@@ -9,6 +9,8 @@ public class CursorControl : MonoBehaviour
     public GameObject m_currentTower;
     public GameObject m_selectedTower;
 
+    [SerializeField] PlayerResourceManager m_resource;
+
     SpriteRenderer m_Marker;
 
     RaycastHit hit;
@@ -19,6 +21,7 @@ public class CursorControl : MonoBehaviour
     void Start()
     {
         m_Marker = m_Placer.GetComponent<SpriteRenderer>();
+        m_resource = FindObjectOfType<PlayerResourceManager>();
     }
 
     // Update is called once per frame
@@ -91,6 +94,7 @@ public class CursorControl : MonoBehaviour
             {
                 //Set a tower
                 Instantiate(m_currentTower, m_Placer.transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
+                m_resource.SubMoney(GetTowerScript().m_cost);
                 m_currentTower = null;
             }
 
@@ -104,5 +108,15 @@ public class CursorControl : MonoBehaviour
                 m_selectedTower = null;
             }
         }
+    }
+
+    public TDTower GetTowerScript()
+    {
+        return m_currentTower.GetComponentInChildren<TDTower>();
+    }
+
+    public TDTower GetSelectedTowerScript()
+    {
+        return m_selectedTower.GetComponentInChildren<TDTower>();
     }
 }

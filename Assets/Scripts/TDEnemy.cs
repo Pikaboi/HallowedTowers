@@ -11,6 +11,8 @@ public class TDEnemy : MonoBehaviour
     public float m_attackPower;
     public float m_health;
 
+    [SerializeField] PlayerResourceManager m_resource;
+
     public Transform m_Destination;
 
     // Start is called before the first frame update
@@ -20,6 +22,8 @@ public class TDEnemy : MonoBehaviour
         m_agent.speed = m_moveSpeed;
 
         m_agent.destination = m_Destination.position;
+
+        m_resource = FindObjectOfType<PlayerResourceManager>();
     }
 
     // Update is called once per frame

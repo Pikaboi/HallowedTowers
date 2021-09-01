@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class TowerDiscard : MonoBehaviour
 {
-    GameObject cursor;
+    CursorControl cursor;
+    [SerializeField] PlayerResourceManager m_resource;
 
     private void Start()
     {
-        cursor = GameObject.FindGameObjectWithTag("Cursor");
+        cursor = GameObject.FindGameObjectWithTag("Cursor").GetComponent<CursorControl>();
+        m_resource = FindObjectOfType<PlayerResourceManager>();
     }
 
     public void removeTower()
     {
-        if (cursor.GetComponent<CursorControl>().m_currentTower != null)
+        if (cursor.m_currentTower != null)
         {
-            cursor.GetComponent<CursorControl>().m_currentTower = null;
+            cursor.m_currentTower = null;
         }
     }
 
@@ -23,8 +25,9 @@ public class TowerDiscard : MonoBehaviour
     {
         if (cursor.GetComponent<CursorControl>().m_selectedTower != null)
         {
-            Destroy(cursor.GetComponent<CursorControl>().m_selectedTower);
-            cursor.GetComponent<CursorControl>().m_selectedTower = null;
+            m_resource.AddMoney(cursor.GetSelectedTowerScript().m_sellCost);
+            Destroy(cursor.m_selectedTower);
+            cursor.m_selectedTower = null;
         }
     }
 }
