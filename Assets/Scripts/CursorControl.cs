@@ -7,6 +7,7 @@ public class CursorControl : MonoBehaviour
     [SerializeField] GameObject m_Placer;
     [SerializeField] LayerMask m_layerMask;
     public GameObject m_currentTower;
+    public GameObject m_selectedTower;
 
     SpriteRenderer m_Marker;
 
@@ -76,6 +77,12 @@ public class CursorControl : MonoBehaviour
             {
                 //Set a tower
                 Instantiate(m_currentTower, m_Placer.transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
+                m_currentTower = null;
+            }
+
+            if(m_currentTower == null && hit.collider.gameObject.layer == 11)
+            {
+                m_selectedTower = hit.collider.gameObject;
             }
         }
 
