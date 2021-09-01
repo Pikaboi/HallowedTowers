@@ -36,7 +36,6 @@ public class TDProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject);
         Destroy(gameObject);
     }
 }
