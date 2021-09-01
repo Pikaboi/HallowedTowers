@@ -13,7 +13,7 @@ public class TDTower : MonoBehaviour
     public float m_fireRate;
     public float m_attack;
     public float m_cost;
-
+    public GameObject m_aimer;
     public bool m_InRange;
 
     public float m_FireTimer;
@@ -29,15 +29,34 @@ public class TDTower : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
+        Aim();
         if (m_InRange)
         {
             m_FireTimer -= Time.deltaTime;
             
             if(m_FireTimer <= 0.0f)
             {
-                Debug.Log("ah");
-                Instantiate(m_Projectile, transform.position + transform.forward * 5.0f, transform.rotation);
+                GameObject bullet = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
+                bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack, gameObject);
                 m_FireTimer = m_fireRate;
+            }
+        }
+    }
+
+    public virtual void Aim()
+    {
+        Collider[] ObjsInRange = Physics.OverlapSphere(transform.position, m_TriggerRange);
+
+        foreach(Collider Obj in ObjsInRange)
+        {
+            if(Obj.gameObject.GetComponent<TDEnemy>() != null)
+            {
+                Vector3 lookat = Obj.gameObject.transform.position - transform.position;
+                lookat.y = 0;
+                Quaternion Rotation = Quaternion.LookRotation(lookat);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Rotation, 1);
+
+                m_aimer.transform.LookAt(Obj.gameObject.transform.position);
             }
         }
     }
