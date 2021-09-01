@@ -11,6 +11,8 @@ public class CursorControl : MonoBehaviour
 
     SpriteRenderer m_Marker;
 
+    RaycastHit hit;
+
     bool m_placable = false;
 
     // Start is called before the first frame update
@@ -22,6 +24,13 @@ public class CursorControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CursorMovement();
+        DetectTowerInRange();
+        ClickControls();
+    }
+
+    void CursorMovement()
+    {
         Vector3 mouseX = Input.mousePosition;
 
         mouseX = Camera.main.ScreenToWorldPoint(new Vector3(mouseX.x, mouseX.y, Camera.main.transform.position.y));
@@ -29,7 +38,6 @@ public class CursorControl : MonoBehaviour
         Vector3 direction = Camera.main.transform.position - m_Placer.transform.position;
         direction = direction.normalized;
 
-        RaycastHit hit;
         Physics.Raycast(Camera.main.transform.position, -direction, out hit, Mathf.Infinity, m_layerMask);
 
         if (hit.collider != null)
@@ -58,34 +66,43 @@ public class CursorControl : MonoBehaviour
             }
         }
 
+        m_Placer.transform.position = new Vector3(mouseX.x, hit.point.y, mouseX.z);
+    }
+
+    void DetectTowerInRange()
+    {
         Collider[] col = Physics.OverlapSphere(m_Placer.transform.position, 0.75f);
 
-        foreach(Collider c in col)
+        foreach (Collider c in col)
         {
-            if(c.gameObject.layer == 11)
+            if (c.gameObject.layer == 11)
             {
                 m_Marker.color = Color.red;
                 m_placable = false;
             }
         }
-        
-        m_Placer.transform.position = new Vector3(mouseX.x, hit.point.y, mouseX.z);
+    }
 
+    void ClickControls()
+    {
         if (Input.GetMouseButtonDown(0))
         {
-            if(m_currentTower != null && m_placable)
+            if (m_currentTower != null && m_placable)
             {
                 //Set a tower
                 Instantiate(m_currentTower, m_Placer.transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
                 m_currentTower = null;
             }
 
-            if(m_currentTower == null && hit.collider.gameObject.layer == 11)
+            if (m_currentTower == null && hit.collider != null && hit.collider.gameObject.layer == 11)
             {
                 m_selectedTower = hit.collider.gameObject;
             }
+
+            if (m_selectedTower != null && hit.collider != null && hit.collider.gameObject.layer != 11)
+            {
+                m_selectedTower = null;
+            }
         }
-
     }
-
 }
