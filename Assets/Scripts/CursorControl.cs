@@ -56,6 +56,17 @@ public class CursorControl : MonoBehaviour
                     break;
             }
         }
+
+        Collider[] col = Physics.OverlapSphere(m_Placer.transform.position, 0.75f);
+
+        foreach(Collider c in col)
+        {
+            if(c.gameObject.layer == 11)
+            {
+                m_Marker.color = Color.red;
+                m_placable = false;
+            }
+        }
         
         m_Placer.transform.position = new Vector3(mouseX.x, hit.point.y, mouseX.z);
 
