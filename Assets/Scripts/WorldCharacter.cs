@@ -57,15 +57,18 @@ public class WorldCharacter : MonoBehaviour
 
     void Movement()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
 
         Vector3 dir = new Vector3(x, 0.0f, y);
         dir = dir.normalized;
 
         m_Controller.SimpleMove(dir * m_speed);
 
-        transform.forward = dir;
+        if (dir != Vector3.zero)
+        {
+            transform.forward = dir;
+        }
     }
 
     void Attack()
