@@ -10,8 +10,8 @@ public class TDTowerManager : MonoBehaviour
     public GameObject m_upgrade2;
     public GameObject m_upgrade1n2;
 
-    bool m_UG2Bought = false;
-    bool m_UG1Bought = false;
+    public bool m_UG2Bought = false;
+    public bool m_UG1Bought = false;
 
     public float m_cost;
     public float m_sellCost;
@@ -33,18 +33,10 @@ public class TDTowerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Upgrade1();
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Upgrade2();
-        }
+        
     }
 
-    void Upgrade1()
+    public void Upgrade1()
     {
         if (!m_UG1Bought)
         {
@@ -75,7 +67,7 @@ public class TDTowerManager : MonoBehaviour
         }
     }
 
-    void Upgrade2()
+    public void Upgrade2()
     {
         if (!m_UG2Bought)
         {
