@@ -29,6 +29,25 @@ public class TDEnemy : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        
+        if(m_health <= 0.0f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Check if a bullet
+        if(collision.gameObject.layer == 14)
+        {
+            if(collision.gameObject.GetComponent<PlayerWeapon>() != null)
+            {
+                m_health -= collision.gameObject.GetComponent<PlayerWeapon>().m_Attack;
+            }
+            if (collision.gameObject.GetComponent<TDProjectile>() != null)
+            {
+                m_health -= collision.gameObject.GetComponent<TDProjectile>().m_attack;
+            }
+        }
     }
 }

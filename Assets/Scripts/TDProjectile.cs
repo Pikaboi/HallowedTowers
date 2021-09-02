@@ -6,7 +6,7 @@ public class TDProjectile : MonoBehaviour
 {
     Rigidbody m_rigidbody;
     [SerializeField] private float m_range;
-    [SerializeField] private float m_attack;
+    public float m_attack;
     [SerializeField] private GameObject m_Tower;
     // Start is called before the first frame update
     void Start()
