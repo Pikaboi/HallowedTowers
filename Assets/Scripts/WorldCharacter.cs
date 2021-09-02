@@ -30,7 +30,10 @@ public class WorldCharacter : MonoBehaviour
             m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
         }
 
-        m_Weapon.SetActive(false);
+        if (m_WeaponStats.isMelee)
+        {
+            m_Weapon.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -79,7 +82,10 @@ public class WorldCharacter : MonoBehaviour
 
             if (m_attackTime <= 0)
             {
-                m_Weapon.SetActive(false);
+                if (m_WeaponStats.isMelee)
+                {
+                    m_Weapon.SetActive(false);
+                }
                 m_attack = false;
                 m_attackTime = 0.2f;
             }
@@ -100,6 +106,13 @@ public class WorldCharacter : MonoBehaviour
                         m_attack = true;
                         break;
                     case WeaponType.RANGE:
+                        if(m_WeaponStats.Bullet != null)
+                        {
+                            GameObject b = Instantiate(m_WeaponStats.Bullet, transform.position, transform.rotation);
+
+                            //We are using the same framework as the tower projectiles
+                            b.GetComponent<TDProjectile>().InheritFromTower(m_WeaponStats.m_BulletRange, m_WeaponStats.m_Attack, null);
+                        }
                         //Shoot a projectile
                         break;
                     default:

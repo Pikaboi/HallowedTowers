@@ -8,11 +8,15 @@ public class TDProjectile : MonoBehaviour
     [SerializeField] private float m_range;
     public float m_attack;
     [SerializeField] private GameObject m_Tower;
+
+    Vector3 ogPos;
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_rigidbody.AddForce(transform.forward * 10.0f, ForceMode.Impulse);
+
+        ogPos = transform.position;
     }
 
     public void InheritFromTower(float range, float attack, GameObject tower)
@@ -28,6 +32,13 @@ public class TDProjectile : MonoBehaviour
         if(m_Tower != null)
         {
             if (Vector3.Distance(transform.position, m_Tower.transform.position) > m_range)
+            {
+                Destroy(gameObject);
+            }
+        } else
+        {
+            //For cases without a tower or from the player
+            if (Vector3.Distance(transform.position, ogPos) > m_range)
             {
                 Destroy(gameObject);
             }
