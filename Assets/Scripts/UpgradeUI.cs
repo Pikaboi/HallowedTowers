@@ -24,6 +24,7 @@ public class UpgradeUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //I do not like how messy it is
         if(m_cursor.m_selectedTower != null)
         {
             m_UG1.gameObject.GetComponent<Image>().enabled = true;
