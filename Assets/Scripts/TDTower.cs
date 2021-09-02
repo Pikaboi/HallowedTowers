@@ -12,8 +12,6 @@ public class TDTower : MonoBehaviour
     public GameObject m_Projectile;
     public float m_fireRate;
     public float m_attack;
-    public float m_cost;
-    public float m_sellCost;
     public GameObject m_aimer;
     public bool m_InRange;
 
@@ -27,7 +25,6 @@ public class TDTower : MonoBehaviour
         m_Trigger = GetComponent<SphereCollider>();
         m_Trigger.radius = m_TriggerRange;
         m_FireTimer = m_fireRate;
-        m_sellCost = m_cost / 2;
 
         m_resource = FindObjectOfType<PlayerResourceManager>();
     }

@@ -110,13 +110,13 @@ public class CursorControl : MonoBehaviour
         }
     }
 
-    public TDTower GetTowerScript()
+    public TDTowerManager GetTowerScript()
     {
-        return m_currentTower.GetComponentInChildren<TDTower>();
+        return m_currentTower.GetComponent<TDTowerManager>();
     }
 
-    public TDTower GetSelectedTowerScript()
+    public TDTowerManager GetSelectedTowerScript()
     {
-        return m_selectedTower.GetComponentInChildren<TDTower>();
+        return m_selectedTower.GetComponent<TDTowerManager>();
     }
 }
