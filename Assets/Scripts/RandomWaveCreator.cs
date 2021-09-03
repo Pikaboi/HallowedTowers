@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveCreator : MonoBehaviour
+public class RandomWaveCreator : MonoBehaviour
 {
-    public WaveManager[] m_waves;
-
-    WaveManager m_currentWave;
+    public WaveManager m_wave;
 
     TDEnemy[] enemies;
     float[] enemyCount;
@@ -18,35 +16,15 @@ public class WaveCreator : MonoBehaviour
     float maxTimer = 0.5f;
     float timer;
 
-    int waveIndex;
-
-    bool WavePlaying = false;
-
     // Start is called before the first frame update
     void Start()
     {
-        waveIndex = 0;
-        m_currentWave = m_waves[waveIndex];
         SetUpWave();
         timer = maxTimer;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (WavePlaying)
-        {
-            SpawnWaves();
-        } else
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                StartWave();
-            }
-        }
-    }
-
-    void SpawnWaves()
     {
         timer -= Time.deltaTime;
         if (wave.Count > 0)
@@ -59,23 +37,12 @@ public class WaveCreator : MonoBehaviour
                 timer = maxTimer;
             }
         }
-
-        if(wave.Count == 0)
-        {
-            waveIndex++;
-            if(waveIndex < m_waves.Length)
-            {
-                m_currentWave = m_waves[1];
-                SetUpWave();
-            }
-            WavePlaying = false;
-        }
     }
 
     void SetUpWave()
     {
-        enemies = m_currentWave.GetTypes();
-        enemyCount = m_currentWave.GetCount();
+        enemies = m_wave.GetTypes();
+        enemyCount = GetRandomCount();
 
         if (enemyCount.Length < enemies.Length)
         {
@@ -93,8 +60,15 @@ public class WaveCreator : MonoBehaviour
         }
     }
 
-    public void StartWave()
+    float[] GetRandomCount()
     {
-        WavePlaying = true;
+        float[] list = new float[enemies.Length];
+
+        for(int i = 0; i < enemies.Length; i++)
+        {
+            list[i] = Random.Range(0, 50);
+        }
+
+        return list;
     }
 }
