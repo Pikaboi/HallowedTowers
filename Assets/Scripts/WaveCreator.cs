@@ -37,12 +37,6 @@ public class WaveCreator : MonoBehaviour
         if (WavePlaying)
         {
             SpawnWaves();
-        } else
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                StartWave();
-            }
         }
     }
 
