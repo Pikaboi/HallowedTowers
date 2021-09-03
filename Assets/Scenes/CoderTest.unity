@@ -643,6 +643,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88da8445744fd4040bc2173a8084d59d, type: 2}
   - {fileID: 11400000, guid: a2bf67839da9cf341b63f755baec28d4, type: 2}
   m_destination: {fileID: 1654989598}
+  WavePlaying: 0
   m_sceneControl: {fileID: 1464717411}
 --- !u!65 &273620324
 BoxCollider:
@@ -1114,6 +1115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Text: {fileID: 1251085983}
+  m_waveCreator: {fileID: 273620323}
 --- !u!1 &432740484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3728,6 +3730,10 @@ PrefabInstance:
       propertyPath: m_UG2Cost
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 3701713177359069104, guid: bf30adb539214734fa9e8ed8ce13e227, type: 3}
+      propertyPath: m_resource
+      value: 
+      objectReference: {fileID: 706761289}
     - target: {fileID: 4065829953801954539, guid: bf30adb539214734fa9e8ed8ce13e227, type: 3}
       propertyPath: m_Name
       value: BaseTower

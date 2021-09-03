@@ -20,7 +20,7 @@ public class WaveCreator : MonoBehaviour
 
     int waveIndex;
 
-    bool WavePlaying = false;
+    public bool WavePlaying = false;
 
     public SceneControl m_sceneControl;
 

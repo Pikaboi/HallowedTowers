@@ -32,6 +32,7 @@ public class TDTower : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
+        CheckEnemies();
         Aim();
         if (m_InRange)
         {
@@ -44,6 +45,22 @@ public class TDTower : MonoBehaviour
                 m_FireTimer = m_fireRate;
             }
         }
+    }
+
+    public virtual void CheckEnemies()
+    {
+        Collider[] ObjsInRange = Physics.OverlapSphere(transform.position, m_TriggerRange);
+
+        bool range = false;
+
+        foreach (Collider Obj in ObjsInRange)
+        {
+            if (Obj.gameObject.tag == "Enemy")
+            {
+                range = true;
+            }
+        }
+        m_InRange = range;
     }
 
     public virtual void Aim()
@@ -61,22 +78,6 @@ public class TDTower : MonoBehaviour
 
                 m_aimer.transform.LookAt(Obj.gameObject.transform.position);
             }
-        }
-    }
-
-    public virtual void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.GetComponent<TDEnemy>() != null)
-        {
-            m_InRange = true;
-        }
-    }
-
-    public virtual void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.GetComponent<TDEnemy>() != null)
-        {
-            m_InRange = false;
         }
     }
 }
