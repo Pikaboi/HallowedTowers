@@ -22,6 +22,8 @@ public class WaveCreator : MonoBehaviour
 
     bool WavePlaying = false;
 
+    public SceneControl m_sceneControl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +63,14 @@ public class WaveCreator : MonoBehaviour
             {
                 m_currentWave = m_waves[1];
                 SetUpWave();
+            } else
+            {
+                GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");
+
+                if (go.Length == 0)
+                {
+                    m_sceneControl.Win();
+                }
             }
             WavePlaying = false;
         }

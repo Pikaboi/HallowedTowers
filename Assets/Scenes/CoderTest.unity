@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 273620323}
   - component: {fileID: 273620324}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: WaveManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,6 +643,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88da8445744fd4040bc2173a8084d59d, type: 2}
   - {fileID: 11400000, guid: a2bf67839da9cf341b63f755baec28d4, type: 2}
   m_destination: {fileID: 1654989598}
+  m_sceneControl: {fileID: 1464717411}
 --- !u!65 &273620324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1516,6 +1517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_WorldHealth: 100
   m_Money: 3000
+  m_SceneControl: {fileID: 1464717411}
 --- !u!4 &706761290
 Transform:
   m_ObjectHideFlags: 0
@@ -3235,6 +3237,7 @@ GameObject:
   - component: {fileID: 1464717410}
   - component: {fileID: 1464717409}
   - component: {fileID: 1464717408}
+  - component: {fileID: 1464717411}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3290,6 +3293,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1464717411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464717407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f782ef4073a74404e868c1f5aa88b506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654989594
 GameObject:
   m_ObjectHideFlags: 0

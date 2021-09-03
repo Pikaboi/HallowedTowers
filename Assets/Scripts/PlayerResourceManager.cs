@@ -6,6 +6,7 @@ public class PlayerResourceManager : MonoBehaviour
 {
     public float m_WorldHealth;
     public float m_Money;
+    public SceneControl m_SceneControl;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,10 @@ public class PlayerResourceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(m_WorldHealth <= 0)
+        {
+            m_SceneControl.GameOver();
+        }
     }
 
     public void AddMoney(float _money)
