@@ -13,6 +13,8 @@ public class WaveCreator : MonoBehaviour
 
     public Transform m_destination;
 
+    bool m_EnemyClose = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +26,12 @@ public class WaveCreator : MonoBehaviour
     {
         if (wave.Count > 0)
         {
-            TDEnemy e = Instantiate(wave[0], transform.position, transform.rotation);
-            e.m_Destination = m_destination;
-            wave.Remove(wave[0]);
+            if (!m_EnemyClose)
+            {
+                TDEnemy e = Instantiate(wave[0], transform.position, transform.rotation);
+                e.m_Destination = m_destination;
+                wave.Remove(wave[0]);
+            }
         }
     }
 
@@ -48,6 +53,22 @@ public class WaveCreator : MonoBehaviour
                     wave.Add(enemies[i]);
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<TDEnemy>() != null)
+        {
+            m_EnemyClose = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<TDEnemy>() != null)
+        {
+            m_EnemyClose = false;
         }
     }
 }
