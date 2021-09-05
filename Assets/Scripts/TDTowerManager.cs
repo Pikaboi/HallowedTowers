@@ -97,4 +97,14 @@ public class TDTowerManager : MonoBehaviour
             }
         }
     }
+
+    public void showRange()
+    {
+        m_child.GetComponent<TDTower>().ShowViewer();
+    }
+
+    public void hideRange()
+    {
+        m_child.GetComponent<TDTower>().HideViewer();
+    }
 }

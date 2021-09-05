@@ -100,11 +100,17 @@ public class CursorControl : MonoBehaviour
 
             if (m_currentTower == null && hit.collider != null && hit.collider.gameObject.layer == 11)
             {
+                if (m_selectedTower != null)
+                {
+                    GetSelectedTowerScript().hideRange();
+                }
                 m_selectedTower = hit.collider.gameObject;
+                GetSelectedTowerScript().showRange();
             }
 
             if (m_selectedTower != null && hit.collider != null && hit.collider.gameObject.layer != 11)
             {
+                GetSelectedTowerScript().hideRange();
                 m_selectedTower = null;
             }
         }

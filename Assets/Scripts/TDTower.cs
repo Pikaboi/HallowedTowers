@@ -14,6 +14,7 @@ public class TDTower : MonoBehaviour
     public float m_attack;
     public GameObject m_aimer;
     public bool m_InRange;
+    public GameObject m_RadiusViewer;
 
     [SerializeField] PlayerResourceManager m_resource;
 
@@ -27,6 +28,8 @@ public class TDTower : MonoBehaviour
         m_FireTimer = m_fireRate;
 
         m_resource = FindObjectOfType<PlayerResourceManager>();
+
+        m_RadiusViewer.SetActive(false);
     }
 
     // Update is called once per frame
@@ -79,5 +82,15 @@ public class TDTower : MonoBehaviour
                 m_aimer.transform.LookAt(Obj.gameObject.transform.position);
             }
         }
+    }
+
+    public void ShowViewer()
+    {
+        m_RadiusViewer.SetActive(true);
+    }
+
+    public void HideViewer()
+    {
+        m_RadiusViewer.SetActive(false);
     }
 }
