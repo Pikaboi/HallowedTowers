@@ -11,6 +11,8 @@ public class TDEnemy : MonoBehaviour
     public float m_attackPower;
     public float m_health;
 
+    public bool m_SpeedDropped = false;
+
     [SerializeField] PlayerResourceManager m_resource;
 
     public Transform m_Destination;
@@ -35,7 +37,7 @@ public class TDEnemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         //Check if a bullet
         if(collision.gameObject.layer == 14)
@@ -47,6 +49,23 @@ public class TDEnemy : MonoBehaviour
             if (collision.gameObject.GetComponent<TDProjectile>() != null)
             {
                 m_health -= collision.gameObject.GetComponent<TDProjectile>().m_attack;
+            }
+        }
+    }
+
+    //For road spikes
+    public void OnTriggerEnter(Collider other)
+    {
+        //We are putting the spikes on the bullet layer
+        if(other.gameObject.tag == "Hazard")
+        {
+            m_health--;
+            other.gameObject.GetComponent<Spikes>().lowerResistance();
+
+            if (other.gameObject.GetComponent<Spikes>().getSlow() && !m_SpeedDropped)
+            {
+                m_agent.speed = m_agent.speed / 2;
+                m_SpeedDropped = true;
             }
         }
     }
