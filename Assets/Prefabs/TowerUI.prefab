@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 350328113}
   - component: {fileID: 350328112}
   - component: {fileID: 350328111}
-  - component: {fileID: 350328110}
+  - component: {fileID: 5893565332658492944}
   m_Layer: 5
   m_Name: SpikeFactory
   m_TagString: Untagged
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 350328110}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpikeSetter, Assembly-CSharp
         m_MethodName: SetTower
         m_Mode: 1
@@ -134,7 +134,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &350328110
+--- !u!114 &5893565332658492944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,10 +143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 350328108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 193c5cc37a3d65c439759be79f23bdc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 93334014c5a88d5499a94ec50c745597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spike: {fileID: 1183744012743834808, guid: 23a5765578d287b408bb4654317df35a, type: 3}
+  Tower: {fileID: 1183744012743834808, guid: 23a5765578d287b408bb4654317df35a, type: 3}
 --- !u!1 &692334968
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 1485498164}
   - component: {fileID: 1485498163}
   - component: {fileID: 1485498162}
-  - component: {fileID: 1485498161}
+  - component: {fileID: 8715301713705030316}
   m_Layer: 5
   m_Name: PumpkinTank
   m_TagString: Untagged
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1485498161}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpikeSetter, Assembly-CSharp
         m_MethodName: SetTower
         m_Mode: 1
@@ -819,7 +819,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1485498161
+--- !u!114 &8715301713705030316
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -828,10 +828,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1485498159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 193c5cc37a3d65c439759be79f23bdc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 93334014c5a88d5499a94ec50c745597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spike: {fileID: 289945622467710851, guid: a00e594d9104ef9469688b5de9040901, type: 3}
+  Tower: {fileID: 289945622467710851, guid: a00e594d9104ef9469688b5de9040901, type: 3}
 --- !u!1 &2066844148
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 2066844153}
   - component: {fileID: 2066844152}
   - component: {fileID: 2066844151}
-  - component: {fileID: 2066844150}
+  - component: {fileID: 2577344335919683962}
   m_Layer: 5
   m_Name: MagicOrb
   m_TagString: Untagged
@@ -954,7 +954,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2066844150}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpikeSetter, Assembly-CSharp
         m_MethodName: SetTower
         m_Mode: 1
@@ -966,7 +966,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2066844150
+--- !u!114 &2577344335919683962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -975,10 +975,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2066844148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 193c5cc37a3d65c439759be79f23bdc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 93334014c5a88d5499a94ec50c745597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spike: {fileID: 3478495592656548393, guid: 83dbd31f2c85ad747b72c78a4495dd75, type: 3}
+  Tower: {fileID: 3478495592656548393, guid: 83dbd31f2c85ad747b72c78a4495dd75, type: 3}
 --- !u!1 &2145831694
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,7 +2450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 156, y: 150.67}
+  m_AnchoredPosition: {x: 103.4, y: 150.67}
   m_SizeDelta: {x: 96.7805, y: 18.146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1031516576436820248
