@@ -19,6 +19,11 @@ public class TowerDiscard : MonoBehaviour
         {
             cursor.m_currentTower = null;
         }
+
+        if(cursor.m_currentSpike != null)
+        {
+            cursor.m_currentSpike = null;
+        }
     }
 
     public void deleteTower()

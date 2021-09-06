@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerSelector : MonoBehaviour
+public class SpikeSetter : MonoBehaviour
 {
-    public GameObject Tower;
+    public GameObject Spike;
     GameObject cursor;
 
     private void Start()
@@ -14,7 +14,7 @@ public class TowerSelector : MonoBehaviour
 
     public void SetTower()
     {
-        cursor.GetComponent<CursorControl>().m_currentTower = Tower;
-        cursor.GetComponent<CursorControl>().m_currentSpike = null;
+        cursor.GetComponent<CursorControl>().m_currentSpike = Spike;
+        cursor.GetComponent<CursorControl>().m_currentTower = null;
     }
 }

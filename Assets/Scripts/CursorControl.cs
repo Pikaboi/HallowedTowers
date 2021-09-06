@@ -8,6 +8,7 @@ public class CursorControl : MonoBehaviour
     [SerializeField] LayerMask m_layerMask;
     public GameObject m_currentTower;
     public GameObject m_selectedTower;
+    public GameObject m_currentSpike;
 
     [SerializeField] PlayerResourceManager m_resource;
 
@@ -53,13 +54,28 @@ public class CursorControl : MonoBehaviour
                     m_placable = false;
                     break;
                 case 12: //The Space for Towers
-                    m_Marker.color = Color.green;
-                    m_placable = true;
+                    if (m_currentTower != null)
+                    {
+                        m_Marker.color = Color.green;
+                        m_placable = true;
+                    } else if(m_currentSpike != null)
+                    {
+                        m_Marker.color = Color.red;
+                        m_placable = false;
+                    }
                     break;
                 case 13://The NavMesh
                     //Dont Allow them to place a tower
-                    m_Marker.color = Color.red;
-                    m_placable = false;
+                    if (m_currentTower != null)
+                    {
+                        m_Marker.color = Color.red;
+                        m_placable = false;
+                    }
+                    else if (m_currentSpike != null)
+                    {
+                        m_Marker.color = Color.green;
+                        m_placable = true;
+                    }
                     break;
                 default:
                     //Any other layer we will ignore
@@ -98,7 +114,13 @@ public class CursorControl : MonoBehaviour
                 m_currentTower = null;
             }
 
-            if (m_currentTower == null && hit.collider != null && hit.collider.gameObject.layer == 11)
+            if (m_currentSpike != null && m_placable)
+            {
+                Instantiate(m_currentSpike, m_Placer.transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
+                m_currentSpike = null;
+            }
+
+            if (m_currentTower == null && m_currentSpike == null && hit.collider != null && hit.collider.gameObject.layer == 11)
             {
                 if (m_selectedTower != null)
                 {
