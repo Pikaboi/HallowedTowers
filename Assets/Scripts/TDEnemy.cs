@@ -13,6 +13,10 @@ public class TDEnemy : MonoBehaviour
 
     public bool m_SpeedDropped = false;
 
+    public bool damageOverTime = false;
+    public float AfflictionTime = 5.0f;
+    public float AfflictionTimer = 0.0f;
+
     [SerializeField] PlayerResourceManager m_resource;
 
     public Transform m_Destination;
@@ -31,6 +35,15 @@ public class TDEnemy : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
+        if(damageOverTime)
+        {
+            AfflictionTimer -= Time.deltaTime;
+            if (AfflictionTimer > 0.0f)
+            {
+                Affliction();
+            }
+        }
+
         if(m_health <= 0.0f)
         {
             Destroy(gameObject);
@@ -68,5 +81,17 @@ public class TDEnemy : MonoBehaviour
                 m_SpeedDropped = true;
             }
         }
+    }
+
+    public void Affliction()
+    {
+        m_health--;
+    }
+
+    public void DamageEnemy(float damage, bool _Dot)
+    {
+        m_health -= damage;
+        damageOverTime = _Dot;
+        AfflictionTimer = AfflictionTime;
     }
 }
