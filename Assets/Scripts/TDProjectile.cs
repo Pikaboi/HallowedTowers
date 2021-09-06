@@ -12,7 +12,7 @@ public class TDProjectile : MonoBehaviour
 
     Vector3 ogPos;
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_rigidbody.AddForce(transform.forward * m_Speed, ForceMode.Impulse);
@@ -28,7 +28,7 @@ public class TDProjectile : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if(m_Tower != null)
         {
@@ -46,7 +46,7 @@ public class TDProjectile : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
     }
