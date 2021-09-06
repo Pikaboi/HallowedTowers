@@ -6,11 +6,15 @@ public class Spikes : MonoBehaviour
 {
     [SerializeField] private int m_Resistance;
     [SerializeField] bool m_Slow;
+    [SerializeField] float m_cost;
+
+    [SerializeField] PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_resource = FindObjectOfType<PlayerResourceManager>();
+        m_resource.SubMoney(m_cost);
     }
 
     // Update is called once per frame

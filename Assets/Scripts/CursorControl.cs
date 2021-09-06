@@ -116,7 +116,7 @@ public class CursorControl : MonoBehaviour
 
             if (m_currentSpike != null && m_placable)
             {
-                Instantiate(m_currentSpike, m_Placer.transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
+                Instantiate(m_currentSpike, m_Placer.transform.position, transform.rotation);
                 m_currentSpike = null;
             }
 
