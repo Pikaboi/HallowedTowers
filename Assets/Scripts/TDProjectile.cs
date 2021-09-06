@@ -8,13 +8,14 @@ public class TDProjectile : MonoBehaviour
     [SerializeField] private float m_range;
     public float m_attack;
     [SerializeField] private GameObject m_Tower;
+    [SerializeField] private float m_Speed;
 
     Vector3 ogPos;
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
-        m_rigidbody.AddForce(transform.forward * 10.0f, ForceMode.Impulse);
+        m_rigidbody.AddForce(transform.forward * m_Speed, ForceMode.Impulse);
 
         ogPos = transform.position;
     }
