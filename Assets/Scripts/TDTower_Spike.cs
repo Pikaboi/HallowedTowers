@@ -6,45 +6,47 @@ public class TDTower_Spike : TDTower
 {
     [SerializeField] Spikes m_Spikes;
 
-    GameObject NavMesh;
+    Vector3 enemypos;
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
-
-        Collider[] cols = Physics.OverlapSphere(transform.position, m_TriggerRange);
-
-        foreach(Collider c in cols)
-        {
-            if(c.gameObject.layer == 13)
-            {
-                NavMesh = c.gameObject;
-            }
-        }
+        m_FireTimer = 0;
     }
 
     // Update is called once per frame
     //Generally the same as the base tower, however we will spawn a spike instead of a bullet
     public override void Update()
     {
-        m_FireTimer -= Time.deltaTime;
-
-        if (m_FireTimer <= 0.0f)
+        CheckEnemies();
+        Aim();
+        if (m_InRange)
         {
-            Instantiate(m_Spikes, GetSpawnLocation(), transform.rotation);
-            m_FireTimer = m_fireRate;
+            m_FireTimer -= Time.deltaTime;
+
+            if (m_FireTimer <= 0.0f)
+            {
+                Instantiate(m_Spikes, enemypos - new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
+                m_FireTimer = m_fireRate;
+            }
         }
     }
 
-    private Vector3 GetSpawnLocation()
+    public override void CheckEnemies()
     {
-        Vector3 spawn = new Vector3(Random.Range(transform.position.x - m_TriggerRange, transform.position.x + m_TriggerRange), 
-            transform.position.y, 
-            Random.Range(transform.position.z - m_TriggerRange, transform.position.z + m_TriggerRange));
+        Collider[] ObjsInRange = Physics.OverlapSphere(transform.position, m_TriggerRange);
 
-       
+        bool range = false;
 
-        return spawn;
+        foreach (Collider Obj in ObjsInRange)
+        {
+            if (Obj.gameObject.tag == "Enemy")
+            {
+                range = true;
+                enemypos = Obj.gameObject.transform.position;
+            }
+        }
+        m_InRange = range;
     }
 }

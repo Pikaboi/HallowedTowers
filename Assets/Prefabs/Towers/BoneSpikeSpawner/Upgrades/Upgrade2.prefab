@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1093104799247120456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 15, y: 1, z: 15}
   m_Children: []
   m_Father: {fileID: 4891855128251603816}
   m_RootOrder: 1
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5898935485806052349}
   - component: {fileID: 8061835839968670046}
   m_Layer: 2
-  m_Name: Base
+  m_Name: Upgrade2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 7.5
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &8061835839968670046
 MonoBehaviour:
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Trigger: {fileID: 0}
-  m_TriggerRange: 5
+  m_TriggerRange: 7.5
   m_Projectile: {fileID: 0}
   m_fireRate: 3
   m_attack: 0
