@@ -13,6 +13,11 @@ public class Spikes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    public void PayForSpikes()
+    {
         m_resource = FindObjectOfType<PlayerResourceManager>();
         m_resource.SubMoney(m_cost);
     }

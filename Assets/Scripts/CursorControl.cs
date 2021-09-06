@@ -117,6 +117,7 @@ public class CursorControl : MonoBehaviour
             if (m_currentSpike != null && m_placable)
             {
                 Instantiate(m_currentSpike, m_Placer.transform.position, transform.rotation);
+                m_currentSpike.GetComponent<Spikes>().PayForSpikes();
                 m_currentSpike = null;
             }
 
