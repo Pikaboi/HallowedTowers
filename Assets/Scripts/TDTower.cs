@@ -29,7 +29,10 @@ public class TDTower : MonoBehaviour
 
         m_resource = FindObjectOfType<PlayerResourceManager>();
 
-        m_RadiusViewer.SetActive(false);
+        if (m_RadiusViewer != null)
+        {
+            m_RadiusViewer.SetActive(false);
+        }
     }
 
     // Update is called once per frame

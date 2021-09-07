@@ -65,6 +65,31 @@ public class TDEnemy : MonoBehaviour
                 m_resource.AddMoney(collision.gameObject.GetComponent<TDProjectile>().m_attack);
                 m_health -= collision.gameObject.GetComponent<TDProjectile>().m_attack;
             }
+            if(collision.gameObject.GetComponent<TDMelee>() != null)
+            {
+                if (collision.gameObject.GetComponent<TDMelee>().m_CanOHKO)
+                {
+                    int rand = Random.Range(0, 99);
+
+                    if (rand < 25)
+                    {
+                        m_resource.AddMoney(m_health);
+                        Destroy(gameObject);
+                        Debug.Log("KO");
+                    }
+                    else
+                    {
+                        m_resource.AddMoney(collision.gameObject.GetComponent<TDMelee>().m_attack);
+                        m_health -= collision.gameObject.GetComponent<TDMelee>().m_attack;
+                    }
+
+                }
+                else
+                {
+                    m_resource.AddMoney(collision.gameObject.GetComponent<TDMelee>().m_attack);
+                    m_health -= collision.gameObject.GetComponent<TDMelee>().m_attack;
+                }
+            }
         }
     }
 
