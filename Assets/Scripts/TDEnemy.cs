@@ -57,11 +57,38 @@ public class TDEnemy : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<PlayerWeapon>() != null)
             {
+                m_resource.AddMoney(collision.gameObject.GetComponent<PlayerWeapon>().m_Attack);
                 m_health -= collision.gameObject.GetComponent<PlayerWeapon>().m_Attack;
             }
             if (collision.gameObject.GetComponent<TDProjectile>() != null)
             {
+                m_resource.AddMoney(collision.gameObject.GetComponent<TDProjectile>().m_attack);
                 m_health -= collision.gameObject.GetComponent<TDProjectile>().m_attack;
+            }
+            if(collision.gameObject.GetComponent<TDMelee>() != null)
+            {
+                if (collision.gameObject.GetComponent<TDMelee>().m_CanOHKO)
+                {
+                    int rand = Random.Range(0, 99);
+
+                    if (rand < 25)
+                    {
+                        m_resource.AddMoney(m_health);
+                        Destroy(gameObject);
+                        Debug.Log("KO");
+                    }
+                    else
+                    {
+                        m_resource.AddMoney(collision.gameObject.GetComponent<TDMelee>().m_attack);
+                        m_health -= collision.gameObject.GetComponent<TDMelee>().m_attack;
+                    }
+
+                }
+                else
+                {
+                    m_resource.AddMoney(collision.gameObject.GetComponent<TDMelee>().m_attack);
+                    m_health -= collision.gameObject.GetComponent<TDMelee>().m_attack;
+                }
             }
         }
     }
@@ -72,6 +99,7 @@ public class TDEnemy : MonoBehaviour
         //We are putting the spikes on the bullet layer
         if(other.gameObject.tag == "Hazard")
         {
+            m_resource.AddMoney(1);
             m_health--;
             other.gameObject.GetComponent<Spikes>().lowerResistance();
 
@@ -90,6 +118,7 @@ public class TDEnemy : MonoBehaviour
 
     public void DamageEnemy(float damage, bool _Dot)
     {
+        m_resource.AddMoney(damage);
         m_health -= damage;
         damageOverTime = _Dot;
         AfflictionTimer = AfflictionTime;
