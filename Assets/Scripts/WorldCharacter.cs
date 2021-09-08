@@ -28,11 +28,11 @@ public class WorldCharacter : MonoBehaviour
         if (m_Weapon != null)
         {
             m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
-        }
 
-        if (m_WeaponStats.isMelee)
-        {
-            m_Weapon.SetActive(false);
+            if (m_WeaponStats.isMelee)
+            {
+                m_Weapon.SetActive(false);
+            }
         }
     }
 
