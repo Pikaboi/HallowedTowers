@@ -69,7 +69,7 @@ public class WaveCreator : MonoBehaviour
 
                 if (go.Length == 0)
                 {
-                    m_sceneControl.Win();
+                    //m_sceneControl.Win();
                 }
             }
             WavePlaying = false;

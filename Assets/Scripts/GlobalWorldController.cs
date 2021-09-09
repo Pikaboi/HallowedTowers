@@ -14,25 +14,29 @@ public class GlobalWorldController : MonoBehaviour
     public DensityVolume[] Fogs;
     public WaveCreator[] waveCreators;
 
-    public List<fogWavePair> pairs;
+    public List<fogWavePair> pairs = new List<fogWavePair>();
     // Start is called before the first frame update
     void Start()
     {
         for(int i = 0; i < Fogs.Length; i++)
         {
-            pairs.Add(MakePair(Fogs[i], waveCreators[i]));
+            fogWavePair pair = MakePair(Fogs[i], waveCreators[i]);
+            pairs.Add(pair);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(pairs[0].wav.waveIndex > pairs[0].wav.m_waves.Length)
+        if (pairs.Count != 0)
         {
-            pairs[0].vol.enabled = false;
-            pairs[0].wav.enabled = false;
+            if (pairs[0].wav.waveIndex > pairs[0].wav.m_waves.Length)
+            {
+                pairs[0].vol.gameObject.SetActive(false);
+                pairs[0].wav.enabled = false;
 
-            pairs.Remove(pairs[0]);
+                pairs.Remove(pairs[0]);
+            }
         }
     }
 
