@@ -30,7 +30,7 @@ public class GlobalWorldController : MonoBehaviour
     {
         if (pairs.Count != 0)
         {
-            if (pairs[0].wav.waveIndex > pairs[0].wav.m_waves.Length)
+            if (pairs[0].wav.waveIndex == pairs[0].wav.m_waves.Length)
             {
                 pairs[0].vol.gameObject.SetActive(false);
                 pairs[0].wav.enabled = false;

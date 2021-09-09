@@ -55,24 +55,24 @@ public class WaveCreator : MonoBehaviour
                 timer = maxTimer;
             }
         }
-
-        if(wave.Count == 0)
+        else
         {
-            waveIndex++;
-            if(waveIndex < m_waves.Length)
-            {
-                m_currentWave = m_waves[1];
-                SetUpWave();
-            } else
-            {
-                GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");
 
-                if (go.Length == 0)
+            if (go.Length == 0)
+            {
+                waveIndex++;
+                if (waveIndex < m_waves.Length)
                 {
-                    //m_sceneControl.Win();
+                    m_currentWave = m_waves[1];
+                    SetUpWave();
                 }
+                else
+                {
+                    m_sceneControl.Win();
+                }
+                WavePlaying = false;
             }
-            WavePlaying = false;
         }
     }
 
