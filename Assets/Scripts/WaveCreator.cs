@@ -18,7 +18,7 @@ public class WaveCreator : MonoBehaviour
     float maxTimer = 0.5f;
     float timer;
 
-    int waveIndex;
+    public int waveIndex;
 
     public bool WavePlaying = false;
 
