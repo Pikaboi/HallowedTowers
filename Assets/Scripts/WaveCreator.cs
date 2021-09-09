@@ -22,8 +22,6 @@ public class WaveCreator : MonoBehaviour
 
     public bool WavePlaying = false;
 
-    public SceneControl m_sceneControl;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +67,7 @@ public class WaveCreator : MonoBehaviour
                 }
                 else
                 {
-                    m_sceneControl.Win();
+                    //m_sceneControl.Win();
                 }
                 WavePlaying = false;
             }
