@@ -121,4 +121,13 @@ public class WorldCharacter : MonoBehaviour
             }
         }
     }
+
+    public void SpawnWeapon(GameObject _weapon)
+    {
+        Destroy(m_Weapon);
+        m_Weapon = null;
+        m_Weapon = Instantiate(_weapon, transform.position + transform.forward, Quaternion.Euler(0.0f, 90.0f, 90.0f));
+        m_Weapon.transform.parent = transform;
+        m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
+    }
 }
