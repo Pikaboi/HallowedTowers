@@ -44,8 +44,6 @@ public class CursorControl : MonoBehaviour
 
         Physics.Raycast(Camera.main.transform.position, -direction, out hit, Mathf.Infinity, m_layerMask);
 
-        Debug.Log(EventSystem.current.IsPointerOverGameObject());
-
         if (hit.collider != null)
         {
             switch (hit.collider.gameObject.layer)
