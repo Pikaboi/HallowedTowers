@@ -43,8 +43,6 @@ public class GlobalWorldController : MonoBehaviour
 
                 pairs.Remove(pairs[0]);
 
-                Debug.Log(pairs[0].wav);
-
                 m_playButton.m_waveCreator = pairs[0].wav;
             }
         }
