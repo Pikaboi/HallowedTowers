@@ -10,6 +10,9 @@ public class TDTowerManager : MonoBehaviour
     public GameObject m_upgrade2;
     public GameObject m_upgrade1n2;
 
+    public string m_UG1String;
+    public string m_UG2String;
+
     public bool m_UG2Bought = false;
     public bool m_UG1Bought = false;
 

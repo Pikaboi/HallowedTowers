@@ -39,7 +39,7 @@ public class UpgradeUI : MonoBehaviour
             } else
             {
                 m_UG1.enabled = true;
-                m_UG1T.text = "Upgrade 1: " + m_cursor.GetSelectedTowerScript().m_UG1Cost;
+                m_UG1T.text = "Upgrade 1: " + m_cursor.GetSelectedTowerScript().m_UG1String + " " + m_cursor.GetSelectedTowerScript().m_UG1Cost;
             }
 
             if (m_cursor.GetSelectedTowerScript().m_UG2Bought)
@@ -50,7 +50,7 @@ public class UpgradeUI : MonoBehaviour
             else
             {
                 m_UG2.enabled = true;
-                m_UG2T.text = "Upgrade 2: " + m_cursor.GetSelectedTowerScript().m_UG2Cost;
+                m_UG2T.text = "Upgrade 2: " + m_cursor.GetSelectedTowerScript().m_UG2String + " " + m_cursor.GetSelectedTowerScript().m_UG2Cost;
             }
         } else
         {
