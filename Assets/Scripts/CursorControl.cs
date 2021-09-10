@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class CursorControl : MonoBehaviour
 {
     [SerializeField] GameObject m_Placer;
@@ -106,7 +106,7 @@ public class CursorControl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (m_currentTower != null && m_placable)
+            if (m_currentTower != null && m_placable && !EventSystem.current.IsPointerOverGameObject())
             {
                 //Set a tower
                 Instantiate(m_currentTower, m_Placer.transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
@@ -114,14 +114,14 @@ public class CursorControl : MonoBehaviour
                 m_currentTower = null;
             }
 
-            if (m_currentSpike != null && m_placable)
+            if (m_currentSpike != null && m_placable && !EventSystem.current.IsPointerOverGameObject())
             {
                 Instantiate(m_currentSpike, m_Placer.transform.position, transform.rotation);
                 m_currentSpike.GetComponent<Spikes>().PayForSpikes();
                 m_currentSpike = null;
             }
 
-            if (m_currentTower == null && m_currentSpike == null && hit.collider != null && hit.collider.gameObject.layer == 11)
+            if (m_currentTower == null && m_currentSpike == null && hit.collider != null && hit.collider.gameObject.layer == 11 && !EventSystem.current.IsPointerOverGameObject())
             {
                 if (m_selectedTower != null)
                 {
@@ -131,7 +131,7 @@ public class CursorControl : MonoBehaviour
                 GetSelectedTowerScript().showRange();
             }
 
-            if (m_selectedTower != null && hit.collider != null && hit.collider.gameObject.layer != 11)
+            if (m_selectedTower != null && hit.collider != null && hit.collider.gameObject.layer != 11 && !EventSystem.current.IsPointerOverGameObject())
             {
                 GetSelectedTowerScript().hideRange();
                 m_selectedTower = null;

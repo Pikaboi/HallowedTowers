@@ -18,7 +18,7 @@ public class WaveCreator : MonoBehaviour
     float maxTimer = 0.5f;
     float timer;
 
-    int waveIndex;
+    public int waveIndex;
 
     public bool WavePlaying = false;
 
@@ -69,7 +69,7 @@ public class WaveCreator : MonoBehaviour
 
                 if (go.Length == 0)
                 {
-                    m_sceneControl.Win();
+                    //m_sceneControl.Win();
                 }
             }
             WavePlaying = false;
