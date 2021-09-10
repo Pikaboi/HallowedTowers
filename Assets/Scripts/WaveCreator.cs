@@ -70,6 +70,13 @@ public class WaveCreator : MonoBehaviour
                     //m_sceneControl.Win();
                 }
                 WavePlaying = false;
+
+                TrickTreatHouse[] houses = GameObject.FindObjectsOfType<TrickTreatHouse>();
+
+                foreach(TrickTreatHouse t in houses)
+                {
+                    t.UpdateIncome();
+                }
             }
         }
     }
