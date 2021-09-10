@@ -56,8 +56,16 @@ public class CursorControl : MonoBehaviour
                 case 12: //The Space for Towers
                     if (m_currentTower != null)
                     {
-                        m_Marker.color = Color.green;
-                        m_placable = true;
+                        if (m_currentTower.gameObject.tag == "Kraken")
+                        {
+                            m_Marker.color = Color.red;
+                            m_placable = false;
+                        }
+                        else
+                        {
+                            m_Marker.color = Color.green;
+                            m_placable = true;
+                        }
                     } else if(m_currentSpike != null)
                     {
                         m_Marker.color = Color.red;
@@ -75,6 +83,26 @@ public class CursorControl : MonoBehaviour
                     {
                         m_Marker.color = Color.green;
                         m_placable = true;
+                    }
+                    break;
+                case 16: //The water for krakens
+                    if (m_currentTower != null)
+                    {
+                        if (m_currentTower.gameObject.tag == "Kraken")
+                        {
+                            m_Marker.color = Color.green;
+                            m_placable = true;
+                        }
+                        else
+                        {
+                            m_Marker.color = Color.red;
+                            m_placable = false;
+                        }
+                    }
+                    else if (m_currentSpike != null)
+                    {
+                        m_Marker.color = Color.red;
+                        m_placable = false;
                     }
                     break;
                 default:

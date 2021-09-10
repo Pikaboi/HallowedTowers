@@ -7,7 +7,7 @@ public class RoundPlayButton : MonoBehaviour
 {
     Button m_button;
     Image m_Image;
-    [SerializeField] TMPro.TMP_Text m_Text;
+    //[SerializeField] TMPro.TMP_Text m_Text;
     public WaveCreator m_waveCreator;
     // Start is called before the first frame update
     void Start()
@@ -38,13 +38,13 @@ public class RoundPlayButton : MonoBehaviour
         {
             m_Image.enabled = true;
             m_button.enabled = true;
-            m_Text.enabled = true;
+            //m_Text.enabled = true;
         }
         else
         {
             m_Image.enabled = false;
             m_button.enabled = false;
-            m_Text.enabled = false;
+            //m_Text.enabled = false;
         }
     }
 }
