@@ -17,6 +17,8 @@ public class TDEnemy : MonoBehaviour
     public float AfflictionTime = 5.0f;
     public float AfflictionTimer = 0.0f;
 
+    public Animator m_anim;
+
     [SerializeField] PlayerResourceManager m_resource;
 
     public Transform m_Destination;
@@ -28,7 +30,6 @@ public class TDEnemy : MonoBehaviour
         m_agent.speed = m_moveSpeed;
 
         m_agent.destination = m_Destination.position;
-
         m_resource = FindObjectOfType<PlayerResourceManager>();
     }
 
@@ -46,7 +47,20 @@ public class TDEnemy : MonoBehaviour
 
         if(m_health <= 0.0f)
         {
-            Destroy(gameObject);
+            if (m_anim == null)
+            {
+                Destroy(gameObject);
+            } else
+            {
+                m_anim.SetTrigger("Die");
+                m_agent.enabled = false;
+                Destroy(gameObject.GetComponent<Rigidbody>());
+
+                if (m_anim.GetCurrentAnimatorStateInfo(0).IsName("Death") && m_anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 

@@ -7,8 +7,10 @@ public class WorldCharacter : MonoBehaviour
     CharacterController m_Controller;
     [SerializeField] float m_speed;
 
-    public float m_attackTime = 0.2f;
+    public float m_attackTime;
+    float m_maxat;
     public bool m_attack = false;
+    public Animator m_anim;
 
     enum WeaponType
     {
@@ -34,6 +36,7 @@ public class WorldCharacter : MonoBehaviour
                 m_Weapon.SetActive(false);
             }
         }
+        m_maxat = m_attackTime;
     }
 
     // Update is called once per frame
@@ -87,7 +90,7 @@ public class WorldCharacter : MonoBehaviour
                     m_Weapon.SetActive(false);
                 }
                 m_attack = false;
-                m_attackTime = 0.2f;
+                m_attackTime = m_maxat;
             }
         }
         else
@@ -95,6 +98,7 @@ public class WorldCharacter : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                m_anim.SetTrigger("Attack");
                 switch (m_Equipped)
                 {
                     case WeaponType.UNARMED:
