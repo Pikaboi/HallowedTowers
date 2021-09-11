@@ -8,6 +8,8 @@ public class PlayerWeaponProp : MonoBehaviour
     [SerializeField] WorldCharacter m_Char;
     bool inzone;
     public Vector3 m_WeaponRot;
+    public AudioSource m_Equip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class PlayerWeaponProp : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 m_Char.SpawnWeapon(m_RealWeapon, m_WeaponRot);
+                m_Equip.Play();
             }
         }
     }

@@ -18,6 +18,8 @@ public class CursorControl : MonoBehaviour
 
     bool m_placable = false;
 
+    public AudioSource m_spawnSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -141,6 +143,7 @@ public class CursorControl : MonoBehaviour
                     //Set a tower
                     Instantiate(m_currentTower, m_Placer.transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
                     m_resource.SubMoney(GetTowerScript().m_cost);
+                    m_spawnSFX.Play();
                 }
                 m_currentTower = null;
             }
@@ -151,6 +154,7 @@ public class CursorControl : MonoBehaviour
                 {
                     Instantiate(m_currentSpike, m_Placer.transform.position, transform.rotation);
                     m_currentSpike.GetComponent<Spikes>().PayForSpikes();
+                    m_spawnSFX.Play();
                 }
                 m_currentSpike = null;
             }

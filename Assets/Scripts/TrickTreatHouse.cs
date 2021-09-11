@@ -11,6 +11,8 @@ public class TrickTreatHouse : MonoBehaviour
 
     [SerializeField] PlayerResourceManager m_resource;
 
+    [SerializeField] AudioSource m_Collect;
+
     bool End = false;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,7 @@ public class TrickTreatHouse : MonoBehaviour
                 m_resource.AddMoney(m_value);
                 m_value = 0;
                 m_multiplier = 1.0f;
+                m_Collect.Play();
             }
         }
     }

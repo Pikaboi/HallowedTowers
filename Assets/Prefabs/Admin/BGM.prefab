@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8527381766842387582
+--- !u!1 &3917770099725165934
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,66 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8527381766842387580}
-  - component: {fileID: 8527381766842387583}
-  - component: {fileID: 4525781504032821455}
+  - component: {fileID: 3917770099725165932}
+  - component: {fileID: 3917770099725165933}
   m_Layer: 0
-  m_Name: CursorControl
-  m_TagString: Cursor
+  m_Name: BGM
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8527381766842387580
+--- !u!4 &3917770099725165932
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8527381766842387582}
+  m_GameObject: {fileID: 3917770099725165934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 225.81824, y: 277.94113, z: -47.525875}
+  m_LocalPosition: {x: -2.7122185, y: -33.353977, z: 5.226744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8527381766842387583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8527381766842387582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c91d698a1b7cf640bf9ea155f64af38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Placer: {fileID: 0}
-  m_layerMask:
-    serializedVersion: 2
-    m_Bits: 16179
-  m_currentTower: {fileID: 0}
-  m_selectedTower: {fileID: 0}
-  m_currentSpike: {fileID: 0}
-  m_resource: {fileID: 0}
-  m_spawnSFX: {fileID: 4525781504032821455}
---- !u!82 &4525781504032821455
+--- !u!82 &3917770099725165933
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8527381766842387582}
+  m_GameObject: {fileID: 3917770099725165934}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 82846d0df71dd1841979d93b828a3b9c, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_audioClip: {fileID: 8300000, guid: e4f8b48e39a35e4409061d091eed14d1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
