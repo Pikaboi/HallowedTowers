@@ -24,6 +24,8 @@ public class TDEnemy : MonoBehaviour
 
     public Transform m_Destination;
 
+    public AudioSource m_Damage;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -50,7 +52,10 @@ public class TDEnemy : MonoBehaviour
         {
             if (m_anim == null)
             {
-                Destroy(gameObject);
+                if (!m_Damage.isPlaying)
+                {
+                    Destroy(gameObject);
+                }
             } else
             {
                 m_anim.SetTrigger("Die");
@@ -74,11 +79,13 @@ public class TDEnemy : MonoBehaviour
             {
                 m_resource.AddMoney(collision.gameObject.GetComponent<PlayerWeapon>().m_Attack);
                 m_health -= collision.gameObject.GetComponent<PlayerWeapon>().m_Attack;
+                m_Damage.Play();
             }
             if (collision.gameObject.GetComponent<TDProjectile>() != null)
             {
                 m_resource.AddMoney(collision.gameObject.GetComponent<TDProjectile>().m_attack);
                 m_health -= collision.gameObject.GetComponent<TDProjectile>().m_attack;
+                m_Damage.Play();
             }
             if(collision.gameObject.GetComponent<TDMelee>() != null)
             {
@@ -90,11 +97,13 @@ public class TDEnemy : MonoBehaviour
                     {
                         m_resource.AddMoney(m_health);
                         Destroy(gameObject);
+                        m_Damage.Play();
                     }
                     else
                     {
                         m_resource.AddMoney(collision.gameObject.GetComponent<TDMelee>().m_attack);
                         m_health -= collision.gameObject.GetComponent<TDMelee>().m_attack;
+                        m_Damage.Play();
                     }
 
                 }
@@ -102,6 +111,7 @@ public class TDEnemy : MonoBehaviour
                 {
                     m_resource.AddMoney(collision.gameObject.GetComponent<TDMelee>().m_attack);
                     m_health -= collision.gameObject.GetComponent<TDMelee>().m_attack;
+                    m_Damage.Play();
                 }
             }
         }
@@ -116,6 +126,7 @@ public class TDEnemy : MonoBehaviour
             m_resource.AddMoney(1);
             m_health-= 5;
             other.gameObject.GetComponent<Spikes>().lowerResistance();
+            m_Damage.Play();
 
             if (other.gameObject.GetComponent<Spikes>().getSlow() && !m_SpeedDropped)
             {
@@ -131,6 +142,7 @@ public class TDEnemy : MonoBehaviour
         if(dotTimer <= 0.0f)
         {
             m_health--;
+            m_Damage.Play();
             dotTimer = 1.0f;
         }
     }
@@ -139,6 +151,7 @@ public class TDEnemy : MonoBehaviour
     {
         m_resource.AddMoney(damage);
         m_health -= damage;
+        m_Damage.Play();
         damageOverTime = _Dot;
         AfflictionTimer = AfflictionTime;
         dotTimer = 1.0f;
