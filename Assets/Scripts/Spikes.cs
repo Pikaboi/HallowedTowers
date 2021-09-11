@@ -40,4 +40,9 @@ public class Spikes : MonoBehaviour
     {
         return m_Slow;
     }
+
+    public float getCost()
+    {
+        return m_cost;
+    }
 }

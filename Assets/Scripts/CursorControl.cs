@@ -136,16 +136,22 @@ public class CursorControl : MonoBehaviour
         {
             if (m_currentTower != null && m_placable && !EventSystem.current.IsPointerOverGameObject())
             {
-                //Set a tower
-                Instantiate(m_currentTower, m_Placer.transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
-                m_resource.SubMoney(GetTowerScript().m_cost);
+                if (m_resource.m_Money >= GetTowerScript().m_cost)
+                {
+                    //Set a tower
+                    Instantiate(m_currentTower, m_Placer.transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
+                    m_resource.SubMoney(GetTowerScript().m_cost);
+                }
                 m_currentTower = null;
             }
 
             if (m_currentSpike != null && m_placable && !EventSystem.current.IsPointerOverGameObject())
             {
-                Instantiate(m_currentSpike, m_Placer.transform.position, transform.rotation);
-                m_currentSpike.GetComponent<Spikes>().PayForSpikes();
+                if (m_resource.m_Money >= m_currentSpike.GetComponent<Spikes>().getCost())
+                {
+                    Instantiate(m_currentSpike, m_Placer.transform.position, transform.rotation);
+                    m_currentSpike.GetComponent<Spikes>().PayForSpikes();
+                }
                 m_currentSpike = null;
             }
 
