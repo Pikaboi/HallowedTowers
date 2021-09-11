@@ -16,6 +16,7 @@ public class TDEnemy : MonoBehaviour
     public bool damageOverTime = false;
     public float AfflictionTime = 5.0f;
     public float AfflictionTimer = 0.0f;
+    public float dotTimer = 1.0f;
 
     public Animator m_anim;
 
@@ -127,7 +128,12 @@ public class TDEnemy : MonoBehaviour
 
     public void Affliction()
     {
-        m_health--;
+        dotTimer -= Time.deltaTime;
+        if(dotTimer <= 0.0f)
+        {
+            m_health--;
+            dotTimer = 1.0f;
+        }
     }
 
     public void DamageEnemy(float damage, bool _Dot)
@@ -136,5 +142,6 @@ public class TDEnemy : MonoBehaviour
         m_health -= damage;
         damageOverTime = _Dot;
         AfflictionTimer = AfflictionTime;
+        dotTimer = 1.0f;
     }
 }
