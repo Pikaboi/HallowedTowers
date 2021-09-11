@@ -90,7 +90,6 @@ public class TDEnemy : MonoBehaviour
                     {
                         m_resource.AddMoney(m_health);
                         Destroy(gameObject);
-                        Debug.Log("KO");
                     }
                     else
                     {
@@ -115,7 +114,7 @@ public class TDEnemy : MonoBehaviour
         if(other.gameObject.tag == "Hazard")
         {
             m_resource.AddMoney(1);
-            m_health--;
+            m_health-= 5;
             other.gameObject.GetComponent<Spikes>().lowerResistance();
 
             if (other.gameObject.GetComponent<Spikes>().getSlow() && !m_SpeedDropped)

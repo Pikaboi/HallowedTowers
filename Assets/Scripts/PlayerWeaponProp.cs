@@ -37,7 +37,7 @@ public class PlayerWeaponProp : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject == m_Char.gameObject)
+        if(other.gameObject == m_Char.gameObject && other.gameObject.GetComponent<WorldCharacter>() != null)
         {
             Debug.Log("ah");
             m_Char = null;
