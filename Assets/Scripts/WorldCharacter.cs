@@ -7,8 +7,10 @@ public class WorldCharacter : MonoBehaviour
     CharacterController m_Controller;
     [SerializeField] float m_speed;
 
-    public float m_attackTime = 0.2f;
+    public float m_attackTime;
+    float m_maxat;
     public bool m_attack = false;
+    public Animator m_anim;
 
     enum WeaponType
     {
@@ -34,6 +36,7 @@ public class WorldCharacter : MonoBehaviour
                 m_Weapon.SetActive(false);
             }
         }
+        m_maxat = m_attackTime;
     }
 
     // Update is called once per frame
@@ -87,7 +90,7 @@ public class WorldCharacter : MonoBehaviour
                     m_Weapon.SetActive(false);
                 }
                 m_attack = false;
-                m_attackTime = 0.2f;
+                m_attackTime = m_maxat;
             }
         }
         else
@@ -95,6 +98,7 @@ public class WorldCharacter : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                m_anim.SetTrigger("Attack");
                 switch (m_Equipped)
                 {
                     case WeaponType.UNARMED:
@@ -120,5 +124,14 @@ public class WorldCharacter : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SpawnWeapon(GameObject _weapon, Vector3 m_rot)
+    {
+        Destroy(m_Weapon);
+        m_Weapon = null;
+        m_Weapon = Instantiate(_weapon, transform.position + transform.forward, Quaternion.Euler(m_rot.x, m_rot.y + transform.rotation.eulerAngles.y, m_rot.z - transform.rotation.eulerAngles.z));
+        m_Weapon.transform.parent = transform;
+        m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
     }
 }

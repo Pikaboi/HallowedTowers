@@ -14,6 +14,12 @@ public class GlobalWorldController : MonoBehaviour
     public DensityVolume[] Fogs;
     public WaveCreator[] waveCreators;
 
+    public SceneControl m_sceneControl;
+
+    public WaveCreator m_lastWave;
+
+    [SerializeField] RoundPlayButton m_playButton;
+
     public List<fogWavePair> pairs = new List<fogWavePair>();
     // Start is called before the first frame update
     void Start()
@@ -30,13 +36,25 @@ public class GlobalWorldController : MonoBehaviour
     {
         if (pairs.Count != 0)
         {
-            if (pairs[0].wav.waveIndex > pairs[0].wav.m_waves.Length)
+            if (pairs[0].wav.waveIndex == pairs[0].wav.m_waves.Length)
             {
                 pairs[0].vol.gameObject.SetActive(false);
                 pairs[0].wav.enabled = false;
 
                 pairs.Remove(pairs[0]);
+
+                m_playButton.m_waveCreator = pairs[0].wav;
             }
+        }
+        else if (pairs.Count == 0)
+        {
+            m_playButton.m_waveCreator = m_lastWave;
+        }
+
+
+        if(m_lastWave.waveIndex == m_lastWave.m_waves.Length)
+        {
+            m_sceneControl.Win();
         }
     }
 

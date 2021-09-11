@@ -22,8 +22,6 @@ public class WaveCreator : MonoBehaviour
 
     public bool WavePlaying = false;
 
-    public SceneControl m_sceneControl;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -55,24 +53,31 @@ public class WaveCreator : MonoBehaviour
                 timer = maxTimer;
             }
         }
-
-        if(wave.Count == 0)
+        else
         {
-            waveIndex++;
-            if(waveIndex < m_waves.Length)
-            {
-                m_currentWave = m_waves[1];
-                SetUpWave();
-            } else
-            {
-                GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");
 
-                if (go.Length == 0)
+            if (go.Length == 0)
+            {
+                waveIndex++;
+                if (waveIndex < m_waves.Length)
+                {
+                    m_currentWave = m_waves[1];
+                    SetUpWave();
+                }
+                else
                 {
                     //m_sceneControl.Win();
                 }
+                WavePlaying = false;
+
+                TrickTreatHouse[] houses = GameObject.FindObjectsOfType<TrickTreatHouse>();
+
+                foreach(TrickTreatHouse t in houses)
+                {
+                    t.UpdateIncome();
+                }
             }
-            WavePlaying = false;
         }
     }
 
