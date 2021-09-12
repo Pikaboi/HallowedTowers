@@ -27,6 +27,6 @@ public class SceneControl : MonoBehaviour
 
     public void Game()
     {
-        SceneManager.LoadScene("CoderTest");
+        SceneManager.LoadScene("ArtTest");
     }
 }

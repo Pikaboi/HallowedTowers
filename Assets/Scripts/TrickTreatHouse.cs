@@ -13,7 +13,9 @@ public class TrickTreatHouse : MonoBehaviour
 
     [SerializeField] AudioSource m_Collect;
 
-    bool End = false;
+    [SerializeField] TMPro.TMP_Text t;
+
+    //bool End = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class TrickTreatHouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        t.text = m_value.ToString();
     }
 
     public void UpdateIncome()
