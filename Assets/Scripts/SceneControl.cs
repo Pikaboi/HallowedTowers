@@ -29,4 +29,13 @@ public class SceneControl : MonoBehaviour
     {
         SceneManager.LoadScene("ArtTest");
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
 }
