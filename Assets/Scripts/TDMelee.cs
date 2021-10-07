@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Add the custom affinity namespace
+using Affinity = affinity.Affinity;
 
 public class TDMelee : MonoBehaviour
 {
     Rigidbody m_rigidbody;
     public float m_attack;
+    public Affinity m_affinity;
     [SerializeField] private GameObject m_Tower;
 
     float m_Timer;

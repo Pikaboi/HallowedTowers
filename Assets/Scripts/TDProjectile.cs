@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Add the custom affinity namespace
+using Affinity = affinity.Affinity;
 
 public class TDProjectile : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class TDProjectile : MonoBehaviour
     public float m_attack;
     [SerializeField] private GameObject m_Tower;
     [SerializeField] private float m_Speed;
-
+    public Affinity m_Affinity;
     Vector3 ogPos;
     // Start is called before the first frame update
     public virtual void Start()
@@ -20,11 +22,12 @@ public class TDProjectile : MonoBehaviour
         ogPos = transform.position;
     }
 
-    public void InheritFromTower(float range, float attack, GameObject tower)
+    public void InheritFromTower(float range, float attack, GameObject tower, Affinity affinity)
     {
         m_range = range;
         m_attack = attack;
         m_Tower = tower;
+        m_Affinity = affinity;
     }
 
     // Update is called once per frame
