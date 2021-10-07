@@ -115,7 +115,7 @@ public class WorldCharacter : MonoBehaviour
                             GameObject b = Instantiate(m_WeaponStats.Bullet, transform.position, transform.rotation);
 
                             //We are using the same framework as the tower projectiles
-                            b.GetComponent<TDProjectile>().InheritFromTower(m_WeaponStats.m_BulletRange, m_WeaponStats.m_Attack, null);
+                            b.GetComponent<TDProjectile>().InheritFromTower(m_WeaponStats.m_BulletRange, m_WeaponStats.m_Attack, null, m_WeaponStats.m_Affinity);
                         }
                         //Shoot a projectile
                         break;
