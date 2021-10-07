@@ -77,24 +77,20 @@ public class TDEnemy : MonoBehaviour
         }
     }
 
-   
+
 
     //For road spikes
-    public void OnTriggerEnter(Collider other)
+    public void SpikesDamage(Spikes _spike)
     {
-        //We are putting the spikes on the bullet layer
-        if(other.gameObject.tag == "Hazard")
-        {
-            m_resource.AddMoney(1);
-            m_health-= 5;
-            other.gameObject.GetComponent<Spikes>().lowerResistance();
-            m_Damage.Play();
+        m_resource.AddMoney(_spike.m_attack * AffinityCheck(_spike.m_affinity));
+        m_health -= _spike.m_attack * AffinityCheck(_spike.m_affinity);
+        _spike.lowerResistance();
+        m_Damage.Play();
 
-            if (other.gameObject.GetComponent<Spikes>().getSlow() && !m_SpeedDropped)
-            {
-                m_agent.speed = m_agent.speed / 2;
-                m_SpeedDropped = true;
-            }
+        if (_spike.getSlow() && !m_SpeedDropped)
+        {
+            m_agent.speed = m_agent.speed / 2;
+            m_SpeedDropped = true;
         }
     }
 

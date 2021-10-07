@@ -6,6 +6,7 @@ using Affinity = affinity.Affinity;
 
 public class Spikes : MonoBehaviour
 {
+    public float m_attack = 5;
     public Affinity m_affinity = Affinity.MONSTER;
 
     [SerializeField] private int m_Resistance;
@@ -48,5 +49,13 @@ public class Spikes : MonoBehaviour
     public float getCost()
     {
         return m_cost;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<TDEnemy>().SpikesDamage(this);
+        }
     }
 }

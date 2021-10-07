@@ -61,7 +61,6 @@ public class TDTower : MonoBehaviour
         {
             for(int i = 0; i < childTowers.Length; i++)
             {
-                Debug.Log(childTowers[i]);
                 childTowers[i].SetAffinity(m_Affinity);
             }
         }

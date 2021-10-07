@@ -5,7 +5,7 @@ using UnityEngine;
 public class TDTower_Spike : TDTower
 {
     [SerializeField] Spikes m_Spikes;
-
+ 
     Vector3 enemypos;
 
     // Start is called before the first frame update
@@ -13,8 +13,6 @@ public class TDTower_Spike : TDTower
     {
         base.Start();
         m_FireTimer = 0;
-
-        //m_Spikes.m_affinity = m_Affinity;
     }
 
     // Update is called once per frame
@@ -31,6 +29,7 @@ public class TDTower_Spike : TDTower
             {
                 Spikes s = Instantiate(m_Spikes, enemypos - new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
                 s.m_affinity = m_Affinity;
+                s.m_attack = m_attack;
                 m_FireTimer = m_fireRate;
             }
         }
