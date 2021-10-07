@@ -53,7 +53,7 @@ public class TDProjectile : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_attack);
+            collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_attack, m_Affinity);
         }
         Destroy(gameObject);
     }

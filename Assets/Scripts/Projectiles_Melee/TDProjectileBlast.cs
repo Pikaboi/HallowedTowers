@@ -25,7 +25,7 @@ public class TDProjectileBlast : TDProjectile
         {
             if (c.gameObject.tag == "Enemy")
             {
-                c.GetComponent<TDEnemy>().DamageEnemy(m_attack);
+                c.GetComponent<TDEnemy>().DamageEnemy(m_attack, m_Affinity);
                 c.GetComponent<TDEnemy>().InflictDOT(m_inflictDOT);
             }
         }

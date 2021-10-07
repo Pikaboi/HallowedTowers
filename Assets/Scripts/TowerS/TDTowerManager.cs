@@ -39,7 +39,7 @@ public class TDTowerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        m_child.GetComponent<TDTower>().SetAffinity(m_affinity);
     }
 
     public void Upgrade1()

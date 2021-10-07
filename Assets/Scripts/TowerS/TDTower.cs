@@ -53,6 +53,19 @@ public class TDTower : MonoBehaviour
                 m_FireTimer = m_fireRate;
             }
         }
+
+        //To get sub towers like Reapers Scythe updated
+        TDTower[] childTowers = gameObject.GetComponentsInChildren<TDTower>();
+
+        if(childTowers.Length > 0)
+        {
+            for(int i = 0; i < childTowers.Length; i++)
+            {
+                Debug.Log(childTowers[i]);
+                childTowers[i].SetAffinity(m_Affinity);
+            }
+        }
+
     }
 
     public virtual void CheckEnemies()
@@ -97,5 +110,10 @@ public class TDTower : MonoBehaviour
     public void HideViewer()
     {
         m_RadiusViewer.SetActive(false);
+    }
+
+    public void SetAffinity(Affinity affinity)
+    {
+        m_Affinity = affinity;
     }
 }

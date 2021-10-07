@@ -109,11 +109,64 @@ public class TDEnemy : MonoBehaviour
         }
     }
 
-    public void DamageEnemy(float damage)
+    public void DamageEnemy(float damage, Affinity _affinity)
     {
+        float trueDamage = damage * AffinityCheck(_affinity);
         m_resource.AddMoney(damage);
         m_health -= damage;
         m_Damage.Play();
+    }
+
+    public float AffinityCheck(Affinity _affinity)
+    {
+        float multiplier = 1.0f;
+        switch (_affinity)
+        {
+            case Affinity.MONSTER:
+                //Neutral
+                multiplier = 1.0f;
+                break;
+            case Affinity.MAGIC:
+                if(m_affinity == Affinity.UNDEAD)
+                {
+                    //Incoming Damage Reduced
+                    multiplier = 0.8f;
+                }
+                if(m_affinity == Affinity.SOUL)
+                {
+                    //Incoming Damage Increased
+                    multiplier = 1.2f;
+                }
+                break;
+            case Affinity.UNDEAD:
+                if (m_affinity == Affinity.SOUL)
+                {
+                    //Incoming Damage Reduced
+                    multiplier = 0.8f;
+                }
+                if (m_affinity == Affinity.MAGIC)
+                {
+                    //Incoming Damage Increased
+                    multiplier = 1.2f;
+                }
+                break;
+            case Affinity.SOUL:
+                if (m_affinity == Affinity.MAGIC)
+                {
+                    //Incoming Damage Reduced
+                    multiplier = 0.8f;
+                }
+                if (m_affinity == Affinity.UNDEAD)
+                {
+                    //Incoming Damage Increased
+                    multiplier = 1.2f;
+                }
+                break;
+            default:
+                multiplier = 1.0f;
+                break;
+        }
+        return multiplier;
     }
 
     public void InflictDOT(bool _inflict)

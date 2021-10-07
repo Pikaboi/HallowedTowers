@@ -34,17 +34,18 @@ public class TDMelee : MonoBehaviour
         }
     }
 
-    public void InheritFromTower(float attack, GameObject tower)
+    public void InheritFromTower(float attack, GameObject tower, Affinity affinity)
     {
         m_attack = attack;
         m_Tower = tower;
+        m_affinity = affinity;
     }
 
     public virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_attack);
+            collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_attack, m_affinity);
             collision.gameObject.GetComponent<TDEnemy>().InstantKill(m_CanOHKO);
         }
     }

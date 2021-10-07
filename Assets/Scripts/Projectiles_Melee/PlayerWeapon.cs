@@ -17,7 +17,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_Attack);
+            collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_Attack, m_Affinity);
         }
         Destroy(gameObject);
     }
