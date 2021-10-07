@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Add the custom affinity namespace
+using Affinity = affinity.Affinity;
 
 public class Spikes : MonoBehaviour
 {
+    public Affinity m_affinity = Affinity.MONSTER;
+
     [SerializeField] private int m_Resistance;
     [SerializeField] bool m_Slow;
     [SerializeField] float m_cost;
