@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+//Add the custom affinity namespace
+using Affinity = affinity.Affinity;
 
 public class TDEnemy : MonoBehaviour
 {
@@ -11,13 +13,18 @@ public class TDEnemy : MonoBehaviour
     public float m_attackPower;
     public float m_health;
 
+    public Affinity m_affinity = Affinity.MONSTER;
+
+    //Status effects
     public bool m_SpeedDropped = false;
 
+    //Damage over time control
     public bool damageOverTime = false;
     public float AfflictionTime = 5.0f;
     public float AfflictionTimer = 0.0f;
     public float dotTimer = 1.0f;
 
+    //Animation
     public Animator m_anim;
 
     [SerializeField] PlayerResourceManager m_resource;
@@ -70,52 +77,7 @@ public class TDEnemy : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        //Check if a bullet
-        if(collision.gameObject.layer == 14)
-        {
-            if(collision.gameObject.GetComponent<PlayerWeapon>() != null)
-            {
-                m_resource.AddMoney(collision.gameObject.GetComponent<PlayerWeapon>().m_Attack);
-                m_health -= collision.gameObject.GetComponent<PlayerWeapon>().m_Attack;
-                m_Damage.Play();
-            }
-            if (collision.gameObject.GetComponent<TDProjectile>() != null)
-            {
-                m_resource.AddMoney(collision.gameObject.GetComponent<TDProjectile>().m_attack);
-                m_health -= collision.gameObject.GetComponent<TDProjectile>().m_attack;
-                m_Damage.Play();
-            }
-            if(collision.gameObject.GetComponent<TDMelee>() != null)
-            {
-                if (collision.gameObject.GetComponent<TDMelee>().m_CanOHKO)
-                {
-                    int rand = Random.Range(0, 99);
-
-                    if (rand < 25)
-                    {
-                        m_resource.AddMoney(m_health);
-                        Destroy(gameObject);
-                        m_Damage.Play();
-                    }
-                    else
-                    {
-                        m_resource.AddMoney(collision.gameObject.GetComponent<TDMelee>().m_attack);
-                        m_health -= collision.gameObject.GetComponent<TDMelee>().m_attack;
-                        m_Damage.Play();
-                    }
-
-                }
-                else
-                {
-                    m_resource.AddMoney(collision.gameObject.GetComponent<TDMelee>().m_attack);
-                    m_health -= collision.gameObject.GetComponent<TDMelee>().m_attack;
-                    m_Damage.Play();
-                }
-            }
-        }
-    }
+   
 
     //For road spikes
     public void OnTriggerEnter(Collider other)
@@ -147,13 +109,35 @@ public class TDEnemy : MonoBehaviour
         }
     }
 
-    public void DamageEnemy(float damage, bool _Dot)
+    public void DamageEnemy(float damage)
     {
         m_resource.AddMoney(damage);
         m_health -= damage;
         m_Damage.Play();
-        damageOverTime = _Dot;
-        AfflictionTimer = AfflictionTime;
-        dotTimer = 1.0f;
+    }
+
+    public void InflictDOT(bool _inflict)
+    {
+        if (_inflict)
+        {
+            damageOverTime = _inflict;
+            AfflictionTimer = AfflictionTime;
+            dotTimer = 1.0f;
+        }
+    }
+
+    public void InstantKill(bool _inflict)
+    {
+        if (_inflict)
+        {
+            int rand = Random.Range(0, 99);
+
+            if(rand < 25)
+            {
+                m_resource.AddMoney(m_health);
+                m_health = 0;
+                m_Damage.Play();
+            }
+        }
     }
 }

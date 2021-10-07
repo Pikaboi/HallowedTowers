@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TDProjectileBlast : TDProjectile
 {
-    public bool inflictDOT = false;
+    public bool m_inflictDOT = false;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -25,7 +25,8 @@ public class TDProjectileBlast : TDProjectile
         {
             if (c.gameObject.tag == "Enemy")
             {
-                c.GetComponent<TDEnemy>().DamageEnemy(m_attack, inflictDOT);
+                c.GetComponent<TDEnemy>().DamageEnemy(m_attack);
+                c.GetComponent<TDEnemy>().InflictDOT(m_inflictDOT);
             }
         }
 

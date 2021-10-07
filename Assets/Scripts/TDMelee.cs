@@ -36,4 +36,13 @@ public class TDMelee : MonoBehaviour
         m_attack = attack;
         m_Tower = tower;
     }
+
+    public virtual void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_attack);
+            collision.gameObject.GetComponent<TDEnemy>().InstantKill(m_CanOHKO);
+        }
+    }
 }

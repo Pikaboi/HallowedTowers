@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Add the custom affinity namespace
+using Affinity =  affinity.Affinity;
 
 public class TDTowerManager : MonoBehaviour
 {
     GameObject m_child;
+    public Affinity m_affinity = Affinity.MONSTER;
     public GameObject m_base;
     public GameObject m_upgrade1;
     public GameObject m_upgrade2;

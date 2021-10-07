@@ -48,6 +48,10 @@ public class TDProjectile : MonoBehaviour
 
     public virtual void OnCollisionEnter(Collision collision)
     {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_attack);
+        }
         Destroy(gameObject);
     }
 }

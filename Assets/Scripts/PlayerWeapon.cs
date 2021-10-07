@@ -9,4 +9,13 @@ public class PlayerWeapon : MonoBehaviour
     //Only add this if its a Ranged weapon
     public GameObject Bullet;
     public float m_BulletRange;
+
+    public virtual void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_Attack);
+        }
+        Destroy(gameObject);
+    }
 }
