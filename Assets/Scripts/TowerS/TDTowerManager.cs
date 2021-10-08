@@ -25,6 +25,8 @@ public class TDTowerManager : MonoBehaviour
     public float m_UG1Cost;
     public float m_UG2Cost;
 
+    public GameObject m_UpgradeUI;
+
     [SerializeField] PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
@@ -34,6 +36,7 @@ public class TDTowerManager : MonoBehaviour
         m_child.transform.parent = gameObject.transform;
         m_resource = FindObjectOfType<PlayerResourceManager>();
         m_sellCost = m_cost / 2;
+        m_UpgradeUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -107,10 +110,12 @@ public class TDTowerManager : MonoBehaviour
     public void showRange()
     {
         m_child.GetComponent<TDTower>().ShowViewer();
+        m_UpgradeUI.SetActive(true);
     }
 
     public void hideRange()
     {
         m_child.GetComponent<TDTower>().HideViewer();
+        m_UpgradeUI.SetActive(false);
     }
 }
