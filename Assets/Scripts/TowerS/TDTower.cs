@@ -8,6 +8,7 @@ public class TDTower : MonoBehaviour
     //Values all towers will share
     public SphereCollider m_Trigger;
     public float m_TriggerRange;
+    public int m_level = 1;
     //the projectile doesnt need to be a attacking type, can be anything
     //So I will set it up as a GameObject
     public GameObject m_Projectile;
@@ -99,6 +100,12 @@ public class TDTower : MonoBehaviour
                 m_aimer.transform.LookAt(Obj.gameObject.transform.position);
             }
         }
+    }
+
+    public void levelUp()
+    {
+        m_attack *= 2;
+        m_level++;
     }
 
     public void ShowViewer()

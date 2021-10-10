@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UpgradeUI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /*// Start is called before the first frame update
     [SerializeField] CursorControl m_cursor;
     [SerializeField] Button m_UG1;
     [SerializeField] Button m_UG2;
@@ -76,5 +76,5 @@ public class UpgradeUI : MonoBehaviour
         {
             m_cursor.GetSelectedTowerScript().Upgrade2();
         }
-    }
+    }*/
 }
