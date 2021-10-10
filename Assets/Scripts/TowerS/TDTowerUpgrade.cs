@@ -39,6 +39,7 @@ public class TDTowerUpgrade : MonoBehaviour
             m_UGBought = true;
             m_resource.SubMoney(m_UGCost);
             m_manager.m_sellCost += m_UGCost / 2;
+            GetComponent<UnityEngine.UI.Button>().enabled = false;
         }
     }
 }
