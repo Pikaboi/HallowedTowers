@@ -18,20 +18,24 @@ public class TDTowerUpgrade : MonoBehaviour
     public TDTowerManager m_manager;
 
     // Start is called before the first frame update
-    public void Start()
+    public virtual void Start()
     {
         m_manager = GetComponentInParent<TDTowerManager>();
         m_resource = FindObjectOfType<PlayerResourceManager>();
+        if (m_successor != null)
+        {
+            m_successor.gameObject.GetComponent<UnityEngine.UI.Button>().enabled = false;
+        }
     }
 
     // Update is called once per frame
-    public void Update()
+    public virtual void Update()
     {
         m_UGName.text = m_UGString;
         m_UGCostString.text = m_UGCost.ToString();
     }
 
-    public void PurchaseUpgrade()
+    public virtual void PurchaseUpgrade()
     {
         if (m_resource.m_Money >= m_UGCost)
         {
@@ -40,6 +44,10 @@ public class TDTowerUpgrade : MonoBehaviour
             m_resource.SubMoney(m_UGCost);
             m_manager.m_sellCost += m_UGCost / 2;
             GetComponent<UnityEngine.UI.Button>().enabled = false;
+            if (m_successor != null)
+            {
+                m_successor.gameObject.GetComponent<UnityEngine.UI.Button>().enabled = true;
+            }
         }
     }
 }

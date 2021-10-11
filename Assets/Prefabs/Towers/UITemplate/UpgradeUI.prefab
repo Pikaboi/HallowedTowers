@@ -521,7 +521,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5016465177359243560}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1291,6 +1291,7 @@ GameObject:
   - component: {fileID: 3270777753632117525}
   - component: {fileID: 1421836654651908438}
   - component: {fileID: 1946297889048307129}
+  - component: {fileID: 5267991744518670441}
   m_Layer: 5
   m_Name: Upgrade3-2
   m_TagString: Untagged
@@ -1400,7 +1401,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1421836654651908438}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5267991744518670441}
+        m_TargetAssemblyTypeName: TDTowerUpgrade, Assembly-CSharp
+        m_MethodName: PurchaseUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5267991744518670441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815387524039127570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UGString: UG 3-2
+  m_UGBought: 0
+  m_successor: {fileID: 3422415341191163123}
+  m_UGCost: 0
+  m_UGName: {fileID: 1114028733265577452}
+  m_UGCostString: {fileID: 7067056951967681881}
+  m_UGPrefab: {fileID: 0}
+  m_resource: {fileID: 0}
+  m_manager: {fileID: 0}
 --- !u!1 &1867891690497591215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1447,7 @@ GameObject:
   - component: {fileID: 7591185784832414715}
   - component: {fileID: 4678595120660729125}
   - component: {fileID: 7277558169954098559}
+  - component: {fileID: 6989217562137795850}
   m_Layer: 5
   m_Name: Upgrade2-1
   m_TagString: Untagged
@@ -1522,7 +1557,44 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4678595120660729125}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6989217562137795850}
+        m_TargetAssemblyTypeName: TDTowerUpgrade_Path, Assembly-CSharp
+        m_MethodName: PurchaseUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6989217562137795850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867891690497591215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07cf98ea1fcdcb45a68f7cedc2b6fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UGString: UG 2-1
+  m_UGBought: 0
+  m_successor: {fileID: 9193360817789475288}
+  m_UGCost: 3
+  m_UGName: {fileID: 8067613170942071987}
+  m_UGCostString: {fileID: 5456764337542636557}
+  m_UGPrefab: {fileID: 0}
+  m_resource: {fileID: 0}
+  m_manager: {fileID: 0}
+  m_UGPaths:
+  - {fileID: 8336456400706409292}
+  - {fileID: 6989217562137795850}
+  - {fileID: 2753921599529633995}
 --- !u!1 &1963148987423361436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,6 +2025,7 @@ GameObject:
   - component: {fileID: 6456580085115062230}
   - component: {fileID: 1822461521455380280}
   - component: {fileID: 4267643194381240456}
+  - component: {fileID: 2753921599529633995}
   m_Layer: 5
   m_Name: Upgrade3-1
   m_TagString: Untagged
@@ -2062,7 +2135,44 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1822461521455380280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2753921599529633995}
+        m_TargetAssemblyTypeName: TDTowerUpgrade_Path, Assembly-CSharp
+        m_MethodName: PurchaseUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2753921599529633995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2480730881012260362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07cf98ea1fcdcb45a68f7cedc2b6fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UGString: UG 3-1
+  m_UGBought: 0
+  m_successor: {fileID: 5267991744518670441}
+  m_UGCost: 1
+  m_UGName: {fileID: 4289433858375562824}
+  m_UGCostString: {fileID: 643900208609723793}
+  m_UGPrefab: {fileID: 0}
+  m_resource: {fileID: 0}
+  m_manager: {fileID: 0}
+  m_UGPaths:
+  - {fileID: 8336456400706409292}
+  - {fileID: 6989217562137795850}
+  - {fileID: 2753921599529633995}
 --- !u!1 &3261362879830123203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2750,7 @@ GameObject:
   - component: {fileID: 9180179611758352337}
   - component: {fileID: 7314384820084686044}
   - component: {fileID: 8047046360407279364}
+  - component: {fileID: 3266816605741391616}
   m_Layer: 5
   m_Name: Upgrade1-2
   m_TagString: Untagged
@@ -2749,7 +2860,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7314384820084686044}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3266816605741391616}
+        m_TargetAssemblyTypeName: TDTowerUpgrade, Assembly-CSharp
+        m_MethodName: PurchaseUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3266816605741391616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3663251729056164777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UGString: UG1-2
+  m_UGBought: 0
+  m_successor: {fileID: 96539602722260632}
+  m_UGCost: 1
+  m_UGName: {fileID: 3328496695185765196}
+  m_UGCostString: {fileID: 7167560511358721398}
+  m_UGPrefab: {fileID: 0}
+  m_resource: {fileID: 0}
+  m_manager: {fileID: 0}
 --- !u!1 &3716832527296513231
 GameObject:
   m_ObjectHideFlags: 0
@@ -3082,12 +3226,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4278807793392985744}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: ChangeAffinity, Assembly-CSharp
+        m_MethodName: SetAffinity
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3424,6 +3568,7 @@ GameObject:
   - component: {fileID: 1066431976262199976}
   - component: {fileID: 1528161793770449792}
   - component: {fileID: 4232971298812647989}
+  - component: {fileID: 2718507514283412477}
   m_Layer: 5
   m_Name: Upgrade2-3
   m_TagString: Untagged
@@ -3533,7 +3678,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1528161793770449792}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2718507514283412477}
+        m_TargetAssemblyTypeName: TDTowerUpgrade, Assembly-CSharp
+        m_MethodName: PurchaseUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2718507514283412477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014803653470013586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UGString: UG 2-3
+  m_UGBought: 0
+  m_successor: {fileID: 0}
+  m_UGCost: 0
+  m_UGName: {fileID: 3616884052522721593}
+  m_UGCostString: {fileID: 3238193899320881760}
+  m_UGPrefab: {fileID: 0}
+  m_resource: {fileID: 0}
+  m_manager: {fileID: 0}
 --- !u!1 &6034273988075207261
 GameObject:
   m_ObjectHideFlags: 0
@@ -4013,7 +4191,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5016465177359243560}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5084,7 +5262,7 @@ GameObject:
   - component: {fileID: 6606461294615459642}
   - component: {fileID: 710023995988193682}
   - component: {fileID: 3828542441780908734}
-  - component: {fileID: 7632462103626436188}
+  - component: {fileID: 8336456400706409292}
   m_Layer: 5
   m_Name: Upgrade1-1
   m_TagString: Untagged
@@ -5195,8 +5373,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7632462103626436188}
-        m_TargetAssemblyTypeName: TDTowerUpgrade, Assembly-CSharp
+      - m_Target: {fileID: 8336456400706409292}
+        m_TargetAssemblyTypeName: TDTowerUpgrade_Path, Assembly-CSharp
         m_MethodName: PurchaseUpgrade
         m_Mode: 1
         m_Arguments:
@@ -5207,7 +5385,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7632462103626436188
+--- !u!114 &8336456400706409292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5216,18 +5394,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 8230745717084610692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Script: {fileID: 11500000, guid: b07cf98ea1fcdcb45a68f7cedc2b6fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UGString: 
+  m_UGString: UG 1-1
   m_UGBought: 0
-  m_successor: {fileID: 0}
-  m_UGCost: 0
+  m_successor: {fileID: 3266816605741391616}
+  m_UGCost: 200
   m_UGName: {fileID: 2676809229637744709}
-  m_UGCostString: {fileID: 0}
+  m_UGCostString: {fileID: 5989703800330438140}
   m_UGPrefab: {fileID: 0}
   m_resource: {fileID: 0}
   m_manager: {fileID: 0}
+  m_UGPaths:
+  - {fileID: 8336456400706409292}
+  - {fileID: 6989217562137795850}
+  - {fileID: 2753921599529633995}
 --- !u!1 &8455571046201715220
 GameObject:
   m_ObjectHideFlags: 0
@@ -5240,6 +5422,7 @@ GameObject:
   - component: {fileID: 7035783093274044312}
   - component: {fileID: 1062727869371254748}
   - component: {fileID: 5307742654969463591}
+  - component: {fileID: 3422415341191163123}
   m_Layer: 5
   m_Name: Upgrade3-3
   m_TagString: Untagged
@@ -5349,7 +5532,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1062727869371254748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3422415341191163123}
+        m_TargetAssemblyTypeName: TDTowerUpgrade, Assembly-CSharp
+        m_MethodName: PurchaseUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3422415341191163123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8455571046201715220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UGString: UG 3-3
+  m_UGBought: 0
+  m_successor: {fileID: 0}
+  m_UGCost: 0
+  m_UGName: {fileID: 4558887179220070246}
+  m_UGCostString: {fileID: 6007746224619639105}
+  m_UGPrefab: {fileID: 0}
+  m_resource: {fileID: 0}
+  m_manager: {fileID: 0}
 --- !u!1 &8492570575652806458
 GameObject:
   m_ObjectHideFlags: 0
@@ -5362,6 +5578,7 @@ GameObject:
   - component: {fileID: 7693707119893236273}
   - component: {fileID: 2190409941669711885}
   - component: {fileID: 2770251389723018091}
+  - component: {fileID: 9193360817789475288}
   m_Layer: 5
   m_Name: Upgrade2-2
   m_TagString: Untagged
@@ -5471,7 +5688,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2190409941669711885}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9193360817789475288}
+        m_TargetAssemblyTypeName: TDTowerUpgrade, Assembly-CSharp
+        m_MethodName: PurchaseUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9193360817789475288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492570575652806458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UGString: UG 2-2
+  m_UGBought: 0
+  m_successor: {fileID: 2718507514283412477}
+  m_UGCost: 0
+  m_UGName: {fileID: 5210598537111593025}
+  m_UGCostString: {fileID: 6161051598309364474}
+  m_UGPrefab: {fileID: 0}
+  m_resource: {fileID: 0}
+  m_manager: {fileID: 0}
 --- !u!1 &8778973531393085767
 GameObject:
   m_ObjectHideFlags: 0
@@ -5752,6 +6002,7 @@ GameObject:
   - component: {fileID: 2406175371977887030}
   - component: {fileID: 3397425952769461298}
   - component: {fileID: 8612077747649763236}
+  - component: {fileID: 96539602722260632}
   m_Layer: 5
   m_Name: Upgrade1-3
   m_TagString: Untagged
@@ -5770,8 +6021,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8522656918169213394}
   - {fileID: 4764367342632022563}
+  - {fileID: 8522656918169213394}
   m_Father: {fileID: 2958106068400975520}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5861,4 +6112,37 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3397425952769461298}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 96539602722260632}
+        m_TargetAssemblyTypeName: TDTowerUpgrade, Assembly-CSharp
+        m_MethodName: PurchaseUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &96539602722260632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9162676341033999478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UGString: UG 1-3
+  m_UGBought: 0
+  m_successor: {fileID: 0}
+  m_UGCost: 3
+  m_UGName: {fileID: 5430149519907486677}
+  m_UGCostString: {fileID: 1324908509124952083}
+  m_UGPrefab: {fileID: 0}
+  m_resource: {fileID: 0}
+  m_manager: {fileID: 0}

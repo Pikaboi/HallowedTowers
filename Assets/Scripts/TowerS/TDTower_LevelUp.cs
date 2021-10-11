@@ -18,7 +18,7 @@ public class TDTower_LevelUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        m_tower = gameObject.GetComponentInParent<TDTowerManager>().m_child.GetComponent<TDTower>();
     }
 
     public void LevelUp()

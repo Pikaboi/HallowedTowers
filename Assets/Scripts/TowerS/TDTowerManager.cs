@@ -17,6 +17,11 @@ public class TDTowerManager : MonoBehaviour
 
     public GameObject m_UpgradeUI;
 
+    public float m_TriggerRange;
+    public float m_fireRate;
+    public float m_attack;
+    public int m_level;
+
     [SerializeField] PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
@@ -33,6 +38,7 @@ public class TDTowerManager : MonoBehaviour
     void Update()
     {
         m_child.GetComponent<TDTower>().SetAffinity(m_affinity);
+        CopyStats();
     }
 
     public void newUpgrade(GameObject _upgradePrefab)
@@ -40,6 +46,7 @@ public class TDTowerManager : MonoBehaviour
         Destroy(m_child);
         m_child = Instantiate(_upgradePrefab, transform.position, transform.rotation);
         m_child.transform.parent = gameObject.transform;
+        PassStats();
     }
 
     public void showRange()
@@ -52,5 +59,21 @@ public class TDTowerManager : MonoBehaviour
     {
         m_child.GetComponent<TDTower>().HideViewer();
         m_UpgradeUI.SetActive(false);
+    }
+
+    public void CopyStats()
+    {
+        m_attack = m_child.GetComponent<TDTower>().m_attack;
+        m_fireRate = m_child.GetComponent<TDTower>().m_fireRate;
+        m_TriggerRange = m_child.GetComponent<TDTower>().m_TriggerRange;
+        m_level = m_child.GetComponent<TDTower>().m_level;
+    }
+
+    public void PassStats()
+    {
+        m_child.GetComponent<TDTower>().m_attack = m_attack;
+        m_child.GetComponent<TDTower>().m_fireRate = m_fireRate;
+        m_child.GetComponent<TDTower>().m_TriggerRange = m_TriggerRange;
+        m_child.GetComponent<TDTower>().m_level = m_level;
     }
 }
