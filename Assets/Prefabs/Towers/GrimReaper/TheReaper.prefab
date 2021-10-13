@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3967178996656813988}
-  - component: {fileID: 8529465664892725623}
-  - component: {fileID: 187750072594014674}
   - component: {fileID: 1056841263}
   - component: {fileID: 1056841262}
   m_Layer: 11
@@ -30,59 +28,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.58, z: 3.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7290226126368337615}
+  - {fileID: 5628648256725036408}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8529465664892725623
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046558100839042445}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &187750072594014674
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046558100839042445}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: c9af0dbe88854d64aa8e276b41a10462, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &1056841263
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -109,16 +60,164 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3670c70e7f9e34badab3317b72a5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_child: {fileID: 0}
+  m_affinity: 0
   m_base: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
-  m_upgrade1: {fileID: 8867338127284404696, guid: 54879064fbb73504bb39f068b6ae0c51, type: 3}
-  m_upgrade2: {fileID: 8867338127284404696, guid: 1e7999e07b53dad4d8da775e08b05341, type: 3}
-  m_upgrade1n2: {fileID: 8867338127284404696, guid: b21553ab63586014cb94430e1832a958, type: 3}
-  m_UG1String: Deaths Reach
-  m_UG2String: Death Sentence
-  m_UG2Bought: 0
-  m_UG1Bought: 0
+  m_towerName: The Grim Reaper
   m_cost: 600
   m_sellCost: 0
-  m_UG1Cost: 700
-  m_UG2Cost: 1000
+  m_UpgradeUI: {fileID: 4414374873859145755}
+  m_TriggerRange: 0
+  m_fireRate: 0
+  m_attack: 0
+  m_level: 0
   m_resource: {fileID: 0}
+--- !u!1001 &7108561975084943652
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3967178996656813988}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.325
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.157
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6067185528594298527, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fdb87632bd4c94846b3d79e685010e46, type: 2}
+    - target: {fileID: 919132149155446097, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+      propertyPath: m_Name
+      value: grim reapers
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+--- !u!4 &7290226126368337615 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+  m_PrefabInstance: {fileID: 7108561975084943652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7721070362805764232
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3967178996656813988}
+    m_Modifications:
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 58.6994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -92.876755
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.039925
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170623183000848954, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: The Grim Reaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Name
+      value: UpgradeUI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+--- !u!1 &4414374873859145755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 7721070362805764232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5628648256725036408 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 7721070362805764232}
+  m_PrefabAsset: {fileID: 0}

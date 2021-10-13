@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6128380272123585833}
+  - {fileID: 4494448217496203424}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59,19 +60,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3670c70e7f9e34badab3317b72a5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_child: {fileID: 0}
+  m_affinity: 0
   m_base: {fileID: 7966081809505972125, guid: b916f4549d68a1f4ab1583116a7f2a84, type: 3}
-  m_upgrade1: {fileID: 7966081809505972125, guid: c8b73e241c120204b8b381703001cdae, type: 3}
-  m_upgrade2: {fileID: 7966081809505972125, guid: 438c7c060681e5f409badfe12f020eae, type: 3}
-  m_upgrade1n2: {fileID: 7966081809505972125, guid: 8199ee75639effb42bc4a16e199159af, type: 3}
-  m_UG1String: Range o' the Kraken
-  m_UG2String: Krakens Triple
-  m_UG2Bought: 0
-  m_UG1Bought: 0
+  m_towerName: The Kraken
   m_cost: 300
   m_sellCost: 0
-  m_UG1Cost: 350
-  m_UG2Cost: 500
+  m_UpgradeUI: {fileID: 5548583849019104707}
+  m_TriggerRange: 0
+  m_fireRate: 0
+  m_attack: 0
+  m_level: 0
   m_resource: {fileID: 0}
+--- !u!1001 &1974060451861732688
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7748959960527691293}
+    m_Modifications:
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 58.6994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -92.876755
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.039925
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170623183000848954, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: The Kraken
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Name
+      value: UpgradeUI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+--- !u!1 &5548583849019104707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 1974060451861732688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4494448217496203424 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 1974060451861732688}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5946677982135141058
 PrefabInstance:
   m_ObjectHideFlags: 0
