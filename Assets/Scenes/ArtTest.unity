@@ -254,7 +254,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22666652}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -9269,6 +9269,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 466166053}
     - target: {fileID: 350441261462590460, guid: 7b8c56d546ebdc94e9f0794de83d8a1e, type: 3}
+      propertyPath: skipTravelIcons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350441261462590460, guid: 7b8c56d546ebdc94e9f0794de83d8a1e, type: 3}
       propertyPath: waveCreators.Array.data[0]
       value: 
       objectReference: {fileID: 663021067}
@@ -9280,6 +9284,10 @@ PrefabInstance:
       propertyPath: waveCreators.Array.data[2]
       value: 
       objectReference: {fileID: 1052317619}
+    - target: {fileID: 350441261462590460, guid: 7b8c56d546ebdc94e9f0794de83d8a1e, type: 3}
+      propertyPath: skipTravelIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 22666655}
     - target: {fileID: 5628817779596052633, guid: 7b8c56d546ebdc94e9f0794de83d8a1e, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -27756,7 +27764,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1470439750, guid: 3f6ca909435688142b99b0f3f88e1ca4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470439751, guid: 3f6ca909435688142b99b0f3f88e1ca4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470439751, guid: 3f6ca909435688142b99b0f3f88e1ca4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489511823917039155, guid: 3f6ca909435688142b99b0f3f88e1ca4, type: 3}
       propertyPath: m_RootOrder
