@@ -19,6 +19,5 @@ public class PlayerWeapon : MonoBehaviour
         {
             collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_Attack, m_Affinity);
         }
-        Destroy(gameObject);
     }
 }
