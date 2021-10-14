@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.UI;
 
 public class GlobalWorldController : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class GlobalWorldController : MonoBehaviour
     {
         public DensityVolume vol;
         public WaveCreator wav;
+        public Image skip;
     }
 
     public DensityVolume[] Fogs;
     public WaveCreator[] waveCreators;
+    public Image[] skipTravelIcons;
 
     public SceneControl m_sceneControl;
 
@@ -26,7 +29,7 @@ public class GlobalWorldController : MonoBehaviour
     {
         for(int i = 0; i < Fogs.Length; i++)
         {
-            fogWavePair pair = MakePair(Fogs[i], waveCreators[i]);
+            fogWavePair pair = MakePair(Fogs[i], waveCreators[i], skipTravelIcons[i]);
             pairs.Add(pair);
         }
     }
@@ -39,6 +42,10 @@ public class GlobalWorldController : MonoBehaviour
             if (pairs[0].wav.waveIndex == pairs[0].wav.m_waves.Length)
             {
                 pairs[0].vol.gameObject.SetActive(false);
+                if (pairs[0].skip != null)
+                {
+                    pairs[0].skip.enabled = true;
+                }
                 pairs[0].wav.enabled = false;
 
                 pairs.Remove(pairs[0]);
@@ -58,11 +65,12 @@ public class GlobalWorldController : MonoBehaviour
         }
     }
 
-    fogWavePair MakePair(DensityVolume _f, WaveCreator _w)
+    fogWavePair MakePair(DensityVolume _f, WaveCreator _w, Image _s)
     {
         fogWavePair Pair;
         Pair.vol = _f;
         Pair.wav = _w;
+        Pair.skip = _s;
         return Pair;
     }
 }
