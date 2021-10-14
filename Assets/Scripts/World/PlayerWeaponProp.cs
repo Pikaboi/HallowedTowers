@@ -42,7 +42,6 @@ public class PlayerWeaponProp : MonoBehaviour
     {
         if(other.gameObject == m_Char.gameObject && other.gameObject.GetComponent<WorldCharacter>() != null)
         {
-            Debug.Log("ah");
             m_Char = null;
             inzone = false;
         }
