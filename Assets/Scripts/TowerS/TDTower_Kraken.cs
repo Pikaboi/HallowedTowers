@@ -58,6 +58,8 @@ public class TDTower_Kraken : TDTower
     private IEnumerator GetAimPos()
     {
         yield return new WaitForSeconds(0.1f);
+
+        //Turn off buttons while waiting for response
         Button[] buttons = GameObject.FindObjectsOfType<Button>();
         Debug.Log(buttons.Length);
 
@@ -65,8 +67,10 @@ public class TDTower_Kraken : TDTower
         {
             b.enabled = false;
         }
+
         yield return waitforClick();
 
+        //Turn them back on once we are set up
         foreach (Button b in buttons)
         {
             b.enabled = true;
