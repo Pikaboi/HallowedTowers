@@ -4,31 +4,66 @@ using UnityEngine;
 
 public class TDTower_Kraken : TDTower
 {
+    [SerializeField] Vector3 AimPos = new Vector3 (10.0f, 0.0f, 0.0f);
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+        SetTarget();
+    }
+
+    public override void Aim()
+    {
+        Vector3 lookat = AimPos - transform.position;
+        lookat.y = 0;
+        Quaternion Rotation = Quaternion.LookRotation(lookat);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Rotation, 1);
+
+        m_aimer.transform.LookAt(AimPos);
+    }
+
+    public void SetTarget()
+    {
+        StartCoroutine(GetAimPos());
     }
 
     // Update is called once per frame
     public override void Update()
     {
-        CheckEnemies();
         Aim();
-        if (m_InRange)
-        {
-            m_FireTimer -= Time.deltaTime;
+        m_FireTimer -= Time.deltaTime;
 
-            if (m_FireTimer <= 0.0f)
+        if (m_FireTimer <= 0.0f)
+        {
+            GameObject bullet = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
+            bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack, gameObject, m_Affinity);
+            m_FireTimer = m_fireRate;
+        }
+    }
+
+    private IEnumerator GetAimPos()
+    {
+        yield return new WaitForSeconds(0.1f);
+        yield return waitforClick();
+    }
+
+    private IEnumerator waitforClick()
+    {
+        bool click = false;
+        while (!click)
+        {
+            //Tooken from Cursor Control for proper mouse position
+            Vector3 mouseX = Input.mousePosition;
+            mouseX = Camera.main.ScreenToWorldPoint(new Vector3(mouseX.x, mouseX.y, Camera.main.transform.position.y));
+            //Vector3 pos = new Vector3(mousepos.x, transform.position.y, mousepos.z);
+            Debug.Log("Waitng for input");
+            if (Input.GetMouseButtonDown(0))
             {
-                GameObject bullet = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
-                bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack, gameObject, m_Affinity);
-                GameObject bullet2 = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, Quaternion.Euler(m_aimer.transform.rotation.x, m_aimer.transform.rotation.y + 45.0f, m_aimer.transform.rotation.z));
-                bullet2.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack, gameObject, m_Affinity);
-                GameObject bullet3 = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, Quaternion.Euler(m_aimer.transform.rotation.x, m_aimer.transform.rotation.y + 135.0f, m_aimer.transform.rotation.z));
-                bullet3.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack, gameObject, m_Affinity);
-                m_FireTimer = m_fireRate;
+                Debug.Log(true);
+                AimPos = mouseX;
+                click = true;
             }
+            yield return null;
         }
     }
 }
