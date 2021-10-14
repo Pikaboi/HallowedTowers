@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TDTower_Kraken : TDTower
 {
@@ -24,7 +25,20 @@ public class TDTower_Kraken : TDTower
 
     public void SetTarget()
     {
+        Button[] buttons = GameObject.FindObjectsOfType<Button>();
+        //Debug.Log(buttons.Length);
+
+        foreach(Button b in buttons)
+        {
+            b.enabled = false;
+        }
+
         StartCoroutine(GetAimPos());
+
+        //foreach (Button b in buttons)
+        //{
+        //    b.enabled = true;
+        //}
     }
 
     // Update is called once per frame
@@ -44,7 +58,19 @@ public class TDTower_Kraken : TDTower
     private IEnumerator GetAimPos()
     {
         yield return new WaitForSeconds(0.1f);
+        Button[] buttons = GameObject.FindObjectsOfType<Button>();
+        Debug.Log(buttons.Length);
+
+        foreach (Button b in buttons)
+        {
+            b.enabled = false;
+        }
         yield return waitforClick();
+
+        foreach (Button b in buttons)
+        {
+            b.enabled = true;
+        }
     }
 
     private IEnumerator waitforClick()
@@ -56,7 +82,6 @@ public class TDTower_Kraken : TDTower
             Vector3 mouseX = Input.mousePosition;
             mouseX = Camera.main.ScreenToWorldPoint(new Vector3(mouseX.x, mouseX.y, Camera.main.transform.position.y));
             //Vector3 pos = new Vector3(mousepos.x, transform.position.y, mousepos.z);
-            Debug.Log("Waitng for input");
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log(true);
