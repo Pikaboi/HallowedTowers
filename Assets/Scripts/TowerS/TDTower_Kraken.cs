@@ -5,12 +5,21 @@ using UnityEngine.UI;
 
 public class TDTower_Kraken : TDTower
 {
-    [SerializeField] Vector3 AimPos = new Vector3 (10.0f, 0.0f, 0.0f);
+    public Vector3 AimPos = new Vector3 (0.0f, 0.0f, 0.0f);
+
+    [SerializeField] LineRenderer lr;
+
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
-        SetTarget();
+        lr.enabled = false;
+        AimPos = transform.parent.GetComponent<TDTower_KrakenManager>().aimpos = AimPos;
+
+        if(AimPos == Vector3.zero) {
+            Debug.Log("Targeting");
+            SetTarget();
+        }
     }
 
     public override void Aim()
@@ -25,20 +34,7 @@ public class TDTower_Kraken : TDTower
 
     public void SetTarget()
     {
-        Button[] buttons = GameObject.FindObjectsOfType<Button>();
-        //Debug.Log(buttons.Length);
-
-        foreach(Button b in buttons)
-        {
-            b.enabled = false;
-        }
-
         StartCoroutine(GetAimPos());
-
-        //foreach (Button b in buttons)
-        //{
-        //    b.enabled = true;
-        //}
     }
 
     // Update is called once per frame
@@ -59,6 +55,9 @@ public class TDTower_Kraken : TDTower
     {
         yield return new WaitForSeconds(0.1f);
 
+        lr.enabled = true;
+        lr.SetPosition(0, transform.position);
+        lr.SetPosition(1, transform.position);
         //Turn off buttons while waiting for response
         Button[] buttons = GameObject.FindObjectsOfType<Button>();
         Debug.Log(buttons.Length);
@@ -68,6 +67,8 @@ public class TDTower_Kraken : TDTower
             b.enabled = false;
         }
 
+        GameObject.FindObjectOfType<CursorControl>().m_configure = true;
+
         yield return waitforClick();
 
         //Turn them back on once we are set up
@@ -75,6 +76,10 @@ public class TDTower_Kraken : TDTower
         {
             b.enabled = true;
         }
+
+        GameObject.FindObjectOfType<CursorControl>().m_configure = false;
+
+        lr.enabled = false;
     }
 
     private IEnumerator waitforClick()
@@ -85,11 +90,21 @@ public class TDTower_Kraken : TDTower
             //Tooken from Cursor Control for proper mouse position
             Vector3 mouseX = Input.mousePosition;
             mouseX = Camera.main.ScreenToWorldPoint(new Vector3(mouseX.x, mouseX.y, Camera.main.transform.position.y));
+
+            if(Vector3.Distance(transform.position, mouseX) > m_TriggerRange)
+            {
+                lr.SetPosition(1, transform.position - (transform.position - mouseX).normalized * m_TriggerRange);
+            } else
+            {
+                lr.SetPosition(1, mouseX);
+            }
+            
             //Vector3 pos = new Vector3(mousepos.x, transform.position.y, mousepos.z);
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log(true);
                 AimPos = mouseX;
+                transform.parent.GetComponent<TDTower_KrakenManager>().aimpos = AimPos;
                 click = true;
             }
             yield return null;
