@@ -13,9 +13,7 @@ public class TDTower : MonoBehaviour
     //So I will set it up as a GameObject
     public GameObject m_Projectile;
     public float m_fireRate;
-    public float m_fireRateBonus;
     public float m_attack;
-    public float m_attackBonus;
     public GameObject m_aimer;
     public bool m_InRange;
     public GameObject m_RadiusViewer;
@@ -52,8 +50,8 @@ public class TDTower : MonoBehaviour
             if(m_FireTimer <= 0.0f)
             {
                 GameObject bullet = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
-                bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack + m_attackBonus, gameObject, m_Affinity);
-                m_FireTimer = m_fireRate - m_fireRateBonus;
+                bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack, gameObject, m_Affinity);
+                m_FireTimer = m_fireRate;
             }
         }
 

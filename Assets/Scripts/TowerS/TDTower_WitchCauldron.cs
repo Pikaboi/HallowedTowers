@@ -23,9 +23,8 @@ public class TDTower_WitchCauldron : TDTower
         {
             if(c.gameObject.GetComponent<TDTower>() != null)
             {
-                if (c.gameObject.GetComponent<TDTower>().m_Affinity == m_Affinity && c.gameObject.GetComponent<TDTower_WitchCauldron>() == null) {
-                    //c.gameObject.GetComponent<TDTower>().CauldronBuff(m_attack, m_fireRate);
-                    //Debug.Log("Add a buff");
+                if (c.gameObject.GetComponent<TDTower>().m_Affinity == m_Affinity && c.gameObject.GetComponent<TDTowerBuff>() == null && c.gameObject.GetComponent<TDTower_WitchCauldron>() == null) {
+                    c.gameObject.AddComponent<TDTowerBuff>();
                 }
             }
         }
@@ -53,6 +52,7 @@ public class TDTower_WitchCauldron : TDTower
         //The cauldron level up boosts range instead of offensive
         //Since it has no offensive prescence
         m_TriggerRange += 0.5f;
+        m_Trigger.radius = m_TriggerRange;
         m_level++;
     }
 }
