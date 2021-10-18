@@ -19,6 +19,7 @@ public class TDTower_LevelUp : MonoBehaviour
     void Update()
     {
         m_tower = gameObject.GetComponentInParent<TDTowerManager>().m_child.GetComponent<TDTower>();
+        m_resource = FindObjectOfType<PlayerResourceManager>();
     }
 
     public void LevelUp()

@@ -20,6 +20,8 @@ public class CursorControl : MonoBehaviour
 
     public AudioSource m_spawnSFX;
 
+    public bool m_configure = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +33,11 @@ public class CursorControl : MonoBehaviour
     void Update()
     {
         CursorMovement();
-        DetectTowerInRange();
-        ClickControls();
+        if (!m_configure)
+        {
+            DetectTowerInRange();
+            ClickControls();
+        }
     }
 
     void CursorMovement()

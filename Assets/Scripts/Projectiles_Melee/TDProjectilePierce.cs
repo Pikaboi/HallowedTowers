@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TDProjectilePierce : TDProjectile
 {
+    public int m_PeirceCount;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -18,6 +19,15 @@ public class TDProjectilePierce : TDProjectile
 
     public override void OnCollisionEnter(Collision collision)
     {
-        //We just override the destruction
+        //We dont use OnCollisionEnter for peirce so we override the function
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Enemy")
+        {
+            m_PeirceCount--;
+            other.GetComponent<TDEnemy>().DamageEnemy(m_attack, m_Affinity);
+        }
     }
 }
