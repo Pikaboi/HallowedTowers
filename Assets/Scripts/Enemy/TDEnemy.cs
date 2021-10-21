@@ -12,6 +12,7 @@ public class TDEnemy : MonoBehaviour
     public float m_moveSpeed;
     public float m_attackPower;
     public float m_health;
+    public float m_debuffMultiplier;
 
     public Affinity m_affinity = Affinity.MONSTER;
 
@@ -77,13 +78,24 @@ public class TDEnemy : MonoBehaviour
         }
     }
 
+    public void Debuff(float _multiplier, Affinity _affinity)
+    {
+        if (_multiplier * AffinityCheck(_affinity) > m_debuffMultiplier)
+        {
+            m_debuffMultiplier = _multiplier * AffinityCheck(_affinity);
+        }
+    }
 
+    public void RemoveDebuff()
+    {
+        m_debuffMultiplier = 0;
+    }
 
     //For road spikes
     public void SpikesDamage(Spikes _spike)
     {
-        m_resource.AddMoney(_spike.m_attack * AffinityCheck(_spike.m_affinity));
-        m_health -= _spike.m_attack * AffinityCheck(_spike.m_affinity);
+        m_resource.AddMoney(_spike.m_attack * AffinityCheck(_spike.m_affinity) * m_debuffMultiplier);
+        m_health -= _spike.m_attack * AffinityCheck(_spike.m_affinity) * m_debuffMultiplier;
         _spike.lowerResistance();
         m_Damage.Play();
 
@@ -107,9 +119,9 @@ public class TDEnemy : MonoBehaviour
 
     public void DamageEnemy(float damage, Affinity _affinity)
     {
-        float trueDamage = damage * AffinityCheck(_affinity);
-        m_resource.AddMoney(damage);
-        m_health -= damage;
+        float trueDamage = damage * AffinityCheck(_affinity) * m_debuffMultiplier;
+        m_resource.AddMoney(trueDamage);
+        m_health -= trueDamage;
         m_Damage.Play();
     }
 

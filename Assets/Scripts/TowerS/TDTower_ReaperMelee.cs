@@ -22,7 +22,7 @@ public class TDTower_ReaperMelee : TDTower
             if(m_FireTimer <= 0.0f)
             {
                 GameObject go = Instantiate(m_Projectile, transform.position, Quaternion.Euler(Vector3.zero));
-                go.GetComponent<TDMelee>().InheritFromTower(m_attack, gameObject, m_Affinity);
+                go.GetComponent<TDMelee>().InheritFromTower(m_attack + (m_attack * m_atkBuff), gameObject, m_Affinity);
                 m_FireTimer = m_fireRate;
             }
         }

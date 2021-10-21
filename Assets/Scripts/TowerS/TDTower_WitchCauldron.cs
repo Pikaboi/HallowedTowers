@@ -5,7 +5,7 @@ using UnityEngine;
 public class TDTower_WitchCauldron : TDTower
 {
     //NOTE:
-    //m_Attack and m_FireRate affect how its buffs work
+    //m_Attack affects how its buffs work
     //Not how this tower attacks
 
     // Start is called before the first frame update
@@ -23,8 +23,9 @@ public class TDTower_WitchCauldron : TDTower
         {
             if(c.gameObject.GetComponent<TDTower>() != null)
             {
-                if (c.gameObject.GetComponent<TDTower>().m_Affinity == m_Affinity && c.gameObject.GetComponent<TDTowerBuff>() == null && c.gameObject.GetComponent<TDTower_WitchCauldron>() == null) {
-                    c.gameObject.AddComponent<TDTowerBuff>();
+                if (c.gameObject.GetComponent<TDTower>().m_Affinity == m_Affinity && c.gameObject.GetComponent<TDTower_WitchCauldron>() == null)
+                {
+                    c.gameObject.GetComponent<TDTower>().Buff(m_attack);
                 }
             }
         }
@@ -41,9 +42,20 @@ public class TDTower_WitchCauldron : TDTower
             {
                 if (c.gameObject.GetComponent<TDTower>().m_Affinity == m_Affinity && c.gameObject.GetComponent<TDTower_WitchCauldron>() == null)
                 {
-                    //c.gameObject.GetComponent<TDTower>().RemoveBuff(m_attack, m_fireRate);
+                    c.gameObject.GetComponent<TDTower>().Debuff();
                 }
             }
+
+            if(c.gameObject.tag == "Enemy")
+            {
+                c.gameObject.GetComponent<TDEnemy>().RemoveDebuff();
+            }
+
+            if(c.gameObject.tag == "Player")
+            {
+                c.gameObject.GetComponent<WorldCharacter>().m_WeaponStats.Debuff();
+            }
+
         }
     }
 
@@ -55,4 +67,37 @@ public class TDTower_WitchCauldron : TDTower
         m_Trigger.radius = m_TriggerRange;
         m_level++;
     }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if(other.GetComponent<TDEnemy>() != null)
+        {
+            other.GetComponent<TDEnemy>().Debuff(m_attack, m_Affinity);
+        }
+
+        if(other.gameObject.tag == "Player")
+        {
+            if (other.GetComponent<WorldCharacter>().m_WeaponStats != null)
+            {
+                other.GetComponent<WorldCharacter>().m_WeaponStats.Buff(m_attack, m_Affinity);
+            }
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<TDEnemy>() != null)
+        {
+            other.GetComponent<TDEnemy>().RemoveDebuff();
+        }
+
+        if (other.gameObject.tag == "Player")
+        {
+            if (other.GetComponent<WorldCharacter>().m_WeaponStats != null)
+            {
+                other.GetComponent<WorldCharacter>().m_WeaponStats.Debuff();
+            }
+        }
+    }
+
 }

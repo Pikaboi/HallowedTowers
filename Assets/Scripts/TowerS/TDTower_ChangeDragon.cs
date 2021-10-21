@@ -11,7 +11,7 @@ public class TDTower_ChangeDragon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_dragon = m_main.m_child.GetComponent<TDTowerDragon>();
+        //m_dragon = m_main.m_child.GetComponent<TDTowerDragon>();
     }
 
     // Update is called once per frame
