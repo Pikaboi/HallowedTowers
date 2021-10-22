@@ -24,6 +24,7 @@ public class TDEnemy : MonoBehaviour
     public float AfflictionTime = 5.0f;
     public float AfflictionTimer = 0.0f;
     public float dotTimer = 1.0f;
+    public float speedDecreaseTimer = 10.0f;
 
     //Animation
     public Animator m_anim;
@@ -53,6 +54,16 @@ public class TDEnemy : MonoBehaviour
             if (AfflictionTimer > 0.0f)
             {
                 Affliction();
+            }
+        }
+
+        if (m_SpeedDropped)
+        {
+            speedDecreaseTimer -= Time.deltaTime;
+            if(speedDecreaseTimer <= 0)
+            {
+                m_agent.speed *= 2;
+                m_SpeedDropped = false;
             }
         }
 
@@ -199,6 +210,15 @@ public class TDEnemy : MonoBehaviour
                 m_health = 0;
                 m_Damage.Play();
             }
+        }
+    }
+
+    public void SlowDebuff()
+    {
+        if (!m_SpeedDropped)
+        {
+            m_agent.speed = m_agent.speed / 2;
+            m_SpeedDropped = true;
         }
     }
 }
