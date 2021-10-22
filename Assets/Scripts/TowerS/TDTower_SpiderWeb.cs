@@ -11,6 +11,8 @@ public class TDTower_SpiderWeb : TDTower
     public float m_sentryTimer;
     public Vector3 m_sentryPos = Vector3.zero;
 
+    public List<GameObject> m_sentries;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -38,13 +40,32 @@ public class TDTower_SpiderWeb : TDTower
 
         if(m_sentryTimer <= 0.0f)
         {
-            if(m_sentryPos != Vector3.zero)
+            if(m_sentryPos != Vector3.zero && m_sentries.Count < 3)
             {
                 GameObject sentry = Instantiate(m_sentry, m_sentryPos, transform.rotation);
                 sentry.transform.localScale = new Vector3(20.0f, 20.0f, 20.0f);
                 sentry.GetComponentInChildren<TDTower>().m_attack = m_attack / 3;
+                sentry.GetComponent<TDSentry>().SetLifetime(20);
                 m_sentryTimer = m_sentryTime;
+                m_sentries.Add(sentry);
                 m_sentryPos = Vector3.zero;
+            }
+        }
+
+        if(m_sentries.Count >= 3)
+        {
+            List<GameObject> delete = new List<GameObject>();
+            foreach(GameObject g in m_sentries)
+            {
+                if(g == null)
+                {
+                    delete.Add(g);
+                }
+            }
+
+            foreach(GameObject g in delete)
+            {
+                m_sentries.Remove(g);
             }
         }
 
