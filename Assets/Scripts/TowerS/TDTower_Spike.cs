@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TDTower_Spike : TDTower
 {
     [SerializeField] Spikes m_Spikes;
- 
-    Vector3 enemypos;
 
+    public List<Spikes> m_activeSpikes = new List<Spikes>();
+
+    Vector3 spikePos = Vector3.zero;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -19,36 +21,47 @@ public class TDTower_Spike : TDTower
     //Generally the same as the base tower, however we will spawn a spike instead of a bullet
     public override void Update()
     {
-        CheckEnemies();
-        Aim();
-        if (m_InRange)
-        {
-            m_FireTimer -= Time.deltaTime;
+        GetSpikePosition();
 
-            if (m_FireTimer <= 0.0f)
+        m_FireTimer -= Time.deltaTime;
+
+        if (m_FireTimer <= 0.0f && m_activeSpikes.Count < 10)
+        {
+            if (spikePos != Vector3.zero)
             {
-                Spikes s = Instantiate(m_Spikes, enemypos - new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
-                s.m_affinity = m_Affinity;
-                s.m_attack = m_attack;
+                Spikes s = Instantiate(m_Spikes, spikePos, transform.rotation);
                 m_FireTimer = m_fireRate;
+                spikePos = Vector3.zero;
+                m_activeSpikes.Add(s);
             }
         }
+
+        if (m_activeSpikes.Count >= 10)
+        {
+            foreach(Spikes s in m_activeSpikes)
+            {
+                if(s == null)
+                {
+                    m_activeSpikes.Remove(s);
+                }
+            }
+        }
+
     }
 
-    public override void CheckEnemies()
+    public void GetSpikePosition()
     {
-        Collider[] ObjsInRange = Physics.OverlapSphere(transform.position, m_TriggerRange);
-
-        bool range = false;
-
-        foreach (Collider Obj in ObjsInRange)
+        //Webs have to be on the navmesh
+        if (spikePos == Vector3.zero)
         {
-            if (Obj.gameObject.tag == "Enemy")
+            Vector3 randomPoint = transform.position + Random.insideUnitSphere * m_TriggerRange;
+            randomPoint.y = 0;
+            NavMeshHit hit;
+
+            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
             {
-                range = true;
-                enemypos = Obj.gameObject.transform.position;
+                spikePos = hit.position;
             }
         }
-        m_InRange = range;
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1046558100839042445
+--- !u!1 &8690665833466195605
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,53 +8,53 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3967178996656813988}
-  - component: {fileID: 1056841263}
-  - component: {fileID: 1056841262}
+  - component: {fileID: 5977017085200724179}
+  - component: {fileID: 8955730285194589884}
+  - component: {fileID: 3651414650806068457}
   m_Layer: 11
-  m_Name: TheReaper
+  m_Name: WitchCauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3967178996656813988
+--- !u!4 &5977017085200724179
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046558100839042445}
+  m_GameObject: {fileID: 8690665833466195605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.58, z: 3.52}
+  m_LocalPosition: {x: -17.410759, y: -6.3716903, z: -21.132318}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7290226126368337615}
-  - {fileID: 5628648256725036408}
+  - {fileID: 5071042703198654252}
+  - {fileID: 4623465923944527700}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1056841263
+--- !u!136 &8955730285194589884
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046558100839042445}
+  m_GameObject: {fileID: 8690665833466195605}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.94850254
+  m_Height: 2.324483
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &1056841262
+  m_Center: {x: -0.044955254, y: -0.16224149, z: -0.00000011920929}
+--- !u!114 &3651414650806068457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046558100839042445}
+  m_GameObject: {fileID: 8690665833466195605}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e3670c70e7f9e34badab3317b72a5ba, type: 3}
@@ -62,100 +62,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_child: {fileID: 0}
   m_affinity: 0
-  m_base: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
-  m_towerName: The Grim Reaper
-  m_cost: 600
+  m_base: {fileID: 5532948400258036149, guid: 256c33f20e4de324180189b4d04e645b, type: 3}
+  m_towerName: Witches Cauldron
+  m_cost: 800
   m_sellCost: 0
-  m_UpgradeUI: {fileID: 4414374873859145755}
+  m_UpgradeUI: {fileID: 3708189316294990391}
   m_TriggerRange: 0
   m_fireRate: 0
   m_attack: 0
   m_level: 0
   m_resource: {fileID: 0}
---- !u!1001 &7108561975084943652
+--- !u!1001 &4743784669328402631
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3967178996656813988}
+    m_TransformParent: {fileID: 5977017085200724179}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalScale.x
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalScale.y
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalScale.z
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 1.12
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.325
+      value: -1.065
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.157
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -6067185528594298527, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 1280446133571650962, guid: 9871065f6f16b324f9eb678a78678de2, type: 3}
-    - target: {fileID: 919132149155446097, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
+    - target: {fileID: 919132149155446097, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
       propertyPath: m_Name
-      value: grim reapers
+      value: Witch's Cauldron
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
---- !u!4 &7290226126368337615 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
+--- !u!4 &5071042703198654252 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c938eb556916cbc43910c3261ffbbd0a, type: 3}
-  m_PrefabInstance: {fileID: 7108561975084943652}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b42e309355c3c864090540f8ef93b9e9, type: 3}
+  m_PrefabInstance: {fileID: 4743784669328402631}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7721070362805764232
+--- !u!1001 &7283411932486572708
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3967178996656813988}
+    m_TransformParent: {fileID: 5977017085200724179}
     m_Modifications:
     - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_RootOrder
@@ -201,23 +197,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5170623183000848954, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
-      propertyPath: m_text
-      value: The Grim Reaper
-      objectReference: {fileID: 0}
     - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
---- !u!1 &4414374873859145755 stripped
+--- !u!1 &3708189316294990391 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
-  m_PrefabInstance: {fileID: 7721070362805764232}
+  m_PrefabInstance: {fileID: 7283411932486572708}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &5628648256725036408 stripped
+--- !u!4 &4623465923944527700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
-  m_PrefabInstance: {fileID: 7721070362805764232}
+  m_PrefabInstance: {fileID: 7283411932486572708}
   m_PrefabAsset: {fileID: 0}

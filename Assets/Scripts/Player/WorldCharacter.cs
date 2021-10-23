@@ -21,7 +21,7 @@ public class WorldCharacter : MonoBehaviour
 
     [SerializeField] WeaponType m_Equipped;
     [SerializeField] GameObject m_Weapon;
-    [SerializeField] PlayerWeapon m_WeaponStats;
+    [SerializeField] public PlayerWeapon m_WeaponStats;
 
     // Start is called before the first frame update
     void Start()
