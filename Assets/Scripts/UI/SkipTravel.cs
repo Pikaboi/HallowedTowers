@@ -16,6 +16,7 @@ public class SkipTravel : MonoBehaviour
     public void OnClick()
     {
         m_Player.transform.position = m_warppoint.transform.position;
+        m_Player.GetComponent<WorldCharacter>().SpawnPoint = m_warppoint;
         //Exit the map after the skip travel
         m_mapButton.OnClick();
     }
