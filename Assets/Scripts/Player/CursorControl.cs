@@ -44,7 +44,7 @@ public class CursorControl : MonoBehaviour
     {
         Vector3 mouseX = Input.mousePosition;
 
-        mouseX = Camera.main.ScreenToWorldPoint(new Vector3(mouseX.x, mouseX.y, Camera.main.transform.position.y));
+        mouseX = Camera.main.ScreenToWorldPoint(new Vector3(mouseX.x, mouseX.y, Camera.main.transform.position.y + 10.0f));
 
         Vector3 direction = Camera.main.transform.position - m_Placer.transform.position;
         direction = direction.normalized;
