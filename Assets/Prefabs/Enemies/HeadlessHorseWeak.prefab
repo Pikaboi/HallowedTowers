@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 203304971324943606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.13, y: 1.498, z: -10.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 5128436247358627680}
   - {fileID: 3430707409010693206}
@@ -89,14 +89,20 @@ MonoBehaviour:
   m_moveSpeed: 10
   m_attackPower: 10
   m_health: 50
+  m_debuffMultiplier: 0
   m_affinity: 2
+  m_targetState: 0
   m_SpeedDropped: 0
   damageOverTime: 0
   AfflictionTime: 5
   AfflictionTimer: 0
   dotTimer: 1
+  speedDecreaseTimer: 10
+  aggressionRadius: 20
+  aggressionTimer: 15
   m_anim: {fileID: 1400499325680354929}
   m_resource: {fileID: 0}
+  m_Player: {fileID: 0}
   m_Destination: {fileID: 0}
   m_Damage: {fileID: -4851937161842882979}
 --- !u!54 &203304971324945167
@@ -237,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 2340168819043818861}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 9.43, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 203304971324945164}
   m_RootOrder: 1

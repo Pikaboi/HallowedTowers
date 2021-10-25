@@ -9,6 +9,9 @@ public class CamMove : MonoBehaviour
     public float xBoundsMin;
     public float zBoundsMax;
     public float zBoundsMin;
+
+    public float offset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,6 @@ public class CamMove : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp(m_follow.transform.position.x, xBoundsMax, xBoundsMin), transform.position.y, Mathf.Clamp(m_follow.transform.position.z, zBoundsMax, zBoundsMin));
+        transform.position = new Vector3(Mathf.Clamp(m_follow.transform.position.x, xBoundsMax, xBoundsMin), transform.position.y, Mathf.Clamp(m_follow.transform.position.z - offset, zBoundsMax, zBoundsMin));
     }
 }
