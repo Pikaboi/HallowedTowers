@@ -7,6 +7,12 @@ using Affinity = affinity.Affinity;
 
 public class TDEnemy : MonoBehaviour
 {
+    public enum TargetState
+    {
+        GOAL,
+        PLAYER
+    };
+
     //Basic Variables
     public NavMeshAgent m_agent;
     public float m_moveSpeed;
@@ -15,6 +21,7 @@ public class TDEnemy : MonoBehaviour
     public float m_debuffMultiplier;
 
     public Affinity m_affinity = Affinity.MONSTER;
+    public TargetState m_targetState = TargetState.GOAL;
 
     //Status effects
     public bool m_SpeedDropped = false;
@@ -26,10 +33,15 @@ public class TDEnemy : MonoBehaviour
     public float dotTimer = 1.0f;
     public float speedDecreaseTimer = 10.0f;
 
+    public float aggressionRadius = 20.0f;
+    public float aggressionTimer = 15.0f;
+
     //Animation
     public Animator m_anim;
 
     [SerializeField] PlayerResourceManager m_resource;
+
+    public WorldCharacter m_Player;
 
     public Transform m_Destination;
 
@@ -43,12 +55,43 @@ public class TDEnemy : MonoBehaviour
 
         m_agent.destination = m_Destination.position;
         m_resource = FindObjectOfType<PlayerResourceManager>();
+
+        m_Player = FindObjectOfType<WorldCharacter>();
     }
 
     // Update is called once per frame
     public virtual void Update()
     {
-        if(damageOverTime)
+        Aggression();
+        DoTControl();
+        ControlSpeedDrop();
+        CheckDeath();
+    }
+
+    public void Aggression()
+    {
+        switch (m_targetState)
+        {
+            case TargetState.GOAL:
+                m_agent.destination = m_Destination.position;
+                break;
+            case TargetState.PLAYER:
+                m_agent.destination = m_Player.transform.position;
+                break;
+        }
+
+        if(Vector3.Distance(transform.position, m_Player.transform.position) < aggressionRadius)
+        {
+            m_targetState = TargetState.PLAYER;
+        } else
+        {
+            m_targetState = TargetState.GOAL;
+        }
+    }
+
+    public void DoTControl()
+    {
+        if (damageOverTime)
         {
             AfflictionTimer -= Time.deltaTime;
             if (AfflictionTimer > 0.0f)
@@ -57,17 +100,25 @@ public class TDEnemy : MonoBehaviour
             }
         }
 
+    }
+
+    public void ControlSpeedDrop()
+    {
         if (m_SpeedDropped)
         {
             speedDecreaseTimer -= Time.deltaTime;
-            if(speedDecreaseTimer <= 0)
+            if (speedDecreaseTimer <= 0)
             {
                 m_agent.speed *= 2;
                 m_SpeedDropped = false;
             }
         }
 
-        if(m_health <= 0.0f)
+    }
+
+    public void CheckDeath()
+    {
+        if (m_health <= 0.0f)
         {
             if (m_anim == null)
             {
@@ -75,7 +126,8 @@ public class TDEnemy : MonoBehaviour
                 {
                     Destroy(gameObject);
                 }
-            } else
+            }
+            else
             {
                 m_anim.SetTrigger("Die");
                 m_agent.enabled = false;
