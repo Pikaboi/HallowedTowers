@@ -11,7 +11,7 @@ public class TDTower_LevelUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_tower = gameObject.GetComponentInParent<TDTowerManager>().m_child.GetComponent<TDTower>();
+        //m_tower = gameObject.GetComponentInParent<TDTowerManager>().m_child.GetComponent<TDTower>();
         m_resource = FindObjectOfType<PlayerResourceManager>();
     }
 

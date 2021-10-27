@@ -6,11 +6,18 @@ public class WorldCharacter : MonoBehaviour
 {
     CharacterController m_Controller;
     [SerializeField] float m_speed;
+    public float m_health;
+    [SerializeField] float m_maxHealth;
 
     public float m_attackTime;
     float m_maxat;
     public bool m_attack = false;
     public Animator m_anim;
+
+    public float maxRespawnTimer = 5.0f;
+    private float respawnTimer;
+
+    public GameObject SpawnPoint;
 
     enum WeaponType
     {
@@ -21,11 +28,13 @@ public class WorldCharacter : MonoBehaviour
 
     [SerializeField] WeaponType m_Equipped;
     [SerializeField] GameObject m_Weapon;
-    [SerializeField] PlayerWeapon m_WeaponStats;
+    [SerializeField] public PlayerWeapon m_WeaponStats;
 
     // Start is called before the first frame update
     void Start()
     {
+        respawnTimer = maxRespawnTimer;
+        m_health = m_maxHealth;
         m_Controller = GetComponent<CharacterController>();
         if (m_Weapon != null)
         {
@@ -42,9 +51,27 @@ public class WorldCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WeaponStatsCheck();
-        Movement();
-        Attack();
+        if (m_health > 0)
+        {
+            WeaponStatsCheck();
+            Movement();
+            Attack();
+        } else
+        {
+            respawnTimer -= Time.deltaTime;
+
+            if(respawnTimer <= 0)
+            {
+                Respawn();
+            }
+        }
+    }
+
+    void Respawn()
+    {
+        m_health = m_maxHealth;
+        transform.position = SpawnPoint.transform.position;
+        respawnTimer = maxRespawnTimer;
     }
 
     void WeaponStatsCheck()
@@ -74,6 +101,17 @@ public class WorldCharacter : MonoBehaviour
         if (dir != Vector3.zero)
         {
             transform.forward = dir;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.GetComponent<TDEnemy>() != null)
+        {
+            if(collision.gameObject.GetComponent<TDEnemy>().m_targetState == TDEnemy.TargetState.PLAYER)
+            {
+                m_health -= collision.gameObject.GetComponent<TDEnemy>().m_attackPower;
+            }
         }
     }
 

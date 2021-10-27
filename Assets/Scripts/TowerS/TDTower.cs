@@ -14,6 +14,7 @@ public class TDTower : MonoBehaviour
     public GameObject m_Projectile;
     public float m_fireRate;
     public float m_attack;
+    public float m_atkBuff;
     public GameObject m_aimer;
     public bool m_InRange;
     public GameObject m_RadiusViewer;
@@ -50,7 +51,7 @@ public class TDTower : MonoBehaviour
             if(m_FireTimer <= 0.0f)
             {
                 GameObject bullet = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
-                bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack, gameObject, m_Affinity);
+                bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack + (m_attack * m_atkBuff), gameObject, m_Affinity);
                 m_FireTimer = m_fireRate;
             }
         }
@@ -102,7 +103,7 @@ public class TDTower : MonoBehaviour
         }
     }
 
-    public void levelUp()
+    public virtual void levelUp()
     {
         m_attack *= 2;
         m_level++;
@@ -121,5 +122,18 @@ public class TDTower : MonoBehaviour
     public void SetAffinity(Affinity affinity)
     {
         m_Affinity = affinity;
+    }
+
+    public void Buff(float buffMult)
+    {
+        if (buffMult > m_atkBuff)
+        {
+            m_atkBuff = buffMult;
+        }
+    }
+
+    public void Debuff()
+    {
+        m_atkBuff = 0;
     }
 }

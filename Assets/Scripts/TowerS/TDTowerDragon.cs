@@ -62,6 +62,12 @@ public class TDTowerDragon : TDTower
         }
     }
 
+    public void ChangePath(FlightPath _path)
+    {
+        m_flightPath = _path;
+        changed = true;
+    }
+
     public void FlightPathMove()
     {
         switch (m_flightPath)
