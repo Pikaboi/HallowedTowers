@@ -18,7 +18,7 @@ public class TDEnemy : MonoBehaviour
     public float m_moveSpeed;
     public float m_attackPower;
     public float m_health;
-    public float m_debuffMultiplier;
+    public float m_debuffMultiplier = 1.0f;
 
     public Affinity m_affinity = Affinity.MONSTER;
     public TargetState m_targetState = TargetState.GOAL;
@@ -35,6 +35,8 @@ public class TDEnemy : MonoBehaviour
 
     public float aggressionRadius = 20.0f;
     public float aggressionTimer = 15.0f;
+
+    public bool aggro = false;
 
     //Animation
     public Animator m_anim;
@@ -80,13 +82,29 @@ public class TDEnemy : MonoBehaviour
                 break;
         }
 
-        if(Vector3.Distance(transform.position, m_Player.transform.position) < aggressionRadius)
+        if(m_Player.m_health <= 0)
+        {
+            aggro = false;
+        }
+
+        if(aggro)
         {
             m_targetState = TargetState.PLAYER;
         } else
         {
             m_targetState = TargetState.GOAL;
         }
+    }
+
+    public void AggroRoll()
+    {
+        int rand = Random.Range(0, 99);
+
+        if(rand < 30)
+        {
+            aggro = true;
+        }
+
     }
 
     public void DoTControl()
@@ -151,7 +169,7 @@ public class TDEnemy : MonoBehaviour
 
     public void RemoveDebuff()
     {
-        m_debuffMultiplier = 0;
+        m_debuffMultiplier = 1.0f;
     }
 
     //For road spikes
@@ -183,6 +201,7 @@ public class TDEnemy : MonoBehaviour
     public void DamageEnemy(float damage, Affinity _affinity)
     {
         float trueDamage = damage * AffinityCheck(_affinity) * m_debuffMultiplier;
+        Debug.Log(trueDamage);
         m_resource.AddMoney(trueDamage);
         m_health -= trueDamage;
         m_Damage.Play();
