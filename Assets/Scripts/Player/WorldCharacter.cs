@@ -7,7 +7,7 @@ public class WorldCharacter : MonoBehaviour
     CharacterController m_Controller;
     [SerializeField] float m_speed;
     public float m_health;
-    [SerializeField] float m_maxHealth;
+    [SerializeField] private float m_maxHealth;
 
     public float m_attackTime;
     float m_maxat;
@@ -204,5 +204,9 @@ public class WorldCharacter : MonoBehaviour
         m_Weapon = Instantiate(_weapon, transform.position + transform.forward, Quaternion.Euler(m_rot.x, m_rot.y + transform.rotation.eulerAngles.y, m_rot.z - transform.rotation.eulerAngles.z));
         m_Weapon.transform.parent = transform;
         m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
+    }
+
+    public float GetMaxHealth() {
+        return m_maxHealth;
     }
 }
