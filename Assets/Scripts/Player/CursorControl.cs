@@ -22,8 +22,6 @@ public class CursorControl : MonoBehaviour
 
     public bool m_configure = false;
 
-    public GameObject m_Player;
-
     // Start is called before the first frame update
     void Start()
     {
