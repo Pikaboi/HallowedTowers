@@ -6356,7 +6356,7 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -15881,6 +15881,10 @@ PrefabInstance:
       propertyPath: m_Placer
       value: 
       objectReference: {fileID: 578777621}
+    - target: {fileID: 8527381766842387583, guid: 2f4939b674e53e140aedf5b7ea25811a, type: 3}
+      propertyPath: m_Player
+      value: 
+      objectReference: {fileID: 592715017}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f4939b674e53e140aedf5b7ea25811a, type: 3}
 --- !u!1001 &734355470
@@ -16243,14 +16247,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1031516575770604917, guid: 5aed7503012c41448b413abbb0b1e035, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1031516575770604919, guid: 5aed7503012c41448b413abbb0b1e035, type: 3}
       propertyPath: m_Name
       value: TowerUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1031516575856064357, guid: 5aed7503012c41448b413abbb0b1e035, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 32.382
+      objectReference: {fileID: 0}
+    - target: {fileID: 1031516575856064357, guid: 5aed7503012c41448b413abbb0b1e035, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 143.55
       objectReference: {fileID: 0}
     - target: {fileID: 1031516576436820249, guid: 5aed7503012c41448b413abbb0b1e035, type: 3}
       propertyPath: m_waveCreator
       value: 
       objectReference: {fileID: 663021067}
+    - target: {fileID: 1031516576439351915, guid: 5aed7503012c41448b413abbb0b1e035, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 32.382
+      objectReference: {fileID: 0}
+    - target: {fileID: 1031516576439351915, guid: 5aed7503012c41448b413abbb0b1e035, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 143.55
+      objectReference: {fileID: 0}
     - target: {fileID: 5383746410077181415, guid: 5aed7503012c41448b413abbb0b1e035, type: 3}
       propertyPath: m_Enabled
       value: 1

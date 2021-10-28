@@ -22,6 +22,8 @@ public class CursorControl : MonoBehaviour
 
     public bool m_configure = false;
 
+    public GameObject m_Player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,14 +44,11 @@ public class CursorControl : MonoBehaviour
 
     void CursorMovement()
     {
-        Vector3 mouseX = Input.mousePosition;
+        Ray r = Camera.main.ScreenPointToRay(Input.mousePosition); //Physics.Raycast(Camera.main.transform.position, -direction, out hit, Mathf.Infinity, m_layerMask);
+        
+        Physics.Raycast(r, out hit);
 
-        mouseX = Camera.main.ScreenToWorldPoint(new Vector3(mouseX.x, mouseX.y, Camera.main.transform.position.y + 10.0f));
-
-        Vector3 direction = Camera.main.transform.position - m_Placer.transform.position;
-        direction = direction.normalized;
-
-        Physics.Raycast(Camera.main.transform.position, -direction, out hit, Mathf.Infinity, m_layerMask);
+        Debug.Log(hit.point);
 
         if (hit.collider != null)
         {
@@ -120,7 +119,13 @@ public class CursorControl : MonoBehaviour
             }
         }
 
-        m_Placer.transform.position = new Vector3(mouseX.x, hit.point.y, mouseX.z);
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            m_Marker.color = Color.white;
+            m_placable = false;
+        }
+
+        m_Placer.transform.position = hit.point;
     }
 
     void DetectTowerInRange()
