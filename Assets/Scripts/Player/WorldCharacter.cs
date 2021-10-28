@@ -19,6 +19,11 @@ public class WorldCharacter : MonoBehaviour
 
     public GameObject SpawnPoint;
 
+    public float m_maxPassiveAggroTimer;
+    private float m_passiveAggroTimer;
+
+    [SerializeField] private LayerMask m_mask;
+
     enum WeaponType
     {
         UNARMED,
@@ -34,6 +39,7 @@ public class WorldCharacter : MonoBehaviour
     void Start()
     {
         respawnTimer = maxRespawnTimer;
+        m_passiveAggroTimer = m_maxPassiveAggroTimer;
         m_health = m_maxHealth;
         m_Controller = GetComponent<CharacterController>();
         if (m_Weapon != null)
@@ -53,6 +59,7 @@ public class WorldCharacter : MonoBehaviour
     {
         if (m_health > 0)
         {
+            AggroCheck();
             WeaponStatsCheck();
             Movement();
             Attack();
@@ -64,6 +71,32 @@ public class WorldCharacter : MonoBehaviour
             {
                 Respawn();
             }
+        }
+    }
+
+    void AggroCheck()
+    {
+        m_passiveAggroTimer -= Time.deltaTime;
+        int aggroCount = 0;
+
+        if (m_passiveAggroTimer < 0)
+        {
+            Collider[] g = Physics.OverlapSphere(transform.position, 5.0f, m_mask);
+
+            foreach (Collider go in g)
+            {
+                if (go.gameObject.GetComponent<TDEnemy>() != null && aggroCount <= 2)
+                {
+                    go.gameObject.GetComponent<TDEnemy>().AggroRoll();
+
+                    if (go.gameObject.GetComponent<TDEnemy>().aggro)
+                    {
+                        aggroCount++;
+                    }
+                }
+            }
+
+            m_passiveAggroTimer = m_maxPassiveAggroTimer;
         }
     }
 
