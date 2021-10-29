@@ -33,8 +33,8 @@ public class TDEnemy : MonoBehaviour
     public float dotTimer = 1.0f;
     public float speedDecreaseTimer = 10.0f;
 
-    public float aggressionRadius = 20.0f;
     public float aggressionTimer = 15.0f;
+    public float maxAggressionTimer = 15.0f;
 
     public bool aggro = false;
 
@@ -59,6 +59,8 @@ public class TDEnemy : MonoBehaviour
         m_resource = FindObjectOfType<PlayerResourceManager>();
 
         m_Player = FindObjectOfType<WorldCharacter>();
+
+        aggressionTimer = maxAggressionTimer;
     }
 
     // Update is called once per frame
@@ -82,14 +84,16 @@ public class TDEnemy : MonoBehaviour
                 break;
         }
 
-        if(m_Player.m_health <= 0 || Vector3.Distance(m_Player.transform.position, transform.position) > 20.0f)
+        if(m_Player.m_health <= 0 || Vector3.Distance(m_Player.transform.position, transform.position) > 20.0f || aggressionTimer < 0.0f)
         {
             aggro = false;
+            aggressionTimer = maxAggressionTimer;
         }
 
         if(aggro)
         {
             m_targetState = TargetState.PLAYER;
+            aggressionTimer -= Time.deltaTime;
         } else
         {
             m_targetState = TargetState.GOAL;
@@ -201,7 +205,6 @@ public class TDEnemy : MonoBehaviour
     public void DamageEnemy(float damage, Affinity _affinity)
     {
         float trueDamage = damage * AffinityCheck(_affinity) * m_debuffMultiplier;
-        Debug.Log(trueDamage);
         m_resource.AddMoney(trueDamage);
         m_health -= trueDamage;
         m_Damage.Play();

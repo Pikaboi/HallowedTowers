@@ -22,6 +22,8 @@ public class WorldCharacter : MonoBehaviour
     public float m_maxPassiveAggroTimer;
     private float m_passiveAggroTimer;
 
+    bool dashing = false;
+
     [SerializeField] private LayerMask m_mask;
 
     enum WeaponType
@@ -129,17 +131,27 @@ public class WorldCharacter : MonoBehaviour
         Vector3 dir = new Vector3(x, 0.0f, y);
         dir = dir.normalized;
 
-        m_Controller.SimpleMove(dir * m_speed);
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            m_Controller.Move(dir * m_speed * 10.0f * Time.deltaTime);
+            dashing = true;
+        }
+        else
+        {
+            m_Controller.SimpleMove(dir * m_speed);
+            dashing = false;
+        }
 
         if (dir != Vector3.zero)
         {
             transform.forward = dir;
         }
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.GetComponent<TDEnemy>() != null)
+        if(collision.gameObject.GetComponent<TDEnemy>() != null && !dashing)
         {
             if(collision.gameObject.GetComponent<TDEnemy>().m_targetState == TDEnemy.TargetState.PLAYER)
             {
