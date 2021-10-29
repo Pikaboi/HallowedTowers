@@ -12,6 +12,8 @@ public class UIHP : MonoBehaviour
     void Start()
     {
         m_Player = m_target.GetComponent<WorldCharacter>();
+        m_slider.maxValue = m_Player.GetMaxHealth();
+        m_slider.value = m_Player.m_health;
     }
 
     private void Update()

@@ -82,7 +82,7 @@ public class TDEnemy : MonoBehaviour
                 break;
         }
 
-        if(m_Player.m_health <= 0)
+        if(m_Player.m_health <= 0 || Vector3.Distance(m_Player.transform.position, transform.position) > 20.0f)
         {
             aggro = false;
         }
