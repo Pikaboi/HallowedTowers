@@ -19,6 +19,7 @@ public class PlayerWeapon : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_Attack + (m_Attack * m_atkBuff), m_Affinity);
+            collision.gameObject.GetComponent<TDEnemy>().AggroRoll();
         }
     }
 

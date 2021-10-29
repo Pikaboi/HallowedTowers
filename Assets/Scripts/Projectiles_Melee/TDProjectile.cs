@@ -54,6 +54,13 @@ public class TDProjectile : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_attack, m_Affinity);
+
+            //If its a players projectile
+            if(m_Tower.GetComponent<PlayerWeapon>() != null)
+            {
+                collision.gameObject.GetComponent<TDEnemy>().AggroRoll();
+            }
+
         }
         Destroy(gameObject);
     }
