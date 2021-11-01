@@ -15,6 +15,10 @@ public class TDTower_ReaperMelee : TDTower
     {
         CheckEnemies();
 
+        m_attack = gameObject.GetComponentInParent<TDTower>().m_attack;
+        Debug.Log(gameObject.GetComponentInParent<TDTower>());
+        m_atkBuff = GetComponentInParent<TDTower>().m_atkBuff;
+
         if (m_InRange)
         {
             m_FireTimer -= Time.deltaTime;
