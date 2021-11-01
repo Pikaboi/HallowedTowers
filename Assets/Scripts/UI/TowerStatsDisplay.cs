@@ -5,19 +5,20 @@ using UnityEngine;
 public class TowerStatsDisplay : MonoBehaviour
 {
     TDTowerManager m_manager;
-    TMPro.TMP_Text t;
+    public TMPro.TMP_Text atk;
+    public TMPro.TMP_Text spd;
+    public TMPro.TMP_Text range;
     // Start is called before the first frame update
     void Start()
     {
         m_manager = GetComponentInParent<TDTowerManager>();
-        t = GetComponent<TMPro.TMP_Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        t.text = "Attack: " + m_manager.m_child.GetComponent<TDTower>().m_attack + "\n" 
-            + "Speed: " + m_manager.m_child.GetComponent<TDTower>().m_fireRate + "\n" 
-            + "Range: " + m_manager.m_child.GetComponent<TDTower>().m_TriggerRange;
+        atk.text = m_manager.m_child.GetComponent<TDTower>().m_attack.ToString();
+        spd.text = m_manager.m_child.GetComponent<TDTower>().m_fireRate.ToString(); 
+        range.text = m_manager.m_child.GetComponent<TDTower>().m_TriggerRange.ToString();
     }
 }
