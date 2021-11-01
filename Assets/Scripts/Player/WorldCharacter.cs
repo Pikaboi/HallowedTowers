@@ -216,6 +216,7 @@ public class WorldCharacter : MonoBehaviour
         m_Weapon = Instantiate(_weapon, transform.position + transform.forward, Quaternion.Euler(m_rot.x, m_rot.y + transform.rotation.eulerAngles.y, m_rot.z - transform.rotation.eulerAngles.z));
         m_Weapon.transform.parent = transform;
         m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
+        m_Weapon.SetActive(false);
     }
 
     public float GetMaxHealth() {

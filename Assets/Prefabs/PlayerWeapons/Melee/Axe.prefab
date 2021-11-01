@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3151657510417776581}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 2.51, y: 1.345, z: -3.105}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 5455050619755815172}
   m_Father: {fileID: 0}
@@ -59,9 +59,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Attack: 2
+  m_atkBuff: 0
   isMelee: 1
   Bullet: {fileID: 0}
   m_BulletRange: 0
+  m_Affinity: 0
 --- !u!1001 &5493972492025104111
 PrefabInstance:
   m_ObjectHideFlags: 0
