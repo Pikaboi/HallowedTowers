@@ -8,9 +8,16 @@ public class WeaponEquipButton : MonoBehaviour
     public GameObject m_Weapon;
     public WorldCharacter m_Player;
     public Vector3 m_rot;
+    public TMPro.TMP_Text t;
     void Start()
     {
         m_Player = FindObjectOfType<WorldCharacter>();
+        t = GetComponentInChildren<TMPro.TMP_Text>();
+    }
+
+    private void Update()
+    {
+        t.text = m_Weapon.name;
     }
 
     // Update is called once per frame
