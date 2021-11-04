@@ -25,6 +25,7 @@ public class TDEnemy : MonoBehaviour
 
     //Status effects
     public bool m_SpeedDropped = false;
+    public bool m_PermaSpeedDrop = false;
 
     //Damage over time control
     public bool damageOverTime = false;
@@ -179,7 +180,7 @@ public class TDEnemy : MonoBehaviour
     }
 
     //For road spikes
-    public void SpikesDamage(Spikes _spike)
+    /*public void SpikesDamage(Spikes _spike)
     {
         m_resource.AddMoney(_spike.m_attack * AffinityCheck(_spike.m_affinity) * m_debuffMultiplier);
         m_health -= _spike.m_attack * AffinityCheck(_spike.m_affinity) * m_debuffMultiplier;
@@ -191,7 +192,7 @@ public class TDEnemy : MonoBehaviour
             m_agent.speed = m_agent.speed / 2;
             m_SpeedDropped = true;
         }
-    }
+    }*/
 
     public void Affliction()
     {
