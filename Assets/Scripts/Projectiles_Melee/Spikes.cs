@@ -18,34 +18,34 @@ public class Spikes : MonoBehaviour
     //Upgrades
     //Path1 UG1 is the m_Slow Variable
 
-    bool Path1UG2;
+    public bool Path1UG2;
     /// <summary>
     /// Make slow debuff stronger on affinity
     /// </summary>
 
-    bool Path1UG3;
+    public bool Path1UG3;
     /// <summary>
     /// Make slowdown permanent
     /// </summary>
 
-    bool Path2UG1;
+    public bool Path2UG1;
     /// <summary>
     /// Increase Affinity Advantage
     /// </summary>
 
-    bool Path2UG2;
+    public bool Path2UG2;
     /// <summary>
     /// Increase Damage to monsters
     /// </summary>
 
-    bool Path2UG3;
+    public bool Path2UG3;
     /// <summary>
     /// Reduce the reduction from a disadvantage
     /// </summary>
 
     //Path 3 UG 1 and 2 will modify the Durability
 
-    bool Path3UG3;
+    public bool Path3UG3;
     /// <summary>
     /// Allow spikes to hit multiple enemies with one use
     /// </summary>
