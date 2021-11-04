@@ -18,7 +18,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<TDEnemy>().DamageEnemy(m_Attack + (m_Attack * m_atkBuff), m_Affinity);
+            DamageEnemy(m_Attack + (m_Attack * m_atkBuff), collision.gameObject.GetComponent<TDEnemy>());
             collision.gameObject.GetComponent<TDEnemy>().AggroRoll();
         }
     }
@@ -42,5 +42,63 @@ public class PlayerWeapon : MonoBehaviour
         m_atkBuff = 0;
     }
 
+    public virtual void DamageEnemy(float damage, TDEnemy _enemy)
+    {
+        float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
+        _enemy.m_resource.AddMoney(trueDamage);
+        _enemy.m_health -= trueDamage;
+        _enemy.m_Damage.Play();
+    }
 
+    public virtual float AffinityCheck(Affinity _affinity)
+    {
+        float multiplier = 1.0f;
+        switch (_affinity)
+        {
+            case Affinity.MONSTER:
+                //Neutral
+                multiplier = 1.0f;
+                break;
+            case Affinity.MAGIC:
+                if (m_Affinity == Affinity.UNDEAD)
+                {
+                    //Damage Decrease
+                    multiplier = 1.2f;
+                }
+                if (m_Affinity == Affinity.SOUL)
+                {
+                    //Damage Increase
+                    multiplier = 0.8f;
+                }
+                break;
+            case Affinity.UNDEAD:
+                if (m_Affinity == Affinity.SOUL)
+                {
+                    //Damage Decrease
+                    multiplier = 1.2f;
+                }
+                if (m_Affinity == Affinity.MAGIC)
+                {
+                    //Damage Increase
+                    multiplier = 0.8f;
+                }
+                break;
+            case Affinity.SOUL:
+                if (m_Affinity == Affinity.MAGIC)
+                {
+                    //Damage Decrease
+                    multiplier = 1.2f;
+                }
+                if (m_Affinity == Affinity.UNDEAD)
+                {
+                    //Damage Increase
+                    multiplier = 0.8f;
+                }
+                break;
+            default:
+                multiplier = 1.0f;
+                break;
+        }
+        return multiplier;
+    }
 }

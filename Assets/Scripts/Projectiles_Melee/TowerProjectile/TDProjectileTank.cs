@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TDProjectilePierce : TDProjectile
+public class TDProjectileTank : TDProjectile
 {
     public int m_PeirceCount;
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class TDProjectilePierce : TDProjectile
         if(other.tag == "Enemy")
         {
             m_PeirceCount--;
-            other.GetComponent<TDEnemy>().DamageEnemy(m_attack, m_Affinity);
+            DamageEnemy(m_attack, other.gameObject.GetComponent<TDEnemy>());
         }
     }
 }

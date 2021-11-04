@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TDProjectileBlast : TDProjectile
+public class TDProjectileMagicOrb : TDProjectile
 {
     public bool m_inflictDOT = false;
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class TDProjectileBlast : TDProjectile
         {
             if (c.gameObject.tag == "Enemy")
             {
-                c.GetComponent<TDEnemy>().DamageEnemy(m_attack, m_Affinity);
+                DamageEnemy(m_attack, c.gameObject.GetComponent<TDEnemy>());
                 c.GetComponent<TDEnemy>().InflictDOT(m_inflictDOT);
             }
         }

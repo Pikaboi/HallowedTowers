@@ -41,7 +41,7 @@ public class TDEnemy : MonoBehaviour
     //Animation
     public Animator m_anim;
 
-    [SerializeField] PlayerResourceManager m_resource;
+    public PlayerResourceManager m_resource;
 
     public WorldCharacter m_Player;
 
@@ -59,6 +59,8 @@ public class TDEnemy : MonoBehaviour
         m_resource = FindObjectOfType<PlayerResourceManager>();
 
         m_Player = FindObjectOfType<WorldCharacter>();
+
+        m_debuffMultiplier = 1.0f;
 
         aggressionTimer = maxAggressionTimer;
     }
@@ -202,13 +204,13 @@ public class TDEnemy : MonoBehaviour
         }
     }
 
-    public void DamageEnemy(float damage, Affinity _affinity)
+    /*public void DamageEnemy(float damage, Affinity _affinity)
     {
         float trueDamage = damage * AffinityCheck(_affinity) * m_debuffMultiplier;
         m_resource.AddMoney(trueDamage);
         m_health -= trueDamage;
         m_Damage.Play();
-    }
+    }*/
 
     public float AffinityCheck(Affinity _affinity)
     {
