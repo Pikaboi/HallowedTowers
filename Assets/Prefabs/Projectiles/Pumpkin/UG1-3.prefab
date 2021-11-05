@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1816388235166196235}
   - component: {fileID: -2063799015080636478}
   m_Layer: 14
-  m_Name: PeircePumpkinBullet
+  m_Name: UG1-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,8 +125,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1131f3fd42f91443837844ac4f24ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_rigidbody: {fileID: 0}
   m_range: 0
   m_attack: 0
   m_Tower: {fileID: 0}
-  m_Speed: 5
+  m_Speed: 30
   m_Affinity: 0
+  ogPos: {x: 0, y: 0, z: 0}
+  Path2UG1: 0
+  Path2UG2: 0
+  Path2UG3: 0
+  Path3UG1: 0
+  Path3UG2: 0
+  Path3UG3: 0
+  m_PeirceCount: 50
+  m_MaxPeirce: 50

@@ -39,6 +39,10 @@ public class TDEnemy : MonoBehaviour
 
     public bool aggro = false;
 
+    public bool m_Stunned = false;
+    public float m_StunTimer = 2.0f;
+    public float m_StunImmuneTimer = 5.0f;
+
     //Animation
     public Animator m_anim;
 
@@ -70,9 +74,29 @@ public class TDEnemy : MonoBehaviour
     public virtual void Update()
     {
         Aggression();
+        Stun();
         DoTControl();
         ControlSpeedDrop();
         CheckDeath();
+    }
+
+    public void Stun()
+    {
+        if (m_Stunned)
+        {
+            m_agent.speed = 0;
+            m_StunTimer -= Time.deltaTime;
+
+            if (m_StunTimer < 0.0f)
+            {
+                m_Stunned = false;
+                m_agent.speed = m_moveSpeed;
+            }
+
+        }
+        else {
+            m_StunImmuneTimer -= Time.deltaTime;
+        }
     }
 
     public void Aggression()

@@ -102,6 +102,7 @@ public class Spikes : MonoBehaviour
             if (Path1UG3)
             {
                 _enemy.m_PermaSpeedDrop = true;
+                _enemy.m_moveSpeed = _enemy.m_agent.speed;
             }
             else
             {

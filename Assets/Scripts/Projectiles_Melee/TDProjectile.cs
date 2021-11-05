@@ -6,13 +6,13 @@ using Affinity = affinity.Affinity;
 
 public class TDProjectile : MonoBehaviour
 {
-    Rigidbody m_rigidbody;
-    [SerializeField] private float m_range;
+    public Rigidbody m_rigidbody;
+    public float m_range;
     public float m_attack;
-    [SerializeField] private GameObject m_Tower;
-    [SerializeField] private float m_Speed;
+    public GameObject m_Tower;
+    public float m_Speed;
     public Affinity m_Affinity;
-    Vector3 ogPos;
+    public Vector3 ogPos;
     // Start is called before the first frame update
     public virtual void Start()
     {
