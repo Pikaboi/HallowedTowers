@@ -53,7 +53,7 @@ public class Spikes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        m_resource = FindObjectOfType<PlayerResourceManager>();
     }
 
     public void PayForSpikes()
@@ -75,6 +75,9 @@ public class Spikes : MonoBehaviour
     public void SpikesDamage(TDEnemy _enemy)
     {
         m_resource.AddMoney(m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier);
+
+        Debug.Log(m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier);
+
         _enemy.m_health -= m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
         lowerResistance();
         _enemy.m_Damage.Play();
@@ -225,7 +228,7 @@ public class Spikes : MonoBehaviour
 
             if (Path3UG3)
             {
-                Collider[] c = Physics.OverlapSphere(transform.position, 1);
+                Collider[] c = Physics.OverlapSphere(transform.position, 3);
 
                 int count = 0;
 
