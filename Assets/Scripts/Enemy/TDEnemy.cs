@@ -43,6 +43,9 @@ public class TDEnemy : MonoBehaviour
     public float m_StunTimer = 2.0f;
     public float m_StunImmuneTimer = 5.0f;
 
+    public bool m_Pushed = false;
+    public float m_PushTimer = 1.0f;
+
     //Animation
     public Animator m_anim;
 
@@ -73,11 +76,32 @@ public class TDEnemy : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
+        PushControl();
         Aggression();
         Stun();
         DoTControl();
         ControlSpeedDrop();
         CheckDeath();
+    }
+
+    public void PushControl()
+    {
+        if (m_Pushed)
+        {
+            m_PushTimer -= Time.deltaTime;
+            GetComponent<Rigidbody>().MovePosition(transform.position - (m_agent.velocity.normalized * 0.25f));
+
+            if (m_PushTimer <= 0)
+            {
+                m_Pushed = false;
+                m_PushTimer = 1.0f;
+            }
+        }
+    }
+
+    public void Push()
+    {
+        m_Pushed = true;
     }
 
     public void Stun()

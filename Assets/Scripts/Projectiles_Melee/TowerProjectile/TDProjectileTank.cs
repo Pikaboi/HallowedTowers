@@ -66,30 +66,26 @@ public class TDProjectileTank : TDProjectile
 
         if (Path2UG2 && m_PeirceCount == m_MaxPeirce)
         {
-            _enemy.GetComponent<Rigidbody>().AddForce(transform.forward * m_Speed, ForceMode.Impulse);
+            _enemy.Push();
         }
 
         if(Path3UG1 && _enemy.m_StunImmuneTimer < 0 && !_enemy.m_Stunned)
         {
             _enemy.m_Stunned = true;
 
-            if (Path3UG2)
+            if(Path3UG3 && AffinityCheck(_enemy.m_affinity) == 0.8f)
             {
-                if (Path3UG3 && AffinityCheck(_enemy.m_affinity) == 0.8f)
-                {
-                     _enemy.m_StunTimer = 1.0f;
-                }
-                else if (AffinityCheck(_enemy.m_affinity) == 1.2f)
-                {
-                    _enemy.m_StunTimer = 4.0f;
-                } else
-                {
-                    _enemy.m_StunTimer = 2.0f;
-                }
-            } else {
+                _enemy.m_StunTimer = 1.0f;
+            } else if(AffinityCheck(_enemy.m_affinity) == 0.8f)
+            {
+                _enemy.m_StunTimer = 0.0f;
+            } else if (Path3UG2 && AffinityCheck(_enemy.m_affinity) == 1.2f)
+            {
+                _enemy.m_StunTimer = 4.0f;
+            } else
+            {
                 _enemy.m_StunTimer = 2.0f;
             }
-            Debug.Log(_enemy.m_StunTimer);
 
             _enemy.m_StunImmuneTimer = 5.0f;
         }
