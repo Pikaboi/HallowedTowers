@@ -91,7 +91,7 @@ public class TDProjectileTank : TDProjectile
         }
 
 
-        _enemy.m_resource.AddMoney(trueDamage);
+        _enemy.m_resource.AddMoney(Mathf.Floor(trueDamage));
         _enemy.m_health -= trueDamage;
         _enemy.m_Damage.Play();
     }

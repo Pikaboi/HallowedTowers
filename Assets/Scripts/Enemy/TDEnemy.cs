@@ -333,7 +333,7 @@ public class TDEnemy : MonoBehaviour
 
             if(rand < 25)
             {
-                m_resource.AddMoney(m_health);
+                m_resource.AddMoney(Mathf.Floor(m_health));
                 m_health = 0;
                 m_Damage.Play();
             }

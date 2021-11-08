@@ -132,8 +132,6 @@ public class TDTowerProjectileCandycorn : TDProjectile
     {
         float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
 
-        Debug.Log(trueDamage);
-
         if (Path2UG2)
         {
             float val = AffinityCheck(_enemy.m_affinity);
@@ -141,19 +139,19 @@ public class TDTowerProjectileCandycorn : TDProjectile
             if(val == 1.2f)
             {
                 //Doubles money on advantage
-                _enemy.m_resource.AddMoney(trueDamage * 2);
+                _enemy.m_resource.AddMoney(Mathf.Floor(trueDamage * 2));
             } else if(val == 0.8f)
             {
                 //No Money on disadvantage
                 _enemy.m_resource.AddMoney(0);
             } else
             {
-                _enemy.m_resource.AddMoney(trueDamage);
+                _enemy.m_resource.AddMoney(Mathf.Floor(trueDamage));
             }
 
         } else
         {
-            _enemy.m_resource.AddMoney(trueDamage);
+            _enemy.m_resource.AddMoney(Mathf.Floor(trueDamage));
         }
 
         if(Path2UG3 && _enemy.m_affinity == Affinity.MONSTER)
