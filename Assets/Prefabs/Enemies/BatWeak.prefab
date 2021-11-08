@@ -162,9 +162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_agent: {fileID: 0}
-  m_moveSpeed: 10
+  m_moveSpeed: 5
   m_attackPower: 1
-  m_health: 10
+  m_health: 15
   m_debuffMultiplier: 0
   m_affinity: 0
   m_targetState: 0
@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Stunned: 0
   m_StunTimer: 2
   m_StunImmuneTimer: 5
+  m_Pushed: 0
+  m_PushTimer: 1
   m_anim: {fileID: 0}
   m_resource: {fileID: 0}
   m_Player: {fileID: 0}

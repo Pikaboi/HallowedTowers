@@ -64,7 +64,7 @@ MonoBehaviour:
   m_affinity: 0
   m_base: {fileID: 5453818987354811057, guid: cde7984bbbddf2949a8da5cc9c41531f, type: 3}
   m_towerName: Magical Orb
-  m_cost: 300
+  m_cost: 500
   m_sellCost: 0
   m_UpgradeUI: {fileID: 9119845503142245980}
   m_TriggerRange: 0
@@ -80,9 +80,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 3478495592656548399}
     m_Modifications:
     - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 5453818987354811057, guid: 5b5331756a14e164e93de8107d7883fb, type: 3}
+    - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Boss Burning
+      objectReference: {fileID: 0}
     - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -128,45 +136,109 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 850
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 5453818987354811057, guid: c12bdf5b0ed4aa945881c432083fa7b7, type: 3}
+    - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Boss Exploiter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 5453818987354811057, guid: 41839293266c54544bd87c0976d13c35, type: 3}
+    - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Big Bang
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 5453818987354811057, guid: c36ca63f013b5e849a28fd81777a4418, type: 3}
+    - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: First Degree Burn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 5453818987354811057, guid: 87810888500b36443a5bff2f6e83e0e5, type: 3}
+    - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Critical Crossfire
+      objectReference: {fileID: 0}
     - target: {fileID: 5170623183000848954, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: Magical Orb
       objectReference: {fileID: 0}
     - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 5453818987354811057, guid: be91078153c203f459fdc10c2037c095, type: 3}
+    - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Crossfire
+      objectReference: {fileID: 0}
     - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
       objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 5453818987354811057, guid: b0db91eedce3dc84e8e0bb4b81bfae9f, type: 3}
+    - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Merciless Magic
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 5453818987354811057, guid: 20e06ff44204250458070483e31111c6, type: 3}
+    - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Afterburn
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 5453818987354811057, guid: 8ec459368811a68428c1fa57721800ac, type: 3}
+    - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Stun Extender
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
 --- !u!1 &9119845503142245980 stripped

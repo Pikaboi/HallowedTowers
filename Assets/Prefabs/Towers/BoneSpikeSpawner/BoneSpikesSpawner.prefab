@@ -64,7 +64,7 @@ MonoBehaviour:
   m_affinity: 0
   m_base: {fileID: 2394666924685792521, guid: 7ceb59c8ef7ef634d8e6b193ca7398f0, type: 3}
   m_towerName: Bone Spikes Grave
-  m_cost: 200
+  m_cost: 250
   m_sellCost: 0
   m_UpgradeUI: {fileID: 5304836795723025938}
   m_TriggerRange: 0
@@ -80,9 +80,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1183744012743834814}
     m_Modifications:
     - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 2394666924685792521, guid: 398096f75242778469a71ec403ddb33a, type: 3}
+    - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Permaslow Spikes
+      objectReference: {fileID: 0}
     - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -128,45 +136,105 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 2394666924685792521, guid: 19d70bd80aa2df441a5658be7e5ed870, type: 3}
+    - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Resistance Breaker
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 2394666924685792521, guid: de2d90629a6d44c4da5f2d478b5ea72e, type: 3}
+    - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Heavy Duty Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 2394666924685792521, guid: 15f7a9ee30b4a994d9bb7b1e4d46d2c2, type: 3}
+    - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Snails Pace Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 700
+      objectReference: {fileID: 0}
     - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 2394666924685792521, guid: 108a9f1398b50b940b81ab488039fa8f, type: 3}
+    - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Double Puncture
+      objectReference: {fileID: 0}
     - target: {fileID: 5170623183000848954, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: Bone Spike Grave
       objectReference: {fileID: 0}
     - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 2394666924685792521, guid: 767d72b0244bd35439b8018019726c58, type: 3}
+    - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: 'Hardened Duty Spikes '
+      objectReference: {fileID: 0}
     - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
       objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 2394666924685792521, guid: c6d03466faebd06468000359aefc235a, type: 3}
+    - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Critical Spikes
+      objectReference: {fileID: 0}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 2394666924685792521, guid: 6123734143679a645b25716c708318e5, type: 3}
+    - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Slowdown Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 450
+      objectReference: {fileID: 0}
     - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 2394666924685792521, guid: 3b283e5aa9c8605488c52feab337e5b8, type: 3}
+    - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Monster Puncture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
 --- !u!1 &5304836795723025938 stripped
