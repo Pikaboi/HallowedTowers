@@ -33,6 +33,7 @@ public class TDEnemy : MonoBehaviour
     public float AfflictionTimer = 0.0f;
     public float dotTimer = 1.0f;
     public float speedDecreaseTimer = 10.0f;
+    public float DOTDamage = 0.0f;
 
     public float aggressionTimer = 15.0f;
     public float maxAggressionTimer = 15.0f;
@@ -247,7 +248,7 @@ public class TDEnemy : MonoBehaviour
         dotTimer -= Time.deltaTime;
         if(dotTimer <= 0.0f)
         {
-            m_health--;
+            m_health -= DOTDamage;
             m_Damage.Play();
             dotTimer = 1.0f;
         }
@@ -313,11 +314,12 @@ public class TDEnemy : MonoBehaviour
         return multiplier;
     }
 
-    public void InflictDOT(bool _inflict)
+    public void InflictDOT(bool _inflict, float attack)
     {
         if (_inflict)
         {
             damageOverTime = _inflict;
+            DOTDamage = attack;
             AfflictionTimer = AfflictionTime;
             dotTimer = 1.0f;
         }

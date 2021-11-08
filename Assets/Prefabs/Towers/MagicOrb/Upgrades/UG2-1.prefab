@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2108564046674864943}
   - component: {fileID: 1701491019214260545}
   m_Layer: 2
-  m_Name: Upgrade1n2
+  m_Name: UG2-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,11 +172,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Trigger: {fileID: 0}
   m_TriggerRange: 5
-  m_Projectile: {fileID: 8889714604909872069, guid: 9fed87053e5ca8d4986ab49872e9771d, type: 3}
+  m_level: 1
+  m_Projectile: {fileID: 8889714604909872069, guid: 62c4b4209b75865448fc80e911318794, type: 3}
   m_fireRate: 1.5
   m_attack: 25
+  m_atkBuff: 0
   m_aimer: {fileID: 3022072250423289585}
   m_InRange: 0
   m_RadiusViewer: {fileID: 679350271187389066}
+  m_Affinity: 0
   m_resource: {fileID: 0}
   m_FireTimer: 0
