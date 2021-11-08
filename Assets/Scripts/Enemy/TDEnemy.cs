@@ -13,7 +13,7 @@ public class TDEnemy : MonoBehaviour
         PLAYER
     };
 
-    //Basic Variables
+    //Basic Variables 
     public NavMeshAgent m_agent;
     public float m_moveSpeed;
     public float m_attackPower;
