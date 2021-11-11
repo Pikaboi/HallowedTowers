@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class TDTowerUpgrade_Path : TDTowerUpgrade
 {
     public TDTowerUpgrade_Path[] m_UGPaths;
@@ -24,6 +24,7 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
         {
             m_manager.newUpgrade(m_UGPrefab);
             m_UGBought = true;
+            GetComponent<Image>().sprite = m_Locked;
             m_resource.SubMoney(m_UGCost);
             m_manager.m_sellCost += m_UGCost / 2;
 
@@ -31,12 +32,18 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
             //Only one path, no crosspaths
             foreach (TDTowerUpgrade_Path t in m_UGPaths)
             {
-                t.gameObject.GetComponent<UnityEngine.UI.Button>().enabled = false;
+                if (t != this)
+                {
+                    t.gameObject.GetComponent<Button>().enabled = false;
+                    t.gameObject.GetComponent<Image>().sprite = t.gameObject.GetComponent<TDTowerUpgrade>().m_Locked;
+                    t.gameObject.GetComponent<TDTowerUpgrade>().m_successor.GetComponent<Image>().sprite = m_Locked;
+                    t.gameObject.GetComponent<TDTowerUpgrade>().m_successor.m_successor.GetComponent<Image>().sprite = m_Locked;
+                }
             }
 
             if (m_successor != null)
             {
-                m_successor.gameObject.GetComponent<UnityEngine.UI.Button>().enabled = true;
+                m_successor.gameObject.GetComponent<Button>().enabled = true;
             }
         }
     }

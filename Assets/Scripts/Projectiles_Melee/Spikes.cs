@@ -74,7 +74,7 @@ public class Spikes : MonoBehaviour
     //For road spikes
     public void SpikesDamage(TDEnemy _enemy)
     {
-        m_resource.AddMoney(m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier);
+        m_resource.AddMoney(Mathf.Floor(m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier));
 
         Debug.Log(m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier);
 
