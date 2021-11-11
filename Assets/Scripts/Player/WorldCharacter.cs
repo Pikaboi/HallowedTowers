@@ -25,6 +25,8 @@ public class WorldCharacter : MonoBehaviour
     bool dashing = false;
 
     [SerializeField] private LayerMask m_mask;
+    [SerializeField] private MapButton m_map;
+    [SerializeField] private MapButton m_inventory;
 
     enum WeaponType
     {
@@ -59,6 +61,16 @@ public class WorldCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            m_map.OnClick();
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            m_inventory.OnClick();
+        }
+
         if (m_health > 0)
         {
             AggroCheck();

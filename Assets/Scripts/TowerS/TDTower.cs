@@ -108,7 +108,7 @@ public class TDTower : MonoBehaviour
 
     public virtual void levelUp()
     {
-        m_attack *= 2;
+        m_attack += 5;
         m_level++;
     }
 

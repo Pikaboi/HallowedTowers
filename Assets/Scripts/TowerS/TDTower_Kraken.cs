@@ -103,7 +103,7 @@ public class TDTower_Kraken : TDTower
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log(true);
-                AimPos = mouseX;
+                AimPos = new Vector3(mouseX.x, transform.position.y, mouseX.z);
                 transform.parent.GetComponent<TDTower_KrakenManager>().aimpos = AimPos;
                 click = true;
             }

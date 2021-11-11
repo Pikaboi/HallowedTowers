@@ -18,6 +18,8 @@ public class TDTowerDragon : TDTower
     public Rigidbody m_rb;
     public float m_speed;
 
+    public bool notStuck = true;
+
     [SerializeField] bool circling = true;
     [SerializeField] bool changed = false;
 
@@ -73,9 +75,27 @@ public class TDTowerDragon : TDTower
         switch (m_flightPath)
         {
             case FlightPath.HORI:
-                if (transform.position.x - transform.parent.position.x >= m_TriggerRange || transform.position.x - transform.parent.position.x <= -m_TriggerRange)
+
+                if (Vector3.Distance(transform.position, transform.parent.position) < 1.0f)
                 {
-                    m_speed = -m_speed;
+                    transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
+                }
+
+                if(transform.position.x - transform.parent.position.x <= (m_TriggerRange / 2) && transform.position.x - transform.parent.position.x > 0)
+                {
+                    notStuck = true;
+                } else if (transform.position.x - transform.parent.position.x >= -(m_TriggerRange / 2) && transform.position.x - transform.parent.position.x < 0)
+                {
+                    notStuck = true;
+                }
+
+                if (notStuck)
+                {
+                    if (transform.position.x - transform.parent.position.x >= m_TriggerRange || transform.position.x - transform.parent.position.x <= -m_TriggerRange)
+                    {
+                        m_speed = -m_speed;
+                        notStuck = false;
+                    }
                 }
 
                 m_rb.velocity = new Vector3(1.0f, 0.0f, 0.0f) * m_speed;
@@ -89,9 +109,22 @@ public class TDTowerDragon : TDTower
                     transform.position = new Vector3(0.0f, transform.position.y, transform.position.z);
                 }
 
-                if (transform.position.z - transform.parent.position.z >= m_TriggerRange || transform.position.z - transform.parent.position.z <= -m_TriggerRange)
+                if (transform.position.z - transform.parent.position.z <= (m_TriggerRange / 2) && transform.position.z - transform.parent.position.z > 0)
                 {
-                    m_speed = -m_speed;
+                    notStuck = true;
+                }
+                else if (transform.position.z - transform.parent.position.z >= -(m_TriggerRange / 2) && transform.position.z - transform.parent.position.z < 0)
+                {
+                    notStuck = true;
+                }
+
+                if (notStuck)
+                {
+                    if (transform.position.z - transform.parent.position.z >= m_TriggerRange || transform.position.z - transform.parent.position.z <= -m_TriggerRange)
+                    {
+                        m_speed = -m_speed;
+                        notStuck = false;
+                    }
                 }
 
                 m_rb.velocity = new Vector3(0.0f, 0.0f, 1.0f) * m_speed;
