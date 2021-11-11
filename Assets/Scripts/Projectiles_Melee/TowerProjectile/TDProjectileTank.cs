@@ -57,43 +57,49 @@ public class TDProjectileTank : TDProjectile
 
     public override void DamageEnemy(float damage, TDEnemy _enemy)
     {
-        float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
-
-        if(Path2UG1 && AffinityCheck(_enemy.m_affinity) == 1.2f && m_PeirceCount == m_MaxPeirce)
+        if (_enemy.m_health > 0)
         {
-            trueDamage *= 2;
-        }
+            float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
 
-        if (Path2UG2 && m_PeirceCount == m_MaxPeirce)
-        {
-            _enemy.Push();
-        }
-
-        if(Path3UG1 && _enemy.m_StunImmuneTimer < 0 && !_enemy.m_Stunned)
-        {
-            _enemy.m_Stunned = true;
-
-            if(Path3UG3 && AffinityCheck(_enemy.m_affinity) == 0.8f)
+            if (Path2UG1 && AffinityCheck(_enemy.m_affinity) == 1.2f && m_PeirceCount == m_MaxPeirce)
             {
-                _enemy.m_StunTimer = 1.0f;
-            } else if(AffinityCheck(_enemy.m_affinity) == 0.8f)
-            {
-                _enemy.m_StunTimer = 0.0f;
-            } else if (Path3UG2 && AffinityCheck(_enemy.m_affinity) == 1.2f)
-            {
-                _enemy.m_StunTimer = 4.0f;
-            } else
-            {
-                _enemy.m_StunTimer = 2.0f;
+                trueDamage *= 2;
             }
 
-            _enemy.m_StunImmuneTimer = 5.0f;
+            if (Path2UG2 && m_PeirceCount == m_MaxPeirce)
+            {
+                _enemy.Push();
+            }
+
+            if (Path3UG1 && _enemy.m_StunImmuneTimer < 0 && !_enemy.m_Stunned)
+            {
+                _enemy.m_Stunned = true;
+
+                if (Path3UG3 && AffinityCheck(_enemy.m_affinity) == 0.8f)
+                {
+                    _enemy.m_StunTimer = 1.0f;
+                }
+                else if (AffinityCheck(_enemy.m_affinity) == 0.8f)
+                {
+                    _enemy.m_StunTimer = 0.0f;
+                }
+                else if (Path3UG2 && AffinityCheck(_enemy.m_affinity) == 1.2f)
+                {
+                    _enemy.m_StunTimer = 4.0f;
+                }
+                else
+                {
+                    _enemy.m_StunTimer = 2.0f;
+                }
+
+                _enemy.m_StunImmuneTimer = 5.0f;
+            }
+
+
+            _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+            _enemy.m_health -= trueDamage;
+            _enemy.m_Damage.Play();
         }
-
-
-        _enemy.m_resource.AddMoney(Mathf.Floor(trueDamage));
-        _enemy.m_health -= trueDamage;
-        _enemy.m_Damage.Play();
     }
 
     public void OnTriggerEnter(Collider other)

@@ -6,7 +6,7 @@ using Affinity = affinity.Affinity;
 
 public class Spikes : MonoBehaviour
 {
-    public float m_attack = 5;
+    public float m_attack = 1;
     public Affinity m_affinity = Affinity.MONSTER;
 
     [SerializeField] private int m_Resistance;
@@ -74,39 +74,45 @@ public class Spikes : MonoBehaviour
     //For road spikes
     public void SpikesDamage(TDEnemy _enemy)
     {
-        m_resource.AddMoney(Mathf.Floor(m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier));
-
-        Debug.Log(m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier);
-
-        _enemy.m_health -= m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
-        lowerResistance();
-        _enemy.m_Damage.Play();
-
-        if (m_Slow && !_enemy.m_SpeedDropped && !_enemy.m_PermaSpeedDrop)
+        if (_enemy.m_health > 0)
         {
-            if (Path1UG2)
+            float trueDamage = m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
+            m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+
+            //Debug.Log(m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier);
+
+            _enemy.m_health -= trueDamage;
+            lowerResistance();
+            _enemy.m_Damage.Play();
+
+            if (m_Slow && !_enemy.m_SpeedDropped && !_enemy.m_PermaSpeedDrop)
             {
-                float val = AffinityCheck(_enemy.m_affinity);
-                if (val == 1.2f)
+                if (Path1UG2)
                 {
-                    _enemy.m_agent.speed = _enemy.m_agent.speed / 3;
-                } else
+                    float val = AffinityCheck(_enemy.m_affinity);
+                    if (val == 1.2f)
+                    {
+                        _enemy.m_agent.speed = _enemy.m_agent.speed / 3;
+                    }
+                    else
+                    {
+                        _enemy.m_agent.speed = _enemy.m_agent.speed / 2;
+                    }
+                }
+                else
                 {
                     _enemy.m_agent.speed = _enemy.m_agent.speed / 2;
                 }
-            } else
-            {
-                _enemy.m_agent.speed = _enemy.m_agent.speed / 2;
-            }
 
-            if (Path1UG3)
-            {
-                _enemy.m_PermaSpeedDrop = true;
-                _enemy.m_moveSpeed = _enemy.m_agent.speed;
-            }
-            else
-            {
-                _enemy.m_SpeedDropped = true;
+                if (Path1UG3)
+                {
+                    _enemy.m_PermaSpeedDrop = true;
+                    _enemy.m_moveSpeed = _enemy.m_agent.speed;
+                }
+                else
+                {
+                    _enemy.m_SpeedDropped = true;
+                }
             }
         }
     }
