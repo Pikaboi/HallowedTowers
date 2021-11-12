@@ -13,7 +13,7 @@ public class TrickTreatHouse : MonoBehaviour
 
     [SerializeField] AudioSource m_Collect;
 
-    [SerializeField] TMPro.TMP_Text t;
+    public TMPro.TMP_Text t;
 
     //bool End = false;
     // Start is called before the first frame update
