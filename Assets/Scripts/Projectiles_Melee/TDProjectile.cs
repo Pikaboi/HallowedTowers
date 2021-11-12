@@ -67,10 +67,13 @@ public class TDProjectile : MonoBehaviour
 
     public virtual void DamageEnemy(float damage, TDEnemy _enemy)
     {
-        float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
-        _enemy.m_resource.AddMoney(trueDamage);
-        _enemy.m_health -= trueDamage;
-        _enemy.m_Damage.Play();
+        if (_enemy.m_health > 0)
+        {
+            float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
+            _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+            _enemy.m_health -= trueDamage;
+            _enemy.m_Damage.Play();
+        }
     }
 
     public virtual float AffinityCheck(Affinity _affinity)

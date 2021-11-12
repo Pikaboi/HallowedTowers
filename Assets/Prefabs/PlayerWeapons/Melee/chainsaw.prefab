@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 2149499176994517735}
   - component: {fileID: 5332463392136489637}
   - component: {fileID: 1954297119782801174}
+  - component: {fileID: 5415421732570195118}
   m_Layer: 14
   m_Name: chainsaw
   m_TagString: Untagged
@@ -228,6 +229,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.09583648, y: 0.28935918, z: 0.90794486}
   m_Center: {x: -0.00375247, y: 0.0018877536, z: -0.008197705}
+--- !u!54 &5415421732570195118
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630125702075443293}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5117521813073635963
 GameObject:
   m_ObjectHideFlags: 0

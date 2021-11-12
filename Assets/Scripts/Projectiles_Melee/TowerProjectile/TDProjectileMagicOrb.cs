@@ -115,32 +115,35 @@ public class TDProjectileMagicOrb : TDProjectile
 
     public void DamageEnemy(float damage, TDEnemy _enemy, bool _AOETarget)
     {
-        float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
-
-        if(_AOETarget && Path3UG3)
+        if (_enemy.m_health > 0)
         {
-            trueDamage = damage * 1.2f * _enemy.m_debuffMultiplier;
-        }
+            float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
 
-        if (Path2UG1)
-        {
-            if (_enemy.m_PermaSpeedDrop || _enemy.m_SpeedDropped || _enemy.m_Stunned)
+            if (_AOETarget && Path3UG3)
             {
-                trueDamage = trueDamage * 1.2f;
+                trueDamage = damage * 1.2f * _enemy.m_debuffMultiplier;
             }
-        }
 
-        if (Path2UG2)
-        {
-            if (_enemy.m_Stunned)
+            if (Path2UG1)
             {
-                _enemy.m_StunTimer += 0.5f;
+                if (_enemy.m_PermaSpeedDrop || _enemy.m_SpeedDropped || _enemy.m_Stunned)
+                {
+                    trueDamage = trueDamage * 1.2f;
+                }
             }
-        }
 
-        _enemy.m_resource.AddMoney(trueDamage);
-        _enemy.m_health -= trueDamage;
-        _enemy.m_Damage.Play();
+            if (Path2UG2)
+            {
+                if (_enemy.m_Stunned)
+                {
+                    _enemy.m_StunTimer += 0.5f;
+                }
+            }
+
+            _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+            _enemy.m_health -= trueDamage;
+            _enemy.m_Damage.Play();
+        }
     }
 }
 

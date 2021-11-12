@@ -253,12 +253,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Trigger: {fileID: 3762871568848428429}
   m_TriggerRange: 5
+  m_level: 1
   m_Projectile: {fileID: 140729626366969553, guid: a14d7f1db712dbb469ed4ad82e305d6d, type: 3}
   m_fireRate: 2
   m_attack: 30
+  m_atkBuff: 0
   m_aimer: {fileID: 8631756370807137534}
   m_InRange: 0
   m_RadiusViewer: {fileID: 0}
+  m_Affinity: 0
+  rotaterLookAt: {x: 0, y: 0, z: 0}
   m_resource: {fileID: 0}
   m_FireTimer: 0
 --- !u!1 &8631756370807137534
@@ -353,11 +357,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Trigger: {fileID: 0}
   m_TriggerRange: 15
+  m_level: 1
   m_Projectile: {fileID: 8889714604909872069, guid: 8866195a1d7c4bf439c0cdbb738bc694, type: 3}
-  m_fireRate: 0.2
+  m_fireRate: 0.5
   m_attack: 15
+  m_atkBuff: 0
   m_aimer: {fileID: 978501102155069436}
   m_InRange: 0
   m_RadiusViewer: {fileID: 1962429915241520912}
+  m_Affinity: 0
+  rotaterLookAt: {x: 0, y: 0, z: 0}
   m_resource: {fileID: 0}
   m_FireTimer: 0

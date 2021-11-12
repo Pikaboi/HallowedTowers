@@ -20,6 +20,8 @@ public class TDTower : MonoBehaviour
     public GameObject m_RadiusViewer;
     public Affinity m_Affinity;
 
+    public Vector3 rotaterLookAt;
+
     [SerializeField] PlayerResourceManager m_resource;
 
     public float m_FireTimer;
@@ -95,6 +97,7 @@ public class TDTower : MonoBehaviour
             {
                 Vector3 lookat = Obj.gameObject.transform.position - transform.position;
                 lookat.y = 0;
+                rotaterLookAt = lookat;
                 Quaternion Rotation = Quaternion.LookRotation(lookat);
                 transform.rotation = Quaternion.Slerp(transform.rotation, Rotation, 1);
 
@@ -105,7 +108,7 @@ public class TDTower : MonoBehaviour
 
     public virtual void levelUp()
     {
-        m_attack *= 2;
+        m_attack += 5;
         m_level++;
     }
 

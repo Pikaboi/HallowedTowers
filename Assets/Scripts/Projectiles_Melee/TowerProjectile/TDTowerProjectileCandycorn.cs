@@ -130,44 +130,48 @@ public class TDTowerProjectileCandycorn : TDProjectile
 
     public override void DamageEnemy(float damage, TDEnemy _enemy)
     {
-        float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
-
-        Debug.Log(trueDamage);
-
-        if (Path2UG2)
+        if (_enemy.m_health > 0)
         {
-            float val = AffinityCheck(_enemy.m_affinity);
+            float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
 
-            if(val == 1.2f)
+            if (Path2UG2)
             {
-                //Doubles money on advantage
-                _enemy.m_resource.AddMoney(trueDamage * 2);
-            } else if(val == 0.8f)
+                float val = AffinityCheck(_enemy.m_affinity);
+
+                if (val == 1.2f)
+                {
+                    //Doubles money on advantage
+                    _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 2.0f * 1.5f, _enemy.m_health * 2.0f * 1.5f)));
+                }
+                else if (val == 0.8f)
+                {
+                    //No Money on disadvantage
+                    _enemy.m_resource.AddMoney(0);
+                }
+                else
+                {
+                    _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+                }
+
+            }
+            else
             {
-                //No Money on disadvantage
-                _enemy.m_resource.AddMoney(0);
-            } else
-            {
-                _enemy.m_resource.AddMoney(trueDamage);
+                _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
             }
 
-        } else
-        {
-            _enemy.m_resource.AddMoney(trueDamage);
+            if (Path2UG3 && _enemy.m_affinity == Affinity.MONSTER)
+            {
+                _enemy.m_resource.AddMoney(5);
+            }
+
+            _enemy.m_health -= trueDamage;
+
+            if (_enemy.m_health <= 0 && Path2UG1)
+            {
+                _enemy.m_resource.AddMoney(25);
+            }
+
+            _enemy.m_Damage.Play();
         }
-
-        if(Path2UG3 && _enemy.m_affinity == Affinity.MONSTER)
-        {
-            _enemy.m_resource.AddMoney(5);
-        }
-
-        _enemy.m_health -= trueDamage;
-
-        if(_enemy.m_health <= 0 && Path2UG1)
-        {
-            _enemy.m_resource.AddMoney(25);
-        }
-
-        _enemy.m_Damage.Play();
     }
 }
