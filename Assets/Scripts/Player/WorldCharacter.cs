@@ -193,7 +193,10 @@ public class WorldCharacter : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                m_anim.SetTrigger("Attack");
+                if (m_anim != null)
+                {
+                    m_anim.SetTrigger("Attack");
+                }
                 switch (m_Equipped)
                 {
                     case WeaponType.UNARMED:
