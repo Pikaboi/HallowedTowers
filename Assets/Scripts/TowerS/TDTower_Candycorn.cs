@@ -97,4 +97,13 @@ public class TDTower_Candycorn : TDTower
             }
         }
     }
+
+    public override void levelUp()
+    {
+        if (m_level < 20)
+        {
+            m_attack += 1;
+            m_level++;
+        }
+    }
 }

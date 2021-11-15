@@ -108,8 +108,11 @@ public class TDTower : MonoBehaviour
 
     public virtual void levelUp()
     {
-        m_attack += 5;
-        m_level++;
+        if (m_level < 20)
+        {
+            m_attack += 5;
+            m_level++;
+        }
     }
 
     public void ShowViewer()

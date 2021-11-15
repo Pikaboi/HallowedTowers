@@ -56,6 +56,11 @@ public class WorldCharacter : MonoBehaviour
             }
         }
         m_maxat = m_attackTime;
+
+        if (m_Weapon != null)
+        {
+            SpawnWeapon(m_Weapon, new Vector3(90, 270, 0));
+        }
     }
 
     // Update is called once per frame

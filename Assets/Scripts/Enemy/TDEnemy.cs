@@ -47,6 +47,8 @@ public class TDEnemy : MonoBehaviour
     public bool m_Pushed = false;
     public float m_PushTimer = 1.0f;
 
+    public ParticleSystem m_Particle;
+
     //Animation
     public Animator m_anim;
 
@@ -72,6 +74,8 @@ public class TDEnemy : MonoBehaviour
         m_debuffMultiplier = 1.0f;
 
         aggressionTimer = maxAggressionTimer;
+
+        m_Particle.Stop();
     }
 
     // Update is called once per frame
@@ -346,6 +350,26 @@ public class TDEnemy : MonoBehaviour
         {
             m_agent.speed = m_agent.speed / 2;
             m_SpeedDropped = true;
+        }
+    }
+
+    public void ParticleColorChange(Affinity _affinity)
+    {
+        float val = AffinityCheck(_affinity);
+
+        if(val == 1.2f)
+        {
+            m_Particle.startColor = Color.green;
+        }
+
+        if(val == 0.8f)
+        {
+            m_Particle.startColor = Color.red;
+        }
+
+        if(val == 1.0f)
+        {
+            m_Particle.startColor = Color.gray;
         }
     }
 }
