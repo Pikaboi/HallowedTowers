@@ -61,6 +61,7 @@ public class WorldCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.M))
         {
             m_map.OnClick();
@@ -132,6 +133,7 @@ public class WorldCharacter : MonoBehaviour
         } else
         {
             m_Equipped = WeaponType.RANGE;
+            m_Weapon.SetActive(true);
         }
     }
 
@@ -193,7 +195,10 @@ public class WorldCharacter : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                m_anim.SetTrigger("Attack");
+                if (m_anim != null)
+                {
+                    m_anim.SetTrigger("Attack");
+                }
                 switch (m_Equipped)
                 {
                     case WeaponType.UNARMED:
