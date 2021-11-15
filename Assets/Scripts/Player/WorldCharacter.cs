@@ -61,6 +61,7 @@ public class WorldCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.M))
         {
             m_map.OnClick();
@@ -132,6 +133,7 @@ public class WorldCharacter : MonoBehaviour
         } else
         {
             m_Equipped = WeaponType.RANGE;
+            m_Weapon.SetActive(true);
         }
     }
 
