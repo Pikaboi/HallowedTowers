@@ -61,6 +61,7 @@ public class TDTowerDragon : TDTower
         if(Vector3.Distance(transform.position, origin) < 1)
         {
             changed = false;
+            circling = true;
         }
     }
 
@@ -132,13 +133,17 @@ public class TDTowerDragon : TDTower
                 transform.forward = m_rb.velocity;
                 break;
             case FlightPath.CIRCLE:
-                if ((transform.position.x - transform.parent.position.x) < m_TriggerRange && circling == true)
+                if (circling == true)
                 {
                     m_rb.velocity = new Vector3(1.0f, 0.0f, 0.0f) * m_speed;
-                }
+
+                    if(Mathf.Abs(transform.position.x - transform.parent.position.x) > m_TriggerRange)
+                    {
+                        circling = false;
+                    }
+                } 
                 else
                 {
-                    circling = false;
                     m_rb.velocity = Vector3.zero;
                     transform.RotateAround(transform.parent.position, Vector3.up, 20 * Time.deltaTime);
                 }
