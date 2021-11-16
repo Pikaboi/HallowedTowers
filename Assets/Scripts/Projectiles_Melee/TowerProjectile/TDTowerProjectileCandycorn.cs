@@ -165,6 +165,8 @@ public class TDTowerProjectileCandycorn : TDProjectile
             }
 
             _enemy.m_health -= trueDamage;
+            _enemy.ParticleColorChange(m_Affinity);
+            _enemy.m_Particle.Play();
 
             if (_enemy.m_health <= 0 && Path2UG1)
             {

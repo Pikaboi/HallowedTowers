@@ -8,11 +8,14 @@ public class TDTower_LevelUp : MonoBehaviour
     [SerializeField] float m_UpgradePrice;
     PlayerResourceManager m_resource;
 
+    public bool isMax;
+
     // Start is called before the first frame update
     void Start()
     {
         //m_tower = gameObject.GetComponentInParent<TDTowerManager>().m_child.GetComponent<TDTower>();
         m_resource = FindObjectOfType<PlayerResourceManager>();
+        m_UpgradePrice = gameObject.GetComponentInParent<TDTowerManager>().m_cost;
     }
 
     // Update is called once per frame
@@ -24,12 +27,22 @@ public class TDTower_LevelUp : MonoBehaviour
 
     public void LevelUp()
     {
-        if(m_resource.m_Money >= m_UpgradePrice)
+        if(m_resource.m_Money >= m_UpgradePrice && m_tower.m_level < 20)
         {
             m_resource.SubMoney(m_UpgradePrice);
             gameObject.GetComponentInParent<TDTowerManager>().m_sellCost += m_UpgradePrice / 2;
-            m_UpgradePrice *= 2;
+            m_UpgradePrice = Mathf.Round(m_UpgradePrice * 1.2f);
             m_tower.levelUp();
         }
+
+        if(m_tower.m_level == 20)
+        {
+            isMax = true;
+        }
+    }
+
+    public float GetPrice()
+    {
+        return m_UpgradePrice;
     }
 }

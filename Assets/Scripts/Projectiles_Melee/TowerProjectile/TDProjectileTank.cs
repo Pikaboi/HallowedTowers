@@ -98,6 +98,8 @@ public class TDProjectileTank : TDProjectile
 
             _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
             _enemy.m_health -= trueDamage;
+            _enemy.ParticleColorChange(m_Affinity);
+            _enemy.m_Particle.Play();
             _enemy.m_Damage.Play();
         }
     }

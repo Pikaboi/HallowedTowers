@@ -56,6 +56,11 @@ public class WorldCharacter : MonoBehaviour
             }
         }
         m_maxat = m_attackTime;
+
+        if (m_Weapon != null)
+        {
+            SpawnWeapon(m_Weapon, new Vector3(90, 270, 0));
+        }
     }
 
     // Update is called once per frame
@@ -228,7 +233,10 @@ public class WorldCharacter : MonoBehaviour
 
     public void SpawnWeapon(GameObject _weapon, Vector3 m_rot)
     {
-        Destroy(m_Weapon);
+        if (m_Weapon != null)
+        {
+            Destroy(m_Weapon);
+        }
         m_Weapon = null;
         m_Weapon = Instantiate(_weapon, transform.position + transform.forward, Quaternion.Euler(m_rot.x, m_rot.y + transform.rotation.eulerAngles.y, m_rot.z - transform.rotation.eulerAngles.z));
         m_Weapon.transform.parent = transform;
