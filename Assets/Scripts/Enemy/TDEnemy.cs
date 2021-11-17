@@ -134,9 +134,17 @@ public class TDEnemy : MonoBehaviour
         {
             case TargetState.GOAL:
                 m_agent.destination = m_Destination.position;
+                if(m_anim != null)
+                {
+                    m_anim.SetBool("Attack", false);
+                }
                 break;
             case TargetState.PLAYER:
                 m_agent.destination = m_Player.transform.position;
+                if (m_anim != null)
+                {
+                    m_anim.SetBool("Attack", true);
+                }
                 break;
         }
 
