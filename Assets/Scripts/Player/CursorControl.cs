@@ -46,8 +46,6 @@ public class CursorControl : MonoBehaviour
         
         Physics.Raycast(r, out hit);
 
-        Debug.Log(hit.collider.gameObject.layer);
-
         if (hit.collider != null)
         {
             switch (hit.collider.gameObject.layer)
@@ -123,7 +121,7 @@ public class CursorControl : MonoBehaviour
             m_placable = false;
         }
 
-        m_Placer.transform.position = hit.point;
+        m_Placer.transform.position = hit.point + new Vector3(0.0f, 0.1f, 0.0f);
     }
 
     void DetectTowerInRange()
