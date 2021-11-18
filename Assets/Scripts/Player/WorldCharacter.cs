@@ -24,6 +24,8 @@ public class WorldCharacter : MonoBehaviour
 
     bool dashing = false;
 
+    public ParticleSystem m_BuffParticle;
+
     [SerializeField] private LayerMask m_mask;
     [SerializeField] private MapButton m_map;
     [SerializeField] private MapButton m_inventory;
@@ -75,6 +77,15 @@ public class WorldCharacter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             m_inventory.OnClick();
+        }
+
+        if (m_WeaponStats.m_atkBuff != 0 && m_BuffParticle.isStopped)
+        {
+            m_BuffParticle.Play();
+        }
+        else if (m_WeaponStats.m_atkBuff == 0)
+        {
+            m_BuffParticle.Stop();
         }
 
         if (m_health > 0)
