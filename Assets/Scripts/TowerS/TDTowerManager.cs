@@ -23,6 +23,7 @@ public class TDTowerManager : MonoBehaviour
     public int m_level;
 
     public ParticleSystem m_UGParticle;
+    public ParticleSystem m_BuffParticle;
 
     [SerializeField] PlayerResourceManager m_resource;
 
@@ -42,6 +43,13 @@ public class TDTowerManager : MonoBehaviour
     {
         m_child.GetComponent<TDTower>().SetAffinity(m_affinity);
         CopyStats();
+        if (m_child.GetComponent<TDTower>().m_atkBuff != 0 && m_BuffParticle.isStopped)
+        {
+            m_BuffParticle.Play();
+        } else if(m_child.GetComponent<TDTower>().m_atkBuff == 0)
+        {
+            m_BuffParticle.Stop();
+        }
     }
 
     public void newUpgrade(GameObject _upgradePrefab)
