@@ -48,6 +48,7 @@ public class TDEnemy : MonoBehaviour
     public float m_PushTimer = 1.0f;
 
     public ParticleSystem m_Particle;
+    [SerializeField] ParticleSystem.MainModule m_main;
 
     //Animation
     public Animator m_anim;
@@ -74,6 +75,8 @@ public class TDEnemy : MonoBehaviour
         m_debuffMultiplier = 1.0f;
 
         aggressionTimer = maxAggressionTimer;
+
+        m_main = m_Particle.main;
 
         m_Particle.Stop();
     }
@@ -365,19 +368,19 @@ public class TDEnemy : MonoBehaviour
     {
         float val = AffinityCheck(_affinity);
 
-        if(val == 1.2f)
+        if (val == 1.2f)
         {
-            m_Particle.startColor = Color.green;
+            m_main.startColor = Color.green;
         }
 
         if(val == 0.8f)
         {
-            m_Particle.startColor = Color.red;
+            m_main.startColor = Color.red;
         }
 
         if(val == 1.0f)
         {
-            m_Particle.startColor = Color.gray;
+            m_main.startColor = Color.gray;
         }
     }
 }

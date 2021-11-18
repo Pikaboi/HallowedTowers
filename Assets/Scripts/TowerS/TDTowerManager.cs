@@ -22,6 +22,8 @@ public class TDTowerManager : MonoBehaviour
     public float m_attack;
     public int m_level;
 
+    public ParticleSystem m_UGParticle;
+
     [SerializeField] PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class TDTowerManager : MonoBehaviour
         m_resource = FindObjectOfType<PlayerResourceManager>();
         m_sellCost = m_cost / 2;
         m_UpgradeUI.SetActive(false);
+        m_UGParticle.Play();
     }
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public class TDTowerManager : MonoBehaviour
         m_child = Instantiate(_upgradePrefab, transform.position, transform.rotation);
         m_child.transform.parent = gameObject.transform;
         PassStats();
+        m_UGParticle.Play();
     }
 
     public void showRange()

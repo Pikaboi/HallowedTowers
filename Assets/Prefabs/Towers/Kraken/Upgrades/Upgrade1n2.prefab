@@ -91,14 +91,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Trigger: {fileID: 0}
   m_TriggerRange: 12
+  m_level: 1
   m_Projectile: {fileID: 8889714604909872069, guid: 8866195a1d7c4bf439c0cdbb738bc694, type: 3}
   m_fireRate: 0.8
   m_attack: 20
+  m_atkBuff: 0
   m_aimer: {fileID: 3856336770611661307}
   m_InRange: 0
   m_RadiusViewer: {fileID: 8588046952676416515}
+  m_Affinity: 0
+  rotaterLookAt: {x: 0, y: 0, z: 0}
   m_resource: {fileID: 0}
   m_FireTimer: 0
+  AimPos: {x: 0, y: 0, z: 0}
+  lr: {fileID: 0}
 --- !u!1 &8588046952676416515
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +164,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 26edf5ca87064a24680c0c7b991b0cc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

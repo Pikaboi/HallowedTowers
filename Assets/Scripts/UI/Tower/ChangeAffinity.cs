@@ -34,6 +34,7 @@ public class ChangeAffinity : MonoBehaviour
             m_manager.m_affinity = m_affinity;
             m_resource.SubMoney(m_upgradePrice);
             m_PriceTag.UpdatePrice();
+            m_manager.m_UGParticle.Play();
         }
     }
 }

@@ -33,6 +33,7 @@ public class TDTower_LevelUp : MonoBehaviour
             gameObject.GetComponentInParent<TDTowerManager>().m_sellCost += m_UpgradePrice / 2;
             m_UpgradePrice = Mathf.Round(m_UpgradePrice * 1.2f);
             m_tower.levelUp();
+            gameObject.GetComponentInParent<TDTowerManager>().m_UGParticle.Play();
         }
 
         if(m_tower.m_level == 20)
