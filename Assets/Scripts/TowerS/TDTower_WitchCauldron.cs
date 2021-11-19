@@ -72,7 +72,7 @@ public class TDTower_WitchCauldron : TDTower
     {
         if(other.GetComponent<TDEnemy>() != null)
         {
-            other.GetComponent<TDEnemy>().Debuff(m_attack, m_Affinity);
+            other.GetComponent<TDEnemy>().Debuff(m_attack + 1, m_Affinity);
         }
 
         if(other.gameObject.tag == "Player")

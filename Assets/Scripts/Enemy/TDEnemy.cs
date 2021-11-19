@@ -47,6 +47,7 @@ public class TDEnemy : MonoBehaviour
     public bool m_Pushed = false;
     public float m_PushTimer = 1.0f;
 
+    public ParticleSystem m_debuff;
     public ParticleSystem m_Particle;
     [SerializeField] ParticleSystem.MainModule m_main;
 
@@ -90,6 +91,15 @@ public class TDEnemy : MonoBehaviour
         DoTControl();
         ControlSpeedDrop();
         CheckDeath();
+
+        if (m_debuffMultiplier != 1.0f && m_debuff.isStopped)
+        {
+            m_debuff.Play();
+        }
+        else if (m_debuffMultiplier == 1.0f)
+        {
+            m_debuff.Stop();
+        }
     }
 
     public void PushControl()
