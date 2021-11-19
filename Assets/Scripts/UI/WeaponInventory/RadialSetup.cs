@@ -30,14 +30,22 @@ public class RadialSetup : MonoBehaviour
     // Update is called once per frame
     public void OnClick()
     {
-        if(m_equipper != null || m_equipper.m_Weapon == m_Radial.m_Weapon)
+        if(m_equipper != null)
         {
             CheckForWeaponOnRadial(m_equipper.m_Weapon);
             m_Radial.m_Weapon = m_equipper.m_Weapon;
             m_Radial.m_rot = m_equipper.m_rot;
 
-            m_equipper = null;
-            m_Configure = false;
+
+            RadialSetup[] radials = FindObjectsOfType<RadialSetup>();
+
+            foreach (RadialSetup r in radials)
+            {
+                r.m_equipper = null;
+                r.m_Configure = false;
+            }
+            //m_equipper = null;
+            //m_Configure = false;
         }
     }
 
