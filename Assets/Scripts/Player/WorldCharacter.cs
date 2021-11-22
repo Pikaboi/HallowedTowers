@@ -29,6 +29,7 @@ public class WorldCharacter : MonoBehaviour
     public AudioSource m_weaponSFX;
     public AudioSource m_oof;
     public AudioSource m_dead;
+    public AudioSource m_respawn;
 
     [SerializeField] private LayerMask m_mask;
     [SerializeField] private MapButton m_map;
@@ -137,6 +138,7 @@ public class WorldCharacter : MonoBehaviour
 
     void Respawn()
     {
+        m_respawn.Play();
         m_health = m_maxHealth;
         transform.position = SpawnPoint.transform.position;
         respawnTimer = maxRespawnTimer;
