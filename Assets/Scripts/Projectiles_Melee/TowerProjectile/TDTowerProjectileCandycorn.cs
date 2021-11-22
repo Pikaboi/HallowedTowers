@@ -173,7 +173,14 @@ public class TDTowerProjectileCandycorn : TDProjectile
                 _enemy.m_resource.AddMoney(25);
             }
 
-            _enemy.m_Damage.Play();
+            if (_enemy.m_health > 0)
+            {
+                _enemy.m_Damage.Play();
+            }
+            else
+            {
+                _enemy.m_Dead.Play();
+            }
         }
     }
 }

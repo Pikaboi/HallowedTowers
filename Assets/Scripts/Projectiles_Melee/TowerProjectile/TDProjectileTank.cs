@@ -100,7 +100,15 @@ public class TDProjectileTank : TDProjectile
             _enemy.m_health -= trueDamage;
             _enemy.ParticleColorChange(m_Affinity);
             _enemy.m_Particle.Play();
-            _enemy.m_Damage.Play();
+
+            if (_enemy.m_health > 0)
+            {
+                _enemy.m_Damage.Play();
+            }
+            else
+            {
+                _enemy.m_Dead.Play();
+            }
         }
     }
 

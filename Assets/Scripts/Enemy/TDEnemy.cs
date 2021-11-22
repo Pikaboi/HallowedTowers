@@ -62,6 +62,8 @@ public class TDEnemy : MonoBehaviour
 
     public AudioSource m_Damage;
 
+    public AudioSource m_Dead;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -221,7 +223,7 @@ public class TDEnemy : MonoBehaviour
         {
             if (m_anim == null)
             {
-                if (!m_Damage.isPlaying)
+                if (!m_Dead.isPlaying)
                 {
                     Destroy(gameObject);
                 }
@@ -276,6 +278,11 @@ public class TDEnemy : MonoBehaviour
             m_health -= DOTDamage;
             m_Damage.Play();
             dotTimer = 1.0f;
+
+            if(m_health <= 0)
+            {
+                m_Dead.Play();
+            }
         }
     }
 
@@ -360,7 +367,7 @@ public class TDEnemy : MonoBehaviour
             {
                 m_resource.AddMoney(Mathf.Floor(m_health * 1.5f));
                 m_health = 0;
-                m_Damage.Play();
+                m_Dead.Play();
             }
         }
     }

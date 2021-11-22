@@ -83,7 +83,14 @@ public class Spikes : MonoBehaviour
 
             _enemy.m_health -= trueDamage;
             lowerResistance();
-            _enemy.m_Damage.Play();
+            if (_enemy.m_health > 0)
+            {
+                _enemy.m_Damage.Play();
+            }
+            else
+            {
+                _enemy.m_Dead.Play();
+            }
 
             if (m_Slow && !_enemy.m_SpeedDropped && !_enemy.m_PermaSpeedDrop)
             {

@@ -55,7 +55,14 @@ public class TDMelee : MonoBehaviour
         float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
         _enemy.m_resource.AddMoney(Mathf.Floor(trueDamage * 1.5f));
         _enemy.m_health -= trueDamage;
-        _enemy.m_Damage.Play();
+        if (_enemy.m_health > 0)
+        {
+            _enemy.m_Damage.Play();
+        }
+        else
+        {
+            _enemy.m_Dead.Play();
+        }
     }
 
     public virtual float AffinityCheck(Affinity _affinity)
