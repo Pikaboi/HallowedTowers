@@ -13,6 +13,7 @@ public class PlayerWeapon : MonoBehaviour
     public GameObject Bullet;
     public float m_BulletRange;
     public Affinity m_Affinity;
+    public AudioClip m_audioClip;
 
     public virtual void OnCollisionEnter(Collision collision)
     {

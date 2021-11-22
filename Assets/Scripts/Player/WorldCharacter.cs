@@ -26,6 +26,10 @@ public class WorldCharacter : MonoBehaviour
 
     public ParticleSystem m_BuffParticle;
 
+    public AudioSource m_weaponSFX;
+    public AudioSource m_oof;
+    public AudioSource m_dead;
+
     [SerializeField] private LayerMask m_mask;
     [SerializeField] private MapButton m_map;
     [SerializeField] private MapButton m_inventory;
@@ -186,6 +190,14 @@ public class WorldCharacter : MonoBehaviour
             if(collision.gameObject.GetComponent<TDEnemy>().m_targetState == TDEnemy.TargetState.PLAYER)
             {
                 m_health -= collision.gameObject.GetComponent<TDEnemy>().m_attackPower;
+
+                if(m_health <= 0)
+                {
+                    m_dead.Play();
+                } else
+                {
+                    m_oof.Play();
+                }
             }
         }
     }
@@ -224,9 +236,20 @@ public class WorldCharacter : MonoBehaviour
                         //Weapon appears and attacks in front
                         m_Weapon.SetActive(true);
                         m_attack = true;
+
+                        if (m_weaponSFX.clip != null)
+                        {
+                            m_weaponSFX.Play();
+                        }
+
                         break;
                     case WeaponType.RANGE:
-                        if(m_WeaponStats.Bullet != null)
+                        if (m_weaponSFX != null)
+                        {
+                            m_weaponSFX.Play();
+                        }
+
+                        if (m_WeaponStats.Bullet != null)
                         {
                             GameObject b = Instantiate(m_WeaponStats.Bullet, transform.position, transform.rotation);
 
@@ -252,6 +275,7 @@ public class WorldCharacter : MonoBehaviour
         m_Weapon = Instantiate(_weapon, transform.position + transform.forward, Quaternion.Euler(m_rot.x, m_rot.y + transform.rotation.eulerAngles.y, m_rot.z - transform.rotation.eulerAngles.z));
         m_Weapon.transform.parent = transform;
         m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
+        m_weaponSFX.clip = m_WeaponStats.m_audioClip;
         m_Weapon.SetActive(false);
     }
 
