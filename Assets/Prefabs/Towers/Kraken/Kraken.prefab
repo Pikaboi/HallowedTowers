@@ -4961,15 +4961,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Change Aim
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
+  m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278254079
+  m_fontColor: {r: 1, g: 0.9783717, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5127,8 +5127,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9b6ae35888714054fb83033b18e9da74, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10119,6 +10119,14 @@ PrefabInstance:
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 7966081809505972125, guid: b916f4549d68a1f4ab1583116a7f2a84, type: 3}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7273354565767627912}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseUpgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
       value: 0
@@ -10147,6 +10155,14 @@ PrefabInstance:
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 7966081809505972125, guid: b916f4549d68a1f4ab1583116a7f2a84, type: 3}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3754763056187863459}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseUpgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
@@ -10171,12 +10187,53 @@ PrefabInstance:
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 7966081809505972125, guid: b916f4549d68a1f4ab1583116a7f2a84, type: 3}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1888063518563441608}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseUpgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 7966081809505972125, guid: b916f4549d68a1f4ab1583116a7f2a84, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+--- !u!114 &3754763056187863459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 1974060451861732688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7273354565767627912 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 1974060451861732688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1888063518563441608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 1974060451861732688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3632162232599196656 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2958106068400975520, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
@@ -10261,13 +10318,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a747aad8377b9384299175f2e269d0ef, type: 3}
---- !u!4 &6128380272123585833 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a747aad8377b9384299175f2e269d0ef, type: 3}
-  m_PrefabInstance: {fileID: 5946677982135141058}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6793594068929642387 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a747aad8377b9384299175f2e269d0ef, type: 3}
+  m_PrefabInstance: {fileID: 5946677982135141058}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6128380272123585833 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a747aad8377b9384299175f2e269d0ef, type: 3}
   m_PrefabInstance: {fileID: 5946677982135141058}
   m_PrefabAsset: {fileID: 0}

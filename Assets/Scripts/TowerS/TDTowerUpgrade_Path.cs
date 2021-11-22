@@ -41,6 +41,9 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
                 }
             }
 
+            GetComponent<Button>().enabled = false;
+            m_sound.Play();
+
             if (m_successor != null)
             {
                 m_successor.gameObject.GetComponent<Button>().enabled = true;

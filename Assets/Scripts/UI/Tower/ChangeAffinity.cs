@@ -14,6 +14,8 @@ public class ChangeAffinity : MonoBehaviour
     PlayerResourceManager m_resource;
     public float m_upgradePrice;
 
+    public AudioSource m_Sound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,7 @@ public class ChangeAffinity : MonoBehaviour
             m_resource.SubMoney(m_upgradePrice);
             m_PriceTag.UpdatePrice();
             m_manager.m_UGParticle.Play();
+            m_Sound.Play();
         }
     }
 }

@@ -18,6 +18,8 @@ public class TDTowerUpgrade : MonoBehaviour
     public PlayerResourceManager m_resource;
     public TDTowerManager m_manager;
 
+    public AudioSource m_sound;
+
     public Sprite m_Locked;
 
     // Start is called before the first frame update
@@ -42,12 +44,14 @@ public class TDTowerUpgrade : MonoBehaviour
     {
         if (m_resource.m_Money >= m_UGCost)
         {
+            Debug.LogWarning("wahoo");
             m_manager.newUpgrade(m_UGPrefab);
             m_UGBought = true;
             GetComponent<Image>().sprite = m_Locked;
             m_resource.SubMoney(m_UGCost);
             m_manager.m_sellCost += m_UGCost / 2;
             GetComponent<Button>().enabled = false;
+            m_sound.Play();
             if (m_successor != null)
             {
                 m_successor.gameObject.GetComponent<UnityEngine.UI.Button>().enabled = true;

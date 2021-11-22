@@ -8,6 +8,8 @@ public class TDTower_LevelUp : MonoBehaviour
     [SerializeField] float m_UpgradePrice;
     PlayerResourceManager m_resource;
 
+    public AudioSource m_sound;
+
     public bool isMax;
 
     // Start is called before the first frame update
@@ -34,6 +36,7 @@ public class TDTower_LevelUp : MonoBehaviour
             m_UpgradePrice = Mathf.Round(m_UpgradePrice * 1.2f);
             m_tower.levelUp();
             gameObject.GetComponentInParent<TDTowerManager>().m_UGParticle.Play();
+            m_sound.Play();
         }
 
         if(m_tower.m_level == 20)

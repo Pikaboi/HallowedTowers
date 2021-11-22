@@ -11767,6 +11767,14 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Shell Shock
       objectReference: {fileID: 0}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4761933106922560004}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseUpgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
       value: 200
@@ -11815,6 +11823,14 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Critical Stun
       objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1368659448722583343}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseUpgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
@@ -11847,6 +11863,14 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Peircing Boost
       objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4383781838239827268}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseUpgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
       value: 200
@@ -11871,3 +11895,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
   m_PrefabInstance: {fileID: 4431726866681594844}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4383781838239827268 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 4431726866681594844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1368659448722583343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 4431726866681594844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4761933106922560004 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 4431726866681594844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

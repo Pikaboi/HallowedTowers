@@ -10059,6 +10059,14 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Recipe Sharing
       objectReference: {fileID: 0}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2913105629339732102}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseUpgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 3238193899320881760, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -10150,6 +10158,14 @@ PrefabInstance:
     - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGString
       value: Candy Complex
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8684860140326862253}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseUpgrade
       objectReference: {fileID: 0}
     - target: {fileID: 5389807259010670435, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
@@ -10263,6 +10279,14 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Monster Buster
       objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6246198666591131590}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PurchaseUpgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
       value: 200
@@ -10287,3 +10311,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
   m_PrefabInstance: {fileID: 6338832788777226590}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6246198666591131590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 6338832788777226590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2913105629339732102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 6338832788777226590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8684860140326862253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+  m_PrefabInstance: {fileID: 6338832788777226590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621253dd1a580d46a171682d2a84127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
