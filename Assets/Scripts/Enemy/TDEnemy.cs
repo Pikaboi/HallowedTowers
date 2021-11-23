@@ -221,23 +221,10 @@ public class TDEnemy : MonoBehaviour
     {
         if (m_health <= 0.0f)
         {
-            if (m_anim == null)
+            m_agent.SetDestination(transform.position);
+            if (!m_Dead.isPlaying)
             {
-                if (!m_Dead.isPlaying)
-                {
-                    Destroy(gameObject);
-                }
-            }
-            else
-            {
-                m_anim.SetTrigger("Die");
-                m_agent.enabled = false;
-                Destroy(gameObject.GetComponent<Rigidbody>());
-
-                if (m_anim.GetCurrentAnimatorStateInfo(0).IsName("Death") && m_anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
-                {
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject);
             }
         }
     }
