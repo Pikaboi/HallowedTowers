@@ -17,7 +17,14 @@ public class WeaponEquipButton : MonoBehaviour
 
     private void Update()
     {
-        t.text = m_Weapon.name;
+        if (gameObject.tag == "InventoryEquip")
+        {
+            t.text = "Equip";
+        }
+        else
+        {
+            t.text = m_Weapon.name;
+        }
     }
 
     // Update is called once per frame
