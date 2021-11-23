@@ -181,6 +181,10 @@ public class WorldCharacter : MonoBehaviour
         if (dir != Vector3.zero)
         {
             transform.forward = dir;
+            m_anim.SetBool("Moving", true);
+        } else
+        {
+            m_anim.SetBool("Moving", false);
         }
 
     }
