@@ -90,6 +90,7 @@ public class Spikes : MonoBehaviour
             else
             {
                 _enemy.m_Dead.Play();
+                _enemy.m_deathParticle.Play();
             }
 
             if (m_Slow && !_enemy.m_SpeedDropped && !_enemy.m_PermaSpeedDrop)

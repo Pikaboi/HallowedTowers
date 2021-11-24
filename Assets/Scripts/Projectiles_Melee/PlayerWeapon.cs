@@ -14,6 +14,7 @@ public class PlayerWeapon : MonoBehaviour
     public float m_BulletRange;
     public Affinity m_Affinity;
     public AudioClip m_audioClip;
+    public ParticleSystem m_particle;
 
     public virtual void OnCollisionEnter(Collision collision)
     {

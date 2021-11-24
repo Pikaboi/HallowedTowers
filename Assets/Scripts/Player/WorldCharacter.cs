@@ -254,6 +254,10 @@ public class WorldCharacter : MonoBehaviour
                         {
                             m_weaponSFX.Play();
                         }
+                        if(m_WeaponStats.m_particle != null)
+                        {
+                            m_WeaponStats.m_particle.Play();
+                        }
 
                         if (m_WeaponStats.Bullet != null)
                         {

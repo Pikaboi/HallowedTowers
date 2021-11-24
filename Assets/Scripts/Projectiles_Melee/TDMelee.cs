@@ -62,6 +62,7 @@ public class TDMelee : MonoBehaviour
         else
         {
             _enemy.m_Dead.Play();
+            _enemy.m_deathParticle.Play();
         }
     }
 

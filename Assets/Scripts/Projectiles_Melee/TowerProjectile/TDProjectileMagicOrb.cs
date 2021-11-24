@@ -151,6 +151,7 @@ public class TDProjectileMagicOrb : TDProjectile
             else
             {
                 _enemy.m_Dead.Play();
+                _enemy.m_deathParticle.Play();
             }
         }
     }

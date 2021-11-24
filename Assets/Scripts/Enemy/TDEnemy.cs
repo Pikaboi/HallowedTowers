@@ -49,6 +49,7 @@ public class TDEnemy : MonoBehaviour
 
     public ParticleSystem m_debuff;
     public ParticleSystem m_Particle;
+    public ParticleSystem m_deathParticle;
     [SerializeField] ParticleSystem.MainModule m_main;
 
     //Animation
@@ -355,6 +356,7 @@ public class TDEnemy : MonoBehaviour
                 m_resource.AddMoney(Mathf.Floor(m_health * 1.5f));
                 m_health = 0;
                 m_Dead.Play();
+                m_deathParticle.Play();
             }
         }
     }
