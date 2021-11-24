@@ -275,7 +275,7 @@ public class WorldCharacter : MonoBehaviour
     {
         if (m_Weapon != null)
         {
-            Destroy(m_Weapon);
+            //Destroy(m_Weapon);
         }
         m_Weapon = null;
         m_Weapon = Instantiate(_weapon, transform.position + transform.forward, Quaternion.Euler(m_rot.x, m_rot.y + transform.rotation.eulerAngles.y, m_rot.z - transform.rotation.eulerAngles.z));
