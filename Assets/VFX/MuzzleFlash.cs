@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MuzzleFlash : MonoBehaviour{
-  //  public ParticleSystem muzzleFlash;
-	//private GunMaster gunMaster;
+    /*public ParticleSystem muzzleFlash;
+	private GunMaster gunMaster;
 
 
-
+	void Start()
 	{
 	  SetlnitialReferences();
 	  gunMaster.EventPlayerinput += PlayMuzzleFlash;
@@ -22,10 +22,10 @@ public class MuzzleFlash : MonoBehaviour{
 	}
 	void PlayMuzzleFlash()
 	{
-		if(muzzleFlash !=null)
+		if (muzzleFlash != null)
 		{
-			muzzleFlash.Play ();
-		}	
-	
+			muzzleFlash.Play();
+		}
+	}*/
 } 
-}
+
