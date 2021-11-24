@@ -25,6 +25,8 @@ public class TDTowerManager : MonoBehaviour
     public ParticleSystem m_UGParticle;
     public ParticleSystem m_BuffParticle;
 
+    public ParticleSystem m_ShootParticle;
+
     [SerializeField] PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
