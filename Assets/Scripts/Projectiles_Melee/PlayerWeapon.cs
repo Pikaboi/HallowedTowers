@@ -15,6 +15,7 @@ public class PlayerWeapon : MonoBehaviour
     public Affinity m_Affinity;
     public AudioClip m_audioClip;
     public ParticleSystem m_particle;
+    public Transform shootpos;
 
     public virtual void OnCollisionEnter(Collision collision)
     {

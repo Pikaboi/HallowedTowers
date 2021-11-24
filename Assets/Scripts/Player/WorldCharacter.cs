@@ -261,7 +261,7 @@ public class WorldCharacter : MonoBehaviour
 
                         if (m_WeaponStats.Bullet != null)
                         {
-                            GameObject b = Instantiate(m_WeaponStats.Bullet, transform.position, transform.rotation);
+                            GameObject b = Instantiate(m_WeaponStats.Bullet, m_WeaponStats.shootpos.position, transform.rotation);
 
                             //We are using the same framework as the tower projectiles
                             b.GetComponent<TDProjectile>().InheritFromTower(m_WeaponStats.m_BulletRange, m_WeaponStats.m_Attack, m_WeaponStats.gameObject, m_WeaponStats.m_Affinity);
