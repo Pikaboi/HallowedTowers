@@ -9978,7 +9978,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b739a3f02ff77bf48b7636e64c3e3b4c, type: 2}
+  - {fileID: 2100000, guid: 081fa21de2f922648b151f601ecd9b7b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10247,6 +10247,7 @@ MonoBehaviour:
   m_level: 0
   m_UGParticle: {fileID: 4290859303445547935}
   m_BuffParticle: {fileID: 350434392320535262}
+  m_ShootParticle: {fileID: 0}
   m_resource: {fileID: 0}
 --- !u!1 &6941227285546164609
 GameObject:
@@ -10627,6 +10628,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0fe7e2891e437bd47886f0493025de06, type: 3}
+    - target: {fileID: 1108511341578172280, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 1421836654651908438, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -10643,6 +10648,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a592e08d0ae00264984195733bdedca2, type: 3}
+    - target: {fileID: 2526567149833242219, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10715,14 +10724,34 @@ PrefabInstance:
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 3812353760970851329, guid: 54f198dfab50f2e458ac41bde78f0ecc, type: 3}
+    - target: {fileID: 3337530439447059909, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 3397425952769461298, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b915482ed1631b3449060a443af474ea, type: 3}
+    - target: {fileID: 3398864317432060304, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 3812353760970851329, guid: 54f198dfab50f2e458ac41bde78f0ecc, type: 3}
+    - target: {fileID: 3664816668469840335, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762715541260667060, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149932997967361091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 4678595120660729125, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -10743,9 +10772,25 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PurchaseUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 6071125372898522560, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294870252994003099, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637857120214453591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776010868060641764, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
@@ -10759,6 +10804,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b915482ed1631b3449060a443af474ea, type: 3}
+    - target: {fileID: 7380101293606698778, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097777556459624931, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 33
+      objectReference: {fileID: 0}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
       value: 0
@@ -10779,6 +10832,10 @@ PrefabInstance:
       propertyPath: m_UGPrefab
       value: 
       objectReference: {fileID: 3812353760970851329, guid: 54f198dfab50f2e458ac41bde78f0ecc, type: 3}
+    - target: {fileID: 9202027933501354846, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
 --- !u!224 &8959163233789343810 stripped
