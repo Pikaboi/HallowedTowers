@@ -83,6 +83,10 @@ public class TDTower_Candycorn : TDTower
                 GameObject bullet = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
                 bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack + groupBonus + (m_attack * m_atkBuff), gameObject, m_Affinity);
                 m_FireTimer = m_fireRate;
+                if (GetComponentInParent<TDTowerManager>().m_ShootParticle != null)
+                {
+                    GetComponentInParent<TDTowerManager>().m_ShootParticle.Play();
+                }
             }
         }
 
