@@ -74,7 +74,14 @@ public class TDProjectileMagicOrb : TDProjectile
 
             if (Path1UG2)
             {
-                collision.gameObject.GetComponent<TDEnemy>().InflictDOT(m_inflictDOT, (m_attack / 2) * AffinityCheck(collision.gameObject.GetComponent<TDEnemy>().m_affinity));
+                if (collision.gameObject.GetComponent<TDEnemy>().BossBool && Path1UG3)
+                {
+                    collision.gameObject.GetComponent<TDEnemy>().InflictDOT(m_inflictDOT, (m_attack / 1.5f) * AffinityCheck(collision.gameObject.GetComponent<TDEnemy>().m_affinity));
+                }
+                else
+                {
+                    collision.gameObject.GetComponent<TDEnemy>().InflictDOT(m_inflictDOT, (m_attack / 2) * AffinityCheck(collision.gameObject.GetComponent<TDEnemy>().m_affinity));
+                }
             } else
             {
                 collision.gameObject.GetComponent<TDEnemy>().InflictDOT(m_inflictDOT, (m_attack / 2));
@@ -118,6 +125,14 @@ public class TDProjectileMagicOrb : TDProjectile
         if (_enemy.m_health > 0)
         {
             float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
+
+            if(Path2UG3 && _enemy.BossBool)
+            {
+                if(AffinityCheck(_enemy.m_affinity) == 1.2f)
+                {
+                    trueDamage = damage * 1.5f * _enemy.m_debuffMultiplier;
+                }
+            }
 
             if (_AOETarget && Path3UG3)
             {

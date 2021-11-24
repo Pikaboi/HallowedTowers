@@ -65,6 +65,8 @@ public class TDEnemy : MonoBehaviour
 
     public AudioSource m_Dead;
 
+    public bool BossBool;
+
     // Start is called before the first frame update
     public virtual void Start()
     {

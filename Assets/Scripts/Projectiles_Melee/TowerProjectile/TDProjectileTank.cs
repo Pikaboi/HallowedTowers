@@ -61,6 +61,11 @@ public class TDProjectileTank : TDProjectile
         {
             float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
 
+            if (Path2UG3 && _enemy.BossBool && m_PeirceCount == m_MaxPeirce)
+            {
+                trueDamage *= 3;
+            }
+
             if (Path2UG1 && AffinityCheck(_enemy.m_affinity) == 1.2f && m_PeirceCount == m_MaxPeirce)
             {
                 trueDamage *= 2;
