@@ -48,7 +48,7 @@ public class PlayerWeapon : MonoBehaviour
     public virtual void DamageEnemy(float damage, TDEnemy _enemy)
     {
         float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
-        _enemy.m_resource.AddMoney(trueDamage);
+        _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
         _enemy.m_health -= trueDamage;
         _enemy.ParticleColorChange(m_Affinity);
         _enemy.m_Particle.Play();

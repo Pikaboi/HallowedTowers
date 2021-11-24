@@ -70,7 +70,7 @@ public class TDProjectile : MonoBehaviour
         if (_enemy.m_health > 0)
         {
             float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
-            _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+            _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
             _enemy.m_health -= trueDamage;
             _enemy.ParticleColorChange(m_Affinity);
             _enemy.m_Particle.Play();

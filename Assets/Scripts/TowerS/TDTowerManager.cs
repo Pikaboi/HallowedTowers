@@ -32,6 +32,7 @@ public class TDTowerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_child = null;
         m_child = Instantiate(m_base, transform.position, transform.rotation);
         m_child.transform.parent = gameObject.transform;
         m_resource = FindObjectOfType<PlayerResourceManager>();

@@ -77,7 +77,7 @@ public class Spikes : MonoBehaviour
         if (_enemy.m_health > 0)
         {
             float trueDamage = m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
-            m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+            m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
 
             //Debug.Log(m_attack * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier);
 

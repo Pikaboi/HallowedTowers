@@ -141,7 +141,7 @@ public class TDTowerProjectileCandycorn : TDProjectile
                 if (val == 1.2f)
                 {
                     //Doubles money on advantage
-                    _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 2.0f * 1.5f, _enemy.m_health * 2.0f * 1.5f)));
+                    _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 2.0f * 1.5f, _enemy.m_health * 2.0f * 1.5f)));
                 }
                 else if (val == 0.8f)
                 {
@@ -150,13 +150,13 @@ public class TDTowerProjectileCandycorn : TDProjectile
                 }
                 else
                 {
-                    _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+                    _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
                 }
 
             }
             else
             {
-                _enemy.m_resource.AddMoney(Mathf.Floor(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+                _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
             }
 
             if (Path2UG3 && _enemy.m_affinity == Affinity.MONSTER)
