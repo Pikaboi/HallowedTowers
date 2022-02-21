@@ -9,6 +9,10 @@ public class WorldCharacter : MonoBehaviour
     public float m_health;
     [SerializeField] private float m_maxHealth;
 
+    //Health Recovery
+    public float recoveryTimer;
+    public float recoveryTimerMax = 2.0f;
+
     public float m_attackTime;
     float m_maxat;
     public bool m_attack = false;
@@ -205,6 +209,24 @@ public class WorldCharacter : MonoBehaviour
                     m_oof.Play();
                 }
             }
+        }
+    }
+
+    public void Recover()
+    {
+        recoveryTimer -= Time.deltaTime;
+        
+        if(recoveryTimer < 0)
+        {
+            if (m_health + 10 <= m_maxHealth)
+            {
+                m_health += 10;
+            } else
+            {
+                m_health = m_maxHealth;
+            }
+
+            recoveryTimer = recoveryTimerMax;
         }
     }
 

@@ -35,7 +35,7 @@ public class TDTower_GhostPirate : TDTower
                     angleStartSplit += m_angleSplit;
                 }
 
-                m_FireTimer = m_fireRate;
+                m_FireTimer = m_fireRate - (m_fireRate * m_fireRateBuff);
             }
         }
     }

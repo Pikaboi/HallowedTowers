@@ -45,8 +45,28 @@ public class TDMelee : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            DamageEnemy(m_attack, collision.gameObject.GetComponent<TDEnemy>());
-            collision.gameObject.GetComponent<TDEnemy>().InstantKill(m_CanOHKO);
+            float critChance = Critical(m_CanOHKO);
+            DamageEnemy(m_attack * critChance, collision.gameObject.GetComponent<TDEnemy>());
+        }
+    }
+
+    public float Critical(bool _inflict)
+    {
+        if (_inflict)
+        {
+            int rand = Random.Range(0, 99);
+
+            if (rand < 25)
+            {
+                return 3.0f;
+            }
+            else
+            {
+                return 1.0f;
+            }
+        } else
+        {
+            return 1.0f;
         }
     }
 

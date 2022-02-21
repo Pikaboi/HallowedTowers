@@ -8,6 +8,55 @@ public class TDTower_WitchCauldron : TDTower
     //m_Attack affects how its buffs work
     //Not how this tower attacks
 
+    public bool Path1UG1;
+    /// <summary>
+    /// Increases attack speed of towers in range
+    /// </summary>
+
+    public bool Path1UG2;
+    /// <summary>
+    /// Doubles the damage buff given to towers
+    /// </summary>
+
+    public bool Path1UG3;
+    /// <summary>
+    /// Decreases cost of tower upgrades based on current level
+    /// </summary>
+
+    public bool Path2UG1;
+    /// <summary>
+    /// Further boost player attack buff by 50%
+    /// </summary>
+
+    public bool Path2UG2;
+    /// <summary>
+    /// Players gradually recover health in the range of the cauldron
+    /// </summary>
+
+    public bool Path2UG3;
+    /// <summary>
+    /// Players attacks get a critical chance
+    /// Reapers Scythes critical chance is higher
+    /// (x3 Multiplier to that one attack)
+    /// </summary>
+
+    public bool Path3UG1;
+    /// <summary>
+    /// Increases debuff strength to enemies by 50%
+    /// Allows towers and players to do more damage
+    /// </summary>
+
+    public bool Path3UG2;
+    /// <summary>
+    /// Enemies with a disadvantage are slowed down
+    /// </summary>
+
+    public bool Path3UG3;
+    /// <summary>
+    /// Enemies with a disadvantage take a small DOT based off the attack of the cauldron
+    /// May need to be buffed later?
+    /// </summary>
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -25,7 +74,17 @@ public class TDTower_WitchCauldron : TDTower
             {
                 if (c.gameObject.GetComponent<TDTower>().m_Affinity == m_Affinity && c.gameObject.GetComponent<TDTower_WitchCauldron>() == null)
                 {
-                    c.gameObject.GetComponent<TDTower>().Buff(m_attack);
+                    if (Path1UG1)
+                    {
+                        //UG1 adds the fire rate buff, based on m_attack as a decrease
+                        if (Path1UG2)
+                        {
+                            //This increases damage boost by 2x
+                            c.gameObject.GetComponent<TDTower>().Buff(m_attack * 2.0f, m_attack);
+                        }
+                        c.gameObject.GetComponent<TDTower>().Buff(m_attack, m_attack);
+                    }
+                    c.gameObject.GetComponent<TDTower>().Buff(m_attack, 0);
                 }
             }
         }
@@ -72,14 +131,52 @@ public class TDTower_WitchCauldron : TDTower
     {
         if(other.GetComponent<TDEnemy>() != null)
         {
-            other.GetComponent<TDEnemy>().Debuff(m_attack + 1, m_Affinity);
+            if (Path3UG1)
+            {
+                //Increase the debuff by 20% when upgrade is active
+                other.GetComponent<TDEnemy>().Debuff((m_attack * 1.5f) + 1, m_Affinity);
+            }
+            else
+            {
+                other.GetComponent<TDEnemy>().Debuff(m_attack + 1, m_Affinity);
+            }
+
+            if (other.GetComponent<TDEnemy>().AffinityCheck(m_Affinity) == 1.2f)
+            {
+                if (Path3UG2)
+                {
+                    other.GetComponent<TDEnemy>().SlowDebuff();
+                }
+
+                if (Path3UG3 && other.GetComponent<TDEnemy>().DOTDamage == 0)
+                {
+                    other.GetComponent<TDEnemy>().InflictDOT(true, m_attack);
+                }
+            }
         }
 
         if(other.gameObject.tag == "Player")
         {
             if (other.GetComponent<WorldCharacter>().m_WeaponStats != null)
             {
-                other.GetComponent<WorldCharacter>().m_WeaponStats.Buff(m_attack, m_Affinity);
+                if (Path2UG1)
+                {
+                    other.GetComponent<WorldCharacter>().m_WeaponStats.Buff(m_attack * 1.5f, m_Affinity);
+                }
+                else
+                {
+                    other.GetComponent<WorldCharacter>().m_WeaponStats.Buff(m_attack, m_Affinity);
+                }
+
+                if (Path2UG3)
+                {
+                    other.GetComponent<WorldCharacter>().m_WeaponStats.m_Critical = true;
+                }
+            }
+
+            if (Path2UG2)
+            {
+                other.GetComponent<WorldCharacter>().Recover();
             }
         }
     }
@@ -96,6 +193,8 @@ public class TDTower_WitchCauldron : TDTower
             if (other.GetComponent<WorldCharacter>().m_WeaponStats != null)
             {
                 other.GetComponent<WorldCharacter>().m_WeaponStats.Debuff();
+
+                other.GetComponent<WorldCharacter>().m_WeaponStats.m_Critical = false;
             }
         }
     }

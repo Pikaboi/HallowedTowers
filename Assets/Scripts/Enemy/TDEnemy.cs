@@ -201,6 +201,9 @@ public class TDEnemy : MonoBehaviour
             if (AfflictionTimer > 0.0f)
             {
                 Affliction();
+            } else
+            {
+                DOTDamage = 0;
             }
         }
 
@@ -344,22 +347,6 @@ public class TDEnemy : MonoBehaviour
             DOTDamage = attack;
             AfflictionTimer = AfflictionTime;
             dotTimer = 1.0f;
-        }
-    }
-
-    public void InstantKill(bool _inflict)
-    {
-        if (_inflict)
-        {
-            int rand = Random.Range(0, 99);
-
-            if(rand < 25)
-            {
-                m_resource.AddMoney(Mathf.Floor(m_health * 1.5f));
-                m_health = 0;
-                m_Dead.Play();
-                m_deathParticle.Play();
-            }
         }
     }
 
