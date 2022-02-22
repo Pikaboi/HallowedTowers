@@ -14,6 +14,52 @@ public class TDTowerDragon : TDTower
         PURSUIT
     }
 
+    public bool Path1UG1;
+    /// <summary>
+    /// Unlock Pursuit
+    /// </summary>
+
+    public bool Path1UG2;
+    /// <summary>
+    /// Disadvantage damage is increased
+    /// </summary>
+
+    public bool Path1UG3;
+    /// <summary>
+    /// Toggle to prioritize Bosses
+    /// Multitarget?
+    /// </summary>
+
+    public bool Path2UG1;
+    /// <summary>
+    /// Circle unlocked
+    /// </summary>
+
+    public bool Path2UG2;
+    /// <summary>
+    /// Infinite and Figure 8 unlocked
+    /// </summary>
+
+    public bool Path2UG3;
+    /// <summary>
+    /// Increased trigger range
+    /// </summary>
+    /// 
+    public bool Path3UG1;
+    /// <summary>
+    /// Range is decreased but attack is stronger
+    /// </summary>
+
+    public bool Path3UG2;
+    /// <summary>
+    /// Attack inflicts stun
+    /// </summary>
+
+    public bool Path3UG3;
+    /// <summary>
+    /// Increased boss damage
+    /// </summary>
+
     public bool pursuit;
         
     public FlightPath m_flightPath;
