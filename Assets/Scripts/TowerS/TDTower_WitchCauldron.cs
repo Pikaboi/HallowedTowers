@@ -85,6 +85,15 @@ public class TDTower_WitchCauldron : TDTower
                         c.gameObject.GetComponent<TDTower>().Buff(m_attack, m_attack);
                     }
                     c.gameObject.GetComponent<TDTower>().Buff(m_attack, 0);
+
+                    if (Path1UG3)
+                    {
+                        if (c.gameObject.GetComponent<TDTower>().GetComponentInParent<TDTowerManager>().m_UGDiscount < ((float)m_level / 100.0f))
+                        {
+                            c.gameObject.GetComponent<TDTower>().GetComponentInParent<TDTowerManager>().m_UGDiscount = ((float)m_level / 100.0f);
+                        }
+                    }
+
                 }
             }
         }
@@ -102,6 +111,11 @@ public class TDTower_WitchCauldron : TDTower
                 if (c.gameObject.GetComponent<TDTower>().m_Affinity == m_Affinity && c.gameObject.GetComponent<TDTower_WitchCauldron>() == null)
                 {
                     c.gameObject.GetComponent<TDTower>().Debuff();
+                }
+
+                if (Path1UG3)
+                {
+                    c.gameObject.GetComponent<TDTower>().GetComponentInParent<TDTowerManager>().m_UGDiscount = 0;
                 }
             }
 
