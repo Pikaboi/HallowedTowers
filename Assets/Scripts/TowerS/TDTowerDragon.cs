@@ -10,9 +10,12 @@ public class TDTowerDragon : TDTower
         VERT,
         CIRCLE,
         FIGURE8,
-        INFINITE
+        INFINITE,
+        PURSUIT
     }
 
+    public bool pursuit;
+        
     public FlightPath m_flightPath;
 
     public Rigidbody m_rb;
@@ -147,6 +150,32 @@ public class TDTowerDragon : TDTower
                     m_rb.velocity = Vector3.zero;
                     transform.RotateAround(transform.parent.position, Vector3.up, 20 * Time.deltaTime);
                 }
+                break;
+            case FlightPath.FIGURE8:
+                Vector3 origin = new Vector3(transform.parent.position.x, transform.position.y, transform.parent.position.z);
+                //Base code from: https://gamedev.stackexchange.com/questions/43691/how-can-i-move-an-object-in-an-infinity-or-figure-8-trajectory
+                float scale = 2.0f / (3.0f - Mathf.Cos(2 * Time.time));
+                float x = scale * Mathf.Cos(Time.time);
+                float y = scale * Mathf.Sin(2 * Time.time) / 2;
+                transform.position = origin + (new Vector3(x, 0, y) * m_TriggerRange);
+                break;
+            case FlightPath.INFINITE:
+                Vector3 originInf = new Vector3(transform.parent.position.x, transform.position.y, transform.parent.position.z);
+                //Base code from: https://gamedev.stackexchange.com/questions/43691/how-can-i-move-an-object-in-an-infinity-or-figure-8-trajectory
+                //However this is modified to be horizontal
+                float scaleInf = 2.0f / (3.0f - Mathf.Cos(2 * Time.time));
+                float xInf = scaleInf * Mathf.Cos(Time.time);
+                float yInf = scaleInf * Mathf.Sin(2 * Time.time) / 2;
+                transform.position = originInf + (new Vector3(yInf, 0, xInf) * m_TriggerRange);
+                break;
+            case FlightPath.PURSUIT:
+                Collider[] Enemies = Physics.OverlapSphere(transform.parent.position, m_TriggerRange);
+
+                foreach(Collider c in Enemies)
+                {
+                    
+                }
+
                 break;
             default:
                 break;
