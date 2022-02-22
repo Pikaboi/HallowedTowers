@@ -63,6 +63,8 @@ public class TDTowerDragon : TDTower
 
         if(Vector3.Distance(transform.position, origin) < 1)
         {
+            transform.position = origin;
+            m_rb.velocity = Vector3.zero;
             changed = false;
             circling = true;
         }
@@ -80,7 +82,7 @@ public class TDTowerDragon : TDTower
         {
             case FlightPath.HORI:
 
-                if (Vector3.Distance(transform.position, transform.parent.position) < 1.0f)
+                if (Vector3.Distance(transform.position, transform.parent.position) < 0.01f)
                 {
                     transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
                 }
@@ -108,7 +110,7 @@ public class TDTowerDragon : TDTower
                 break;
             case FlightPath.VERT:
 
-                if(Vector3.Distance(transform.position, transform.parent.position) < 1.0f)
+                if(Vector3.Distance(transform.position, transform.parent.position) < 0.01f)
                 {
                     transform.position = new Vector3(0.0f, transform.position.y, transform.position.z);
                 }
@@ -152,14 +154,6 @@ public class TDTowerDragon : TDTower
                 }
                 break;
             case FlightPath.FIGURE8:
-                Vector3 origin = new Vector3(transform.parent.position.x, transform.position.y, transform.parent.position.z);
-                //Base code from: https://gamedev.stackexchange.com/questions/43691/how-can-i-move-an-object-in-an-infinity-or-figure-8-trajectory
-                float scale = 2.0f / (3.0f - Mathf.Cos(2 * Time.time));
-                float x = scale * Mathf.Cos(Time.time);
-                float y = scale * Mathf.Sin(2 * Time.time) / 2;
-                transform.position = origin + (new Vector3(x, 0, y) * m_TriggerRange);
-                break;
-            case FlightPath.INFINITE:
                 Vector3 originInf = new Vector3(transform.parent.position.x, transform.position.y, transform.parent.position.z);
                 //Base code from: https://gamedev.stackexchange.com/questions/43691/how-can-i-move-an-object-in-an-infinity-or-figure-8-trajectory
                 //However this is modified to be horizontal
@@ -168,12 +162,36 @@ public class TDTowerDragon : TDTower
                 float yInf = scaleInf * Mathf.Sin(2 * Time.time) / 2;
                 transform.position = originInf + (new Vector3(yInf, 0, xInf) * m_TriggerRange);
                 break;
+            case FlightPath.INFINITE:
+                Vector3 origin = new Vector3(transform.parent.position.x, transform.position.y, transform.parent.position.z);
+                //Base code from: https://gamedev.stackexchange.com/questions/43691/how-can-i-move-an-object-in-an-infinity-or-figure-8-trajectory
+                float scale = 2.0f / (3.0f - Mathf.Cos(2 * Time.time));
+                float x = scale * Mathf.Cos(Time.time);
+                float y = scale * Mathf.Sin(2 * Time.time) / 2;
+                transform.position = origin + (new Vector3(x, 0, y) * m_TriggerRange);
+                break;
             case FlightPath.PURSUIT:
                 Collider[] Enemies = Physics.OverlapSphere(transform.parent.position, m_TriggerRange);
 
+                Transform enem = null;
+
                 foreach(Collider c in Enemies)
                 {
-                    
+                    if(c.gameObject.GetComponent<TDEnemy>() != null)
+                    {
+                        //Debug.Log(c.gameObject);
+                        enem = c.gameObject.transform;
+                        break;
+                    }
+                }
+
+                if(enem != null)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, enem.position, m_speed * Time.deltaTime);
+                    transform.position = new Vector3(transform.position.x, 3.0f, transform.position.z);
+                } else
+                {
+                    MoveToCenter();
                 }
 
                 break;
