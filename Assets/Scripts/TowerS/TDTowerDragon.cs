@@ -63,7 +63,7 @@ public class TDTowerDragon : TDTower
 
         if(Vector3.Distance(transform.position, origin) < 1)
         {
-            transform.position = origin;
+            transform.position = new Vector3(origin.x, 3.0f, origin.z);
             m_rb.velocity = Vector3.zero;
             changed = false;
             circling = true;
