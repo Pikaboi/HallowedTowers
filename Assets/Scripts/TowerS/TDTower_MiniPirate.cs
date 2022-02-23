@@ -9,6 +9,8 @@ public class TDTower_MiniPirate : TDTower_GhostPirate
     public override void Start()
     {
         base.Start();
+
+        m_FireTimer = master.m_FireTimer;
     }
 
     // Update is called once per frame

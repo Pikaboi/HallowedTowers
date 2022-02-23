@@ -8,6 +8,12 @@ public class TDTower_GhostPirate : TDTower
     public float m_angleStart = -20.0f;
     public int m_bulletCount = 5;
 
+    public bool Path3UG3;
+    /// <summary>
+    /// Attack is boosted when a player is near the ship
+    /// </summary>
+    public float m_PlayerBoost;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -37,6 +43,22 @@ public class TDTower_GhostPirate : TDTower
 
                 m_FireTimer = m_fireRate - (m_fireRate * m_fireRateBuff);
             }
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<WorldCharacter>() != null && Path3UG3)
+        {
+            m_attack += m_PlayerBoost;
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.GetComponent<WorldCharacter>() != null && Path3UG3)
+        {
+            m_attack -= m_PlayerBoost;
         }
     }
 }
