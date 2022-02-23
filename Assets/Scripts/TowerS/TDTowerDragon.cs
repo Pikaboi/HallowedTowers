@@ -19,15 +19,10 @@ public class TDTowerDragon : TDTower
     /// Unlock Pursuit
     /// </summary>
 
-    public bool Path1UG2;
-    /// <summary>
-    /// Disadvantage damage is increased
-    /// </summary>
-
     public bool Path1UG3;
     /// <summary>
-    /// Toggle to prioritize Bosses
-    /// Multitarget?
+    /// Increase movement speed
+    /// And attack speed
     /// </summary>
 
     public bool Path2UG1;
@@ -50,22 +45,17 @@ public class TDTowerDragon : TDTower
     /// Range is decreased but attack is stronger
     /// </summary>
 
-    public bool Path3UG2;
-    /// <summary>
-    /// Attack inflicts stun
-    /// </summary>
-
-    public bool Path3UG3;
-    /// <summary>
-    /// Increased boss damage
-    /// </summary>
-
     public bool pursuit;
         
     public FlightPath m_flightPath;
 
     public Rigidbody m_rb;
     public float m_speed;
+
+    public TDTower_ChangeDragon m_circle;
+    public TDTower_ChangeDragon m_fig8;
+    public TDTower_ChangeDragon m_infinite;
+    public TDTower_ChangeDragon m_pursuit;
 
     public bool notStuck = true;
 
@@ -78,6 +68,58 @@ public class TDTowerDragon : TDTower
         base.Start();
         transform.position += new Vector3(0.0f, 3.0f, 0.0f);
         m_rb = GetComponent<Rigidbody>();
+
+        TDTower_ChangeDragon[] buttons = transform.parent.GetChild(0).GetChild(0).GetComponentsInChildren<TDTower_ChangeDragon>();
+
+        Debug.Log(buttons.Length);
+
+        m_circle = buttons[2];
+        m_fig8 = buttons[3];
+        m_infinite = buttons[4];
+        m_pursuit = buttons[5];
+
+        if (!Path2UG1)
+        {
+            m_circle.turnOff();
+        } else
+        {
+            m_circle.turnOn();
+        }
+
+        if (!Path2UG2)
+        {
+            m_fig8.turnOff();
+            m_infinite.turnOff();
+        } else
+        {
+            m_fig8.turnOn();
+            m_infinite.turnOn();
+        }
+
+        if (!Path1UG1)
+        {
+            m_pursuit.turnOff();
+        } else
+        {
+            m_pursuit.turnOn();
+        }
+
+        if (Path2UG3)
+        {
+            m_TriggerRange *= 1.5f;
+        }
+
+        if (Path3UG1)
+        {
+            m_TriggerRange *= 0.5f;
+        }
+
+        if (Path1UG3)
+        {
+            m_fireRate *= 0.75f;
+            m_speed *= 1.5f;
+        }
+
     }
 
     // Update is called once per frame
