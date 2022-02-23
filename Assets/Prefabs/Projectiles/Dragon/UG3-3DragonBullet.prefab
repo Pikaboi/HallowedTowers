@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4758191200993151291}
   - component: {fileID: 4602612176163404990}
   - component: {fileID: 1816388235166196235}
-  - component: {fileID: -7285685251167757640}
+  - component: {fileID: 2305029522385420769}
   m_Layer: 14
-  m_Name: DragonBulletRazing
+  m_Name: UG3-3DragonBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-7285685251167757640
+--- !u!114 &2305029522385420769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,21 +72,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8889714604909872069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8ee04b86a5986d4685499287d79cabc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1187478ab3eeef449a76e1bb21c61530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_rigidbody: {fileID: 0}
   m_range: 0
-  m_attack: 15
+  m_attack: 0
   m_Tower: {fileID: 0}
   m_Speed: 30
   m_Affinity: 0
   ogPos: {x: 0, y: 0, z: 0}
-  Path1UG1: 0
   Path1UG2: 0
-  Path2UG1: 0
-  Path2UG2: 0
-  Path2UG3: 0
+  Path3UG2: 1
+  Path3UG3: 1
 --- !u!1001 &8165384721556994867
 PrefabInstance:
   m_ObjectHideFlags: 0

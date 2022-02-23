@@ -112,6 +112,7 @@ public class TDTowerDragon : TDTower
         if (Path3UG1)
         {
             m_TriggerRange *= 0.5f;
+            m_attack *= 2;
         }
 
         if (Path1UG3)
@@ -120,6 +121,7 @@ public class TDTowerDragon : TDTower
             m_speed *= 1.5f;
         }
 
+        
     }
 
     // Update is called once per frame
