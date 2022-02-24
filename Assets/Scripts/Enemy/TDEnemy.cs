@@ -26,6 +26,7 @@ public class TDEnemy : MonoBehaviour
     //Status effects
     public bool m_SpeedDropped = false;
     public bool m_PermaSpeedDrop = false;
+    public SpiderWeb m_CurrentWeb;
 
     //Damage over time control
     public bool damageOverTime = false;
@@ -204,6 +205,7 @@ public class TDEnemy : MonoBehaviour
             } else
             {
                 DOTDamage = 0;
+                damageOverTime = false;
             }
         }
 
@@ -230,6 +232,10 @@ public class TDEnemy : MonoBehaviour
             m_agent.SetDestination(transform.position);
             if (!m_Dead.isPlaying)
             {
+                if (m_CurrentWeb != null && m_CurrentWeb.Path3UG1)
+                {
+                    m_resource.AddMoney(100);
+                }
                 Destroy(gameObject);
             }
         }

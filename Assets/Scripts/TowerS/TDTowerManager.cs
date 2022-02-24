@@ -29,7 +29,7 @@ public class TDTowerManager : MonoBehaviour
 
     public float m_UGDiscount;
 
-    [SerializeField] PlayerResourceManager m_resource;
+    [SerializeField] public PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
     void Start()

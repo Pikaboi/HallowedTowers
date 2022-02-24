@@ -15,6 +15,11 @@ public class TDTower_SpiderWeb : TDTower
 
     public List<GameObject> m_sentries;
 
+    public bool Path3UG3;
+    /// <summary>
+    /// Gives candy per round
+    /// </summary>
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -34,7 +39,8 @@ public class TDTower_SpiderWeb : TDTower
         {
             if (m_webPlacement != Vector3.zero)
             {
-                Instantiate(m_Projectile, m_webPlacement, transform.rotation);
+                GameObject web = Instantiate(m_Projectile, m_webPlacement, transform.rotation);
+                web.GetComponent<SpiderWeb>().m_Attack = m_attack;
                 m_FireTimer = m_fireRate;
                 m_webPlacement = Vector3.zero;
             }
@@ -100,5 +106,10 @@ public class TDTower_SpiderWeb : TDTower
                 m_sentryPos = randomPoint;
             }
         }
+    }
+
+    public void SpiderIncome()
+    {
+        transform.parent.GetComponent<TDTowerManager>().m_resource.AddMoney(100);
     }
 }

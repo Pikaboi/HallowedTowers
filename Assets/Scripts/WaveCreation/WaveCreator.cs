@@ -77,6 +77,16 @@ public class WaveCreator : MonoBehaviour
                 {
                     t.UpdateIncome();
                 }
+
+                TDTower_SpiderWeb[] webTowers = GameObject.FindObjectsOfType<TDTower_SpiderWeb>();
+
+                foreach(TDTower_SpiderWeb s in webTowers)
+                {
+                    if (s.Path3UG3)
+                    {
+                        s.SpiderIncome();
+                    }
+                }
             }
         }
     }

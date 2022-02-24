@@ -129,6 +129,12 @@ public class TDProjectile_Pirate : TDProjectile
                 _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(m_attack * 1.5f)));
             }
 
+            if (_enemy.m_CurrentWeb != null && _enemy.m_CurrentWeb.Path2UG1)
+            {
+                _enemy.m_health -= _enemy.m_CurrentWeb.m_Attack;
+                _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(_enemy.m_CurrentWeb.m_Attack * 1.5f, _enemy.m_health * 1.5f)));
+            }
+
             _enemy.ParticleColorChange(m_Affinity);
             _enemy.m_Particle.Play();
 
