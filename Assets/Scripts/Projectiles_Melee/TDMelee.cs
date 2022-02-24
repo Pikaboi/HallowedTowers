@@ -14,6 +14,18 @@ public class TDMelee : MonoBehaviour
     float m_Timer;
 
     public bool m_CanOHKO;
+    /// <summary>
+    /// Path 1 UG 1
+    /// Adds the critical skill to the scythe
+    /// </summary>
+
+    public bool m_CriticalBoost;
+    /// <summary>
+    /// Path 1 UG 3
+    /// If boolean is active, crit chance increase
+    /// Multiplier is increased
+    /// </summary>
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -56,13 +68,27 @@ public class TDMelee : MonoBehaviour
         {
             int rand = Random.Range(0, 99);
 
-            if (rand < 25)
+            if (m_CriticalBoost)
             {
-                return 3.0f;
+                if (rand < 50)
+                {
+                    return 4.0f;
+                }
+                else
+                {
+                    return 1.0f;
+                }
             }
             else
             {
-                return 1.0f;
+                if (rand < 25)
+                {
+                    return 3.0f;
+                }
+                else
+                {
+                    return 1.0f;
+                }
             }
         } else
         {

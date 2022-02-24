@@ -4,19 +4,38 @@ using UnityEngine;
 
 public class TDTower_ReaperMelee : TDTower
 {
+    public bool Path1UG2;
+    /// <summary>
+    /// Makes the shooter range unavailable
+    /// However the scythe has more range
+    /// and attack
+    /// this bool sets the range
+    /// </summary>
+
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+
+        if (Path1UG2)
+        {
+            //gameObject.GetComponentInParent<TDTower>().m_TriggerRange = 0.5f;
+            //gameObject.GetComponentInParent<TDTower>().m_Trigger.radius = gameObject.GetComponentInParent<TDTower>().m_TriggerRange;
+        }
     }
 
     // Update is called once per frame
     public override void Update()
     {
+        if (Path1UG2)
+        {
+            //gameObject.GetComponentInParent<TDTower>().m_TriggerRange = 0.5f;
+            //gameObject.GetComponentInParent<TDTower>().m_Trigger.radius = gameObject.GetComponentInParent<TDTower>().m_TriggerRange;
+        }
+
         CheckEnemies();
 
         m_attack = gameObject.GetComponentInParent<TDTower>().m_attack;
-        Debug.Log(gameObject.GetComponentInParent<TDTower>());
         m_atkBuff = GetComponentInParent<TDTower>().m_atkBuff;
 
         if (m_InRange)
