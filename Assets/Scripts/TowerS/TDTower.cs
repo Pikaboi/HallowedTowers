@@ -34,6 +34,8 @@ public class TDTower : MonoBehaviour
         m_Trigger.radius = m_TriggerRange;
         m_FireTimer = m_fireRate;
 
+        m_RadiusViewer.transform.localScale = new Vector3(m_TriggerRange * 2, m_RadiusViewer.transform.localScale.y, m_TriggerRange * 2);
+
         m_resource = FindObjectOfType<PlayerResourceManager>();
 
         if (m_RadiusViewer != null)
