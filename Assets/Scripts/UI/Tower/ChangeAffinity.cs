@@ -13,6 +13,7 @@ public class ChangeAffinity : MonoBehaviour
 
     PlayerResourceManager m_resource;
     public float m_upgradePrice;
+    public float m_baseCost;
 
     public AudioSource m_Sound;
 
@@ -21,12 +22,13 @@ public class ChangeAffinity : MonoBehaviour
     {
         m_manager = gameObject.GetComponentInParent<TDTowerManager>();
         m_resource = FindObjectOfType<PlayerResourceManager>();
+        m_baseCost = m_upgradePrice;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        m_upgradePrice = m_baseCost - (m_baseCost * m_manager.m_AffinityDiscount);
     }
 
     public void SetAffinity()

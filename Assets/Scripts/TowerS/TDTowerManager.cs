@@ -28,6 +28,8 @@ public class TDTowerManager : MonoBehaviour
     public ParticleSystem m_ShootParticle;
 
     public float m_UGDiscount;
+    public float m_LevelDiscount;
+    public float m_AffinityDiscount;
 
     [SerializeField] public PlayerResourceManager m_resource;
 

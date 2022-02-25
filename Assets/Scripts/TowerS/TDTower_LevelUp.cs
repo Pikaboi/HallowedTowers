@@ -6,6 +6,7 @@ public class TDTower_LevelUp : MonoBehaviour
 {
     TDTower m_tower;
     [SerializeField] float m_UpgradePrice;
+    private float m_baseCost;
     PlayerResourceManager m_resource;
 
     public AudioSource m_sound;
@@ -18,11 +19,13 @@ public class TDTower_LevelUp : MonoBehaviour
         //m_tower = gameObject.GetComponentInParent<TDTowerManager>().m_child.GetComponent<TDTower>();
         m_resource = FindObjectOfType<PlayerResourceManager>();
         m_UpgradePrice = gameObject.GetComponentInParent<TDTowerManager>().m_cost;
+        m_baseCost = m_UpgradePrice;
     }
 
     // Update is called once per frame
     void Update()
     {
+        m_UpgradePrice = m_baseCost - (m_baseCost * gameObject.GetComponentInParent<TDTowerManager>().m_LevelDiscount);
         m_tower = gameObject.GetComponentInParent<TDTowerManager>().m_child.GetComponent<TDTower>();
         m_resource = FindObjectOfType<PlayerResourceManager>();
     }
