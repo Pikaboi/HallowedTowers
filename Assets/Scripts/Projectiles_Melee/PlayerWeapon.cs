@@ -16,13 +16,36 @@ public class PlayerWeapon : MonoBehaviour
     public AudioClip m_audioClip;
     public ParticleSystem m_particle;
     public Transform shootpos;
+    public bool m_Critical;
 
     public virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            DamageEnemy(m_Attack + (m_Attack * m_atkBuff), collision.gameObject.GetComponent<TDEnemy>());
+            float critChance = Critical(m_Critical);
+            DamageEnemy((m_Attack + (m_Attack * m_atkBuff)) * critChance, collision.gameObject.GetComponent<TDEnemy>());
             collision.gameObject.GetComponent<TDEnemy>().AggroRoll();
+        }
+    }
+
+    private float Critical(bool _critFlag)
+    {
+        if (_critFlag)
+        {
+            int rand = Random.Range(0, 99);
+
+            if (rand < 25)
+            {
+                return 3.0f;
+            }
+            else
+            {
+                return 1.0f;
+            }
+        }
+        else
+        {
+            return 1.0f;
         }
     }
 

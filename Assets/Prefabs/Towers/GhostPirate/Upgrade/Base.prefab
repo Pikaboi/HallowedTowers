@@ -145,6 +145,7 @@ MonoBehaviour:
   m_level: 1
   m_Projectile: {fileID: 8889714604909872069, guid: 0f3594725bd8bee4cb6b93a4aaf05ff7, type: 3}
   m_fireRate: 1
+  m_fireRateBuff: 0
   m_attack: 5
   m_atkBuff: 0
   m_aimer: {fileID: 7590493156465583534}
@@ -154,8 +155,8 @@ MonoBehaviour:
   rotaterLookAt: {x: 0, y: 0, z: 0}
   m_resource: {fileID: 0}
   m_FireTimer: 0
-  m_angleSplit: 30
-  m_angleStart: -60
+  m_angleSplit: 10
+  m_angleStart: -20
   m_bulletCount: 5
 --- !u!1 &7590493156465583534
 GameObject:

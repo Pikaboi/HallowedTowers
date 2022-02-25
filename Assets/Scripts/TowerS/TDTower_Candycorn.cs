@@ -101,11 +101,11 @@ public class TDTower_Candycorn : TDTower
                 bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack + groupBonus + (m_attack * m_atkBuff), gameObject, m_Affinity);
                 if (bossPresent)
                 {
-                    m_FireTimer = m_fireRate / 2;
+                    m_FireTimer = (m_fireRate - (m_fireRate * m_fireRateBuff)) / 2;
                 }
                 else
                 {
-                    m_FireTimer = m_fireRate;
+                    m_FireTimer = m_fireRate - (m_fireRate * m_fireRateBuff);
                 }
                 if (GetComponentInParent<TDTowerManager>().m_ShootParticle != null)
                 {

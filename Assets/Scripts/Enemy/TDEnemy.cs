@@ -26,6 +26,7 @@ public class TDEnemy : MonoBehaviour
     //Status effects
     public bool m_SpeedDropped = false;
     public bool m_PermaSpeedDrop = false;
+    public SpiderWeb m_CurrentWeb;
 
     //Damage over time control
     public bool damageOverTime = false;
@@ -201,6 +202,10 @@ public class TDEnemy : MonoBehaviour
             if (AfflictionTimer > 0.0f)
             {
                 Affliction();
+            } else
+            {
+                DOTDamage = 0;
+                damageOverTime = false;
             }
         }
 
@@ -227,6 +232,10 @@ public class TDEnemy : MonoBehaviour
             m_agent.SetDestination(transform.position);
             if (!m_Dead.isPlaying)
             {
+                if (m_CurrentWeb != null && m_CurrentWeb.Path3UG1)
+                {
+                    m_resource.AddMoney(100);
+                }
                 Destroy(gameObject);
             }
         }
@@ -344,22 +353,6 @@ public class TDEnemy : MonoBehaviour
             DOTDamage = attack;
             AfflictionTimer = AfflictionTime;
             dotTimer = 1.0f;
-        }
-    }
-
-    public void InstantKill(bool _inflict)
-    {
-        if (_inflict)
-        {
-            int rand = Random.Range(0, 99);
-
-            if(rand < 25)
-            {
-                m_resource.AddMoney(Mathf.Floor(m_health * 1.5f));
-                m_health = 0;
-                m_Dead.Play();
-                m_deathParticle.Play();
-            }
         }
     }
 

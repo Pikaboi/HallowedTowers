@@ -27,7 +27,11 @@ public class TDTowerManager : MonoBehaviour
 
     public ParticleSystem m_ShootParticle;
 
-    [SerializeField] PlayerResourceManager m_resource;
+    public float m_UGDiscount;
+    public float m_LevelDiscount;
+    public float m_AffinityDiscount;
+
+    [SerializeField] public PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
     void Start()

@@ -13,6 +13,7 @@ public class TDTower : MonoBehaviour
     //So I will set it up as a GameObject
     public GameObject m_Projectile;
     public float m_fireRate;
+    public float m_fireRateBuff;
     public float m_attack;
     public float m_atkBuff;
     public GameObject m_aimer;
@@ -32,6 +33,8 @@ public class TDTower : MonoBehaviour
         m_Trigger = GetComponent<SphereCollider>();
         m_Trigger.radius = m_TriggerRange;
         m_FireTimer = m_fireRate;
+
+        m_RadiusViewer.transform.localScale = new Vector3(m_TriggerRange * 2, m_RadiusViewer.transform.localScale.y, m_TriggerRange * 2);
 
         m_resource = FindObjectOfType<PlayerResourceManager>();
 
@@ -54,7 +57,7 @@ public class TDTower : MonoBehaviour
             {
                 GameObject bullet = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
                 bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack + (m_attack * m_atkBuff), gameObject, m_Affinity);
-                m_FireTimer = m_fireRate;
+                m_FireTimer = m_fireRate - (m_fireRate * m_fireRateBuff);
 
                 if(GetComponentInParent<TDTowerManager>().m_ShootParticle != null)
                 {
@@ -135,11 +138,16 @@ public class TDTower : MonoBehaviour
         m_Affinity = affinity;
     }
 
-    public void Buff(float buffMult)
+    public void Buff(float buffMult, float fireRate)
     {
         if (buffMult > m_atkBuff)
         {
             m_atkBuff = buffMult;
+        }
+
+        if (fireRate > m_fireRateBuff)
+        {
+            m_fireRateBuff = fireRate;
         }
     }
 
