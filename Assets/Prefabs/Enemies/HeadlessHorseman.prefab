@@ -99,6 +99,7 @@ MonoBehaviour:
   m_targetState: 0
   m_SpeedDropped: 0
   m_PermaSpeedDrop: 0
+  m_CurrentWeb: {fileID: 0}
   damageOverTime: 0
   AfflictionTime: 5
   AfflictionTimer: 0
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Destination: {fileID: 0}
   m_Damage: {fileID: -5141726655210495604}
   m_Dead: {fileID: -3005403358208912252}
+  BossBool: 0
 --- !u!54 &203304971324945167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10029,13 +10031,19 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8124558764783648112}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 7660c7dbf84b7134585b46411242309e, type: 3}
   m_Controller: {fileID: 9100000, guid: 7648cc029cc4b6646a66ed8498002720, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'HorsemanLFoot'\n\tTransform 'HorsemanLPalm'\n\tTransform
+    'HorsemanSpine2'\n\tTransform 'HorsemanLForearm'\n\tTransform 'HorsemanSpine4'\n\tTransform
+    'HorsemanRPalm'\n\tTransform 'HorsemanRUpperarm'\n\tTransform 'HorsemanRFoot'\n\tTransform
+    'HorsemanPelvis'\n\tTransform 'HorsemanRForearm'\n\tand more ...\n\tFrom animation
+    clip 'Take 001'\n\tFrom animation clip 'Take 001'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
