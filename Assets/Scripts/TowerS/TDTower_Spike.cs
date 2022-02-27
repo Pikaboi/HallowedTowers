@@ -31,7 +31,7 @@ public class TDTower_Spike : TDTower
             {
                 Spikes s = Instantiate(m_Spikes, spikePos, transform.rotation);
                 s.m_affinity = m_Affinity;
-                m_FireTimer = m_fireRate;
+                m_FireTimer = m_fireRate - (m_fireRate * m_fireRateBuff);
                 spikePos = Vector3.zero;
                 m_activeSpikes.Add(s);
             }

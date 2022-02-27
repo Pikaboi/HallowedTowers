@@ -25,4 +25,18 @@ public class TDTower_ChangeDragon : MonoBehaviour
     {
         m_dragon.ChangePath(m_flightPath);
     }
+
+    public void turnOn()
+    {
+        transform.GetComponent<UnityEngine.UI.Button>().enabled = true;
+        transform.GetComponent<UnityEngine.UI.Image>().enabled = true;
+        transform.GetComponentInChildren<TMPro.TMP_Text>().enabled = true;
+    }
+
+    public void turnOff()
+    {
+        transform.GetComponent<UnityEngine.UI.Button>().enabled = false;
+        transform.GetComponent<UnityEngine.UI.Image>().enabled = false;
+        transform.GetComponentInChildren<TMPro.TMP_Text>().enabled = false;
+    }
 }
