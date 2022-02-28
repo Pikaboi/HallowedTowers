@@ -27,6 +27,8 @@ public class WorldCharacter : MonoBehaviour
     private float m_passiveAggroTimer;
 
     bool dashing = false;
+    bool hit = false;
+    float hittimer = 0;
 
     public ParticleSystem m_BuffParticle;
 
@@ -77,7 +79,7 @@ public class WorldCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        HitTimer();
         if (Input.GetKeyDown(KeyCode.M))
         {
             m_map.OnClick();
@@ -107,9 +109,23 @@ public class WorldCharacter : MonoBehaviour
         {
             respawnTimer -= Time.deltaTime;
 
-            if(respawnTimer <= 0)
+            if (respawnTimer <= 0)
             {
                 Respawn();
+            }
+        }
+    }
+
+    void HitTimer()
+    {
+        if (hit)
+        {
+            hittimer += Time.deltaTime;
+
+            if(hittimer > 0.5f)
+            {
+                hittimer = 0f;
+                hit = false;
             }
         }
     }
@@ -199,8 +215,9 @@ public class WorldCharacter : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<TDEnemy>().m_targetState == TDEnemy.TargetState.PLAYER)
             {
-                if (collision.gameObject.GetComponent<TDEnemy>().CheckIfAttacking())
+                if (collision.gameObject.GetComponent<TDEnemy>().CheckIfAttacking() && !hit)
                 {
+                    hit = true;
                     m_health -= collision.gameObject.GetComponent<TDEnemy>().m_attackPower;
 
                     if (m_health <= 0)

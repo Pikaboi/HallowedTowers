@@ -403,7 +403,6 @@ public class TDEnemy : MonoBehaviour
     {
         if (m_anim.GetCurrentAnimatorStateInfo(1).normalizedTime > (m_attackFrameStart / 40) && !m_anim.IsInTransition(1) && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Attack"))
         {
-            Debug.Log("Bazinga");
             return true;
         }
 
