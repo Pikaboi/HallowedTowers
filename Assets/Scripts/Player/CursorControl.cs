@@ -165,7 +165,7 @@ public class CursorControl : MonoBehaviour
                 m_currentSpike = null;
             }
 
-            if (m_currentTower == null && m_currentSpike == null && hit.collider != null && hit.collider.gameObject.layer == 11 && !EventSystem.current.IsPointerOverGameObject())
+            if (m_currentTower == null && m_currentSpike == null && hit.collider != null && hit.collider.gameObject.GetComponent<WorldCharacter>() == null && hit.collider.gameObject.layer == 11 && !EventSystem.current.IsPointerOverGameObject())
             {
                 if (m_selectedTower != null)
                 {
