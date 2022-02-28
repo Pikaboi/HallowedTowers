@@ -155,14 +155,26 @@ public class TDEnemy : MonoBehaviour
                 m_agent.destination = m_Destination.position;
                 if(m_anim != null)
                 {
-                    m_anim.SetBool("Attack", false);
+                    m_anim.SetBool("Run", false);
+                    m_anim.SetBool("Charge", false);
                 }
+                m_agent.speed = m_moveSpeed;
                 break;
             case TargetState.PLAYER:
                 m_agent.destination = m_Player.transform.position;
                 if (m_anim != null)
                 {
-                    m_anim.SetBool("Attack", true);
+                    if (Vector3.Distance(transform.position, m_Player.transform.position) < 3.0f && m_anim.GetBool("Charge"))
+                    {
+                        m_anim.SetTrigger("Attack");
+                    }
+                    else
+                    {
+                        m_anim.SetBool("Charge", true);
+                    }
+                    m_anim.SetBool("Run", true);
+
+                    m_agent.speed = m_moveSpeed * 2f;
                 }
                 break;
         }
