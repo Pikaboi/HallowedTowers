@@ -97,6 +97,7 @@ MonoBehaviour:
   m_debuffMultiplier: 0
   m_affinity: 3
   m_targetState: 0
+  m_attackFrameStart: 0
   m_SpeedDropped: 0
   m_PermaSpeedDrop: 0
   m_CurrentWeb: {fileID: 0}
@@ -10031,19 +10032,13 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8485222832231641173}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: eb36caa5a96079d40bb803ae51f8a6c6, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 709dc4058f634a14c8171a3f0d929667, type: 3}
   m_Controller: {fileID: 9100000, guid: 5e4dc88db5a9eaa439ec64de7fd147b8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Base HumanLCalf'\n\tTransform 'Base HumanRUpperarm'\n\tTransform
-    'Base HumanRPalm'\n\tTransform 'Base HumanRForearm'\n\tTransform 'Base HumanNeck'\n\tTransform
-    'Base HumanSpine'\n\tTransform 'Base HumanPelvis'\n\tTransform 'Base HumanHead'\n\tTransform
-    'Base HumanLThigh'\n\tTransform 'Base HumanRFoot'\n\tand more ...\n\tFrom animation
-    clip 'Take 001'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
