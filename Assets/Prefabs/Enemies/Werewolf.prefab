@@ -99,6 +99,7 @@ MonoBehaviour:
   m_targetState: 0
   m_SpeedDropped: 0
   m_PermaSpeedDrop: 0
+  m_CurrentWeb: {fileID: 0}
   damageOverTime: 0
   AfflictionTime: 5
   AfflictionTimer: 0
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Destination: {fileID: 0}
   m_Damage: {fileID: -5141726655210495604}
   m_Dead: {fileID: 1444647152544580098}
+  BossBool: 0
 --- !u!54 &203304971324945167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10029,7 +10031,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8158717107296316185}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: d181d38334e36974bbc575b36e7e3cc1, type: 3}
   m_Controller: {fileID: 9100000, guid: ef5e42ae8d7522c4cb915440aad279e9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

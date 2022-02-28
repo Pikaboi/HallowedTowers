@@ -23,6 +23,8 @@ public class TDEnemy : MonoBehaviour
     public Affinity m_affinity = Affinity.MONSTER;
     public TargetState m_targetState = TargetState.GOAL;
 
+    public float m_attackFrameStart;
+
     //Status effects
     public bool m_SpeedDropped = false;
     public bool m_PermaSpeedDrop = false;
@@ -155,14 +157,26 @@ public class TDEnemy : MonoBehaviour
                 m_agent.destination = m_Destination.position;
                 if(m_anim != null)
                 {
-                    m_anim.SetBool("Attack", false);
+                    m_anim.SetBool("Run", false);
+                    m_anim.SetBool("Charge", false);
                 }
+                m_agent.speed = m_moveSpeed;
                 break;
             case TargetState.PLAYER:
                 m_agent.destination = m_Player.transform.position;
                 if (m_anim != null)
                 {
-                    m_anim.SetBool("Attack", true);
+                    if (Vector3.Distance(transform.position, m_Player.transform.position) < 3.0f && m_anim.GetBool("Charge"))
+                    {
+                        m_anim.SetTrigger("Attack");
+                    }
+                    else
+                    {
+                        m_anim.SetBool("Charge", true);
+                    }
+                    m_anim.SetBool("Run", true);
+
+                    m_agent.speed = m_moveSpeed * 2f;
                 }
                 break;
         }
@@ -383,5 +397,15 @@ public class TDEnemy : MonoBehaviour
         {
             m_main.startColor = Color.gray;
         }
+    }
+
+    public bool CheckIfAttacking()
+    {
+        if (m_anim.GetCurrentAnimatorStateInfo(1).normalizedTime > (m_attackFrameStart / 40) && !m_anim.IsInTransition(1) && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Attack"))
+        {
+            return true;
+        }
+
+        return false;
     }
 }
