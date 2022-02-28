@@ -199,14 +199,18 @@ public class WorldCharacter : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<TDEnemy>().m_targetState == TDEnemy.TargetState.PLAYER)
             {
-                m_health -= collision.gameObject.GetComponent<TDEnemy>().m_attackPower;
+                if (collision.gameObject.GetComponent<TDEnemy>().CheckIfAttacking())
+                {
+                    m_health -= collision.gameObject.GetComponent<TDEnemy>().m_attackPower;
 
-                if(m_health <= 0)
-                {
-                    m_dead.Play();
-                } else
-                {
-                    m_oof.Play();
+                    if (m_health <= 0)
+                    {
+                        m_dead.Play();
+                    }
+                    else
+                    {
+                        m_oof.Play();
+                    }
                 }
             }
         }

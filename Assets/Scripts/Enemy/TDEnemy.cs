@@ -23,6 +23,8 @@ public class TDEnemy : MonoBehaviour
     public Affinity m_affinity = Affinity.MONSTER;
     public TargetState m_targetState = TargetState.GOAL;
 
+    public float m_attackFrameStart;
+
     //Status effects
     public bool m_SpeedDropped = false;
     public bool m_PermaSpeedDrop = false;
@@ -395,5 +397,16 @@ public class TDEnemy : MonoBehaviour
         {
             m_main.startColor = Color.gray;
         }
+    }
+
+    public bool CheckIfAttacking()
+    {
+        if (m_anim.GetCurrentAnimatorStateInfo(1).normalizedTime > (m_attackFrameStart / 40) && !m_anim.IsInTransition(1) && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Attack"))
+        {
+            Debug.Log("Bazinga");
+            return true;
+        }
+
+        return false;
     }
 }
