@@ -22,6 +22,10 @@ public class WaveCreator : MonoBehaviour
 
     public bool WavePlaying = false;
 
+    //Using this to monitor later spawns
+    public int roundPenalty = 0;
+    private int penaltyCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +40,24 @@ public class WaveCreator : MonoBehaviour
     {
         if (WavePlaying)
         {
-            SpawnWaves();
+            if (penaltyCount != roundPenalty)
+            {
+                penaltyCount++;
+                WavePlaying = false;
+            } else if (m_currentWave == null)
+            {
+                WavePlaying = false;
+                waveIndex++;
+                if (waveIndex < m_waves.Length)
+                {
+                    m_currentWave = m_waves[waveIndex];
+                    SetUpWave();
+                }
+            }
+            else
+            {
+                SpawnWaves();
+            }
         }
     }
 
@@ -62,7 +83,7 @@ public class WaveCreator : MonoBehaviour
                 waveIndex++;
                 if (waveIndex < m_waves.Length)
                 {
-                    m_currentWave = m_waves[1];
+                    m_currentWave = m_waves[waveIndex];
                     SetUpWave();
                 }
                 else
@@ -71,7 +92,7 @@ public class WaveCreator : MonoBehaviour
                 }
                 WavePlaying = false;
 
-                TrickTreatHouse[] houses = GameObject.FindObjectsOfType<TrickTreatHouse>();
+                /*TrickTreatHouse[] houses = GameObject.FindObjectsOfType<TrickTreatHouse>();
 
                 foreach(TrickTreatHouse t in houses)
                 {
@@ -86,13 +107,18 @@ public class WaveCreator : MonoBehaviour
                     {
                         s.SpiderIncome();
                     }
-                }
+                }*/
             }
         }
     }
 
     void SetUpWave()
     {
+        if (m_currentWave == null)
+        {
+            return;
+        }
+
         enemies = m_currentWave.GetTypes();
         enemyCount = m_currentWave.GetCount();
 

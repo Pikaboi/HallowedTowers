@@ -8,7 +8,9 @@ public class RoundPlayButton : MonoBehaviour
     Button m_button;
     Image m_Image;
     //[SerializeField] TMPro.TMP_Text m_Text;
-    public WaveCreator m_waveCreator;
+    public WaveCreator[] m_waveCreators;
+
+    bool m_roundOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,11 @@ public class RoundPlayButton : MonoBehaviour
     //Handle the onClick event
     void StartLevel()
     {
-        m_waveCreator.StartWave();
+        foreach(WaveCreator w in m_waveCreators)
+        {
+            w.StartWave();
+        }
+        
     }
 
     // Update is called once per frame
@@ -34,7 +40,17 @@ public class RoundPlayButton : MonoBehaviour
 
         GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if(go.Length == 0 && !m_waveCreator.WavePlaying)
+        foreach (WaveCreator w in m_waveCreators)
+        {
+            if (w.WavePlaying)
+            {
+                m_roundOver = false;
+                break;
+            }
+            m_roundOver = true;
+        }
+
+        if(go.Length == 0 && m_roundOver)
         {
             m_Image.enabled = true;
             m_button.enabled = true;
