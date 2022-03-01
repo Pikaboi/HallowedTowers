@@ -4992,6 +4992,8 @@ MonoBehaviour:
   m_speed: 20
   m_health: 0
   m_maxHealth: 0
+  recoveryTimer: 0
+  recoveryTimerMax: 2
   m_attackTime: 1
   m_attack: 0
   m_anim: {fileID: 8525162097524243870}
@@ -5408,15 +5410,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b72a181ae31bb942bb30eb699b026bc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b72a181ae31bb942bb30eb699b026bc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b72a181ae31bb942bb30eb699b026bc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b72a181ae31bb942bb30eb699b026bc, type: 3}
       propertyPath: m_LocalPosition.x
