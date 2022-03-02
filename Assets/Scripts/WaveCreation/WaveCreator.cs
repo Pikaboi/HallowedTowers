@@ -22,6 +22,8 @@ public class WaveCreator : MonoBehaviour
 
     public bool WavePlaying = false;
 
+    public bool spawnsFinshed = false;
+
     //Using this to monitor later spawns
     public int roundPenalty = 0;
     private int penaltyCount = 0;
@@ -88,26 +90,9 @@ public class WaveCreator : MonoBehaviour
                 }
                 else
                 {
-                    //m_sceneControl.Win();
+                    spawnsFinshed = true;
                 }
                 WavePlaying = false;
-
-                /*TrickTreatHouse[] houses = GameObject.FindObjectsOfType<TrickTreatHouse>();
-
-                foreach(TrickTreatHouse t in houses)
-                {
-                    t.UpdateIncome();
-                }
-
-                TDTower_SpiderWeb[] webTowers = GameObject.FindObjectsOfType<TDTower_SpiderWeb>();
-
-                foreach(TDTower_SpiderWeb s in webTowers)
-                {
-                    if (s.Path3UG3)
-                    {
-                        s.SpiderIncome();
-                    }
-                }*/
             }
         }
     }

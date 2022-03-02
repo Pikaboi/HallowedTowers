@@ -11,6 +11,9 @@ public class RoundPlayButton : MonoBehaviour
     public WaveCreator[] m_waveCreators;
 
     bool m_roundOver;
+
+    public GlobalWorldController m_global;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +55,11 @@ public class RoundPlayButton : MonoBehaviour
 
         if(go.Length == 0 && m_roundOver)
         {
+            if (!m_Image.enabled)
+            {
+                m_global.UpdateEconomy();
+            }
+
             m_Image.enabled = true;
             m_button.enabled = true;
             //m_Text.enabled = true;

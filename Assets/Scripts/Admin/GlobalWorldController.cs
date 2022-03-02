@@ -12,7 +12,7 @@ public class GlobalWorldController : MonoBehaviour
 
     public SceneControl m_sceneControl;
 
-    public WaveCreator m_lastWave;
+    [SerializeField] private bool GameOver;
 
     [SerializeField] RoundPlayButton m_playButton;
 
@@ -32,6 +32,41 @@ public class GlobalWorldController : MonoBehaviour
             foreach(GameObject g in go)
             {
                 Destroy(g);
+            }
+        }
+
+        foreach(WaveCreator w in waveCreators)
+        {
+            if(w.spawnsFinshed == false)
+            {
+                GameOver = false;
+                break;
+            }
+            GameOver = true;
+        }
+
+        if (GameOver)
+        {
+            m_sceneControl.Win();
+        }
+    }
+
+    public void UpdateEconomy()
+    {
+        TrickTreatHouse[] houses = GameObject.FindObjectsOfType<TrickTreatHouse>();
+
+        foreach (TrickTreatHouse t in houses)
+        {
+            t.UpdateIncome();
+        }
+
+        TDTower_SpiderWeb[] webTowers = GameObject.FindObjectsOfType<TDTower_SpiderWeb>();
+
+        foreach (TDTower_SpiderWeb s in webTowers)
+        {
+            if (s.Path3UG3)
+            {
+                s.SpiderIncome();
             }
         }
     }
