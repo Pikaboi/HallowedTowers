@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class GlobalWorldController : MonoBehaviour
 {
-    public DensityVolume[] Fogs;
     public WaveCreator[] waveCreators;
-    public Image[] skipTravelIcons;
 
     public SceneControl m_sceneControl;
 
@@ -25,6 +23,8 @@ public class GlobalWorldController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug Command, please comment out
+        //Nukes all enemies
         if (Input.GetKeyDown(KeyCode.O))
         {
             GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");

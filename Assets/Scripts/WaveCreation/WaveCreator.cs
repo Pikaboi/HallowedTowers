@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.UI;
 
 public class WaveCreator : MonoBehaviour
 {
@@ -23,6 +25,10 @@ public class WaveCreator : MonoBehaviour
     public bool WavePlaying = false;
 
     public bool spawnsFinshed = false;
+
+    public GameObject m_fog;
+    public SkipTravel m_travelButton;
+    public int m_unlockRound;
 
     //Using this to monitor later spawns
     public int roundPenalty = 0;
@@ -82,6 +88,20 @@ public class WaveCreator : MonoBehaviour
 
             if (go.Length == 0)
             {
+                if (waveIndex == m_unlockRound)
+                {
+                    Debug.Log("woah");
+                    if (m_travelButton != null)
+                    {
+                        m_travelButton.gameObject.GetComponent<Image>().enabled = true;
+                    }
+
+                    if (m_fog != null)
+                    {
+                        m_fog.SetActive(false);
+                    }
+                }
+
                 waveIndex++;
                 if (waveIndex < m_waves.Length)
                 {
