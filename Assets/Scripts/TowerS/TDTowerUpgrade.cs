@@ -47,7 +47,6 @@ public class TDTowerUpgrade : MonoBehaviour
     {
         if (m_resource.m_Money >= m_UGCost)
         {
-            Debug.LogWarning("wahoo");
             m_manager.newUpgrade(m_UGPrefab);
             m_UGBought = true;
             GetComponent<Image>().sprite = m_Locked;

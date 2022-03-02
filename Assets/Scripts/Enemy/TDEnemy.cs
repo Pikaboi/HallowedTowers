@@ -401,9 +401,12 @@ public class TDEnemy : MonoBehaviour
 
     public bool CheckIfAttacking()
     {
-        if (m_anim.GetCurrentAnimatorStateInfo(1).normalizedTime > (m_attackFrameStart / 40) && !m_anim.IsInTransition(1) && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Attack"))
+        if (m_anim != null)
         {
-            return true;
+            if (m_anim.GetCurrentAnimatorStateInfo(1).normalizedTime > (m_attackFrameStart / 40) && !m_anim.IsInTransition(1) && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Attack"))
+            {
+                return true;
+            }
         }
 
         return false;
