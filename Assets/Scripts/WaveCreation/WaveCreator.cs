@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.UI;
 
 public class WaveCreator : MonoBehaviour
 {
@@ -22,6 +24,16 @@ public class WaveCreator : MonoBehaviour
 
     public bool WavePlaying = false;
 
+    public bool spawnsFinshed = false;
+
+    public GameObject m_fog;
+    public SkipTravel m_travelButton;
+    public int m_unlockRound;
+
+    //Using this to monitor later spawns
+    public int roundPenalty = 0;
+    private int penaltyCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +48,24 @@ public class WaveCreator : MonoBehaviour
     {
         if (WavePlaying)
         {
-            SpawnWaves();
+            if (penaltyCount != roundPenalty)
+            {
+                penaltyCount++;
+                WavePlaying = false;
+            } else if (m_currentWave == null)
+            {
+                WavePlaying = false;
+                waveIndex++;
+                if (waveIndex < m_waves.Length)
+                {
+                    m_currentWave = m_waves[waveIndex];
+                    SetUpWave();
+                }
+            }
+            else
+            {
+                SpawnWaves();
+            }
         }
     }
 
@@ -59,40 +88,41 @@ public class WaveCreator : MonoBehaviour
 
             if (go.Length == 0)
             {
+                if (waveIndex == m_unlockRound)
+                {
+                    if (m_travelButton != null)
+                    {
+                        m_travelButton.gameObject.GetComponent<Image>().enabled = true;
+                    }
+
+                    if (m_fog != null)
+                    {
+                        m_fog.SetActive(false);
+                    }
+                }
+
                 waveIndex++;
                 if (waveIndex < m_waves.Length)
                 {
-                    m_currentWave = m_waves[1];
+                    m_currentWave = m_waves[waveIndex];
                     SetUpWave();
                 }
                 else
                 {
-                    //m_sceneControl.Win();
+                    spawnsFinshed = true;
                 }
                 WavePlaying = false;
-
-                TrickTreatHouse[] houses = GameObject.FindObjectsOfType<TrickTreatHouse>();
-
-                foreach(TrickTreatHouse t in houses)
-                {
-                    t.UpdateIncome();
-                }
-
-                TDTower_SpiderWeb[] webTowers = GameObject.FindObjectsOfType<TDTower_SpiderWeb>();
-
-                foreach(TDTower_SpiderWeb s in webTowers)
-                {
-                    if (s.Path3UG3)
-                    {
-                        s.SpiderIncome();
-                    }
-                }
             }
         }
     }
 
     void SetUpWave()
     {
+        if (m_currentWave == null)
+        {
+            return;
+        }
+
         enemies = m_currentWave.GetTypes();
         enemyCount = m_currentWave.GetCount();
 
