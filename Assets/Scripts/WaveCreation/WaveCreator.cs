@@ -90,7 +90,6 @@ public class WaveCreator : MonoBehaviour
             {
                 if (waveIndex == m_unlockRound)
                 {
-                    Debug.Log("woah");
                     if (m_travelButton != null)
                     {
                         m_travelButton.gameObject.GetComponent<Image>().enabled = true;
