@@ -205,6 +205,9 @@ MonoBehaviour:
   m_UGParticle: {fileID: 8845285029515627018}
   m_BuffParticle: {fileID: 2054608349692662383}
   m_ShootParticle: {fileID: 452299407454124765}
+  m_UGDiscount: 0
+  m_LevelDiscount: 0
+  m_AffinityDiscount: 0
   m_resource: {fileID: 0}
 --- !u!1 &5160522523025211683
 GameObject:
@@ -10202,7 +10205,7 @@ PrefabInstance:
     - target: {fileID: 710023995988193682, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 849f1431670e6e240b822abb5009b2e4, type: 3}
+      objectReference: {fileID: 21300000, guid: 79cf63e9fb29dba4e8669746f2e04411, type: 3}
     - target: {fileID: 819660974541294618, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'Lolly Scramble:
@@ -10222,7 +10225,7 @@ PrefabInstance:
     - target: {fileID: 1062727869371254748, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b2b6da1d2646120498635494c045c6bd, type: 3}
+      objectReference: {fileID: 21300000, guid: 8a8451cf474e9674dba2ab2c769ed17a, type: 3}
     - target: {fileID: 1114028733265577452, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -10242,19 +10245,27 @@ PrefabInstance:
     - target: {fileID: 1421836654651908438, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b2b6da1d2646120498635494c045c6bd, type: 3}
+      objectReference: {fileID: 21300000, guid: 8a8451cf474e9674dba2ab2c769ed17a, type: 3}
     - target: {fileID: 1528161793770449792, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 175512a795c76614896de20235afd770, type: 3}
+      objectReference: {fileID: 21300000, guid: c7860bda3c5f9c547b1df2a5e30cc522, type: 3}
     - target: {fileID: 1822461521455380280, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b2b6da1d2646120498635494c045c6bd, type: 3}
+      objectReference: {fileID: 21300000, guid: 8a8451cf474e9674dba2ab2c769ed17a, type: 3}
+    - target: {fileID: 1946297889048307129, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946297889048307129, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 174d2ab20604a424ab3c1852ac40b580, type: 3}
     - target: {fileID: 2190409941669711885, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 175512a795c76614896de20235afd770, type: 3}
+      objectReference: {fileID: 21300000, guid: c7860bda3c5f9c547b1df2a5e30cc522, type: 3}
     - target: {fileID: 2238404483904642272, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'Candy Reward:
@@ -10356,6 +10367,14 @@ PrefabInstance:
       value: Recipe Sharing
       objectReference: {fileID: 0}
     - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b722a944c4c1e2d46b72aef15d68e35d, type: 3}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2913105629339732102}
@@ -10394,7 +10413,7 @@ PrefabInstance:
     - target: {fileID: 3397425952769461298, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 849f1431670e6e240b822abb5009b2e4, type: 3}
+      objectReference: {fileID: 21300000, guid: 79cf63e9fb29dba4e8669746f2e04411, type: 3}
     - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
       value: 500
@@ -10415,6 +10434,30 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
+    - target: {fileID: 3828542441780908734, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828542441780908734, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 14b93b9fc770b1b49b848c8a62dd29fa, type: 3}
+    - target: {fileID: 4232971298812647989, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232971298812647989, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b722a944c4c1e2d46b72aef15d68e35d, type: 3}
+    - target: {fileID: 4267643194381240456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267643194381240456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 174d2ab20604a424ab3c1852ac40b580, type: 3}
     - target: {fileID: 4289433858375562824, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -10434,7 +10477,7 @@ PrefabInstance:
     - target: {fileID: 4678595120660729125, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 175512a795c76614896de20235afd770, type: 3}
+      objectReference: {fileID: 21300000, guid: c7860bda3c5f9c547b1df2a5e30cc522, type: 3}
     - target: {fileID: 4708672312819164162, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'Monstrous Candy:
@@ -10471,6 +10514,14 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Candy Complex
       objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 174d2ab20604a424ab3c1852ac40b580, type: 3}
     - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10582,10 +10633,18 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
+    - target: {fileID: 7277558169954098559, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277558169954098559, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b722a944c4c1e2d46b72aef15d68e35d, type: 3}
     - target: {fileID: 7314384820084686044, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 849f1431670e6e240b822abb5009b2e4, type: 3}
+      objectReference: {fileID: 21300000, guid: 79cf63e9fb29dba4e8669746f2e04411, type: 3}
     - target: {fileID: 7632462103626436188, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
       value: 2
@@ -10610,6 +10669,14 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 8047046360407279364, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047046360407279364, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 14b93b9fc770b1b49b848c8a62dd29fa, type: 3}
     - target: {fileID: 8067613170942071987, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -10630,6 +10697,14 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Monster Buster
       objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 14b93b9fc770b1b49b848c8a62dd29fa, type: 3}
     - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

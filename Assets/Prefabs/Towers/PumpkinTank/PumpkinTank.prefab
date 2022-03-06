@@ -158,6 +158,9 @@ MonoBehaviour:
   m_UGParticle: {fileID: 7686859012911287956}
   m_BuffParticle: {fileID: 2114597979499960601}
   m_ShootParticle: {fileID: 4212622764194194372}
+  m_UGDiscount: 0
+  m_LevelDiscount: 0
+  m_AffinityDiscount: 0
   m_resource: {fileID: 0}
 --- !u!1 &632375855335001415
 GameObject:
@@ -11962,7 +11965,7 @@ PrefabInstance:
     - target: {fileID: 710023995988193682, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 17e503cce155cc147b45fdee332c0ac8, type: 3}
+      objectReference: {fileID: 21300000, guid: 7629f091f4bbbac429f3538aac4b47fe, type: 3}
     - target: {fileID: 819660974541294618, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'Knockback:
@@ -11974,23 +11977,31 @@ PrefabInstance:
     - target: {fileID: 1062727869371254748, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e575cb11b6ce90e45aa9dd5ac7e727db, type: 3}
+      objectReference: {fileID: 21300000, guid: e1d4b7f480e40f842aed6350dbaecf00, type: 3}
     - target: {fileID: 1421836654651908438, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e575cb11b6ce90e45aa9dd5ac7e727db, type: 3}
+      objectReference: {fileID: 21300000, guid: e1d4b7f480e40f842aed6350dbaecf00, type: 3}
     - target: {fileID: 1528161793770449792, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b3feb4e2973d8cb48880dc345d1a7470, type: 3}
+      objectReference: {fileID: 21300000, guid: 17c2e15575bf5544ba1193e4126c1a1a, type: 3}
     - target: {fileID: 1822461521455380280, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e575cb11b6ce90e45aa9dd5ac7e727db, type: 3}
+      objectReference: {fileID: 21300000, guid: e1d4b7f480e40f842aed6350dbaecf00, type: 3}
+    - target: {fileID: 1946297889048307129, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946297889048307129, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 406ab54e6d7a7844ebcf5cbcf575e803, type: 3}
     - target: {fileID: 2190409941669711885, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b3feb4e2973d8cb48880dc345d1a7470, type: 3}
+      objectReference: {fileID: 21300000, guid: 17c2e15575bf5544ba1193e4126c1a1a, type: 3}
     - target: {fileID: 2238404483904642272, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'First Impact:
@@ -12068,6 +12079,14 @@ PrefabInstance:
       value: Shell Shock
       objectReference: {fileID: 0}
     - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cefe390e8fd3ec6429dcaefa1c844e2b, type: 3}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4761933106922560004}
@@ -12090,7 +12109,7 @@ PrefabInstance:
     - target: {fileID: 3397425952769461298, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 17e503cce155cc147b45fdee332c0ac8, type: 3}
+      objectReference: {fileID: 21300000, guid: 7629f091f4bbbac429f3538aac4b47fe, type: 3}
     - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
       value: 500
@@ -12103,10 +12122,34 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Unstoppable Stun
       objectReference: {fileID: 0}
+    - target: {fileID: 3828542441780908734, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828542441780908734, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 060959cb0e440d44bbc7e803095140e8, type: 3}
+    - target: {fileID: 4232971298812647989, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232971298812647989, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cefe390e8fd3ec6429dcaefa1c844e2b, type: 3}
+    - target: {fileID: 4267643194381240456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267643194381240456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 406ab54e6d7a7844ebcf5cbcf575e803, type: 3}
     - target: {fileID: 4678595120660729125, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b3feb4e2973d8cb48880dc345d1a7470, type: 3}
+      objectReference: {fileID: 21300000, guid: 17c2e15575bf5544ba1193e4126c1a1a, type: 3}
     - target: {fileID: 4708672312819164162, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'Peircing Influx:
@@ -12138,6 +12181,14 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Critical Stun
       objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 406ab54e6d7a7844ebcf5cbcf575e803, type: 3}
     - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -12184,10 +12235,18 @@ PrefabInstance:
       propertyPath: m_UGString
       value: First Impact
       objectReference: {fileID: 0}
+    - target: {fileID: 7277558169954098559, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277558169954098559, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cefe390e8fd3ec6429dcaefa1c844e2b, type: 3}
     - target: {fileID: 7314384820084686044, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 17e503cce155cc147b45fdee332c0ac8, type: 3}
+      objectReference: {fileID: 21300000, guid: 7629f091f4bbbac429f3538aac4b47fe, type: 3}
     - target: {fileID: 7699149475077671301, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'Shell Shock:
@@ -12204,6 +12263,14 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 8047046360407279364, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047046360407279364, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 060959cb0e440d44bbc7e803095140e8, type: 3}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
       value: 100
@@ -12216,6 +12283,14 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Peircing Boost
       objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 060959cb0e440d44bbc7e803095140e8, type: 3}
     - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
