@@ -13,6 +13,7 @@ public class RadialSetup : MonoBehaviour
     void Start()
     {
         m_button = GetComponent<Button>();
+        GetComponent<Image>().alphaHitTestMinimumThreshold = 1f;
     }
 
     private void Update()
