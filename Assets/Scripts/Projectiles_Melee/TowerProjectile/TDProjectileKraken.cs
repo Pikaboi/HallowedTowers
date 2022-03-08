@@ -173,7 +173,6 @@ public class TDProjectileKraken : TDProjectile
             {
                 if (Vector3.Distance(transform.position, m_Tower.transform.position) > 17.0f)
                 {
-                    Debug.Log("Ha!");
                     trueDamage = damage * 1.2f * _enemy.m_debuffMultiplier;
                 }
             }
