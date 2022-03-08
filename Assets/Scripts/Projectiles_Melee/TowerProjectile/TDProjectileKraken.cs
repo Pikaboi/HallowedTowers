@@ -64,7 +64,6 @@ public class TDProjectileKraken : TDProjectile
             {
                 if (Path1UG2)
                 {
-                    Debug.Log("This is being called");
                     transform.LookAt(m_target.transform.position);
                     m_rigidbody.velocity = transform.forward * m_Speed;
                 }
@@ -172,8 +171,9 @@ public class TDProjectileKraken : TDProjectile
 
             if (Path3UG3)
             {
-                if (Vector3.Distance(transform.position, m_Tower.transform.position) < 8.0f)
+                if (Vector3.Distance(transform.position, m_Tower.transform.position) > 17.0f)
                 {
+                    Debug.Log("Ha!");
                     trueDamage = damage * 1.2f * _enemy.m_debuffMultiplier;
                 }
             }
