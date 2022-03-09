@@ -37,6 +37,8 @@ public class WorldCharacter : MonoBehaviour
     public AudioSource m_dead;
     public AudioSource m_respawn;
 
+    public Transform m_weaponPos;
+
     [SerializeField] private LayerMask m_mask;
     [SerializeField] private MapButton m_map;
     [SerializeField] private MapButton m_inventory;
@@ -62,17 +64,12 @@ public class WorldCharacter : MonoBehaviour
         if (m_Weapon != null)
         {
             m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
-
-            if (m_WeaponStats.isMelee)
-            {
-                m_Weapon.SetActive(false);
-            }
         }
         m_maxat = m_attackTime;
 
         if (m_Weapon != null)
         {
-            SpawnWeapon(m_Weapon, new Vector3(90, 270, 0));
+            SpawnWeapon(m_Weapon, new Vector3(90, 90, 0));
         }
     }
 
@@ -175,7 +172,6 @@ public class WorldCharacter : MonoBehaviour
         } else
         {
             m_Equipped = WeaponType.RANGE;
-            m_Weapon.SetActive(true);
         }
     }
 
@@ -259,10 +255,6 @@ public class WorldCharacter : MonoBehaviour
 
             if (m_attackTime <= 0)
             {
-                if (m_WeaponStats.isMelee)
-                {
-                    m_Weapon.SetActive(false);
-                }
                 m_attack = false;
                 m_attackTime = m_maxat;
             }
@@ -283,7 +275,7 @@ public class WorldCharacter : MonoBehaviour
                         break;
                     case WeaponType.MELEE:
                         //Weapon appears and attacks in front
-                        m_Weapon.SetActive(true);
+                        //m_Weapon.SetActive(true);
                         m_attack = true;
 
                         if (m_weaponSFX.clip != null)
@@ -325,11 +317,11 @@ public class WorldCharacter : MonoBehaviour
             Destroy(m_Weapon);
         }
         m_Weapon = null;
-        m_Weapon = Instantiate(_weapon, transform.position + transform.forward, Quaternion.Euler(m_rot.x, m_rot.y + transform.rotation.eulerAngles.y, m_rot.z - transform.rotation.eulerAngles.z));
-        m_Weapon.transform.parent = transform;
+        m_Weapon = Instantiate(_weapon, m_weaponPos.transform.position, Quaternion.Euler(0,0,0));
+        m_Weapon.transform.parent = m_weaponPos;
+        m_Weapon.transform.localRotation = Quaternion.Euler(m_rot.x, m_rot.y, m_rot.z);
         m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
         m_weaponSFX.clip = m_WeaponStats.m_audioClip;
-        m_Weapon.SetActive(false);
     }
 
     public float GetMaxHealth() {
