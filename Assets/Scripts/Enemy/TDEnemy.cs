@@ -50,6 +50,8 @@ public class TDEnemy : MonoBehaviour
     public bool m_Pushed = false;
     public float m_PushTimer = 1.0f;
 
+    public float m_chargeTimer = 0.5f;
+
     public ParticleSystem m_debuff;
     public ParticleSystem m_Particle;
     public ParticleSystem m_deathParticle;
@@ -164,19 +166,44 @@ public class TDEnemy : MonoBehaviour
                 break;
             case TargetState.PLAYER:
                 m_agent.destination = m_Player.transform.position;
+
                 if (m_anim != null)
                 {
-                    if (Vector3.Distance(transform.position, m_Player.transform.position) < 3.0f && m_anim.GetBool("Charge"))
+                    if (Vector3.Distance(transform.position, m_Player.transform.position) < 3.0f && m_anim.GetBool("Charge") && m_chargeTimer < 0.0f)
                     {
+                        //The enemy attacks
+                        //its stops the dash
+                        //Returns to its usual speed
+                        //and charge is removed
                         m_anim.SetTrigger("Attack");
+                        m_anim.SetBool("Run", false);
+                        m_agent.speed = m_moveSpeed;
+                        m_anim.SetBool("Charge", false);
+                    } else if (m_anim.GetBool("Charge") && m_chargeTimer < 0.0f) {
+                        //The enemy finishes charging
+                        //The enemy now starts running
+                        //Speed increases
+                        m_anim.SetBool("Run", true);
+                        m_agent.speed = m_moveSpeed * 2f;
+                    } else if(m_anim.GetBool("Charge") && m_chargeTimer > 0.0f)
+                    {
+                        //it is stationary, charging
+                        //Timer till it can move decreases
+                        m_chargeTimer -= Time.deltaTime;
                     }
                     else
                     {
-                        m_anim.SetBool("Charge", true);
+                        if (!m_anim.IsInTransition(1) && !m_anim.GetCurrentAnimatorStateInfo(1).IsName("Attack"))
+                        {
+                            //Starts charge
+                            //Sets speed to 0
+                            //Resets charge timer.
+                            m_anim.SetBool("Charge", true);
+                            m_agent.speed = 0;
+                            m_chargeTimer = 2.0f;
+                        }
                     }
-                    m_anim.SetBool("Run", true);
-
-                    m_agent.speed = m_moveSpeed * 2f;
+                    
                 }
                 break;
         }
