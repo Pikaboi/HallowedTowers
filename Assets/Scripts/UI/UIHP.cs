@@ -23,16 +23,12 @@ public class UIHP : MonoBehaviour
         m_slider.maxValue = m_Player.GetMaxHealth();
         m_slider.value = m_Player.m_health;
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q))
         {
-            if (m_Radial.activeSelf == false)
-            {
-                m_Radial.SetActive(true);
-            }
-            else
-            {
-                m_Radial.SetActive(false);
-            }
+            m_Radial.SetActive(true);
+        } else
+        {
+            m_Radial.SetActive(false);
         }
     }
 
