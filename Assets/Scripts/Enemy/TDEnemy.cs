@@ -185,7 +185,7 @@ public class TDEnemy : MonoBehaviour
                         //Speed increases
                         m_anim.SetBool("Run", true);
                         m_agent.speed = m_moveSpeed * 2f;
-                    } else if(m_anim.GetBool("Charge") && m_chargeTimer > 0.0f)
+                    } else if(m_anim.GetBool("Charge") && m_chargeTimer > 0.0f && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Charge"))
                     {
                         //it is stationary, charging
                         //Timer till it can move decreases
@@ -193,7 +193,7 @@ public class TDEnemy : MonoBehaviour
                     }
                     else
                     {
-                        if (!m_anim.IsInTransition(1) && !m_anim.GetCurrentAnimatorStateInfo(1).IsName("Attack"))
+                        if (!m_anim.IsInTransition(1) && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Default"))
                         {
                             //Starts charge
                             //Sets speed to 0
