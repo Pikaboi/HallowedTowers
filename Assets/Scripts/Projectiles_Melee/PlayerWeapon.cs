@@ -17,6 +17,12 @@ public class PlayerWeapon : MonoBehaviour
     public ParticleSystem m_particle;
     public Transform shootpos;
     public bool m_Critical;
+    public BoxCollider m_boxCollider;
+
+    public void Start()
+    {
+        m_boxCollider = GetComponent<BoxCollider>();
+    }
 
     public virtual void OnCollisionEnter(Collision collision)
     {

@@ -255,6 +255,7 @@ public class WorldCharacter : MonoBehaviour
 
             if (m_attackTime <= 0)
             {
+                m_WeaponStats.m_boxCollider.enabled = false;
                 m_attack = false;
                 m_attackTime = m_maxat;
             }
@@ -277,6 +278,8 @@ public class WorldCharacter : MonoBehaviour
                         //Weapon appears and attacks in front
                         //m_Weapon.SetActive(true);
                         m_attack = true;
+
+                        m_WeaponStats.m_boxCollider.enabled = true;
 
                         if (m_weaponSFX.clip != null)
                         {
