@@ -64,6 +64,7 @@ MonoBehaviour:
   m_level: 1
   m_Projectile: {fileID: 5880796213485176459, guid: f0d4d428f313e7749adadc3de0474fc8, type: 3}
   m_fireRate: 5
+  m_fireRateBuff: 0
   m_attack: 5
   m_atkBuff: 0
   m_aimer: {fileID: 8317699826767727565}
@@ -74,10 +75,11 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_FireTimer: 0
   m_webPlacement: {x: 0, y: 0, z: 0}
-  m_sentry: {fileID: 2974676119334868706, guid: 9d9acd5c52235084aa77469c9016d888, type: 3}
+  m_sentry: {fileID: 2974676119334868706, guid: 58a363a96dba5fc4293fade6d190a6c7, type: 3}
   m_sentryTime: 5
   m_sentryTimer: 0
   m_sentryPos: {x: 0, y: 0, z: 0}
+  sentryTotal: 3
   m_sentries: []
 --- !u!1 &4070262902099870122
 GameObject:

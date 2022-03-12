@@ -6,71 +6,69 @@ using UnityEngine.UI;
 
 public class GlobalWorldController : MonoBehaviour
 {
-    public struct fogWavePair
-    {
-        public DensityVolume vol;
-        public WaveCreator wav;
-        public Image skip;
-    }
-
-    public DensityVolume[] Fogs;
     public WaveCreator[] waveCreators;
-    public Image[] skipTravelIcons;
 
     public SceneControl m_sceneControl;
 
-    public WaveCreator m_lastWave;
+    [SerializeField] private bool GameOver;
 
     [SerializeField] RoundPlayButton m_playButton;
 
-    public List<fogWavePair> pairs = new List<fogWavePair>();
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < Fogs.Length; i++)
-        {
-            fogWavePair pair = MakePair(Fogs[i], waveCreators[i], skipTravelIcons[i]);
-            pairs.Add(pair);
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pairs.Count != 0)
+        //Debug Command, please comment out
+        //Nukes all enemies
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            if (pairs[0].wav.waveIndex == pairs[0].wav.m_waves.Length)
+            GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");
+
+            foreach(GameObject g in go)
             {
-                pairs[0].vol.gameObject.SetActive(false);
-                if (pairs[0].skip != null)
-                {
-                    pairs[0].skip.enabled = true;
-                }
-                pairs[0].wav.enabled = false;
-
-                pairs.Remove(pairs[0]);
-
-                m_playButton.m_waveCreator = pairs[0].wav;
+                Destroy(g);
             }
         }
-        else if (pairs.Count == 0)
+
+        foreach(WaveCreator w in waveCreators)
         {
-            m_playButton.m_waveCreator = m_lastWave;
+            if(w.spawnsFinshed == false)
+            {
+                GameOver = false;
+                break;
+            }
+            GameOver = true;
         }
 
-
-        if(m_lastWave.waveIndex == m_lastWave.m_waves.Length)
+        if (GameOver)
         {
             m_sceneControl.Win();
         }
     }
 
-    fogWavePair MakePair(DensityVolume _f, WaveCreator _w, Image _s)
+    public void UpdateEconomy()
     {
-        fogWavePair Pair;
-        Pair.vol = _f;
-        Pair.wav = _w;
-        Pair.skip = _s;
-        return Pair;
+        TrickTreatHouse[] houses = GameObject.FindObjectsOfType<TrickTreatHouse>();
+
+        foreach (TrickTreatHouse t in houses)
+        {
+            t.UpdateIncome();
+        }
+
+        TDTower_SpiderWeb[] webTowers = GameObject.FindObjectsOfType<TDTower_SpiderWeb>();
+
+        foreach (TDTower_SpiderWeb s in webTowers)
+        {
+            if (s.Path3UG3)
+            {
+                s.SpiderIncome();
+            }
+        }
     }
+
 }

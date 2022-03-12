@@ -23,9 +23,12 @@ public class TDEnemy : MonoBehaviour
     public Affinity m_affinity = Affinity.MONSTER;
     public TargetState m_targetState = TargetState.GOAL;
 
+    public float m_attackFrameStart;
+
     //Status effects
     public bool m_SpeedDropped = false;
     public bool m_PermaSpeedDrop = false;
+    public SpiderWeb m_CurrentWeb;
 
     //Damage over time control
     public bool damageOverTime = false;
@@ -154,14 +157,26 @@ public class TDEnemy : MonoBehaviour
                 m_agent.destination = m_Destination.position;
                 if(m_anim != null)
                 {
-                    m_anim.SetBool("Attack", false);
+                    m_anim.SetBool("Run", false);
+                    m_anim.SetBool("Charge", false);
                 }
+                m_agent.speed = m_moveSpeed;
                 break;
             case TargetState.PLAYER:
                 m_agent.destination = m_Player.transform.position;
                 if (m_anim != null)
                 {
-                    m_anim.SetBool("Attack", true);
+                    if (Vector3.Distance(transform.position, m_Player.transform.position) < 3.0f && m_anim.GetBool("Charge"))
+                    {
+                        m_anim.SetTrigger("Attack");
+                    }
+                    else
+                    {
+                        m_anim.SetBool("Charge", true);
+                    }
+                    m_anim.SetBool("Run", true);
+
+                    m_agent.speed = m_moveSpeed * 2f;
                 }
                 break;
         }
@@ -201,6 +216,10 @@ public class TDEnemy : MonoBehaviour
             if (AfflictionTimer > 0.0f)
             {
                 Affliction();
+            } else
+            {
+                DOTDamage = 0;
+                damageOverTime = false;
             }
         }
 
@@ -227,6 +246,10 @@ public class TDEnemy : MonoBehaviour
             m_agent.SetDestination(transform.position);
             if (!m_Dead.isPlaying)
             {
+                if (m_CurrentWeb != null && m_CurrentWeb.Path3UG1)
+                {
+                    m_resource.AddMoney(100);
+                }
                 Destroy(gameObject);
             }
         }
@@ -347,22 +370,6 @@ public class TDEnemy : MonoBehaviour
         }
     }
 
-    public void InstantKill(bool _inflict)
-    {
-        if (_inflict)
-        {
-            int rand = Random.Range(0, 99);
-
-            if(rand < 25)
-            {
-                m_resource.AddMoney(Mathf.Floor(m_health * 1.5f));
-                m_health = 0;
-                m_Dead.Play();
-                m_deathParticle.Play();
-            }
-        }
-    }
-
     public void SlowDebuff()
     {
         if (!m_SpeedDropped)
@@ -390,5 +397,18 @@ public class TDEnemy : MonoBehaviour
         {
             m_main.startColor = Color.gray;
         }
+    }
+
+    public bool CheckIfAttacking()
+    {
+        if (m_anim != null)
+        {
+            if (m_anim.GetCurrentAnimatorStateInfo(1).normalizedTime > (m_attackFrameStart / 40) && !m_anim.IsInTransition(1) && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Attack"))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

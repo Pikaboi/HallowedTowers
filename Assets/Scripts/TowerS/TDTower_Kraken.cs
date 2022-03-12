@@ -5,6 +5,21 @@ using UnityEngine.UI;
 
 public class TDTower_Kraken : TDTower
 {
+    public bool Path1UG1;
+    /// <summary>
+    /// Lower Fire Rate to 0.5
+    /// Lower Range to 15
+    /// </summary>
+
+    public bool Path1UG3;
+    /// <summary>
+    /// Shoots 3 bullets instead
+    /// </summary>
+
+    //Homing in on enemies
+    public List<TDEnemy> m_targets;
+    
+
     public Vector3 AimPos = new Vector3 (0.0f, 0.0f, 0.0f);
 
     [SerializeField] LineRenderer lr;
@@ -13,6 +28,15 @@ public class TDTower_Kraken : TDTower
     public override void Start()
     {
         base.Start();
+
+        if (Path1UG1)
+        {
+            m_fireRate = 0.5f;
+            m_TriggerRange = 15f;
+            m_Trigger.radius = m_TriggerRange;
+            m_RadiusViewer.transform.localScale = new Vector3(m_TriggerRange * 2, m_RadiusViewer.transform.localScale.y, m_TriggerRange * 2);
+        }
+
         lr.enabled = false;
         AimPos = transform.parent.GetComponent<TDTower_KrakenManager>().aimpos = AimPos;
 
@@ -41,14 +65,63 @@ public class TDTower_Kraken : TDTower
     public override void Update()
     {
         Aim();
+        CheckEnemies();
         m_FireTimer -= Time.deltaTime;
 
-        if (m_FireTimer <= 0.0f)
+        if (m_InRange)
         {
-            GameObject bullet = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
-            bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack, gameObject, m_Affinity);
-            m_FireTimer = m_fireRate;
+            if (m_FireTimer <= 0.0f)
+            {
+                if (Path1UG3)
+                {
+                    float angle = -10.0f;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        GameObject bulleti = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
+                        bulleti.transform.Rotate(new Vector3(0.0f, angle, 0.0f));
+                        angle += 10;
+                        bulleti.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack, gameObject, m_Affinity);
+                        if (m_targets.Count > i && m_targets[i] != null)
+                        {
+                            bulleti.GetComponent<TDProjectileKraken>().getTarget(m_targets[i]);
+                        }
+                    }
+                }
+                else
+                {
+                    GameObject bullet = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
+                    bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack, gameObject, m_Affinity);
+                    if (m_targets.Count > 0)
+                    {
+                        bullet.GetComponent<TDProjectileKraken>().getTarget(m_targets[0]);
+                    }
+                }
+                m_FireTimer = m_fireRate - (m_fireRate * m_fireRateBuff);
+            }
         }
+    }
+
+    public override void CheckEnemies()
+    {
+        m_targets.Clear();
+
+        Collider[] ObjsInRange = Physics.OverlapSphere(transform.position, m_TriggerRange);
+
+        bool range = false;
+
+        foreach (Collider Obj in ObjsInRange)
+        {
+            if (Obj.gameObject.tag == "Enemy")
+            {
+                range = true;
+                if (m_targets.Count < 3 && !m_targets.Contains(Obj.gameObject.GetComponent<TDEnemy>()))
+                {
+                    m_targets.Add(Obj.gameObject.GetComponent<TDEnemy>());
+                }
+            }
+        }
+
+        m_InRange = range;
     }
 
     private IEnumerator GetAimPos()

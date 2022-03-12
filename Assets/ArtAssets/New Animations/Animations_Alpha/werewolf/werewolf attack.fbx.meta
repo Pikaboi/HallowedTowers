@@ -1,0 +1,462 @@
+fileFormatVersion: 2
+guid: 72ca3b27d5b78c04c8cbbf2e739e036c
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Attack
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'WerewolfSpine1' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'WerewolfSpine2' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'WerewolfSpine3'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'WerewolfSpine4'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'WerewolfNeck1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'WerewolfNeck2'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: WerewolfPelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfLThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfRThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfLCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfRCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfLFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfRFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfRibcage
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfHead
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfLUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfRUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfLForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfRForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfLPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WerewolfRPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: werewolf attack(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Werewolf
+      parentName: werewolf attack(Clone)
+      position: {x: -0.0032476487, y: 0, z: -0.050336912}
+      rotation: {x: 0.5000001, y: -0.50000006, z: -0.4999999, w: 0.49999997}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: WerewolfLPlatform
+      parentName: werewolf attack(Clone)
+      position: {x: -0.322961, y: 0.008281424, z: 0.024828855}
+      rotation: {x: 0.5, y: -0.49999988, z: -0.5, w: 0.5000001}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: WerewolfRPlatform
+      parentName: werewolf attack(Clone)
+      position: {x: 0.34970716, y: 0.009362395, z: 0.13853051}
+      rotation: {x: 0.5, y: -0.49999988, z: -0.5, w: 0.5000001}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: werewolf
+      parentName: werewolf attack(Clone)
+      position: {x: -0.1016, y: -0.2794, z: -0.04544955}
+      rotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WerewolfPelvis
+      parentName: werewolf attack(Clone)
+      position: {x: -0.0032475519, y: 1.8516486, z: -0.36021388}
+      rotation: {x: 0.49543074, y: -0.50451815, z: -0.49544013, w: 0.5045284}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: WerewolfSpine1
+      parentName: WerewolfPelvis
+      position: {x: -0.09240657, y: -0.007070087, z: -0.000000017410516}
+      rotation: {x: 0.000000019227919, y: -0.0000001155043, z: -0.18199718, w: 0.9832991}
+      scale: {x: 1.0000007, y: 1.0000008, z: 1.0000001}
+    - name: WerewolfSpine2
+      parentName: WerewolfSpine1
+      position: {x: -0.22053498, y: 0, z: 0}
+      rotation: {x: -0.0000000027176097, y: 0.000000017999378, z: 0.11640262, w: 0.99320215}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1}
+    - name: WerewolfSpine3
+      parentName: WerewolfSpine2
+      position: {x: -0.18786643, y: 0.000000048446655, z: 0}
+      rotation: {x: -0.000000001540803, y: -0.000000008853596, z: 0.037790947, w: 0.9992857}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: WerewolfSpine4
+      parentName: WerewolfSpine3
+      position: {x: -0.20188612, y: 0, z: 0}
+      rotation: {x: 0.0000000012034223, y: 0.00000007523364, z: -0.107217595, w: 0.99423563}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.9999999}
+    - name: WerewolfRibcage
+      parentName: WerewolfSpine4
+      position: {x: -0.2720485, y: 0, z: -3.784895e-10}
+      rotation: {x: -0.000000021648933, y: 0.00000008385603, z: 0.012377279, w: 0.9999234}
+      scale: {x: 0.9999988, y: 0.99999875, z: 1}
+    - name: WerewolfNeck1
+      parentName: WerewolfRibcage
+      position: {x: -0.001605716, y: -0.007070111, z: -0.0000000136256215}
+      rotation: {x: 0.0027538703, y: -0.00046547578, z: -0.15877962, w: 0.9873101}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: WerewolfNeck2
+      parentName: WerewolfNeck1
+      position: {x: -0.1408509, y: 0, z: 0}
+      rotation: {x: 0.012228591, y: 0.00023408861, z: 0.013150503, w: 0.99983877}
+      scale: {x: 1, y: 1, z: 1.0000005}
+    - name: WerewolfHead
+      parentName: WerewolfNeck2
+      position: {x: -0.1408511, y: 0, z: 0}
+      rotation: {x: 0.0027392693, y: 0.0054257805, z: 0.16459605, w: 0.9863424}
+      scale: {x: 0.9999998, y: 0.9999997, z: 1}
+    - name: WerewolfLCollarbone
+      parentName: WerewolfRibcage
+      position: {x: 0.035095338, y: 0.20522018, z: 0.06088428}
+      rotation: {x: 0.16111353, y: 0.72578365, z: 0.13965683, w: 0.65404636}
+      scale: {x: 1.0000005, y: 1.0000001, z: 0.9999994}
+    - name: WerewolfLUpperarm
+      parentName: WerewolfLCollarbone
+      position: {x: -0.48011458, y: 0, z: 0}
+      rotation: {x: -0.020277904, y: -0.030652009, z: -0.2068442, w: 0.9776834}
+      scale: {x: 0.9999971, y: 1, z: 1.0000032}
+    - name: WerewolfLForearm
+      parentName: WerewolfLUpperarm
+      position: {x: -0.6302486, y: 0, z: 0}
+      rotation: {x: 0.103681765, y: -0.0015673852, z: -0.02354464, w: 0.9943306}
+      scale: {x: 1.0000088, y: 1.0000002, z: 0.99999106}
+    - name: WerewolfLPalm
+      parentName: WerewolfLForearm
+      position: {x: -0.60622036, y: -0.000000048446655, z: 0.00000009689331}
+      rotation: {x: -0.8435778, y: 0.020252155, z: 0.05627747, w: 0.53366584}
+      scale: {x: 1.0000325, y: 0.9999748, z: 0.99999315}
+    - name: WerewolfLLFingers1
+      parentName: WerewolfLPalm
+      position: {x: -0.20983447, y: 0.022350283, z: 0.0048033283}
+      rotation: {x: -0.0043278155, y: -0.05199461, z: 0.15780334, w: 0.98609126}
+      scale: {x: 1.0000396, y: 0.9999623, z: 0.9999973}
+    - name: WerewolfLLFingers2
+      parentName: WerewolfLLFingers1
+      position: {x: -0.122617416, y: 0.000000048446655, z: -0.000000036334992}
+      rotation: {x: -0.00041791497, y: 0.020224357, z: 0.012272998, w: 0.9997201}
+      scale: {x: 1.0000327, y: 0.99996966, z: 0.9999983}
+    - name: WerewolfLLFingers3
+      parentName: WerewolfLLFingers2
+      position: {x: -0.08095901, y: 0.00000009689331, z: 0.000000012111664}
+      rotation: {x: -0.00000012819301, y: -0.00027518862, z: -0.008910345, w: 0.9999603}
+      scale: {x: 1.0000321, y: 0.9999695, z: 0.99999774}
+    - name: WerewolfLLThumb1
+      parentName: WerewolfLPalm
+      position: {x: -0.044484783, y: 0.00044396514, z: 0.16884483}
+      rotation: {x: 0.06941658, y: 0.34025696, z: 0.07296506, w: 0.9349239}
+      scale: {x: 1.0000197, y: 0.99996805, z: 1.0000117}
+    - name: WerewolfLLThumb2
+      parentName: WerewolfLLThumb1
+      position: {x: -0.08135162, y: 0, z: 0.00000009689331}
+      rotation: {x: -0.035448145, y: 0.06382827, z: -0.008367006, w: 0.99729604}
+      scale: {x: 0.99999875, y: 0.9999689, z: 1.0000323}
+    - name: WerewolfLLThumb3
+      parentName: WerewolfLLThumb2
+      position: {x: -0.09200243, y: 0, z: 0.00000009689331}
+      rotation: {x: 0.04083993, y: 0.034916587, z: -0.0016972626, w: 0.998554}
+      scale: {x: 0.9999984, y: 0.99996877, z: 1.000033}
+    - name: WerewolfRCollarbone
+      parentName: WerewolfRibcage
+      position: {x: 0.035094563, y: 0.20522018, z: -0.060884226}
+      rotation: {x: -0.16111344, y: -0.72578365, z: 0.13965692, w: 0.6540463}
+      scale: {x: 0.9999995, y: 0.9999999, z: 1.0000008}
+    - name: WerewolfRUpperarm
+      parentName: WerewolfRCollarbone
+      position: {x: -0.48011455, y: 0, z: 0.00000019378662}
+      rotation: {x: 0.037751578, y: 0.029663159, z: -0.21431716, w: 0.97558343}
+      scale: {x: 0.99999785, y: 0.9999997, z: 1.0000019}
+    - name: WerewolfRForearm
+      parentName: WerewolfRUpperarm
+      position: {x: -0.63024855, y: 0, z: 0}
+      rotation: {x: -0.052026022, y: 0.014614694, z: -0.022360627, w: 0.99828845}
+      scale: {x: 1.0000031, y: 0.9999975, z: 0.99999994}
+    - name: WerewolfRPalm
+      parentName: WerewolfRForearm
+      position: {x: -0.60621756, y: 0.00000009689331, z: 0}
+      rotation: {x: 0.84314126, y: -0.002596886, z: 0.053493705, w: 0.5350182}
+      scale: {x: 1.0000112, y: 0.9999859, z: 1.0000036}
+    - name: WerewolfRLFingers1
+      parentName: WerewolfRPalm
+      position: {x: -0.18754408, y: 0.0152519755, z: 0.00068028795}
+      rotation: {x: 0.004328662, y: 0.051993147, z: 0.15779687, w: 0.9860924}
+      scale: {x: 1.0000129, y: 0.99998707, z: 0.9999987}
+    - name: WerewolfRLFingers2
+      parentName: WerewolfRLFingers1
+      position: {x: -0.12359168, y: 0, z: 0}
+      rotation: {x: 0.00041796474, y: -0.02022319, z: 0.012272124, w: 0.9997201}
+      scale: {x: 1.0000106, y: 0.9999903, z: 0.99999887}
+    - name: WerewolfRLFingers3
+      parentName: WerewolfRLFingers2
+      position: {x: -0.0818483, y: 0.000000048446655, z: 0}
+      rotation: {x: 0.000000029672357, y: 0.00027512788, z: -0.008909075, w: 0.9999603}
+      scale: {x: 1.0000107, y: 0.99998975, z: 0.9999987}
+    - name: WerewolfRLThumb1
+      parentName: WerewolfRPalm
+      position: {x: 0.036925845, y: 0.035385825, z: -0.17588654}
+      rotation: {x: -0.041112043, y: -0.2323728, z: 0.031502068, w: 0.9712468}
+      scale: {x: 1.0000136, y: 0.99999005, z: 0.9999964}
+    - name: WerewolfRLThumb2
+      parentName: WerewolfRLThumb1
+      position: {x: -0.12465756, y: 0, z: -0.00000009689331}
+      rotation: {x: 0.016311327, y: -0.033103168, z: 0.021951737, w: 0.99907774}
+      scale: {x: 1.0000116, y: 0.99999005, z: 0.9999989}
+    - name: WerewolfRLThumb3
+      parentName: WerewolfRLThumb2
+      position: {x: -0.124781385, y: 0.00000019378662, z: 0}
+      rotation: {x: -0.045482665, y: -0.08437838, z: 0.058427956, w: 0.9936789}
+      scale: {x: 1.0000007, y: 0.99998903, z: 1.00001}
+    - name: WerewolfLThigh
+      parentName: WerewolfPelvis
+      position: {x: -0.034810666, y: 0.094913684, z: 0.17784572}
+      rotation: {x: -0.11361678, y: 0.99272597, z: -0.013401151, w: 0.037507147}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1}
+    - name: WerewolfLCalf
+      parentName: WerewolfLThigh
+      position: {x: -0.91826653, y: 0.000000048446655, z: 0.000000048446655}
+      rotation: {x: 0.00016131332, y: 0.0021712054, z: 0.2102232, w: 0.977651}
+      scale: {x: 1.0000005, y: 0.9999999, z: 0.99999994}
+    - name: WerewolfLFoot
+      parentName: WerewolfLCalf
+      position: {x: -0.94524693, y: 0, z: 0}
+      rotation: {x: -0.026882218, y: 0.026541434, z: -0.69008046, w: 0.72274613}
+      scale: {x: 1.000001, y: 0.9999994, z: 1}
+    - name: WerewolfRThigh
+      parentName: WerewolfPelvis
+      position: {x: -0.034810666, y: 0.09491363, z: -0.17784579}
+      rotation: {x: -0.112108916, y: 0.99262404, z: 0.015055329, w: -0.04361643}
+      scale: {x: 0.99999976, y: 1.0000005, z: 1.0000001}
+    - name: WerewolfRCalf
+      parentName: WerewolfRThigh
+      position: {x: -0.91826606, y: 0.000000024223327, z: 0.00000014533997}
+      rotation: {x: -0.00010152476, y: -0.0020196543, z: 0.17480594, w: 0.98460084}
+      scale: {x: 0.9999995, y: 1.0000013, z: 1.0000005}
+    - name: WerewolfRFoot
+      parentName: WerewolfRCalf
+      position: {x: -0.94524705, y: -0.000000003027916, z: -0.000000024223327}
+      rotation: {x: 0.03282685, y: -0.029636512, z: -0.66403407, w: 0.7463933}
+      scale: {x: 0.9999977, y: 1.0000023, z: 1.0000001}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

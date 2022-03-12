@@ -9,6 +9,10 @@ public class WorldCharacter : MonoBehaviour
     public float m_health;
     [SerializeField] private float m_maxHealth;
 
+    //Health Recovery
+    public float recoveryTimer;
+    public float recoveryTimerMax = 2.0f;
+
     public float m_attackTime;
     float m_maxat;
     public bool m_attack = false;
@@ -23,6 +27,8 @@ public class WorldCharacter : MonoBehaviour
     private float m_passiveAggroTimer;
 
     bool dashing = false;
+    bool hit = false;
+    float hittimer = 0;
 
     public ParticleSystem m_BuffParticle;
 
@@ -73,7 +79,7 @@ public class WorldCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        HitTimer();
         if (Input.GetKeyDown(KeyCode.M))
         {
             m_map.OnClick();
@@ -103,9 +109,23 @@ public class WorldCharacter : MonoBehaviour
         {
             respawnTimer -= Time.deltaTime;
 
-            if(respawnTimer <= 0)
+            if (respawnTimer <= 0)
             {
                 Respawn();
+            }
+        }
+    }
+
+    void HitTimer()
+    {
+        if (hit)
+        {
+            hittimer += Time.deltaTime;
+
+            if(hittimer > 0.5f)
+            {
+                hittimer = 0f;
+                hit = false;
             }
         }
     }
@@ -195,16 +215,39 @@ public class WorldCharacter : MonoBehaviour
         {
             if(collision.gameObject.GetComponent<TDEnemy>().m_targetState == TDEnemy.TargetState.PLAYER)
             {
-                m_health -= collision.gameObject.GetComponent<TDEnemy>().m_attackPower;
+                if (collision.gameObject.GetComponent<TDEnemy>().CheckIfAttacking() && !hit)
+                {
+                    hit = true;
+                    m_health -= collision.gameObject.GetComponent<TDEnemy>().m_attackPower;
 
-                if(m_health <= 0)
-                {
-                    m_dead.Play();
-                } else
-                {
-                    m_oof.Play();
+                    if (m_health <= 0)
+                    {
+                        m_dead.Play();
+                    }
+                    else
+                    {
+                        m_oof.Play();
+                    }
                 }
             }
+        }
+    }
+
+    public void Recover()
+    {
+        recoveryTimer -= Time.deltaTime;
+        
+        if(recoveryTimer < 0)
+        {
+            if (m_health + 10 <= m_maxHealth)
+            {
+                m_health += 10;
+            } else
+            {
+                m_health = m_maxHealth;
+            }
+
+            recoveryTimer = recoveryTimerMax;
         }
     }
 

@@ -77,6 +77,9 @@ MonoBehaviour:
   m_UGParticle: {fileID: 3280955383951277533}
   m_BuffParticle: {fileID: 7795880572779964000}
   m_ShootParticle: {fileID: 0}
+  m_UGDiscount: 0
+  m_LevelDiscount: 0
+  m_AffinityDiscount: 0
   m_resource: {fileID: 0}
 --- !u!1 &3574829593914728314
 GameObject:
@@ -9967,36 +9970,70 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
+      objectReference: {fileID: 8867338127284404696, guid: 6ec0810ef06c76a4a992f773652a4f3c, type: 3}
+    - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Reaper of Souls
+      objectReference: {fileID: 0}
+    - target: {fileID: 373836019647365126, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 3-2:
+
+
+        Fire Rate is increased if an Affinity weak enemy
+        is nearby.'
+      objectReference: {fileID: 0}
     - target: {fileID: 710023995988193682, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0cd04afa37263dc4781c5e28a688b52e, type: 3}
+      objectReference: {fileID: 21300000, guid: 804603cd7d8dafe42a3c0992326eb829, type: 3}
+    - target: {fileID: 819660974541294618, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 2-2:
+
+
+        Swap Affinities for a discounted price'
+      objectReference: {fileID: 0}
     - target: {fileID: 1062727869371254748, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ba58a1cc4fe55714d8f246853759d32a, type: 3}
+      objectReference: {fileID: 21300000, guid: 50e1c8be408440c43bc6735f88acdd7b, type: 3}
     - target: {fileID: 1421836654651908438, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ba58a1cc4fe55714d8f246853759d32a, type: 3}
+      objectReference: {fileID: 21300000, guid: 50e1c8be408440c43bc6735f88acdd7b, type: 3}
     - target: {fileID: 1528161793770449792, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c5e93f00fe9b3bd48ae2b93be5db8109, type: 3}
+      objectReference: {fileID: 21300000, guid: 5205a0983dc6b034888f6251cf8ca184, type: 3}
     - target: {fileID: 1822461521455380280, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ba58a1cc4fe55714d8f246853759d32a, type: 3}
+      objectReference: {fileID: 21300000, guid: 50e1c8be408440c43bc6735f88acdd7b, type: 3}
+    - target: {fileID: 1946297889048307129, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946297889048307129, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 408fb29900a4fca4a8712470b3d45a69, type: 3}
     - target: {fileID: 2190409941669711885, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c5e93f00fe9b3bd48ae2b93be5db8109, type: 3}
+      objectReference: {fileID: 21300000, guid: 5205a0983dc6b034888f6251cf8ca184, type: 3}
+    - target: {fileID: 2238404483904642272, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 2-1:
+
+
+        Increased damage against shared affinity.'
+      objectReference: {fileID: 0}
     - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10042,17 +10079,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
+      objectReference: {fileID: 8867338127284404696, guid: 55ec452ee76a574458d44e3210ed472e, type: 3}
+    - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Life and Death
+      objectReference: {fileID: 0}
     - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
+      objectReference: {fileID: 8867338127284404696, guid: 4dd051fc71414ed4e802c1c58108a742, type: 3}
+    - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Caster from Hell
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4af111bcdff84284e91e984fb5299c60, type: 3}
     - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10063,32 +10120,100 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
+      objectReference: {fileID: 8867338127284404696, guid: dde86759957281a418c1474ba2d4221b, type: 3}
+    - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Grasp of Death
+      objectReference: {fileID: 0}
     - target: {fileID: 3397425952769461298, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0cd04afa37263dc4781c5e28a688b52e, type: 3}
+      objectReference: {fileID: 21300000, guid: 804603cd7d8dafe42a3c0992326eb829, type: 3}
+    - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 50000
+      objectReference: {fileID: 0}
     - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
+      objectReference: {fileID: 8867338127284404696, guid: 9da020be9f0d8414f861e07c184ab55d, type: 3}
+    - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: The lone death
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828542441780908734, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828542441780908734, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bcbb34a011027bd4bbb6680aa5d5700a, type: 3}
+    - target: {fileID: 4232971298812647989, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232971298812647989, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4af111bcdff84284e91e984fb5299c60, type: 3}
+    - target: {fileID: 4267643194381240456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267643194381240456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 408fb29900a4fca4a8712470b3d45a69, type: 3}
     - target: {fileID: 4678595120660729125, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c5e93f00fe9b3bd48ae2b93be5db8109, type: 3}
+      objectReference: {fileID: 21300000, guid: 5205a0983dc6b034888f6251cf8ca184, type: 3}
+    - target: {fileID: 4708672312819164162, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 1-2:
+
+
+        The scythes range is increased, however shooting
+        is removed.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959168145285065131, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 2-3:
+
+
+        Doubles Affinity Advantage Damage, but halves
+        Affinity Disadvantage.'
+      objectReference: {fileID: 0}
     - target: {fileID: 5170623183000848954, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: The Grim Reaper
       objectReference: {fileID: 0}
     - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
+      objectReference: {fileID: 8867338127284404696, guid: eb714ee405f3fe44aa6564c4987cd7c4, type: 3}
+    - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Face Erasure
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 408fb29900a4fca4a8712470b3d45a69, type: 3}
     - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10097,30 +10222,93 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PurchaseUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 5337773031675873295, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 3-3:
+
+
+        Increases damage when no towers are in the towers
+        range.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857591534422646647, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 1-3:
+
+
+        Critical chance is now 50%, Damage is Quadrupled.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6409950654856518928, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 1-1:
+
+
+        Scythe attack now has critical. 25% chance to
+        triple damage dealt.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
+      objectReference: {fileID: 8867338127284404696, guid: dfc99688b9d31744487f4a2a4b466d4b, type: 3}
+    - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Judge as Equals
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277558169954098559, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277558169954098559, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4af111bcdff84284e91e984fb5299c60, type: 3}
     - target: {fileID: 7314384820084686044, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0cd04afa37263dc4781c5e28a688b52e, type: 3}
+      objectReference: {fileID: 21300000, guid: 804603cd7d8dafe42a3c0992326eb829, type: 3}
+    - target: {fileID: 7699149475077671301, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 3-1:
+
+
+        Scythe is removed but bullets deal more damage
+        to bosses.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047046360407279364, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047046360407279364, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bcbb34a011027bd4bbb6680aa5d5700a, type: 3}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
+      objectReference: {fileID: 8867338127284404696, guid: d14e5d7210e2e194f86635810e7d6bec, type: 3}
+    - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Lifetaker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bcbb34a011027bd4bbb6680aa5d5700a, type: 3}
     - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10130,9 +10318,17 @@ PrefabInstance:
       value: PurchaseUpgrade
       objectReference: {fileID: 0}
     - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 8867338127284404696, guid: ab19984d203a6394682eefc154b3e7ea, type: 3}
+      objectReference: {fileID: 8867338127284404696, guid: 68a84b4cfea2fe34bbc9bffac7c36dcb, type: 3}
+    - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Deaths Many Causes
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
 --- !u!1 &4414374873859145755 stripped

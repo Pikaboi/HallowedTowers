@@ -5075,6 +5075,9 @@ MonoBehaviour:
   m_UGParticle: {fileID: 4638369717011769937}
   m_BuffParticle: {fileID: 305317057500308329}
   m_ShootParticle: {fileID: 0}
+  m_UGDiscount: 0
+  m_LevelDiscount: 0
+  m_AffinityDiscount: 0
   m_resource: {fileID: 0}
 --- !u!1 &9140728632152188806
 GameObject:
@@ -9963,16 +9966,34 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 5532948400258036149, guid: 256c33f20e4de324180189b4d04e645b, type: 3}
+      objectReference: {fileID: 5532948400258036149, guid: 66b5db39b048af041b9f764c89f25afa, type: 3}
+    - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Discount Hex
+      objectReference: {fileID: 0}
+    - target: {fileID: 373836019647365126, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 3-2:
+
+
+        Enemies are slowed when entering the range.'
+      objectReference: {fileID: 0}
     - target: {fileID: 710023995988193682, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 998d7bcfcabddda47abba15717249771, type: 3}
+    - target: {fileID: 819660974541294618, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 2-2:
+
+
+        Player Recovers Health (Not Game Lives)'
+      objectReference: {fileID: 0}
     - target: {fileID: 1062727869371254748, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -9993,6 +10014,13 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e47519b8b69af714dbfb359858cc8d96, type: 3}
+    - target: {fileID: 2238404483904642272, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 2-1:
+
+
+        Player gains boosted damage when near.'
+      objectReference: {fileID: 0}
     - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10038,17 +10066,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 66600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 5532948400258036149, guid: 256c33f20e4de324180189b4d04e645b, type: 3}
+      objectReference: {fileID: 5532948400258036149, guid: ee323da1bb6abd64ebc97b8d73598579, type: 3}
+    - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Reapers concotion
+      objectReference: {fileID: 0}
     - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 7000
       objectReference: {fileID: 0}
     - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 5532948400258036149, guid: 256c33f20e4de324180189b4d04e645b, type: 3}
+      objectReference: {fileID: 5532948400258036149, guid: c93dc019587e3cd4cbd7e19ed9c1a9dd, type: 3}
+    - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Debilitate
+      objectReference: {fileID: 0}
     - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10059,28 +10099,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 5532948400258036149, guid: 256c33f20e4de324180189b4d04e645b, type: 3}
+      objectReference: {fileID: 5532948400258036149, guid: c091227288825164bac7f09695a6bd1a, type: 3}
+    - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Hyper Broth
+      objectReference: {fileID: 0}
     - target: {fileID: 3397425952769461298, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 998d7bcfcabddda47abba15717249771, type: 3}
     - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 9000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 5532948400258036149, guid: 256c33f20e4de324180189b4d04e645b, type: 3}
+      objectReference: {fileID: 5532948400258036149, guid: fee49d038f6633d42a1b2d2fb9136a69, type: 3}
+    - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Poison Brew
+      objectReference: {fileID: 0}
     - target: {fileID: 4678595120660729125, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e47519b8b69af714dbfb359858cc8d96, type: 3}
+    - target: {fileID: 4708672312819164162, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 1-2:
+
+
+        Boost same affinity Tower''s attacks further.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959168145285065131, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 2-3:
+
+
+        Grants critical to weapon, 25% chance to deal
+        3x damage.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 8000
+      objectReference: {fileID: 0}
     - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 5532948400258036149, guid: 256c33f20e4de324180189b4d04e645b, type: 3}
+      objectReference: {fileID: 5532948400258036149, guid: 470b79260b0e7e94799a3c8407498de8, type: 3}
+    - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Lethargy Hex
+      objectReference: {fileID: 0}
     - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10089,30 +10164,68 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PurchaseUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 5337773031675873295, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 3-3:
+
+
+        Deals miniscule damage to enemies as a damage
+        over time.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857591534422646647, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 1-3:
+
+
+        Lowers Upgrade and Level Up cost for same affinity
+        towers.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6409950654856518928, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 1-1:
+
+
+        Boost same affinity towers fire  rate.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 5532948400258036149, guid: 256c33f20e4de324180189b4d04e645b, type: 3}
+      objectReference: {fileID: 5532948400258036149, guid: 3a34db7dfd8c105439119b21ea450954, type: 3}
+    - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Performance Potion
+      objectReference: {fileID: 0}
     - target: {fileID: 7314384820084686044, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 998d7bcfcabddda47abba15717249771, type: 3}
+    - target: {fileID: 7699149475077671301, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 3-1:
+
+
+        Enemies with disadvantage are weakened more.'
+      objectReference: {fileID: 0}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 5532948400258036149, guid: 256c33f20e4de324180189b4d04e645b, type: 3}
+      objectReference: {fileID: 5532948400258036149, guid: bc4f1f429b4e29c4bb01e543614f1ff0, type: 3}
+    - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Ammo Potion
+      objectReference: {fileID: 0}
     - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10122,9 +10235,17 @@ PrefabInstance:
       value: PurchaseUpgrade
       objectReference: {fileID: 0}
     - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 5532948400258036149, guid: 256c33f20e4de324180189b4d04e645b, type: 3}
+      objectReference: {fileID: 5532948400258036149, guid: d5e73576e62364146bac508a591e1d0e, type: 3}
+    - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Recovery Balm
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
 --- !u!1 &3708189316294990391 stripped

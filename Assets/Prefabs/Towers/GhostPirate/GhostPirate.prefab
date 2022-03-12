@@ -5088,6 +5088,9 @@ MonoBehaviour:
   m_UGParticle: {fileID: 3743394869169653943}
   m_BuffParticle: {fileID: 9191333597841096257}
   m_ShootParticle: {fileID: 0}
+  m_UGDiscount: 0
+  m_LevelDiscount: 0
+  m_AffinityDiscount: 0
   m_resource: {fileID: 0}
 --- !u!1 &8819135726392712664
 GameObject:
@@ -10079,36 +10082,71 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 6098061356175707378, guid: dcd2467f57a8db0499359ae263018485, type: 3}
+      objectReference: {fileID: 6098061356175707378, guid: 6fabbd97c90f5db4da8ea3b9ac4b8027, type: 3}
+    - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Motley Crew
+      objectReference: {fileID: 0}
+    - target: {fileID: 373836019647365126, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 3-2:
+
+
+        Takes candy from enemies as they attack. '
+      objectReference: {fileID: 0}
     - target: {fileID: 710023995988193682, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 745fab02cf9123b409fd9521622e6866, type: 3}
+      objectReference: {fileID: 21300000, guid: aa6719f4c7b9d5a4abca4253299c3bd4, type: 3}
+    - target: {fileID: 819660974541294618, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 2-2:
+
+
+        Increases damage to enemies with a affinity
+        disadvantage.'
+      objectReference: {fileID: 0}
     - target: {fileID: 1062727869371254748, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ad1c64a2196ca784a8f892466439431f, type: 3}
+      objectReference: {fileID: 21300000, guid: 01767b2c6443ea04c936953fc0a31088, type: 3}
     - target: {fileID: 1421836654651908438, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ad1c64a2196ca784a8f892466439431f, type: 3}
+      objectReference: {fileID: 21300000, guid: 01767b2c6443ea04c936953fc0a31088, type: 3}
     - target: {fileID: 1528161793770449792, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b20fa4bda60a4af439a793cc7587f565, type: 3}
+      objectReference: {fileID: 21300000, guid: e6fd687bc00224e42a4d5dabbefb311b, type: 3}
     - target: {fileID: 1822461521455380280, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ad1c64a2196ca784a8f892466439431f, type: 3}
+      objectReference: {fileID: 21300000, guid: 01767b2c6443ea04c936953fc0a31088, type: 3}
+    - target: {fileID: 1946297889048307129, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946297889048307129, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2de7ea6a145199d4c80c573fdd080772, type: 3}
     - target: {fileID: 2190409941669711885, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b20fa4bda60a4af439a793cc7587f565, type: 3}
+      objectReference: {fileID: 21300000, guid: e6fd687bc00224e42a4d5dabbefb311b, type: 3}
+    - target: {fileID: 2238404483904642272, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 2-1:
+
+
+        Increases angle of fire and increases cannons
+        fired.'
+      objectReference: {fileID: 0}
     - target: {fileID: 2682519555747753456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10154,17 +10192,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 6098061356175707378, guid: dcd2467f57a8db0499359ae263018485, type: 3}
+      objectReference: {fileID: 6098061356175707378, guid: 9e26e705c5ed99c4eb5529b03e6fedc9, type: 3}
+    - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Sleep with the fish
+      objectReference: {fileID: 0}
     - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 6098061356175707378, guid: dcd2467f57a8db0499359ae263018485, type: 3}
+      objectReference: {fileID: 6098061356175707378, guid: eedb5fdc3fbd5884fa0b67f69233fde6, type: 3}
+    - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Bounty Hunter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbfeff599d31f554bb8aff382fdec893, type: 3}
     - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10175,28 +10233,95 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 6098061356175707378, guid: dcd2467f57a8db0499359ae263018485, type: 3}
+      objectReference: {fileID: 6098061356175707378, guid: 94fb7da669dbb8544a80a64ca125b288, type: 3}
+    - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Port and Starboard
+      objectReference: {fileID: 0}
     - target: {fileID: 3397425952769461298, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 745fab02cf9123b409fd9521622e6866, type: 3}
+      objectReference: {fileID: 21300000, guid: aa6719f4c7b9d5a4abca4253299c3bd4, type: 3}
+    - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 9000
+      objectReference: {fileID: 0}
     - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 6098061356175707378, guid: dcd2467f57a8db0499359ae263018485, type: 3}
+      objectReference: {fileID: 6098061356175707378, guid: 826d395413142844db4c3cb3ccb1e966, type: 3}
+    - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Employers Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828542441780908734, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828542441780908734, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a895f43ba9b482489fcdf6c7b92d485, type: 3}
+    - target: {fileID: 4232971298812647989, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232971298812647989, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbfeff599d31f554bb8aff382fdec893, type: 3}
+    - target: {fileID: 4267643194381240456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267643194381240456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2de7ea6a145199d4c80c573fdd080772, type: 3}
     - target: {fileID: 4678595120660729125, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b20fa4bda60a4af439a793cc7587f565, type: 3}
+      objectReference: {fileID: 21300000, guid: e6fd687bc00224e42a4d5dabbefb311b, type: 3}
+    - target: {fileID: 4708672312819164162, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 1-2:
+
+
+        2 ships target the right and left of the ship.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959168145285065131, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 2-3:
+
+
+        More bullets are fired at once. Dont mess with
+        the captain.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 7777
+      objectReference: {fileID: 0}
     - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 6098061356175707378, guid: dcd2467f57a8db0499359ae263018485, type: 3}
+      objectReference: {fileID: 6098061356175707378, guid: 0fd8aa6e1d28c6942afc7607d9249612, type: 3}
+    - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Treasure Hunter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2de7ea6a145199d4c80c573fdd080772, type: 3}
     - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10205,30 +10330,93 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PurchaseUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 5337773031675873295, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 3-3:
+
+
+        Powered up with the player character nearby.
+        Gotta impress the boss!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857591534422646647, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 1-3:
+
+
+        A fleet of ships cover all angles. None come
+        through.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6225595474437292179, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6409950654856518928, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 1-1:
+
+
+        A second ship covers the backside of the ship'
+      objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 6098061356175707378, guid: dcd2467f57a8db0499359ae263018485, type: 3}
+      objectReference: {fileID: 6098061356175707378, guid: 344542b0aec3742408f20f119fbf8634, type: 3}
+    - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Cannonstorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277558169954098559, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277558169954098559, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbfeff599d31f554bb8aff382fdec893, type: 3}
     - target: {fileID: 7314384820084686044, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 745fab02cf9123b409fd9521622e6866, type: 3}
+      objectReference: {fileID: 21300000, guid: aa6719f4c7b9d5a4abca4253299c3bd4, type: 3}
+    - target: {fileID: 7699149475077671301, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_text
+      value: 'Upgrade 3-1:
+
+
+        Increases fire rate and deals more damage to
+        bosses. Gotta earn the pay.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047046360407279364, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047046360407279364, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a895f43ba9b482489fcdf6c7b92d485, type: 3}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 0
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 6098061356175707378, guid: dcd2467f57a8db0499359ae263018485, type: 3}
+      objectReference: {fileID: 6098061356175707378, guid: 806dc1820fb81e9488038eace091a8f5, type: 3}
+    - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Second Mate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a895f43ba9b482489fcdf6c7b92d485, type: 3}
     - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10238,9 +10426,17 @@ PrefabInstance:
       value: PurchaseUpgrade
       objectReference: {fileID: 0}
     - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGCost
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
       value: 
-      objectReference: {fileID: 6098061356175707378, guid: dcd2467f57a8db0499359ae263018485, type: 3}
+      objectReference: {fileID: 6098061356175707378, guid: 5df1cf78bdf4f65458ef975db14bde29, type: 3}
+    - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_UGString
+      value: Walk the Plank
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
 --- !u!114 &472239786362389942 stripped

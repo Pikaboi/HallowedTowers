@@ -24,7 +24,7 @@ public class AffinityPriceTag : MonoBehaviour
     {
         foreach(ChangeAffinity g in m_affinityButtons)
         {
-            g.m_upgradePrice = m_updatedUGPrice;
+            g.m_baseCost = m_updatedUGPrice;
         }
     }
 

@@ -97,8 +97,10 @@ MonoBehaviour:
   m_debuffMultiplier: 0
   m_affinity: 1
   m_targetState: 0
+  m_attackFrameStart: 0
   m_SpeedDropped: 0
   m_PermaSpeedDrop: 0
+  m_CurrentWeb: {fileID: 0}
   damageOverTime: 0
   AfflictionTime: 5
   AfflictionTimer: 0
@@ -422,7 +424,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4826884719017411100}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 1ace8ddb8443fb443ba4551a225b9d06, type: 3}
   m_Controller: {fileID: 9100000, guid: a7f4c6c65725b804f82fb76afda80642, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
