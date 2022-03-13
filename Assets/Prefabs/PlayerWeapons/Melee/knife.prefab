@@ -102,7 +102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5799291526095351513
 Transform:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ BoxCollider:
   m_GameObject: {fileID: 6571007245212513379}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.99533796, y: 0.28186917, z: 0.037482996}
   m_Center: {x: 0.49, y: 0, z: 0}
@@ -202,6 +202,8 @@ MonoBehaviour:
   m_audioClip: {fileID: 8300000, guid: 006ecce03c9686341bb20447b2c451c6, type: 3}
   m_particle: {fileID: 0}
   shootpos: {fileID: 0}
+  m_Critical: 0
+  m_boxCollider: {fileID: 0}
 --- !u!54 &6539765027830948221
 Rigidbody:
   m_ObjectHideFlags: 0

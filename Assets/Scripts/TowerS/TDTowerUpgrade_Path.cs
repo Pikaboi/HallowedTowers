@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class TDTowerUpgrade_Path : TDTowerUpgrade
 {
     public TDTowerUpgrade_Path[] m_UGPaths;
-
+    public int PathNum;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -27,6 +27,8 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
             GetComponent<Image>().sprite = m_Locked;
             m_resource.SubMoney(m_UGCost);
             m_manager.m_sellCost += m_UGCost / 2;
+
+            m_manager.ChangeModel(PathNum);
 
             //Take out all the starting upgrade paths
             //Only one path, no crosspaths

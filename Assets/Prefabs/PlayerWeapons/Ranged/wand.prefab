@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741570376987133639}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.584, y: 1.492, z: -2.761}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 3398947657968401939}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!54 &3504610175610547852
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ BoxCollider:
   m_GameObject: {fileID: 1741570376987133639}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.015277037, y: 0.15034066, z: 0.0146945575}
   m_Center: {x: 0, y: -0.075, z: -9.3132174e-10}
@@ -85,6 +85,8 @@ MonoBehaviour:
   m_audioClip: {fileID: 8300000, guid: 06ada5590eba8d6489b36c6f3c54ff78, type: 3}
   m_particle: {fileID: 0}
   shootpos: {fileID: 3398947657968401939}
+  m_Critical: 0
+  m_boxCollider: {fileID: 0}
 --- !u!1 &5302648271809311023
 GameObject:
   m_ObjectHideFlags: 0

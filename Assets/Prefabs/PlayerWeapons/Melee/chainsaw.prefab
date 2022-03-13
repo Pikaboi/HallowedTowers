@@ -217,6 +217,10 @@ MonoBehaviour:
   m_BulletRange: 0
   m_Affinity: 2
   m_audioClip: {fileID: 8300000, guid: 640b9fdc0c69c1a4c9d9bb22a2a1559d, type: 3}
+  m_particle: {fileID: 0}
+  shootpos: {fileID: 0}
+  m_Critical: 0
+  m_boxCollider: {fileID: 0}
 --- !u!65 &1954297119782801174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -226,7 +230,7 @@ BoxCollider:
   m_GameObject: {fileID: 1630125702075443293}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.09583648, y: 0.28935918, z: 0.90794486}
   m_Center: {x: -0.00375247, y: 0.0018877536, z: 0.46}

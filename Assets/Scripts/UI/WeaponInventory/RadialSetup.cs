@@ -67,6 +67,7 @@ public class RadialSetup : MonoBehaviour
                 if (r.m_Radial.m_Weapon == _weapon)
                 {
                     r.m_Radial.m_Weapon = m_Radial.m_Weapon;
+                    r.m_Radial.m_rot = m_Radial.m_rot;
                 }
             }
         }

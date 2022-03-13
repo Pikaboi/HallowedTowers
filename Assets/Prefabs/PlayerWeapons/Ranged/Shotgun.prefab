@@ -61,7 +61,7 @@ BoxCollider:
   m_GameObject: {fileID: 1741570376987133639}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.015277039, y: 0.15034069, z: 0.06082464}
   m_Center: {x: 0, y: 0.07580704, z: -0.0040842504}
@@ -86,6 +86,8 @@ MonoBehaviour:
   m_audioClip: {fileID: 8300000, guid: 6dd7024f00606b44eb5884197a66a893, type: 3}
   m_particle: {fileID: 4908833076756516007}
   shootpos: {fileID: 5707021474525642061}
+  m_Critical: 0
+  m_boxCollider: {fileID: 0}
 --- !u!1 &1977782769989571661
 GameObject:
   m_ObjectHideFlags: 0
