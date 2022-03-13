@@ -514,7 +514,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.000015258789, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1011,7 +1011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Axe:'
+  m_text: 'Baseball Bat:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
@@ -1249,9 +1249,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -10}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &8967076411542532233
 CanvasRenderer:
@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Axe:'
+  m_text: 'Pitchfork:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
@@ -1623,9 +1623,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -10}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &8967076411585629287
 CanvasRenderer:
@@ -2742,7 +2742,6 @@ GameObject:
   - component: {fileID: 8967076411859110861}
   - component: {fileID: 8967076411859110848}
   - component: {fileID: 8967076411859110863}
-  - component: {fileID: 8967076411859110862}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -2816,18 +2815,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &8967076411859110862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8967076411859110860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bfd2cb34a593d64cad9d5592037ee99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8967076411860986736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3330,7 +3317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Axe:'
+  m_text: 'Wand:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
@@ -3774,6 +3761,7 @@ GameObject:
   - component: {fileID: 8967076412016404838}
   - component: {fileID: 8967076412016404837}
   - component: {fileID: 6755984801794712528}
+  - component: {fileID: 4082157238582260519}
   m_Layer: 5
   m_Name: WeaponImg
   m_TagString: Untagged
@@ -3881,7 +3869,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076412016404837}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4082157238582260519}
+        m_TargetAssemblyTypeName: InventoryPurchase, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4082157238582260519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076412016404833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42780cd2c7c8c9a48a3a7b5a31860b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponMenuPrefab: {fileID: 6673458994170965827, guid: c841e3187f64e874c886d91014020627, type: 3}
+  m_price: 5000
+  m_resource: {fileID: 0}
+  m_inventory: {fileID: 0}
 --- !u!1 &8967076412019025866
 GameObject:
   m_ObjectHideFlags: 0
@@ -3894,6 +3910,7 @@ GameObject:
   - component: {fileID: 8967076412019025871}
   - component: {fileID: 8967076412019025870}
   - component: {fileID: 8967076412019025868}
+  - component: {fileID: 8545139205150060658}
   m_Layer: 5
   m_Name: WeaponImg
   m_TagString: Untagged
@@ -4002,9 +4019,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 8545139205150060658}
+        m_TargetAssemblyTypeName: InventoryPurchase, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4014,6 +4031,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8545139205150060658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076412019025866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42780cd2c7c8c9a48a3a7b5a31860b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponMenuPrefab: {fileID: 8938562049097978622, guid: 33e537a05bf38744a996244a5bd6b122, type: 3}
+  m_price: 100
+  m_resource: {fileID: 0}
+  m_inventory: {fileID: 0}
 --- !u!1 &8967076412039376728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4229,7 +4262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Axe:'
+  m_text: 'Hook:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
@@ -4698,7 +4731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Axe:'
+  m_text: 'Shuriken:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
@@ -4785,7 +4818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8967076412235404772
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5096,7 +5129,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8967076412262502741}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
   m_Name: 
@@ -5857,9 +5890,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -10}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8967076412600084969
 CanvasRenderer:
@@ -6134,6 +6167,7 @@ GameObject:
   - component: {fileID: 8967076412678362107}
   - component: {fileID: 8967076412678362106}
   - component: {fileID: 3048943141529627730}
+  - component: {fileID: 5029823981425531728}
   m_Layer: 5
   m_Name: WeaponImg
   m_TagString: Untagged
@@ -6241,7 +6275,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076412678362106}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5029823981425531728}
+        m_TargetAssemblyTypeName: InventoryPurchase, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5029823981425531728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076412678362086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42780cd2c7c8c9a48a3a7b5a31860b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponMenuPrefab: {fileID: 5009871537329847313, guid: 038346e4512f7234a8142128919492bc, type: 3}
+  m_price: 500
+  m_resource: {fileID: 0}
+  m_inventory: {fileID: 0}
 --- !u!1 &8967076412694045876
 GameObject:
   m_ObjectHideFlags: 0
@@ -6407,6 +6469,7 @@ GameObject:
   - component: {fileID: 8967076412742083992}
   - component: {fileID: 8967076412742083975}
   - component: {fileID: 278339245907995560}
+  - component: {fileID: 230305719843522002}
   m_Layer: 5
   m_Name: WeaponImg
   m_TagString: Untagged
@@ -6514,7 +6577,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076412742083975}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 230305719843522002}
+        m_TargetAssemblyTypeName: InventoryPurchase, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &230305719843522002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076412742083971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42780cd2c7c8c9a48a3a7b5a31860b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponMenuPrefab: {fileID: 7393361511255692882, guid: f38ab188805db334082c41adb6a0f516, type: 3}
+  m_price: 200
+  m_resource: {fileID: 0}
+  m_inventory: {fileID: 0}
 --- !u!1 &8967076412743831148
 GameObject:
   m_ObjectHideFlags: 0
@@ -6813,6 +6904,7 @@ GameObject:
   - component: {fileID: 8967076412843915609}
   - component: {fileID: 8967076412843915608}
   - component: {fileID: 5965814813326773336}
+  - component: {fileID: 9204865039459584229}
   m_Layer: 5
   m_Name: WeaponImg
   m_TagString: Untagged
@@ -6920,7 +7012,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076412843915608}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9204865039459584229}
+        m_TargetAssemblyTypeName: InventoryPurchase, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9204865039459584229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076412843915588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42780cd2c7c8c9a48a3a7b5a31860b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponMenuPrefab: {fileID: 4476342548027711754, guid: e7257c4a1e4494846ac1c53015550fbf, type: 3}
+  m_price: 300
+  m_resource: {fileID: 0}
+  m_inventory: {fileID: 0}
 --- !u!1 &8967076412859901822
 GameObject:
   m_ObjectHideFlags: 0
@@ -6932,7 +7052,6 @@ GameObject:
   - component: {fileID: 8967076412859901823}
   - component: {fileID: 8967076412859901810}
   - component: {fileID: 8967076412859901809}
-  - component: {fileID: 8967076412859901808}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -6997,18 +7116,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &8967076412859901808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8967076412859901822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bfd2cb34a593d64cad9d5592037ee99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8967076412929910035
 GameObject:
   m_ObjectHideFlags: 0
@@ -7149,7 +7256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Axe:'
+  m_text: 'Shotgun:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
@@ -7283,7 +7390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Axe:'
+  m_text: 'Chainsaw: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: d01797fee7699034e9c78d57848e7abd, type: 2}
@@ -7440,6 +7547,7 @@ GameObject:
   - component: {fileID: 8967076413008870898}
   - component: {fileID: 8967076413008870897}
   - component: {fileID: 6613225245787620482}
+  - component: {fileID: 2627538201256431280}
   m_Layer: 5
   m_Name: WeaponImg
   m_TagString: Untagged
@@ -7547,7 +7655,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076413008870897}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2627538201256431280}
+        m_TargetAssemblyTypeName: InventoryPurchase, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2627538201256431280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076413008870909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42780cd2c7c8c9a48a3a7b5a31860b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponMenuPrefab: {fileID: 4074455030474025903, guid: 55d5744130a38d442b47714beb1e4930, type: 3}
+  m_price: 300
+  m_resource: {fileID: 0}
+  m_inventory: {fileID: 0}
 --- !u!1 &8967076413039255110
 GameObject:
   m_ObjectHideFlags: 0
@@ -7560,6 +7696,7 @@ GameObject:
   - component: {fileID: 8967076413039255130}
   - component: {fileID: 8967076413039255129}
   - component: {fileID: 8967076413039255128}
+  - component: {fileID: 6176266475388387184}
   m_Layer: 5
   m_Name: UpgradeMenu
   m_TagString: Untagged
@@ -7668,7 +7805,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076413039255129}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6176266475388387184}
+        m_TargetAssemblyTypeName: MapButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6176266475388387184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076413039255110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e06852d8f925b84586260e6ed8a248a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapRoot: {fileID: 8967076412235404771}
 --- !u!1 &8967076413044458125
 GameObject:
   m_ObjectHideFlags: 0
@@ -7757,6 +7919,7 @@ GameObject:
   - component: {fileID: 8967076413056539099}
   - component: {fileID: 8967076413056539098}
   - component: {fileID: 3902540281050105366}
+  - component: {fileID: 5220289041806524656}
   m_Layer: 5
   m_Name: WeaponImg
   m_TagString: Untagged
@@ -7864,7 +8027,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076413056539098}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5220289041806524656}
+        m_TargetAssemblyTypeName: InventoryPurchase, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5220289041806524656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076413056539078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42780cd2c7c8c9a48a3a7b5a31860b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponMenuPrefab: {fileID: 3077887548206861061, guid: 9a2b56dc5c39d4d4e8ee210302388d00, type: 3}
+  m_price: 4000
+  m_resource: {fileID: 0}
+  m_inventory: {fileID: 0}
 --- !u!1 &8967076413058419091
 GameObject:
   m_ObjectHideFlags: 0
@@ -7898,7 +8089,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0.000015258789}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7952,6 +8143,7 @@ GameObject:
   - component: {fileID: 8967076413074228663}
   - component: {fileID: 8967076413074228662}
   - component: {fileID: 611808472304640571}
+  - component: {fileID: 5083050523547577892}
   m_Layer: 5
   m_Name: WeaponImg
   m_TagString: Untagged
@@ -8059,7 +8251,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076413074228662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5083050523547577892}
+        m_TargetAssemblyTypeName: InventoryPurchase, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5083050523547577892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076413074228658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42780cd2c7c8c9a48a3a7b5a31860b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponMenuPrefab: {fileID: 3932136087045649862, guid: 5e24814cce173c44a9b2b06582c0c9dd, type: 3}
+  m_price: 666
+  m_resource: {fileID: 0}
+  m_inventory: {fileID: 0}
 --- !u!1 &8967076413103188738
 GameObject:
   m_ObjectHideFlags: 0
@@ -8185,6 +8405,7 @@ GameObject:
   - component: {fileID: 8967076413204804030}
   - component: {fileID: 8967076413204804029}
   - component: {fileID: 8746166257244924171}
+  - component: {fileID: 914107232632262020}
   m_Layer: 5
   m_Name: WeaponImg
   m_TagString: Untagged
@@ -8292,7 +8513,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076413204804029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 914107232632262020}
+        m_TargetAssemblyTypeName: InventoryPurchase, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &914107232632262020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076413204804025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42780cd2c7c8c9a48a3a7b5a31860b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponMenuPrefab: {fileID: 3623231642450915792, guid: e5327e0bde1e45f4db924a96c265605a, type: 3}
+  m_price: 100
+  m_resource: {fileID: 0}
+  m_inventory: {fileID: 0}
 --- !u!1 &8967076413237511938
 GameObject:
   m_ObjectHideFlags: 0
@@ -8328,9 +8577,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -10}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8967076413237511942
 CanvasRenderer:

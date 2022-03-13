@@ -11,6 +11,7 @@ public class ShopTrigger : MonoBehaviour
     void Start()
     {
         m_trigger = GetComponent<BoxCollider>();
+        m_shopUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,26 +26,14 @@ public class ShopTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<WorldCharacter>() != null)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                ActivateShop();
-            }
-        }
+        m_shopUI.SetActive(true);
     }
 
-    void ActivateShop()
+    private void OnTriggerExit(Collider other)
     {
-        if (m_shopUI.activeSelf)
-        {
-            m_shopUI.SetActive(false);
-        } else
-        {
-            m_shopUI.SetActive(true);
-        }
+        m_shopUI.SetActive(false);
     }
 
 }

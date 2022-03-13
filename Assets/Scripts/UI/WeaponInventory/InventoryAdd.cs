@@ -19,6 +19,6 @@ public class InventoryAdd : MonoBehaviour
     public void addWeapon(GameObject g)
     {
         GameObject newWeapon = Instantiate(g);
-        newWeapon.transform.parent = gameObject.transform;
+        newWeapon.transform.SetParent(transform, false);
     }
 }
