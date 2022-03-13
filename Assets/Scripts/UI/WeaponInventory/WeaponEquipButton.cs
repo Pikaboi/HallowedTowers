@@ -13,6 +13,7 @@ public class WeaponEquipButton : MonoBehaviour
     {
         m_Player = FindObjectOfType<WorldCharacter>();
         t = GetComponentInChildren<TMPro.TMP_Text>();
+        GetComponent<UnityEngine.UI.Image>().alphaHitTestMinimumThreshold = 1.0f;
     }
 
     private void Update()
