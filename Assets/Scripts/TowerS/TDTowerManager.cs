@@ -31,6 +31,12 @@ public class TDTowerManager : MonoBehaviour
     public float m_LevelDiscount;
     public float m_AffinityDiscount;
 
+    //Alternate designs for Upgrades
+    public GameObject baseModel;
+    public GameObject Path1Model;
+    public GameObject Path2Model;
+    public GameObject Path3Model;
+
     [SerializeField] public PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
@@ -43,6 +49,23 @@ public class TDTowerManager : MonoBehaviour
         m_sellCost = m_cost / 2;
         m_UpgradeUI.SetActive(false);
         m_UGParticle.Play();
+
+        //I hope you like these if statements
+        //Blame the dragon tower
+        if (Path1Model != null)
+        {
+            Path1Model.SetActive(false);
+        }
+
+        if (Path2Model != null)
+        {
+            Path2Model.SetActive(false);
+        }
+
+        if (Path3Model != null)
+        {
+            Path3Model.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -94,5 +117,26 @@ public class TDTowerManager : MonoBehaviour
         m_child.GetComponent<TDTower>().m_fireRate = m_fireRate;
         m_child.GetComponent<TDTower>().m_TriggerRange = m_TriggerRange;
         m_child.GetComponent<TDTower>().m_level = m_level;
+    }
+
+    public void ChangeModel(int _modelnum)
+    {
+        if(_modelnum == 0)
+        {
+            return;
+        }
+
+        baseModel.SetActive(false);
+
+        if(_modelnum == 1)
+        {
+            Path1Model.SetActive(true);
+        } else if (_modelnum == 2)
+        {
+            Path2Model.SetActive(true);
+        } else if (_modelnum == 3)
+        {
+            Path3Model.SetActive(true);
+        }   
     }
 }
