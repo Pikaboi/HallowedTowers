@@ -23,7 +23,7 @@ public class PlayerWeaponProp : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                m_Char.SpawnWeapon(m_RealWeapon, m_WeaponRot);
+                //m_Char.SpawnWeapon(m_RealWeapon, m_WeaponRot);
                 m_Equip.Play();
             }
         }

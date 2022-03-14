@@ -25,7 +25,38 @@ public class UpgradeMenuUpdater : MonoBehaviour
     {
         if(m_equip != null)
         {
-            m_WeaponName.text = m_equip.m_Weapon.name;
+            if (m_equip.GetUGCount() == 5)
+            {
+                m_WeaponName.text = m_equip.m_Weapon.name + " Level MAX";
+            }
+            else
+            {
+                m_WeaponName.text = m_equip.m_Weapon.name + " Level " + m_equip.GetUGCount().ToString();
+            }
+
+            m_CurrentStats.text = "Attack: " + (m_equip.m_Weapon.GetComponent<PlayerWeapon>().m_Attack + m_equip.attackBoost).ToString();
+
+            if(m_equip.GetUGCount() == 5)
+            {
+                m_NewStats.text = m_CurrentStats.text;
+            } else if(m_equip.GetUGCount() == 1) {
+                m_NewStats.text = "Attack: " + m_equip.m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 2;
+            }
+            else
+            {
+                m_NewStats.text = "Attack: " + (m_equip.m_Weapon.GetComponent<PlayerWeapon>().m_Attack + m_equip.attackBoost * 2).ToString();
+            }
+            
+            m_Cost.transform.parent.GetComponent<WeaponUpgrader>().m_equipper = m_equip;
+
+            if (m_equip.GetUGCount() == 5)
+            {
+                m_Cost.text = "Fully Upgraded";
+            }
+            else
+            {
+                m_Cost.text = "Upgrade: " + m_equip.GetUGPrice();
+            }
         }
     }
 

@@ -11,7 +11,8 @@ public class WeaponEquipButton : MonoBehaviour
     public TMPro.TMP_Text t;
 
     float UpgradePrice = 0;
-    int UGCount = 0;
+    int UGCount = 1;
+    public float attackBoost;
 
     PlayerResourceManager m_resource;
 
@@ -39,7 +40,7 @@ public class WeaponEquipButton : MonoBehaviour
     // Update is called once per frame
     public void OnClick()
     {
-        m_Player.SpawnWeapon(m_Weapon, m_rot);
+        m_Player.SpawnWeapon(m_Weapon, m_rot, attackBoost);
     }
 
     public void Upgrade()
@@ -47,9 +48,25 @@ public class WeaponEquipButton : MonoBehaviour
         if (m_resource.m_Money >= UpgradePrice && UGCount < 5)
         {
             m_resource.SubMoney(UpgradePrice);
-            m_Weapon.GetComponent<PlayerWeapon>().m_Attack = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 2;
+            if(UGCount == 1)
+            {
+                attackBoost = m_Weapon.GetComponent<PlayerWeapon>().m_Attack;
+            } else
+            {
+                attackBoost = (attackBoost) * 2;
+            }
             UGCount++;
-            UpgradePrice = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 1000;
+            UpgradePrice = (attackBoost) * 1000;
         }
+    }
+
+    public int GetUGCount()
+    {
+        return UGCount;
+    }
+
+    public float GetUGPrice()
+    {
+        return UpgradePrice;
     }
 }

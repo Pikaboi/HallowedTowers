@@ -16,6 +16,7 @@ public class CreateWeaponUpgradeMenu : MonoBehaviour
     private void OnEnable()
     {
         WeaponEquipButton[] _Equips = m_content.GetComponentsInChildren<WeaponEquipButton>();
+        Debug.Log(_Equips.Length);
 
         foreach(WeaponEquipButton web in _Equips)
         {
@@ -28,9 +29,9 @@ public class CreateWeaponUpgradeMenu : MonoBehaviour
 
     private void OnDisable()
     {
-        for(int i = 0; i < m_content.transform.childCount; i++)
+        for(int i = 0; i < transform.childCount; i++)
         {
-            Destroy(m_content.transform.GetChild(i).gameObject);
+            Destroy(transform.GetChild(i).gameObject);
         }
     }
 
