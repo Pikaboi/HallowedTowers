@@ -63,5 +63,7 @@ public class UpgradeMenuUpdater : MonoBehaviour
     public void getEquipper(WeaponEquipButton m_e)
     {
         m_equip = m_e;
+        m_AffImage1.sprite = m_e.m_affinitySprite.sprite;
+        m_AffImage2.sprite = m_e.m_affinitySprite.sprite;
     }
 }

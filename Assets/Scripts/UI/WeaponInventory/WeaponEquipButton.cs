@@ -16,6 +16,8 @@ public class WeaponEquipButton : MonoBehaviour
 
     PlayerResourceManager m_resource;
 
+    public UnityEngine.UI.Image m_affinitySprite;
+
     void Start()
     {
         UpgradePrice = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 1000;
