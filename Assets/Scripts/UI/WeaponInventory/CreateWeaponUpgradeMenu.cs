@@ -7,17 +7,17 @@ public class CreateWeaponUpgradeMenu : MonoBehaviour
     public GameObject m_content;
 
     public GameObject m_WUGMenu;
+
+    public WeaponEquipButton[] _Equips;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateEquips();
     }
 
     private void OnEnable()
     {
-        WeaponEquipButton[] _Equips = m_content.GetComponentsInChildren<WeaponEquipButton>();
-        Debug.Log(_Equips.Length);
-
         foreach(WeaponEquipButton web in _Equips)
         {
             GameObject wug = Instantiate(m_WUGMenu);
@@ -39,5 +39,10 @@ public class CreateWeaponUpgradeMenu : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void UpdateEquips()
+    {
+        _Equips = m_content.GetComponentsInChildren<WeaponEquipButton>();
     }
 }

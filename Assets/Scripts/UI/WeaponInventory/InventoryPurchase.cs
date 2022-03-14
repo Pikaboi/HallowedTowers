@@ -9,6 +9,9 @@ public class InventoryPurchase : MonoBehaviour
     public PlayerResourceManager m_resource;
     public InventoryAdd m_inventory;
     public TMPro.TMP_Text pricetag;
+
+    public CreateWeaponUpgradeMenu m_UGmenuInstance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,8 @@ public class InventoryPurchase : MonoBehaviour
 
             pricetag.text = "SOLD OUT";
             GetComponent<UnityEngine.UI.Button>().enabled = false;
+
+            m_UGmenuInstance.UpdateEquips();
         }
     }
 }
