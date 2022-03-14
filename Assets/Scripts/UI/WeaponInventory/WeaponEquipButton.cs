@@ -9,6 +9,7 @@ public class WeaponEquipButton : MonoBehaviour
     public WorldCharacter m_Player;
     public Vector3 m_rot;
     public TMPro.TMP_Text t;
+    public TMPro.TMP_Text attackt;
 
     float UpgradePrice = 0;
     int UGCount = 1;
@@ -46,6 +47,8 @@ public class WeaponEquipButton : MonoBehaviour
         {
             t.text = m_Weapon.name;
         }
+
+        attackt.text = "Attack: " + (m_Weapon.GetComponent<PlayerWeapon>().m_Attack + attackBoost);
     }
 
     // Update is called once per frame
@@ -68,6 +71,8 @@ public class WeaponEquipButton : MonoBehaviour
             }
             UGCount++;
             UpgradePrice = (attackBoost) * 1000;
+
+            attackt.text = "Attack: " + (m_Weapon.GetComponent<PlayerWeapon>().m_Attack + attackBoost);
         }
     }
 
