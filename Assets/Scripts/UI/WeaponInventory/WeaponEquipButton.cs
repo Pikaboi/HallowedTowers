@@ -18,7 +18,16 @@ public class WeaponEquipButton : MonoBehaviour
 
     public UnityEngine.UI.Image m_affinitySprite;
 
-    void Start()
+    /*void Start()
+    {
+        UpgradePrice = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 1000;
+        m_Player = FindObjectOfType<WorldCharacter>();
+        t = GetComponentInChildren<TMPro.TMP_Text>();
+        GetComponent<UnityEngine.UI.Image>().alphaHitTestMinimumThreshold = 1.0f;
+        m_resource = FindObjectOfType<PlayerResourceManager>();
+    }*/
+
+    private void Awake()
     {
         UpgradePrice = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 1000;
         m_Player = FindObjectOfType<WorldCharacter>();
