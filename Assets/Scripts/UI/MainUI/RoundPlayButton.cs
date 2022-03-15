@@ -71,4 +71,9 @@ public class RoundPlayButton : MonoBehaviour
             //m_Text.enabled = false;
         }
     }
+
+    public bool getRoundStatus()
+    {
+        return m_roundOver;
+    }
 }

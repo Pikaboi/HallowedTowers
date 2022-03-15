@@ -173,6 +173,10 @@ public class TDProjectileMagicOrb : TDProjectile
             else
             {
                 _enemy.m_Dead.Play();
+                if (_enemy.m_deathEffect != null)
+                {
+                    _enemy.m_deathEffect.Play();
+                }
                 _enemy.m_deathParticle.Play();
             }
         }

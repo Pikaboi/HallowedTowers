@@ -9,11 +9,35 @@ public class WeaponEquipButton : MonoBehaviour
     public WorldCharacter m_Player;
     public Vector3 m_rot;
     public TMPro.TMP_Text t;
-    void Start()
+    public TMPro.TMP_Text attackt;
+
+    float UpgradePrice = 0;
+    int UGCount = 1;
+    public float attackBoost;
+
+    PlayerResourceManager m_resource;
+
+    public UnityEngine.UI.Image m_affinitySprite;
+
+    /*void Start()
     {
+        UpgradePrice = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 1000;
         m_Player = FindObjectOfType<WorldCharacter>();
         t = GetComponentInChildren<TMPro.TMP_Text>();
         GetComponent<UnityEngine.UI.Image>().alphaHitTestMinimumThreshold = 1.0f;
+        m_resource = FindObjectOfType<PlayerResourceManager>();
+    }*/
+
+    private void Awake()
+    {
+        if (m_Weapon != null)
+        {
+            UpgradePrice = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 1000;
+        }
+        m_Player = FindObjectOfType<WorldCharacter>();
+        t = GetComponentInChildren<TMPro.TMP_Text>();
+        GetComponent<UnityEngine.UI.Image>().alphaHitTestMinimumThreshold = 1.0f;
+        m_resource = FindObjectOfType<PlayerResourceManager>();
     }
 
     private void Update()
@@ -26,11 +50,48 @@ public class WeaponEquipButton : MonoBehaviour
         {
             t.text = m_Weapon.name;
         }
+
+        if (attackt != null)
+        {
+            attackt.text = "Attack: " + (m_Weapon.GetComponent<PlayerWeapon>().m_Attack + attackBoost);
+        }
     }
 
     // Update is called once per frame
     public void OnClick()
     {
-        m_Player.SpawnWeapon(m_Weapon, m_rot);
+        if (m_Weapon != null)
+        {
+            m_Player.SpawnWeapon(m_Weapon, m_rot, attackBoost);
+        }
+    }
+
+    public void Upgrade()
+    {
+        if (m_resource.m_Money >= UpgradePrice && UGCount < 5)
+        {
+            m_resource.SubMoney(UpgradePrice);
+            if(UGCount == 1)
+            {
+                attackBoost = m_Weapon.GetComponent<PlayerWeapon>().m_Attack;
+            } else
+            {
+                attackBoost = (attackBoost) * 2;
+            }
+            UGCount++;
+            UpgradePrice = (attackBoost) * 1000;
+
+            attackt.text = "Attack: " + (m_Weapon.GetComponent<PlayerWeapon>().m_Attack + attackBoost);
+        }
+    }
+
+    public int GetUGCount()
+    {
+        return UGCount;
+    }
+
+    public float GetUGPrice()
+    {
+        return UpgradePrice;
     }
 }
