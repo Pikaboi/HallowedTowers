@@ -76,6 +76,9 @@ public class TDEnemy : MonoBehaviour
 
     public VisualEffect m_chargeParticle;
     public VisualEffect m_attackParticle;
+    //Yep, they made some effects particles and some VFX
+    //So I have to make 2 different particle systems for attack
+    public ParticleSystem m_attackParticleSystem;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -107,6 +110,11 @@ public class TDEnemy : MonoBehaviour
         if(m_attackParticle != null)
         {
             m_attackParticle.Stop();
+        }
+
+        if (m_attackParticleSystem != null)
+        {
+            m_attackParticleSystem.Stop();
         }
 
         m_Particle.Stop();
@@ -189,6 +197,10 @@ public class TDEnemy : MonoBehaviour
                     {
                         m_attackParticle.Stop();
                     }
+                    if (m_attackParticleSystem != null)
+                    {
+                        m_attackParticleSystem.Stop();
+                    }
                 }
                 m_agent.speed = m_moveSpeed;
                 break;
@@ -207,6 +219,10 @@ public class TDEnemy : MonoBehaviour
                         if(m_attackParticle != null)
                         {
                             m_attackParticle.Play();
+                        }
+                        if (m_attackParticleSystem != null)
+                        {
+                            m_attackParticleSystem.Play();
                         }
                         m_anim.SetBool("Run", false);
                         m_agent.speed = m_moveSpeed;
@@ -247,6 +263,10 @@ public class TDEnemy : MonoBehaviour
                             if(m_attackParticle != null)
                             {
                                 m_attackParticle.Stop();
+                            }
+                            if (m_attackParticleSystem != null)
+                            {
+                                m_attackParticleSystem.Stop();
                             }
 
                             m_agent.speed = 0;
@@ -321,6 +341,7 @@ public class TDEnemy : MonoBehaviour
         if (m_health <= 0.0f)
         {
             m_agent.SetDestination(transform.position);
+            GetComponent<CapsuleCollider>().enabled = false;
             if (!m_Dead.isPlaying)
             {
                 if (m_CurrentWeb != null && m_CurrentWeb.Path3UG1)
