@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponUpgrader : MonoBehaviour
 {
-    WeaponEquipButton m_equipper;
+    public WeaponEquipButton m_equipper;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,9 @@ public class WeaponUpgrader : MonoBehaviour
 
     public void OnClick()
     {
-        m_equipper.Upgrade();
+        if (m_equipper != null)
+        {
+            m_equipper.Upgrade();
+        }
     }
 }

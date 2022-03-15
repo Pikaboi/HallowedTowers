@@ -69,7 +69,7 @@ public class WorldCharacter : MonoBehaviour
 
         if (m_Weapon != null)
         {
-            SpawnWeapon(m_Weapon, new Vector3(90, 90, 0));
+            SpawnWeapon(m_Weapon, new Vector3(90, 90, 0), 0);
         }
     }
 
@@ -313,7 +313,7 @@ public class WorldCharacter : MonoBehaviour
         }
     }
 
-    public void SpawnWeapon(GameObject _weapon, Vector3 m_rot)
+    public void SpawnWeapon(GameObject _weapon, Vector3 m_rot, float _bonus)
     {
         if (m_Weapon != null)
         {
@@ -324,6 +324,7 @@ public class WorldCharacter : MonoBehaviour
         m_Weapon.transform.parent = m_weaponPos;
         m_Weapon.transform.localRotation = Quaternion.Euler(m_rot.x, m_rot.y, m_rot.z);
         m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
+        m_WeaponStats.m_Attack += _bonus;
         m_weaponSFX.clip = m_WeaponStats.m_audioClip;
     }
 
