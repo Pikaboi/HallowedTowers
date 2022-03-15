@@ -18,7 +18,13 @@ public class RadialSetup : MonoBehaviour
 
     private void Update()
     {
-        GetComponentInChildren<TMPro.TMP_Text>().text = m_Radial.m_Weapon.name;
+        if (m_Radial != null)
+        {
+            if (m_Radial.m_Weapon != null)
+            {
+                GetComponentInChildren<TMPro.TMP_Text>().text = m_Radial.m_Weapon.name;
+            }
+        }
         if (m_Configure)
         {
             m_button.enabled = true;

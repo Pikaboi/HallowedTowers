@@ -30,7 +30,10 @@ public class WeaponEquipButton : MonoBehaviour
 
     private void Awake()
     {
-        UpgradePrice = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 1000;
+        if (m_Weapon != null)
+        {
+            UpgradePrice = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 1000;
+        }
         m_Player = FindObjectOfType<WorldCharacter>();
         t = GetComponentInChildren<TMPro.TMP_Text>();
         GetComponent<UnityEngine.UI.Image>().alphaHitTestMinimumThreshold = 1.0f;
@@ -48,13 +51,19 @@ public class WeaponEquipButton : MonoBehaviour
             t.text = m_Weapon.name;
         }
 
-        attackt.text = "Attack: " + (m_Weapon.GetComponent<PlayerWeapon>().m_Attack + attackBoost);
+        if (attackt != null)
+        {
+            attackt.text = "Attack: " + (m_Weapon.GetComponent<PlayerWeapon>().m_Attack + attackBoost);
+        }
     }
 
     // Update is called once per frame
     public void OnClick()
     {
-        m_Player.SpawnWeapon(m_Weapon, m_rot, attackBoost);
+        if (m_Weapon != null)
+        {
+            m_Player.SpawnWeapon(m_Weapon, m_rot, attackBoost);
+        }
     }
 
     public void Upgrade()
