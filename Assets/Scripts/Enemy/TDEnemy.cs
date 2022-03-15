@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 //Add the custom affinity namespace
 using Affinity = affinity.Affinity;
 
@@ -55,6 +56,7 @@ public class TDEnemy : MonoBehaviour
     public ParticleSystem m_debuff;
     public ParticleSystem m_Particle;
     public ParticleSystem m_deathParticle;
+    public VisualEffect m_deathEffect;
     [SerializeField] ParticleSystem.MainModule m_main;
 
     //Animation
@@ -72,9 +74,17 @@ public class TDEnemy : MonoBehaviour
 
     public bool BossBool;
 
+    public VisualEffect m_chargeParticle;
+    public VisualEffect m_attackParticle;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
+        if (m_chargeParticle != null)
+        {
+            m_chargeParticle.enabled = false;
+        }
+
         m_agent = GetComponent<NavMeshAgent>();
         m_agent.speed = m_moveSpeed;
 
@@ -88,6 +98,16 @@ public class TDEnemy : MonoBehaviour
         aggressionTimer = maxAggressionTimer;
 
         m_main = m_Particle.main;
+
+        if(m_deathEffect != null)
+        {
+            m_deathEffect.Stop();
+        }
+
+        if(m_attackParticle != null)
+        {
+            m_attackParticle.Stop();
+        }
 
         m_Particle.Stop();
     }
@@ -161,6 +181,14 @@ public class TDEnemy : MonoBehaviour
                 {
                     m_anim.SetBool("Run", false);
                     m_anim.SetBool("Charge", false);
+                    if (m_chargeParticle != null)
+                    {
+                        m_chargeParticle.enabled = false;
+                    }
+                    if(m_attackParticle != null)
+                    {
+                        m_attackParticle.Stop();
+                    }
                 }
                 m_agent.speed = m_moveSpeed;
                 break;
@@ -176,15 +204,27 @@ public class TDEnemy : MonoBehaviour
                         //Returns to its usual speed
                         //and charge is removed
                         m_anim.SetTrigger("Attack");
+                        if(m_attackParticle != null)
+                        {
+                            m_attackParticle.Play();
+                        }
                         m_anim.SetBool("Run", false);
                         m_agent.speed = m_moveSpeed;
                         m_anim.SetBool("Charge", false);
+                        if (m_chargeParticle != null)
+                        {
+                            m_chargeParticle.enabled = false;
+                        }
                     } else if (m_anim.GetBool("Charge") && m_chargeTimer < 0.0f) {
                         //The enemy finishes charging
                         //The enemy now starts running
                         //Speed increases
                         m_anim.SetBool("Run", true);
                         m_agent.speed = m_moveSpeed * 2f;
+                        if (m_chargeParticle != null)
+                        {
+                            m_chargeParticle.enabled = false;
+                        }
                     } else if(m_anim.GetBool("Charge") && m_chargeTimer > 0.0f && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Charge"))
                     {
                         //it is stationary, charging
@@ -199,6 +239,16 @@ public class TDEnemy : MonoBehaviour
                             //Sets speed to 0
                             //Resets charge timer.
                             m_anim.SetBool("Charge", true);
+                            if (m_chargeParticle != null)
+                            {
+                                m_chargeParticle.enabled = true;
+                            }
+
+                            if(m_attackParticle != null)
+                            {
+                                m_attackParticle.Stop();
+                            }
+
                             m_agent.speed = 0;
                             m_chargeTimer = 2.0f;
                         }
