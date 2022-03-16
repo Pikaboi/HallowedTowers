@@ -48,7 +48,13 @@ public class WeaponEquipButton : MonoBehaviour
         }
         else
         {
-            t.text = m_Weapon.name;
+            if (m_Weapon != null)
+            {
+                t.text = m_Weapon.name;
+            } else
+            {
+                t.text = "";
+            }
         }
 
         if (attackt != null)
@@ -68,20 +74,24 @@ public class WeaponEquipButton : MonoBehaviour
 
     public void Upgrade()
     {
-        if (m_resource.m_Money >= UpgradePrice && UGCount < 5)
+        if (m_Weapon != null)
         {
-            m_resource.SubMoney(UpgradePrice);
-            if(UGCount == 1)
+            if (m_resource.m_Money >= UpgradePrice && UGCount < 5)
             {
-                attackBoost = m_Weapon.GetComponent<PlayerWeapon>().m_Attack;
-            } else
-            {
-                attackBoost = (attackBoost) * 2;
-            }
-            UGCount++;
-            UpgradePrice = (attackBoost) * 1000;
+                m_resource.SubMoney(UpgradePrice);
+                if (UGCount == 1)
+                {
+                    attackBoost = m_Weapon.GetComponent<PlayerWeapon>().m_Attack;
+                }
+                else
+                {
+                    attackBoost = (attackBoost) * 2;
+                }
+                UGCount++;
+                UpgradePrice = (attackBoost) * 1000;
 
-            attackt.text = "Attack: " + (m_Weapon.GetComponent<PlayerWeapon>().m_Attack + attackBoost);
+                attackt.text = "Attack: " + (m_Weapon.GetComponent<PlayerWeapon>().m_Attack + attackBoost);
+            }
         }
     }
 

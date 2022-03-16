@@ -1351,6 +1351,7 @@ GameObject:
   - component: {fileID: 2948574875611358688}
   - component: {fileID: 5990417947660558455}
   - component: {fileID: 8722241649918089196}
+  - component: {fileID: 3893689766613442096}
   m_Layer: 5
   m_Name: Cancel
   m_TagString: Untagged
@@ -1460,7 +1461,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3893689766613442096}
         m_TargetAssemblyTypeName: MapButton, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -1484,6 +1485,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3893689766613442096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8593244551191064505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e06852d8f925b84586260e6ed8a248a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapRoot: {fileID: 8839650796981751855}
 --- !u!1 &8839650796981751855
 GameObject:
   m_ObjectHideFlags: 0
