@@ -36,7 +36,7 @@ public class InventoryPurchase : MonoBehaviour
             pricetag.text = "SOLD OUT";
             GetComponent<UnityEngine.UI.Button>().enabled = false;
 
-            m_UGmenuInstance.UpdateEquips();
+            //m_UGmenuInstance.UpdateEquips();
         }
     }
 }
