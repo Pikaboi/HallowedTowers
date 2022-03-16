@@ -24,8 +24,10 @@ public class TDTower_Candycorn : TDTower
 
     public bool Path3UG3;
     /// <summary>
-    /// Candy Shooters can shoot from the range of nearby shooters
+    /// Candy Shooters have Increased range when near other candyshooters
     /// </summary>
+
+    public float m_baseTriggerRange;
 
     public float effectiveRange = 0;
 
@@ -36,6 +38,7 @@ public class TDTower_Candycorn : TDTower
     {
         base.Start();
         groupBonus = 0;
+        m_baseTriggerRange = m_TriggerRange;
     }
 
     // Update is called once per frame
@@ -87,6 +90,17 @@ public class TDTower_Candycorn : TDTower
             }
 
             groupBonus = val;
+
+            if (Path3UG3)
+            {
+                if (groupBonus > 1)
+                {
+                    m_TriggerRange = m_baseTriggerRange + 5;
+                } else
+                {
+                    m_TriggerRange = m_baseTriggerRange;
+                }
+            }
         }
 
         CheckEnemies();

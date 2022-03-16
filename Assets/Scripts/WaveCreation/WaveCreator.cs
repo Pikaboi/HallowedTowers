@@ -17,7 +17,7 @@ public class WaveCreator : MonoBehaviour
 
     public Transform m_destination;
 
-    float maxTimer = 0.5f;
+    float maxTimer = 1.5f;
     float timer;
 
     public int waveIndex;
@@ -60,6 +60,10 @@ public class WaveCreator : MonoBehaviour
                 {
                     m_currentWave = m_waves[waveIndex];
                     SetUpWave();
+                }
+                else
+                {
+                    spawnsFinshed = true;
                 }
             }
             else

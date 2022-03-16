@@ -5078,6 +5078,10 @@ MonoBehaviour:
   m_UGDiscount: 0
   m_LevelDiscount: 0
   m_AffinityDiscount: 0
+  baseModel: {fileID: 0}
+  Path1Model: {fileID: 0}
+  Path2Model: {fileID: 0}
+  Path3Model: {fileID: 0}
   m_resource: {fileID: 0}
 --- !u!1 &9140728632152188806
 GameObject:
@@ -9966,7 +9970,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 30000
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 96539602722260632, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
@@ -9986,7 +9990,7 @@ PrefabInstance:
     - target: {fileID: 710023995988193682, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 998d7bcfcabddda47abba15717249771, type: 3}
+      objectReference: {fileID: 21300000, guid: a2457ab5cbafe3c478d5a4cecda8c899, type: 3}
     - target: {fileID: 819660974541294618, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'Upgrade 2-2:
@@ -9997,23 +10001,31 @@ PrefabInstance:
     - target: {fileID: 1062727869371254748, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2f23cc43d48e04f42be598ddf1c29e6d, type: 3}
+      objectReference: {fileID: 21300000, guid: ac1d72cfb3a61444c997d5ef4c96c39e, type: 3}
     - target: {fileID: 1421836654651908438, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2f23cc43d48e04f42be598ddf1c29e6d, type: 3}
+      objectReference: {fileID: 21300000, guid: ac1d72cfb3a61444c997d5ef4c96c39e, type: 3}
     - target: {fileID: 1528161793770449792, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e47519b8b69af714dbfb359858cc8d96, type: 3}
+      objectReference: {fileID: 21300000, guid: e7f9a8692bce3a549b49db8342f25409, type: 3}
     - target: {fileID: 1822461521455380280, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2f23cc43d48e04f42be598ddf1c29e6d, type: 3}
+      objectReference: {fileID: 21300000, guid: ac1d72cfb3a61444c997d5ef4c96c39e, type: 3}
+    - target: {fileID: 1946297889048307129, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946297889048307129, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 28da653f4da40a34690214a42cdf88cd, type: 3}
     - target: {fileID: 2190409941669711885, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e47519b8b69af714dbfb359858cc8d96, type: 3}
+      objectReference: {fileID: 21300000, guid: e7f9a8692bce3a549b49db8342f25409, type: 3}
     - target: {fileID: 2238404483904642272, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'Upgrade 2-1:
@@ -10067,7 +10079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 66600
+      value: 6660
       objectReference: {fileID: 0}
     - target: {fileID: 2718507514283412477, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
@@ -10079,7 +10091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 7000
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 2753921599529633995, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
@@ -10090,6 +10102,14 @@ PrefabInstance:
       value: Debilitate
       objectReference: {fileID: 0}
     - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: acdd9cfbb21a9d54a9328f4c4383caee, type: 3}
+    - target: {fileID: 2770251389723018091, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1911356261818041212}
@@ -10099,7 +10119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 20000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3266816605741391616, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
@@ -10112,10 +10132,10 @@ PrefabInstance:
     - target: {fileID: 3397425952769461298, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 998d7bcfcabddda47abba15717249771, type: 3}
+      objectReference: {fileID: 21300000, guid: a2457ab5cbafe3c478d5a4cecda8c899, type: 3}
     - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 9000
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 3422415341191163123, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
@@ -10125,10 +10145,34 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Poison Brew
       objectReference: {fileID: 0}
+    - target: {fileID: 3828542441780908734, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828542441780908734, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d43a3602604ed9043bfca812ba6e248f, type: 3}
+    - target: {fileID: 4232971298812647989, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232971298812647989, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: acdd9cfbb21a9d54a9328f4c4383caee, type: 3}
+    - target: {fileID: 4267643194381240456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267643194381240456, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 28da653f4da40a34690214a42cdf88cd, type: 3}
     - target: {fileID: 4678595120660729125, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e47519b8b69af714dbfb359858cc8d96, type: 3}
+      objectReference: {fileID: 21300000, guid: e7f9a8692bce3a549b49db8342f25409, type: 3}
     - target: {fileID: 4708672312819164162, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'Upgrade 1-2:
@@ -10162,7 +10206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 8000
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 5267991744518670441, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
@@ -10172,6 +10216,14 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Lethargy Hex
       objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 28da653f4da40a34690214a42cdf88cd, type: 3}
     - target: {fileID: 5307742654969463591, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10209,7 +10261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 10000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6989217562137795850, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
@@ -10219,10 +10271,18 @@ PrefabInstance:
       propertyPath: m_UGString
       value: Performance Potion
       objectReference: {fileID: 0}
+    - target: {fileID: 7277558169954098559, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277558169954098559, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: acdd9cfbb21a9d54a9328f4c4383caee, type: 3}
     - target: {fileID: 7314384820084686044, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 998d7bcfcabddda47abba15717249771, type: 3}
+      objectReference: {fileID: 21300000, guid: a2457ab5cbafe3c478d5a4cecda8c899, type: 3}
     - target: {fileID: 7699149475077671301, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_text
       value: 'Upgrade 3-1:
@@ -10230,9 +10290,17 @@ PrefabInstance:
 
         Enemies with disadvantage are weakened more.'
       objectReference: {fileID: 0}
+    - target: {fileID: 8047046360407279364, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047046360407279364, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d43a3602604ed9043bfca812ba6e248f, type: 3}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 10000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8336456400706409292, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
@@ -10243,6 +10311,14 @@ PrefabInstance:
       value: Ammo Potion
       objectReference: {fileID: 0}
     - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d43a3602604ed9043bfca812ba6e248f, type: 3}
+    - target: {fileID: 8612077747649763236, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7225210666090535996}
@@ -10252,7 +10328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGCost
-      value: 20000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 9193360817789475288, guid: d75bc242644711a4fb115fdd52850b49, type: 3}
       propertyPath: m_UGPrefab
