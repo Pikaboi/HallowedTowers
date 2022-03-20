@@ -34,6 +34,8 @@ public class WaveCreator : MonoBehaviour
     public int roundPenalty = 0;
     private int penaltyCount = 0;
 
+    public WaveAffIcons m_waveIcon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -124,6 +126,7 @@ public class WaveCreator : MonoBehaviour
     {
         if (m_currentWave == null)
         {
+            m_waveIcon.GetNextAffinity();
             return;
         }
 
@@ -144,10 +147,32 @@ public class WaveCreator : MonoBehaviour
                 }
             }
         }
+
+        m_waveIcon.GetNextAffinity();
     }
 
     public void StartWave()
     {
         WavePlaying = true;
+    }
+
+    public affinity.Affinity GetWaveAffinity()
+    {
+        if(wave.Count > 0)
+        {
+            return wave[wave.Count - 1].m_affinity;
+        }
+
+        return 0;
+    }
+
+    public bool EmptyWaveAffinity()
+    {
+        if(wave.Count == 0)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
