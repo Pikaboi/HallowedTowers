@@ -35,6 +35,7 @@ public class WaveCreator : MonoBehaviour
     private int penaltyCount = 0;
 
     public WaveAffIcons m_waveIcon;
+    public WaveAffIcons m_groundWaveIcon;
 
     // Start is called before the first frame update
     void Start()
@@ -126,6 +127,7 @@ public class WaveCreator : MonoBehaviour
     {
         if (m_currentWave == null)
         {
+            m_groundWaveIcon.GetNextAffinity();
             m_waveIcon.GetNextAffinity();
             return;
         }
@@ -148,6 +150,7 @@ public class WaveCreator : MonoBehaviour
             }
         }
 
+        m_groundWaveIcon.GetNextAffinity();
         m_waveIcon.GetNextAffinity();
     }
 
