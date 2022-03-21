@@ -37,6 +37,8 @@ public class WaveCreator : MonoBehaviour
     public WaveAffIcons m_waveIcon;
     public WaveAffIcons m_groundWaveIcon;
 
+    public float DistanceMultiplier;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +87,7 @@ public class WaveCreator : MonoBehaviour
             {
                 TDEnemy e = Instantiate(wave[0], transform.position, transform.rotation);
                 e.m_Destination = m_destination;
+                e.m_health *= DistanceMultiplier;
                 wave.Remove(wave[0]);
                 timer = maxTimer;
             }
