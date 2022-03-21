@@ -10,12 +10,13 @@ public class UpdateNotification : MonoBehaviour
 
     private bool PrevRoundStatus;
 
-    private float timer = 2.0f;
+    private float timer = 5.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         m_Self = GetComponent<Animator>();
+        PrevRoundStatus = true;
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class UpdateNotification : MonoBehaviour
             if(timer < 0.0f)
             {
                 m_Self.SetBool("Notif", false);
-                timer = 2.0f;
+                timer = 5.0f;
             }
         }
 
