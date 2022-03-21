@@ -39,6 +39,9 @@ public class WaveCreator : MonoBehaviour
 
     public float DistanceMultiplier;
 
+    public FogLiftNotification m_fognotif;
+    public FogLiftNotification m_skipnotif;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -103,11 +106,19 @@ public class WaveCreator : MonoBehaviour
                     if (m_travelButton != null)
                     {
                         m_travelButton.gameObject.GetComponent<Image>().enabled = true;
+                        if (m_skipnotif != null)
+                        {
+                            m_skipnotif.Animate();
+                        }
                     }
 
                     if (m_fog != null)
                     {
                         m_fog.SetActive(false);
+                        if(m_fognotif != null)
+                        {
+                            m_fognotif.Animate();
+                        }
                     }
                 }
 

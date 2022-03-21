@@ -14,6 +14,8 @@ public class RoundPlayButton : MonoBehaviour
 
     public GlobalWorldController m_global;
 
+    public bool firstRound = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class RoundPlayButton : MonoBehaviour
     //Handle the onClick event
     void StartLevel()
     {
+        firstRound = false;
         foreach(WaveCreator w in m_waveCreators)
         {
             w.StartWave();
