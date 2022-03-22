@@ -9,6 +9,8 @@ public class CamMove : MonoBehaviour
     public float xBoundsMin;
     public float zBoundsMax;
     public float zBoundsMin;
+    public float yBoundsMin;
+    public float yBoundsMax;
 
     public float offset;
 
@@ -16,6 +18,11 @@ public class CamMove : MonoBehaviour
     void Start()
     {
         
+    }
+
+    private void Update()
+    {
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y - Input.mouseScrollDelta.y, yBoundsMin, yBoundsMax), transform.position.z);
     }
 
     // Update is called once per frame
