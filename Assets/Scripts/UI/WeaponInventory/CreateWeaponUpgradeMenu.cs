@@ -17,16 +17,16 @@ public class CreateWeaponUpgradeMenu : MonoBehaviour
     {
         UpdateEquips();
 
-        m_baseWeapon = _Equips[0];
+        //m_baseWeapon = _Equips[0];
     }
 
     private void OnEnable()
     {
         UpdateEquips();
 
-        GameObject basewug = Instantiate(m_WUGMenu);
-        basewug.transform.SetParent(transform, false);
-        basewug.GetComponent<UpgradeMenuUpdater>().getEquipper(m_baseWeapon);
+        //GameObject basewug = Instantiate(m_WUGMenu);
+        //basewug.transform.SetParent(transform, false);
+        //basewug.GetComponent<UpgradeMenuUpdater>().getEquipper(m_baseWeapon);
 
         foreach (WeaponEquipButton web in _Equips)
         {
@@ -48,11 +48,11 @@ public class CreateWeaponUpgradeMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void UpdateEquips()
     {
-        _Equips = m_content.GetComponentsInChildren<WeaponEquipButton>();
+        _Equips = m_content.GetComponentsInChildren<WeaponEquipButton>(true);
     }
 }
