@@ -14,7 +14,7 @@ public class WaveAffIcons : MonoBehaviour
 
     public WaveCreator m_wav;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         m_Self = GetComponent<SpriteRenderer>();
     }

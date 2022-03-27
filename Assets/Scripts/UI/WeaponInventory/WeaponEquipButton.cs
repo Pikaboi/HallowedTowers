@@ -66,6 +66,12 @@ public class WeaponEquipButton : MonoBehaviour
     // Update is called once per frame
     public void OnClick()
     {
+        if(m_Player == null)
+        {
+            Debug.Log("this is the issue");
+            return;
+        }
+
         if (m_Weapon != null)
         {
             m_Player.SpawnWeapon(m_Weapon, m_rot, attackBoost);
