@@ -132,6 +132,7 @@ MonoBehaviour:
   m_chargeParticle: {fileID: 2009526071049097283}
   m_attackParticle: {fileID: 0}
   m_attackParticleSystem: {fileID: 0}
+  m_attackHbox: {fileID: 603649905997237213}
 --- !u!54 &203304971324945167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10030,6 +10031,35 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!136 &4814993410619548811
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457778120763767479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.34041908
+  m_Height: 1.3813581
+  m_Direction: 0
+  m_Center: {x: -0.6138524, y: -0.00000016743638, z: 0.0000007216009}
+--- !u!114 &603649905997237213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457778120763767479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1a6849419bb19408ccd2b6edd9f5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enemy: {fileID: 203304971324943601}
+  m_attack: 0
+  m_cc: {fileID: 0}
 --- !u!95 &8677379370046744030
 Animator:
   serializedVersion: 3
@@ -10433,5 +10463,10 @@ GameObject:
 --- !u!4 &8902468066383194058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f24cdf90ada1114280aa7352eee06b5, type: 3}
+  m_PrefabInstance: {fileID: 8935514358633070625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7457778120763767479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7242338749408347498, guid: 0f24cdf90ada1114280aa7352eee06b5, type: 3}
   m_PrefabInstance: {fileID: 8935514358633070625}
   m_PrefabAsset: {fileID: 0}
