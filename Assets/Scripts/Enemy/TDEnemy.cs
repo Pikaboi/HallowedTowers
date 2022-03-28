@@ -80,6 +80,8 @@ public class TDEnemy : MonoBehaviour
     //So I have to make 2 different particle systems for attack
     public ParticleSystem m_attackParticleSystem;
 
+    public TDEnemyAttack m_attackHbox;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -202,6 +204,10 @@ public class TDEnemy : MonoBehaviour
                         m_attackParticleSystem.Stop();
                     }
                 }
+                if (m_attackHbox != null)
+                {
+                    m_attackHbox.m_cc.enabled = false;
+                }
                 m_agent.speed = m_moveSpeed;
                 break;
             case TargetState.PLAYER:
@@ -216,6 +222,10 @@ public class TDEnemy : MonoBehaviour
                         //Returns to its usual speed
                         //and charge is removed
                         m_anim.SetTrigger("Attack");
+                        if(m_attackHbox != null)
+                        {
+                            m_attackHbox.m_cc.enabled = true;
+                        }
                         if(m_attackParticle != null)
                         {
                             m_attackParticle.Play();
@@ -254,6 +264,11 @@ public class TDEnemy : MonoBehaviour
                             //Starts charge
                             //Sets speed to 0
                             //Resets charge timer.
+                            if(m_attackHbox != null)
+                            {
+                                m_attackHbox.m_cc.enabled = false;
+                            }
+
                             m_anim.SetBool("Charge", true);
                             if (m_chargeParticle != null)
                             {

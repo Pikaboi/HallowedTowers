@@ -211,25 +211,25 @@ public class WorldCharacter : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.GetComponent<TDEnemy>() != null && !dashing)
+        //Check you are hit by the enemies attack hit box
+        if(other.gameObject.GetComponent<TDEnemyAttack>() != null && !dashing)
         {
-            if(collision.gameObject.GetComponent<TDEnemy>().m_targetState == TDEnemy.TargetState.PLAYER)
+            Debug.Log("I've been hit!");
+            //Check the enemy was attacking and player is not in invincibility frames
+            if (!hit)
             {
-                if (collision.gameObject.GetComponent<TDEnemy>().CheckIfAttacking() && !hit)
-                {
-                    hit = true;
-                    m_health -= collision.gameObject.GetComponent<TDEnemy>().m_attackPower;
+                hit = true;
+                m_health -= other.gameObject.GetComponent<TDEnemyAttack>().m_attack;
 
-                    if (m_health <= 0)
-                    {
-                        m_dead.Play();
-                    }
-                    else
-                    {
-                        m_oof.Play();
-                    }
+                if (m_health <= 0)
+                {
+                    m_dead.Play();
+                }
+                else
+                {
+                    m_oof.Play();
                 }
             }
         }
