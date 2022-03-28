@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -5141726655210495604}
   - component: {fileID: 1444647152544580098}
   m_Layer: 0
-  m_Name: Werewolf Weak
+  m_Name: WerewolfWeak
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_chargeParticle: {fileID: 312546279460097039}
   m_attackParticle: {fileID: 4335917620543729490}
   m_attackParticleSystem: {fileID: 0}
+  m_attackHbox: {fileID: 2655053892544633283}
 --- !u!54 &203304971324945167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5144,6 +5145,35 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!136 &6830233230068838912
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474892804363814035}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9566866
+  m_Direction: 0
+  m_Center: {x: -0.47833726, y: -0.00000023963207, z: 0.0000007255408}
+--- !u!114 &2655053892544633283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474892804363814035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1a6849419bb19408ccd2b6edd9f5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enemy: {fileID: 203304971324943601}
+  m_attack: 0
+  m_cc: {fileID: 0}
 --- !u!1 &3494183187466355754
 GameObject:
   m_ObjectHideFlags: 0
@@ -10425,5 +10455,10 @@ GameObject:
 --- !u!4 &8823190863728144803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d181d38334e36974bbc575b36e7e3cc1, type: 3}
+  m_PrefabInstance: {fileID: 9077282308955936328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1474892804363814035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7606336892017251035, guid: d181d38334e36974bbc575b36e7e3cc1, type: 3}
   m_PrefabInstance: {fileID: 9077282308955936328}
   m_PrefabAsset: {fileID: 0}
