@@ -267,6 +267,9 @@ public class TDEnemy : MonoBehaviour
                         {
                             //it is stationary, charging
                             //Timer till it can move decreases
+                            transform.LookAt(m_Player.transform.position);
+                            //Prevents any weird unwanted rotation
+                            transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
                             m_chargeTimer -= Time.deltaTime;
                         }
                         else
