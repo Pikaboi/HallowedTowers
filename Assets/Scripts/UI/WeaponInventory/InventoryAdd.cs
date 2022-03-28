@@ -11,7 +11,6 @@ public class InventoryAdd : MonoBehaviour
         WorldCharacter player = FindObjectOfType<WorldCharacter>();
         starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).m_Player = player;
         addWeapon(starterWeapon);
-
     }
 
     private void Start()
