@@ -80,7 +80,13 @@ public class TDEnemy : MonoBehaviour
     //So I have to make 2 different particle systems for attack
     public ParticleSystem m_attackParticleSystem;
 
+    //Enemies have one or the other
+    //attackHbox refers to melee attackers
+    //attackProj refers to ranged attackers
     public TDEnemyAttack m_attackHbox;
+    public TDEnemyProjectile m_attackProj;
+    public Transform m_projectileSpawn;
+    public bool ranged;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -211,84 +217,172 @@ public class TDEnemy : MonoBehaviour
                 m_agent.speed = m_moveSpeed;
                 break;
             case TargetState.PLAYER:
-                m_agent.destination = m_Player.transform.position;
-
-                if (m_anim != null)
+                //Totally different code based on range and physical attacks
+                //Would be a lot cleaner if the artists' VFX are all different components
+                if (ranged)
                 {
-                    if (Vector3.Distance(transform.position, m_Player.transform.position) < 3.0f && m_anim.GetBool("Charge") && m_chargeTimer < 0.0f)
+                    //Instead of moving, stand in place
+                    m_agent.destination = transform.position;
+                    if (m_anim != null)
                     {
-                        //The enemy attacks
-                        //its stops the dash
-                        //Returns to its usual speed
-                        //and charge is removed
-                        m_anim.SetTrigger("Attack");
-                        if(m_attackHbox != null)
+                        if (m_anim.GetBool("Charge") && m_chargeTimer < 0.0f)
                         {
-                            m_attackHbox.m_cc.enabled = true;
-                        }
-                        if(m_attackParticle != null)
-                        {
-                            m_attackParticle.Play();
-                        }
-                        if (m_attackParticleSystem != null)
-                        {
-                            m_attackParticleSystem.Play();
-                        }
-                        m_anim.SetBool("Run", false);
-                        m_agent.speed = m_moveSpeed;
-                        m_anim.SetBool("Charge", false);
-                        if (m_chargeParticle != null)
-                        {
-                            m_chargeParticle.enabled = false;
-                        }
-                    } else if (m_anim.GetBool("Charge") && m_chargeTimer < 0.0f) {
-                        //The enemy finishes charging
-                        //The enemy now starts running
-                        //Speed increases
-                        m_anim.SetBool("Run", true);
-                        m_agent.speed = m_moveSpeed * 2f;
-                        if (m_chargeParticle != null)
-                        {
-                            m_chargeParticle.enabled = false;
-                        }
-                    } else if(m_anim.GetBool("Charge") && m_chargeTimer > 0.0f && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Charge"))
-                    {
-                        //it is stationary, charging
-                        //Timer till it can move decreases
-                        m_chargeTimer -= Time.deltaTime;
-                    }
-                    else
-                    {
-                        if (!m_anim.IsInTransition(1) && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Default"))
-                        {
-                            //Starts charge
-                            //Sets speed to 0
-                            //Resets charge timer.
-                            if(m_attackHbox != null)
+                            //The enemy attacks
+                            //its stops the dash
+                            //Returns to its usual speed
+                            //and charge is removed
+                            m_anim.SetTrigger("Attack");
+                            if (m_attackProj != null)
                             {
-                                m_attackHbox.m_cc.enabled = false;
+                                TDEnemyProjectile g = Instantiate(m_attackProj, m_projectileSpawn.position, transform.rotation);
+                                g.InheritFromEnemy(this);
                             }
 
-                            m_anim.SetBool("Charge", true);
-                            if (m_chargeParticle != null)
+                            if (m_attackParticle != null)
                             {
-                                m_chargeParticle.enabled = true;
-                            }
-
-                            if(m_attackParticle != null)
-                            {
-                                m_attackParticle.Stop();
+                                m_attackParticle.Play();
                             }
                             if (m_attackParticleSystem != null)
                             {
-                                m_attackParticleSystem.Stop();
+                                m_attackParticleSystem.Play();
                             }
 
-                            m_agent.speed = 0;
-                            m_chargeTimer = 2.0f;
+                            m_anim.SetBool("Charge", false);
+                            if (m_chargeParticle != null)
+                            {
+                                m_chargeParticle.enabled = false;
+                            }
                         }
+                        else if (m_anim.GetBool("Charge") && m_chargeTimer < 0.0f)
+                        {
+                            //The enemy finishes charging
+                            //The enemy now starts running
+                            //Speed increases
+                            if (m_chargeParticle != null)
+                            {
+                                m_chargeParticle.enabled = false;
+                            }
+                        }
+                        else if (m_anim.GetBool("Charge") && m_chargeTimer > 0.0f && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Charge"))
+                        {
+                            //it is stationary, charging
+                            //Timer till it can move decreases
+                            m_chargeTimer -= Time.deltaTime;
+                        }
+                        else
+                        {
+                            if (!m_anim.IsInTransition(1) && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Default"))
+                            {
+                                //Starts charge
+                                //Sets speed to 0
+                                //Resets charge timer.
+
+                                m_anim.SetBool("Charge", true);
+                                if (m_chargeParticle != null)
+                                {
+                                    m_chargeParticle.enabled = true;
+                                }
+
+                                if (m_attackParticle != null)
+                                {
+                                    m_attackParticle.Stop();
+                                }
+                                if (m_attackParticleSystem != null)
+                                {
+                                    m_attackParticleSystem.Stop();
+                                }
+
+                                m_agent.speed = 0;
+                                m_chargeTimer = 2.0f;
+                            }
+                        }
+
                     }
-                    
+                }
+                else
+                {
+                    m_agent.destination = m_Player.transform.position;
+
+                    if (m_anim != null)
+                    {
+                        if (Vector3.Distance(transform.position, m_Player.transform.position) < 3.0f && m_anim.GetBool("Charge") && m_chargeTimer < 0.0f)
+                        {
+                            //The enemy attacks
+                            //its stops the dash
+                            //Returns to its usual speed
+                            //and charge is removed
+                            m_anim.SetTrigger("Attack");
+                            if (m_attackHbox != null)
+                            {
+                                m_attackHbox.m_cc.enabled = true;
+                            }
+                            if (m_attackParticle != null)
+                            {
+                                m_attackParticle.Play();
+                            }
+                            if (m_attackParticleSystem != null)
+                            {
+                                m_attackParticleSystem.Play();
+                            }
+                            m_anim.SetBool("Run", false);
+                            m_agent.speed = m_moveSpeed;
+                            m_anim.SetBool("Charge", false);
+                            if (m_chargeParticle != null)
+                            {
+                                m_chargeParticle.enabled = false;
+                            }
+                        }
+                        else if (m_anim.GetBool("Charge") && m_chargeTimer < 0.0f)
+                        {
+                            //The enemy finishes charging
+                            //The enemy now starts running
+                            //Speed increases
+                            m_anim.SetBool("Run", true);
+                            m_agent.speed = m_moveSpeed * 2f;
+                            if (m_chargeParticle != null)
+                            {
+                                m_chargeParticle.enabled = false;
+                            }
+                        }
+                        else if (m_anim.GetBool("Charge") && m_chargeTimer > 0.0f && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Charge"))
+                        {
+                            //it is stationary, charging
+                            //Timer till it can move decreases
+                            m_chargeTimer -= Time.deltaTime;
+                        }
+                        else
+                        {
+                            if (!m_anim.IsInTransition(1) && m_anim.GetCurrentAnimatorStateInfo(1).IsName("Default"))
+                            {
+                                //Starts charge
+                                //Sets speed to 0
+                                //Resets charge timer.
+                                if (m_attackHbox != null)
+                                {
+                                    m_attackHbox.m_cc.enabled = false;
+                                }
+
+                                m_anim.SetBool("Charge", true);
+                                if (m_chargeParticle != null)
+                                {
+                                    m_chargeParticle.enabled = true;
+                                }
+
+                                if (m_attackParticle != null)
+                                {
+                                    m_attackParticle.Stop();
+                                }
+                                if (m_attackParticleSystem != null)
+                                {
+                                    m_attackParticleSystem.Stop();
+                                }
+
+                                m_agent.speed = 0;
+                                m_chargeTimer = 2.0f;
+                            }
+                        }
+
+                    }
                 }
                 break;
         }

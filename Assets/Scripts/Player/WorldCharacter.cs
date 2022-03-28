@@ -233,6 +233,26 @@ public class WorldCharacter : MonoBehaviour
                 }
             }
         }
+
+        if(other.gameObject.GetComponent<TDEnemyProjectile>() != null && !dashing)
+        {
+            Debug.Log("I've been shot!");
+            //Check the enemy was attacking and player is not in invincibility frames
+            if (!hit)
+            {
+                hit = true;
+                m_health -= other.gameObject.GetComponent<TDEnemyProjectile>().m_attack;
+
+                if (m_health <= 0)
+                {
+                    m_dead.Play();
+                }
+                else
+                {
+                    m_oof.Play();
+                }
+            }
+        }
     }
 
     public void Recover()
