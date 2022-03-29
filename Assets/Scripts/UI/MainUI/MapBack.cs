@@ -31,7 +31,7 @@ public class MapBack : MonoBehaviour
         {
             foreach(MapRendererCall map in m_rendercams)
             {
-                if (map.isActiveAndEnabled)
+                if (map.m_Cam.activeSelf)
                 {
                     map.turnOffCam();
                 }

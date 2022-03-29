@@ -1823,6 +1823,7 @@ GameObject:
   - component: {fileID: 5383746410077181415}
   - component: {fileID: 8153743841060396926}
   - component: {fileID: 1609280709501894414}
+  - component: {fileID: 1391988911682889858}
   m_Layer: 5
   m_Name: MapButton
   m_TagString: Untagged
@@ -1955,6 +1956,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1391988911682889858}
+        m_TargetAssemblyTypeName: MapRendererCall, Assembly-CSharp
+        m_MethodName: OnOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1609280709501894414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1968,6 +1981,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapRoot: {fileID: 1218873519}
+--- !u!114 &1391988911682889858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729043900915714761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c554d999ee44e4d84f71f65527e4e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Cam: {fileID: 0}
 --- !u!1 &749905403798333636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,6 +3811,7 @@ GameObject:
   - component: {fileID: 3568830071273651261}
   - component: {fileID: 4789570764149499912}
   - component: {fileID: 6842284693237542106}
+  - component: {fileID: 8937304290426556051}
   m_Layer: 5
   m_Name: Area2
   m_TagString: Untagged
@@ -3930,6 +3957,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapRoot: {fileID: 69050545}
+--- !u!114 &8937304290426556051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444908110424096529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c554d999ee44e4d84f71f65527e4e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Cam: {fileID: 0}
 --- !u!1 &1462745316716368894
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,7 +5322,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AreaMaps:
   - {fileID: 69050545}
+  - {fileID: 5528161075095175504}
+  m_rendercams:
+  - {fileID: 7646295972796251681}
+  - {fileID: 8937304290426556051}
   mainMap: {fileID: 1218873519}
+  m_cam: {fileID: 0}
 --- !u!1 &2344489691180949834
 GameObject:
   m_ObjectHideFlags: 0
@@ -10952,6 +10997,7 @@ GameObject:
   - component: {fileID: 3580993621532845806}
   - component: {fileID: 543424199960069053}
   - component: {fileID: 192891276458193380}
+  - component: {fileID: 7646295972796251681}
   m_Layer: 5
   m_Name: Area1
   m_TagString: Untagged
@@ -11084,6 +11130,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7646295972796251681}
+        m_TargetAssemblyTypeName: MapRendererCall, Assembly-CSharp
+        m_MethodName: turnOnCam
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapRendererCall, Assembly-CSharp
+        m_MethodName: turnOffCam
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapRendererCall, Assembly-CSharp
+        m_MethodName: turnOffCam
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &192891276458193380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11097,6 +11179,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapRoot: {fileID: 69050545}
+--- !u!114 &7646295972796251681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6272173267442202782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c554d999ee44e4d84f71f65527e4e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Cam: {fileID: 0}
 --- !u!1 &6624601448583712945
 GameObject:
   m_ObjectHideFlags: 0
