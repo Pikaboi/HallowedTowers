@@ -5,9 +5,17 @@ using UnityEngine;
 public class InventoryAdd : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    public GameObject starterWeapon;
+    void Awake()
     {
+        addWeapon(starterWeapon);
+        WorldCharacter player = FindObjectOfType<WorldCharacter>();
+        starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).m_Player = player;
+        starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).OnClick();
+    }
 
+    private void Start()
+    {
     }
 
     // Update is called once per frame

@@ -67,10 +67,10 @@ public class WorldCharacter : MonoBehaviour
         }
         m_maxat = m_attackTime;
 
-        if (m_Weapon != null)
-        {
-            SpawnWeapon(m_Weapon, new Vector3(90, 90, 0), 0);
-        }
+        //if (m_Weapon != null)
+       // {
+         //   SpawnWeapon(m_Weapon, new Vector3(-14.471f, -90, 90), 0);
+       // }
     }
 
     // Update is called once per frame
@@ -87,13 +87,16 @@ public class WorldCharacter : MonoBehaviour
             m_inventory.OnClick();
         }
 
-        if (m_WeaponStats.m_atkBuff != 0 && m_BuffParticle.isStopped)
+        if (m_Weapon != null)
         {
-            m_BuffParticle.Play();
-        }
-        else if (m_WeaponStats.m_atkBuff == 0)
-        {
-            m_BuffParticle.Stop();
+            if (m_WeaponStats.m_atkBuff != 0 && m_BuffParticle.isStopped)
+            {
+                m_BuffParticle.Play();
+            }
+            else if (m_WeaponStats.m_atkBuff == 0)
+            {
+                m_BuffParticle.Stop();
+            }
         }
 
         if (m_health > 0)
@@ -101,7 +104,10 @@ public class WorldCharacter : MonoBehaviour
             AggroCheck();
             WeaponStatsCheck();
             Movement();
-            Attack();
+            if (m_Weapon != null)
+            {
+                Attack();
+            }
         } else
         {
             respawnTimer -= Time.deltaTime;
@@ -205,25 +211,25 @@ public class WorldCharacter : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.GetComponent<TDEnemy>() != null && !dashing)
+        //Check you are hit by the enemies attack hit box
+        if(other.gameObject.GetComponent<TDEnemyAttack>() != null && !dashing)
         {
-            if(collision.gameObject.GetComponent<TDEnemy>().m_targetState == TDEnemy.TargetState.PLAYER)
+            Debug.Log("I've been hit!");
+            //Check the enemy was attacking and player is not in invincibility frames
+            if (!hit)
             {
-                if (collision.gameObject.GetComponent<TDEnemy>().CheckIfAttacking() && !hit)
-                {
-                    hit = true;
-                    m_health -= collision.gameObject.GetComponent<TDEnemy>().m_attackPower;
+                hit = true;
+                m_health -= other.gameObject.GetComponent<TDEnemyAttack>().m_attack;
 
-                    if (m_health <= 0)
-                    {
-                        m_dead.Play();
-                    }
-                    else
-                    {
-                        m_oof.Play();
-                    }
+                if (m_health <= 0)
+                {
+                    m_dead.Play();
+                }
+                else
+                {
+                    m_oof.Play();
                 }
             }
         }
