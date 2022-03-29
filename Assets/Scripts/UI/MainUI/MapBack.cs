@@ -5,7 +5,9 @@ using UnityEngine;
 public class MapBack : MonoBehaviour
 {
     [SerializeField] GameObject[] AreaMaps;
+    [SerializeField] MapRendererCall[] m_rendercams;
     [SerializeField] GameObject mainMap;
+    [SerializeField] GameObject m_cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,23 @@ public class MapBack : MonoBehaviour
             }
         }
 
+        if (!noneOpen)
+        {
+            foreach(MapRendererCall map in m_rendercams)
+            {
+                if (map.isActiveAndEnabled)
+                {
+                    map.turnOffCam();
+                }
+            }
+
+            m_cam.SetActive(true);
+        }
+
         if (noneOpen)
         {
             mainMap.SetActive(false);
+            m_cam.SetActive(false);
         }
     }
 }
