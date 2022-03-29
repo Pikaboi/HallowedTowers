@@ -255,6 +255,26 @@ public class WorldCharacter : MonoBehaviour
         }
     }
 
+    public void ParticleDamage(float m_attack)
+    {
+        Debug.Log("I've been shot!");
+        //Check the enemy was attacking and player is not in invincibility frames
+        if (!hit)
+        {
+            hit = true;
+            m_health -= m_attack;
+
+            if (m_health <= 0)
+            {
+                m_dead.Play();
+            }
+            else
+            {
+                m_oof.Play();
+            }
+        }
+    }
+
     public void Recover()
     {
         recoveryTimer -= Time.deltaTime;

@@ -42,6 +42,7 @@ Transform:
   - {fileID: 6986064591864336155}
   - {fileID: 8261784564977315159}
   - {fileID: 7791277927275435270}
+  - {fileID: 5071124218416588021}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,6 +134,10 @@ MonoBehaviour:
   m_chargeParticle: {fileID: 6668036856127861593}
   m_attackParticle: {fileID: 0}
   m_attackParticleSystem: {fileID: 2431303325016831284}
+  m_attackHbox: {fileID: 0}
+  m_attackProj: {fileID: 2357020210439560762, guid: 64411caabdbc36f46b4bc2c7c91b339a, type: 3}
+  m_projectileSpawn: {fileID: 5071124218416588021}
+  ranged: 1
 --- !u!54 &203304971324945167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -423,6 +428,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3857908943548464061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5071124218416588021}
+  m_Layer: 0
+  m_Name: ProjectilePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5071124218416588021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857908943548464061}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.616}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 203304971324945164}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &55733641945843319
 Animator:
   serializedVersion: 3
@@ -10577,6 +10612,10 @@ PrefabInstance:
     - target: {fileID: 5182015926091093956, guid: 40f03d711b6cb624f9b855db5e5f4ba7, type: 3}
       propertyPath: m_Name
       value: VampireSpell
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182015926091093956, guid: 40f03d711b6cb624f9b855db5e5f4ba7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40f03d711b6cb624f9b855db5e5f4ba7, type: 3}
