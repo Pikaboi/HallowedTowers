@@ -7,7 +7,7 @@ public class MapBack : MonoBehaviour
     [SerializeField] GameObject[] AreaMaps;
     [SerializeField] MapRendererCall[] m_rendercams;
     [SerializeField] GameObject mainMap;
-    [SerializeField] GameObject m_cam;
+    [SerializeField] MapRendererCall m_cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,13 +37,13 @@ public class MapBack : MonoBehaviour
                 }
             }
 
-            m_cam.SetActive(true);
+            m_cam.turnOnCam();
         }
 
         if (noneOpen)
         {
             mainMap.SetActive(false);
-            m_cam.SetActive(false);
+            m_cam.OnOff();
         }
     }
 }
