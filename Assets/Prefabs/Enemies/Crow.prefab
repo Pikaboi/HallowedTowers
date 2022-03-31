@@ -94,7 +94,7 @@ MonoBehaviour:
   m_agent: {fileID: 0}
   m_moveSpeed: 5
   m_attackPower: 5
-  m_health: 40
+  m_health: 200
   m_debuffMultiplier: 0
   m_affinity: 0
   m_targetState: 0
@@ -132,6 +132,9 @@ MonoBehaviour:
   m_attackParticle: {fileID: 0}
   m_attackParticleSystem: {fileID: 0}
   m_attackHbox: {fileID: 8562892450433280851}
+  m_attackProj: {fileID: 0}
+  m_projectileSpawn: {fileID: 0}
+  ranged: 0
 --- !u!54 &203304971324945167
 Rigidbody:
   m_ObjectHideFlags: 0
