@@ -67,8 +67,6 @@ public class TDTowerManager : MonoBehaviour
         {
             Path3Model.SetActive(false);
         }
-
-        SaveData.saveData.towers.Add(this);
     }
 
     // Update is called once per frame
