@@ -22,6 +22,7 @@ public class TDTowerUpgrade : MonoBehaviour
     public AudioSource m_sound;
 
     public Sprite m_Locked;
+    public Sprite m_Purchased;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -49,7 +50,7 @@ public class TDTowerUpgrade : MonoBehaviour
         {
             m_manager.newUpgrade(m_UGPrefab);
             m_UGBought = true;
-            GetComponent<Image>().sprite = m_Locked;
+            GetComponent<Image>().sprite = m_Purchased;
             m_resource.SubMoney(m_UGCost);
             m_manager.m_sellCost += m_UGCost / 2;
             GetComponent<Button>().enabled = false;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //Add the custom affinity namespace
 using Affinity = affinity.Affinity;
+
 public class TDTower : MonoBehaviour
 {
     //Values all towers will share

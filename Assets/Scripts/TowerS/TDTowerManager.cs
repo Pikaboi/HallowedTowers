@@ -4,6 +4,7 @@ using UnityEngine;
 //Add the custom affinity namespace
 using Affinity =  affinity.Affinity;
 
+[System.Serializable]
 public class TDTowerManager : MonoBehaviour
 {
     public GameObject m_child;
@@ -66,6 +67,8 @@ public class TDTowerManager : MonoBehaviour
         {
             Path3Model.SetActive(false);
         }
+
+        SaveData.saveData.towers.Add(this);
     }
 
     // Update is called once per frame

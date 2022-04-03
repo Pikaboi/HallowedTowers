@@ -24,7 +24,7 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
         {
             m_manager.newUpgrade(m_UGPrefab);
             m_UGBought = true;
-            GetComponent<Image>().sprite = m_Locked;
+            GetComponent<Image>().sprite = m_Purchased;
             m_resource.SubMoney(m_UGCost);
             m_manager.m_sellCost += m_UGCost / 2;
 
