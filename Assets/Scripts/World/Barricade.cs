@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Barricade : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Barricade : MonoBehaviour
     private PlayerResourceManager m_resource;
     private Vector3 ogPos;
     public float m_price;
+    public GameObject m_img;
+
 
     void Start()
     {
@@ -62,6 +65,7 @@ public class Barricade : MonoBehaviour
         } else
         {
             m_moveBack = false;
+            m_img.SetActive(true);
         }
     }
 
@@ -79,10 +83,14 @@ public class Barricade : MonoBehaviour
 
     public void PayBarricade()
     {
-        if (m_resource.m_Money >= m_price)
+        if (!m_moving)
         {
-            m_resource.m_Money -= m_price;
-            m_moving = true;
+            if (m_resource.m_Money >= m_price)
+            {
+                m_resource.SubMoney(m_price);
+                m_moving = true;
+                m_img.SetActive(false);
+            }
         }
     }
 
