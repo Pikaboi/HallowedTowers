@@ -32,7 +32,7 @@ public class WaveCreator : MonoBehaviour
 
     //Using this to monitor later spawns
     public int roundPenalty = 0;
-    private int penaltyCount = 0;
+    public int penaltyCount = 0;
 
     public WaveAffIcons m_waveIcon;
     public WaveAffIcons m_groundWaveIcon;

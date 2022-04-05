@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SaveControl : MonoBehaviour
 {
-    public List<GameObject> m_towers = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -19,18 +18,11 @@ public class SaveControl : MonoBehaviour
 
     public void SaveGame()
     {
-        TDTowerManager[] towers = FindObjectsOfType<TDTowerManager>();
-
-        foreach(TDTowerManager tower in towers)
-        {
-            m_towers.Add(tower.gameObject);
-        }
-
-        ES3.Save("playerTowers", m_towers);
+        ES3AutoSaveMgr.Current.Save();
     }
 
     public void LoadGame()
     {
-        m_towers = (List<GameObject>)ES3.Load("playerTowers");
+        ES3AutoSaveMgr.Current.Load();
     }
 }
