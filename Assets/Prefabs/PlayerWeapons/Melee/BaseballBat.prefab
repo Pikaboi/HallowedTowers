@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7275741709095288891}
   - component: {fileID: 7275741709095288888}
   - component: {fileID: 3878388225600450132}
+  - component: {fileID: 6081358322143124001}
+  - component: {fileID: -2115670274876318251}
   m_Layer: 14
   m_Name: BaseballBat
   m_TagString: Untagged
@@ -86,6 +88,59 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6081358322143124001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275741709095288893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 1515076514290253466
+  localRefs:
+    _Keys:
+    - {fileID: 7275741709095288893}
+    - {fileID: 7275741709095288892}
+    - {fileID: 7275741709095288891}
+    - {fileID: 7275741709095288888}
+    - {fileID: 11500000, guid: 60207506e02979f478b08b0dae36f71d, type: 3}
+    - {fileID: 8300000, guid: 006ecce03c9686341bb20447b2c451c6, type: 3}
+    - {fileID: 3878388225600450132}
+    - {fileID: 6081358322143124001}
+    - {fileID: 4989539619645724348}
+    - {fileID: 5653626623443389446}
+    - {fileID: 8780450136884495267}
+    - {fileID: -5534212621762556924, guid: ec289238aeec90f4e8bb35627eec2ba5, type: 3}
+    - {fileID: 6791036438727571305}
+    - {fileID: 2100000, guid: ad7596f0acaeee94e94ebedeb6de1a3c, type: 2}
+    _Values: ddc5fe6f25793a64bbd89b8386be78693e722b9f4cd03355ebb085f386269b1807f8d4bcdab20c3f500b8322eab12a73c48953765da1a50d6f57a62a01d1151d8d4b75806dcabc0f7e6b4f414d106b64250748f085ee8a57611eb27df41ec122e05e50c9d8541f71bb9c080dad9c3f7f
+--- !u!114 &-2115670274876318251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275741709095288893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 3878388225600450132}
+  - {fileID: 7275741709095288888}
+  - {fileID: 7275741709095288891}
+  - {fileID: 7275741709095288892}
 --- !u!1001 &5331995914736610285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,8 +210,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec289238aeec90f4e8bb35627eec2ba5, type: 3}
+--- !u!1 &4989539619645724348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ec289238aeec90f4e8bb35627eec2ba5, type: 3}
+  m_PrefabInstance: {fileID: 5331995914736610285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5653626623443389446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ec289238aeec90f4e8bb35627eec2ba5, type: 3}
+  m_PrefabInstance: {fileID: 5331995914736610285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &8780450136884495267 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: ec289238aeec90f4e8bb35627eec2ba5, type: 3}
+  m_PrefabInstance: {fileID: 5331995914736610285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6791036438727571305 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: ec289238aeec90f4e8bb35627eec2ba5, type: 3}
   m_PrefabInstance: {fileID: 5331995914736610285}
   m_PrefabAsset: {fileID: 0}
