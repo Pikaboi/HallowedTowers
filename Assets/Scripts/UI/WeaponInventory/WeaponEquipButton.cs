@@ -12,10 +12,10 @@ public class WeaponEquipButton : MonoBehaviour
     public TMPro.TMP_Text attackt;
 
     float UpgradePrice = 0;
-    int UGCount = 1;
+    public int UGCount = 1;
     public float attackBoost;
 
-    PlayerResourceManager m_resource;
+    public PlayerResourceManager m_resource;
 
     public UnityEngine.UI.Image m_affinitySprite;
 
