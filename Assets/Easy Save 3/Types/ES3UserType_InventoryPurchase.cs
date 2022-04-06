@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_weaponMenuPrefab", "m_price", "m_resource", "m_inventory", "pricetag", "m_UGmenuInstance")]
+	[ES3PropertiesAttribute("m_weaponMenuPrefab", "m_price", "m_resource", "m_inventory", "pricetag", "m_text", "m_UGmenuInstance")]
 	public class ES3UserType_InventoryPurchase : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -21,6 +21,7 @@ namespace ES3Types
 			writer.WritePropertyByRef("m_resource", instance.m_resource);
 			writer.WritePropertyByRef("m_inventory", instance.m_inventory);
 			writer.WritePropertyByRef("pricetag", instance.pricetag);
+			writer.WriteProperty("m_text", instance.m_text, ES3Type_string.Instance);
 			writer.WritePropertyByRef("m_UGmenuInstance", instance.m_UGmenuInstance);
 		}
 
@@ -46,6 +47,9 @@ namespace ES3Types
 						break;
 					case "pricetag":
 						instance.pricetag = reader.Read<TMPro.TMP_Text>();
+						break;
+					case "m_text":
+						instance.m_text = reader.Read<System.String>(ES3Type_string.Instance);
 						break;
 					case "m_UGmenuInstance":
 						instance.m_UGmenuInstance = reader.Read<CreateWeaponUpgradeMenu>();

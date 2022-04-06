@@ -9,6 +9,7 @@ public class InventoryPurchase : MonoBehaviour
     public PlayerResourceManager m_resource;
     public InventoryAdd m_inventory;
     public TMPro.TMP_Text pricetag;
+    public string m_text;
 
     public CreateWeaponUpgradeMenu m_UGmenuInstance;
 
@@ -17,12 +18,13 @@ public class InventoryPurchase : MonoBehaviour
     {
         m_resource = FindObjectOfType<PlayerResourceManager>();
         pricetag.text += " " + m_price;
+        m_text = pricetag.text;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        pricetag.text = m_text;
     }
 
     public void OnClick()
@@ -33,7 +35,7 @@ public class InventoryPurchase : MonoBehaviour
             //m_sound.Play();
             m_inventory.addWeapon(m_weaponMenuPrefab);
 
-            pricetag.text = "SOLD OUT";
+            m_text = "SOLD OUT";
             GetComponent<UnityEngine.UI.Button>().enabled = false;
 
             //m_UGmenuInstance.UpdateEquips();
