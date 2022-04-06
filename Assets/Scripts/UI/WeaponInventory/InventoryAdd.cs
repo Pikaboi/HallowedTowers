@@ -24,6 +24,15 @@ public class InventoryAdd : MonoBehaviour
 
     }
 
+    public void RemoveInventoryOnLoad()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            GameObject g = transform.GetChild(i).gameObject;
+            Destroy(g);
+        }
+    }
+
     public void addWeapon(GameObject g)
     {
         GameObject newWeapon = Instantiate(g);

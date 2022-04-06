@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SaveControl : MonoBehaviour
 {
+    public InventoryAdd m_Adder;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class SaveControl : MonoBehaviour
     public void LoadGame()
     {
         //FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
+        m_Adder.RemoveInventoryOnLoad();
         ES3AutoSaveMgr.Current.Load();
         FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
     }
