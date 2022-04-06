@@ -13,7 +13,7 @@ public class InventoryPurchase : MonoBehaviour
     public CreateWeaponUpgradeMenu m_UGmenuInstance;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         m_resource = FindObjectOfType<PlayerResourceManager>();
         pricetag.text += " " + m_price;
