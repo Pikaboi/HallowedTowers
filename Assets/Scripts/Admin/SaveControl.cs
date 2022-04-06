@@ -23,6 +23,8 @@ public class SaveControl : MonoBehaviour
 
     public void LoadGame()
     {
+        //FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
         ES3AutoSaveMgr.Current.Load();
+        FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
     }
 }

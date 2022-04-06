@@ -377,4 +377,19 @@ public class WorldCharacter : MonoBehaviour
     public float GetMaxHealth() {
         return m_maxHealth;
     }
+
+    public void DeleteWeaponsforLoad()
+    {
+        PlayerWeapon[] children = m_weaponPos.GetComponentsInChildren<PlayerWeapon>();
+
+        Debug.Log(children.Length);
+
+        foreach(PlayerWeapon w in children)
+        {
+            if (w != m_WeaponStats)
+            {
+                Destroy(w.gameObject);
+            }
+        }
+    }
 }
