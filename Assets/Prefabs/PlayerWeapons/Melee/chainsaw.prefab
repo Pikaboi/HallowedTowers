@@ -174,6 +174,8 @@ GameObject:
   - component: {fileID: 5332463392136489637}
   - component: {fileID: 1954297119782801174}
   - component: {fileID: 5415421732570195118}
+  - component: {fileID: 7373064065519453427}
+  - component: {fileID: -3939353224762202789}
   m_Layer: 14
   m_Name: chainsaw
   m_TagString: Untagged
@@ -251,6 +253,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7373064065519453427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630125702075443293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 1325526820884176181
+  localRefs:
+    _Keys: []
+    _Values: 
+--- !u!114 &-3939353224762202789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630125702075443293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 5415421732570195118}
+  - {fileID: 1954297119782801174}
+  - {fileID: 5332463392136489637}
+  - {fileID: 2149499176994517735}
 --- !u!1 &5117521813073635963
 GameObject:
   m_ObjectHideFlags: 0

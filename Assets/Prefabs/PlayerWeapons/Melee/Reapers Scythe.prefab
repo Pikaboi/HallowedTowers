@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3992801263248667265}
   - component: {fileID: 362253518143195105}
   - component: {fileID: 8893733202493605950}
+  - component: {fileID: -1824113820174705434}
+  - component: {fileID: 959068160290377614}
   m_Layer: 14
   m_Name: Reapers Scythe
   m_TagString: Untagged
@@ -87,6 +89,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-1824113820174705434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742993419931396289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 7187815370787660006
+  localRefs:
+    _Keys: []
+    _Values: 
+--- !u!114 &959068160290377614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742993419931396289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 4087606016128250491}
+  - {fileID: 8893733202493605950}
+  - {fileID: 362253518143195105}
+  - {fileID: 3992801263248667265}
 --- !u!1001 &5865361195008060167
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7275741709095288891}
   - component: {fileID: 7275741709095288888}
   - component: {fileID: 3878388225600450132}
+  - component: {fileID: 6075891035418240372}
+  - component: {fileID: 421095543933532984}
   m_Layer: 14
   m_Name: Pitchfork
   m_TagString: Untagged
@@ -87,6 +89,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6075891035418240372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275741709095288893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 3499518810017977902
+  localRefs:
+    _Keys: []
+    _Values: 
+--- !u!114 &421095543933532984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275741709095288893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 7275741709095288892}
+  - {fileID: 3878388225600450132}
+  - {fileID: 7275741709095288888}
+  - {fileID: 7275741709095288891}
 --- !u!1001 &3987493022369827790
 PrefabInstance:
   m_ObjectHideFlags: 0
