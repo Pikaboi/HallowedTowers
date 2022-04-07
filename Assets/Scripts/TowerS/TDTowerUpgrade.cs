@@ -9,7 +9,7 @@ public class TDTowerUpgrade : MonoBehaviour
     public bool m_UGBought = false;
     public TDTowerUpgrade m_successor;
     public float m_UGCost;
-    private float m_baseCost;
+    public float m_baseCost;
 
     public TMPro.TMP_Text m_UGName;
     public TMPro.TMP_Text m_UGCostString;
@@ -34,6 +34,12 @@ public class TDTowerUpgrade : MonoBehaviour
         {
             m_successor.gameObject.GetComponent<UnityEngine.UI.Button>().enabled = false;
         }
+    }
+
+    public virtual void Awake()
+    {
+        m_resource = FindObjectOfType<PlayerResourceManager>();
+        m_baseCost = m_UGCost;
     }
 
     // Update is called once per frame
