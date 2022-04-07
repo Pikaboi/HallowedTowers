@@ -25,6 +25,11 @@ public class ChangeAffinity : MonoBehaviour
         m_baseCost = m_upgradePrice;
     }
 
+    public virtual void Awake()
+    {
+        m_resource = FindObjectOfType<PlayerResourceManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {

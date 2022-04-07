@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3856336770611661308}
-  - component: {fileID: 6654063106046523153}
   m_Layer: 0
   m_Name: Aimer
   m_TagString: Untagged
@@ -31,26 +30,6 @@ Transform:
   m_Father: {fileID: 8675820301349744956}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6654063106046523153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3856336770611661307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveLayer: 1
-  saveTag: 1
-  saveName: 1
-  saveHideFlags: 1
-  saveActive: 1
-  saveChildren: 0
-  componentsToSave:
-  - {fileID: 3856336770611661308}
 --- !u!1 &7966081809505972125
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +155,7 @@ MonoBehaviour:
     - {fileID: 7721048976826865434}
     - {fileID: 2100000, guid: 26edf5ca87064a24680c0c7b991b0cc8, type: 2}
     - {fileID: -8406009794871590234}
-    _Values: 1e8d8cd2927517283163ee87e824322e9793ea4354b9ee52f01df8b853cc5f0595a01410ace4fd6973cafad110dc3218a40baf7373ce4c2885203e50912f8364fc160db8f0dd7d4e6a7f48e04c409c34afeeebb7e3146e3954ec8b8ca6add75c4e5ed5f9ce7a277e7702210de8d28b3bbe72ff801b3a4717a8d30bdd6909f51856a592ed6ba265343993bf1f0d9fae2679c7ce33ae564176a6ec51fb6e4a146df3f649bcc0612f6027cbb77885d8f6487eceaacf27d73952e608477e516ac67ca92d2c1755f26516986e5b790eb9fb32
+    _Values: fc125870733e1145d2bcdbb1d4e5196f5ad5edc77e63ef4d268300fc56b0dc708073265cd4eb105ab20ff5890068176e6ec7802d19957f67230a4bef3e15ef7c67b3cf9f414265441ab7e991919ab2426d926a1d300a8a15f4be7ede36ff98642178234c99772c4e2cc41361abeed643bd8d82acaad14b5bd6466cff3ebb851a1f85b10abdffdb0b9ae3b50ae2133f0518c4643c7dbbf14ed338dc201bd373703ff842253ccb85436a8d478e87563e3cfa99e8fddf3e67258affc97add4410387044caead019c91db6572d0f8b9d3929
 --- !u!114 &-8028664630491678021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,18 +168,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveLayer: 1
-  saveTag: 1
-  saveName: 1
-  saveHideFlags: 1
-  saveActive: 1
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
   saveChildren: 1
-  componentsToSave:
-  - {fileID: 8675820301349744956}
-  - {fileID: 7041643262743318278}
-  - {fileID: 1036800987912537092}
-  - {fileID: -8406009794871590234}
-  - {fileID: -8028664630491678021}
+  componentsToSave: []
 --- !u!1 &8588046952676416515
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +186,6 @@ GameObject:
   - component: {fileID: 3803063411243188219}
   - component: {fileID: 7222070808695078114}
   - component: {fileID: 7721048976826865434}
-  - component: {fileID: -1951671226795472451}
   m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
@@ -283,25 +256,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-1951671226795472451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8588046952676416515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveLayer: 1
-  saveTag: 1
-  saveName: 1
-  saveHideFlags: 1
-  saveActive: 1
-  saveChildren: 0
-  componentsToSave:
-  - {fileID: 3803063411243188219}
-  - {fileID: 7222070808695078114}
-  - {fileID: 7721048976826865434}
