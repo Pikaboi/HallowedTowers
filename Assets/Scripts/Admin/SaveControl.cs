@@ -35,5 +35,11 @@ public class SaveControl : MonoBehaviour
         //m_Adder.RemoveInventoryOnLoad();
         ES3AutoSaveMgr.Current.Load();
         FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
+        TDTowerManager[] managers = FindObjectsOfType<TDTowerManager>();
+
+        foreach(TDTowerManager m in managers)
+        {
+            m.RemoveOtherTowers();
+        }
     }
 }
