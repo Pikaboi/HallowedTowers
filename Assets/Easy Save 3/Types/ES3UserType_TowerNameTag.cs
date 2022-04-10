@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("t", "m_manager")]
+	[ES3PropertiesAttribute("t", "m_manager", "m_font")]
 	public class ES3UserType_TowerNameTag : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -18,6 +18,7 @@ namespace ES3Types
 			
 			writer.WritePrivateFieldByRef("t", instance);
 			writer.WritePrivateFieldByRef("m_manager", instance);
+			writer.WritePrivateFieldByRef("m_font", instance);
 		}
 
 		protected override void ReadComponent<T>(ES3Reader reader, object obj)
@@ -33,6 +34,9 @@ namespace ES3Types
 					break;
 					case "m_manager":
 					reader.SetPrivateField("m_manager", reader.Read<TDTowerManager>(), instance);
+					break;
+					case "m_font":
+					reader.SetPrivateField("m_font", reader.Read<TMPro.TMP_FontAsset>(), instance);
 					break;
 					default:
 						reader.Skip();
