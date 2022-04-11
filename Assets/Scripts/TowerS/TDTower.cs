@@ -119,7 +119,7 @@ public class TDTower : MonoBehaviour
     {
         if (m_level < 20)
         {
-            m_attack += 5;
+            m_attack += 1;
             m_level++;
         }
     }
