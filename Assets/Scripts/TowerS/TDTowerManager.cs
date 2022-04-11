@@ -140,4 +140,17 @@ public class TDTowerManager : MonoBehaviour
             Path3Model.SetActive(true);
         }   
     }
+
+    public void RemoveOtherTowers()
+    {
+        TDTower[] towers = gameObject.GetComponentsInChildren<TDTower>();
+
+        foreach(TDTower t in towers)
+        {
+            if(t.gameObject != m_child.gameObject)
+            {
+                Destroy(t.gameObject);
+            }
+        }
+    }
 }
