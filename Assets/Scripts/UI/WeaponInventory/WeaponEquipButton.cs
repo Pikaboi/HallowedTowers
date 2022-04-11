@@ -85,14 +85,10 @@ public class WeaponEquipButton : MonoBehaviour
             if (m_resource.m_Money >= UpgradePrice && UGCount < 5)
             {
                 m_resource.SubMoney(UpgradePrice);
-                if (UGCount == 1)
-                {
-                    attackBoost = m_Weapon.GetComponent<PlayerWeapon>().m_Attack;
-                }
-                else
-                {
-                    attackBoost = (attackBoost) * 2;
-                }
+
+                attackBoost = Mathf.Round((m_Weapon.GetComponent<PlayerWeapon>().m_Attack /2) * (0.5f * UGCount));
+                Debug.Log((m_Weapon.GetComponent<PlayerWeapon>().m_Attack / 2) * (0.5f * UGCount));
+
                 UGCount++;
                 UpgradePrice = (attackBoost) * 1000;
 
