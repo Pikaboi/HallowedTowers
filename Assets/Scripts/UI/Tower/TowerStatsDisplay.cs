@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TowerStatsDisplay : MonoBehaviour
 {
-    TDTowerManager m_manager;
+    [SerializeField] private TDTowerManager m_manager;
     public TMPro.TMP_Text atk;
     public TMPro.TMP_Text spd;
     public TMPro.TMP_Text range;

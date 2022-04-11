@@ -5,6 +5,7 @@ using UnityEngine;
 public class SaveControl : MonoBehaviour
 {
     public InventoryAdd m_Adder;
+    public SceneControl m_scenecontrol;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,23 @@ public class SaveControl : MonoBehaviour
         ES3AutoSaveMgr.Current.Save();
     }
 
+    public void SaveAndQuit()
+    {
+        ES3AutoSaveMgr.Current.Save();
+        m_scenecontrol.Title();
+    }
+
     public void LoadGame()
     {
         //FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
-        m_Adder.RemoveInventoryOnLoad();
+        //m_Adder.RemoveInventoryOnLoad();
         ES3AutoSaveMgr.Current.Load();
         FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
+        TDTowerManager[] managers = FindObjectsOfType<TDTowerManager>();
+
+        foreach(TDTowerManager m in managers)
+        {
+            m.RemoveOtherTowers();
+        }
     }
 }

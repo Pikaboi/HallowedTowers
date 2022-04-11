@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TowerNameTag : MonoBehaviour
 {
-    TMPro.TMP_Text t;
+    [SerializeField] private TMPro.TMP_Text t;
     [SerializeField] TDTowerManager m_manager;
     // Start is called before the first frame update
     void Start()
