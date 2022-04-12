@@ -93,8 +93,9 @@ MonoBehaviour:
   m_TriggerRange: 5
   m_level: 1
   m_Projectile: {fileID: 8889714604909872069, guid: 00dc043f4a81d0d48a5175b6b0dcba62, type: 3}
-  m_fireRate: 0.4
-  m_attack: 5
+  m_fireRate: 0.5
+  m_fireRateBuff: 0
+  m_attack: 1
   m_atkBuff: 0
   m_aimer: {fileID: 3856336770611661307}
   m_InRange: 0
@@ -108,7 +109,9 @@ MonoBehaviour:
   Path3UG2: 0
   groupBonus: 0
   Path3UG3: 0
+  m_baseTriggerRange: 0
   effectiveRange: 0
+  bossPresent: 0
 --- !u!1 &8588046952676416515
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class TDTower_Spike : TDTower
 
         m_FireTimer -= Time.deltaTime;
 
-        if (m_FireTimer <= 0.0f && m_activeSpikes.Count < 10)
+        if (m_FireTimer <= 0.0f && m_activeSpikes.Count < 5)
         {
             if (spikePos != Vector3.zero)
             {
@@ -37,7 +37,7 @@ public class TDTower_Spike : TDTower
             }
         }
 
-        if (m_activeSpikes.Count >= 10)
+        if (m_activeSpikes.Count >= 5)
         {
             foreach(Spikes s in m_activeSpikes)
             {
