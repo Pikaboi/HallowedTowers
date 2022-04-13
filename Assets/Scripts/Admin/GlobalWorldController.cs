@@ -10,6 +10,8 @@ public class GlobalWorldController : MonoBehaviour
 
     public SceneControl m_sceneControl;
 
+    public int RoundNum = 0;
+
     [SerializeField] private bool GameOver;
 
     [SerializeField] RoundPlayButton m_playButton;
@@ -69,6 +71,11 @@ public class GlobalWorldController : MonoBehaviour
                 s.SpiderIncome();
             }
         }
+    }
+
+    public void UpdateRound()
+    {
+        RoundNum++;
     }
 
 }
