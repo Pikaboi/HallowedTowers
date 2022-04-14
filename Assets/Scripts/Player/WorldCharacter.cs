@@ -26,7 +26,7 @@ public class WorldCharacter : MonoBehaviour
     public float m_maxPassiveAggroTimer;
     private float m_passiveAggroTimer;
 
-    bool dashing = false;
+    bool blocking = false;
     bool hit = false;
     float hittimer = 0;
 
@@ -53,6 +53,8 @@ public class WorldCharacter : MonoBehaviour
     [SerializeField] WeaponType m_Equipped;
     [SerializeField] GameObject m_Weapon;
     [SerializeField] public PlayerWeapon m_WeaponStats;
+
+    public ParticleSystem m_Blockparticle; 
 
     // Start is called before the first frame update
     void Start()
@@ -189,15 +191,20 @@ public class WorldCharacter : MonoBehaviour
         Vector3 dir = new Vector3(x, 0.0f, y);
         dir = dir.normalized;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
-            m_Controller.Move(dir * m_speed * 10.0f * Time.deltaTime);
-            dashing = true;
+            //m_Controller.Move(dir * m_speed * 10.0f * Time.deltaTime);
+            if (!m_Blockparticle.isPlaying)
+            {
+                m_Blockparticle.Play();
+            }
+            blocking = true;
         }
         else
         {
+            m_Blockparticle.Stop();
             m_Controller.SimpleMove(dir * m_speed);
-            dashing = false;
+            blocking = false;
         }
 
         if (dir != Vector3.zero)
@@ -214,7 +221,7 @@ public class WorldCharacter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Check you are hit by the enemies attack hit box
-        if(other.gameObject.GetComponent<TDEnemyAttack>() != null && !dashing)
+        if(other.gameObject.GetComponent<TDEnemyAttack>() != null && !blocking)
         {
             Debug.Log("I've been hit!");
             //Check the enemy was attacking and player is not in invincibility frames
@@ -234,7 +241,7 @@ public class WorldCharacter : MonoBehaviour
             }
         }
 
-        if(other.gameObject.GetComponent<TDEnemyProjectile>() != null && !dashing)
+        if(other.gameObject.GetComponent<TDEnemyProjectile>() != null && !blocking)
         {
             Debug.Log("I've been shot!");
             //Check the enemy was attacking and player is not in invincibility frames
@@ -309,7 +316,7 @@ public class WorldCharacter : MonoBehaviour
         else
         {
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && !blocking)
             {
                 if (m_anim != null)
                 {

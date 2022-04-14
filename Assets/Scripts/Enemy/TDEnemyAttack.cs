@@ -11,7 +11,7 @@ public class TDEnemyAttack : MonoBehaviour
     void Start()
     {
         m_cc = GetComponent<CapsuleCollider>();
-        m_attack = m_enemy.m_attackPower;
+        m_attack = m_enemy.m_playerAttackPower;
         m_cc.enabled = false;
     }
 }
