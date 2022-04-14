@@ -495,7 +495,6 @@ MonoBehaviour:
   m_Player: {fileID: 0}
   m_rot: {x: -118.423, y: 263.085, z: 96.088}
   t: {fileID: 0}
-  attackt: {fileID: 2745978058171208479}
   attackBoost: 0
   m_affinitySprite: {fileID: 4462290334479194545}
 --- !u!82 &958859984965783310
@@ -652,6 +651,7 @@ GameObject:
   - component: {fileID: 962356898126970638}
   - component: {fileID: 7932485604397835517}
   - component: {fileID: 2745978058171208479}
+  - component: {fileID: 4231078607177273268}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -775,6 +775,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4231078607177273268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871551493522880474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d5ecd897c835c43a7dc87afabbb5fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weapon: {fileID: 4183783224934465335}
+  t: {fileID: 0}
 --- !u!1 &4999513261229127805
 GameObject:
   m_ObjectHideFlags: 0
