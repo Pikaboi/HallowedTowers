@@ -6,6 +6,8 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
 {
     public TDTowerUpgrade_Path[] m_UGPaths;
     public int PathNum;
+
+    public string resourcePath;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -16,12 +18,14 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
     public override void Update()
     {
         base.Update();
+        m_UGPrefab = Resources.Load<GameObject>("Towers/" + resourcePath);
     }
 
     public override void PurchaseUpgrade()
     {
         if (m_resource.m_Money >= m_UGCost)
         {
+            
             m_manager.newUpgrade(m_UGPrefab);
             m_UGBought = true;
             GetComponent<Image>().sprite = m_Purchased;
