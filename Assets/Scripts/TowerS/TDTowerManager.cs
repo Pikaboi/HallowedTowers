@@ -38,14 +38,20 @@ public class TDTowerManager : MonoBehaviour
     public GameObject Path2Model;
     public GameObject Path3Model;
 
+    public string baseResource;
+
     [SerializeField] public PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_child = null;
-        m_child = Instantiate(m_base, transform.position, transform.rotation);
-        m_child.transform.parent = gameObject.transform;
+        if (gameObject.GetComponentInChildren<TDTower>() == null)
+        {
+            m_child = null;
+            m_base = Resources.Load<GameObject>("Towers/" + baseResource);
+            m_child = Instantiate(m_base, transform.position, transform.rotation);
+            m_child.transform.parent = gameObject.transform;
+        }
         m_resource = FindObjectOfType<PlayerResourceManager>();
         m_sellCost = m_cost / 2;
         m_UpgradeUI.SetActive(false);
@@ -53,7 +59,7 @@ public class TDTowerManager : MonoBehaviour
 
         //I hope you like these if statements
         //Blame the dragon tower
-        if (Path1Model != null)
+        /*if (Path1Model != null)
         {
             Path1Model.SetActive(false);
         }
@@ -66,7 +72,7 @@ public class TDTowerManager : MonoBehaviour
         if (Path3Model != null)
         {
             Path3Model.SetActive(false);
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -83,9 +89,10 @@ public class TDTowerManager : MonoBehaviour
         }
     }
 
-    public void newUpgrade(GameObject _upgradePrefab)
+    public void newUpgrade(GameObject _upgradePrefab, string baseString)
     {
         Destroy(m_child);
+        baseResource = baseString;
         m_child = Instantiate(_upgradePrefab, transform.position, transform.rotation);
         m_child.transform.parent = gameObject.transform;
         PassStats();

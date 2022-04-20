@@ -23,6 +23,7 @@ public class TDTowerUpgrade : MonoBehaviour
 
     public Sprite m_Locked;
     public Sprite m_Purchased;
+    public string resourcePath;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -48,13 +49,14 @@ public class TDTowerUpgrade : MonoBehaviour
         m_UGCost = m_baseCost - (m_baseCost * m_manager.m_UGDiscount);
         m_UGName.text = m_UGString;
         m_UGCostString.text = m_UGCost.ToString();
+        m_UGPrefab = Resources.Load<GameObject>("Towers/" + resourcePath);
     }
 
     public virtual void PurchaseUpgrade()
     {
         if (m_resource.m_Money >= m_UGCost)
         {
-            m_manager.newUpgrade(m_UGPrefab);
+            m_manager.newUpgrade(m_UGPrefab, resourcePath);
             m_UGBought = true;
             GetComponent<Image>().sprite = m_Purchased;
             m_resource.SubMoney(m_UGCost);

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_child", "m_affinity", "m_base", "m_towerName", "m_cost", "m_sellCost", "m_UpgradeUI", "m_TriggerRange", "m_fireRate", "m_attack", "m_level", "m_UGParticle", "m_BuffParticle", "m_ShootParticle", "m_UGDiscount", "m_LevelDiscount", "m_AffinityDiscount", "baseModel", "Path1Model", "Path2Model", "Path3Model", "m_resource")]
+	[ES3PropertiesAttribute("m_child", "m_affinity", "m_base", "m_towerName", "m_cost", "m_sellCost", "m_UpgradeUI", "m_TriggerRange", "m_fireRate", "m_attack", "m_level", "m_UGParticle", "m_BuffParticle", "m_ShootParticle", "m_UGDiscount", "m_LevelDiscount", "m_AffinityDiscount", "baseModel", "Path1Model", "Path2Model", "Path3Model", "baseResource", "m_resource")]
 	public class ES3UserType_TDTowerManager : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -37,6 +37,7 @@ namespace ES3Types
 			writer.WritePropertyByRef("Path1Model", instance.Path1Model);
 			writer.WritePropertyByRef("Path2Model", instance.Path2Model);
 			writer.WritePropertyByRef("Path3Model", instance.Path3Model);
+			writer.WriteProperty("baseResource", instance.baseResource, ES3Type_string.Instance);
 			writer.WritePropertyByRef("m_resource", instance.m_resource);
 		}
 
@@ -110,6 +111,9 @@ namespace ES3Types
 						break;
 					case "Path3Model":
 						instance.Path3Model = reader.Read<UnityEngine.GameObject>(ES3Type_GameObject.Instance);
+						break;
+					case "baseResource":
+						instance.baseResource = reader.Read<System.String>(ES3Type_string.Instance);
 						break;
 					case "m_resource":
 						instance.m_resource = reader.Read<PlayerResourceManager>();
