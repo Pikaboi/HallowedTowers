@@ -25,9 +25,14 @@ public class TDTowerUpgrade : MonoBehaviour
     public Sprite m_Purchased;
     public string resourcePath;
 
+    public string lockedResource;
+    public string purchasedResource;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
+        m_Locked = Resources.Load<Sprite>("" + lockedResource);
+        m_Purchased = Resources.Load<Sprite>("" + purchasedResource);
         m_manager = GetComponentInParent<TDTowerManager>();
         m_resource = FindObjectOfType<PlayerResourceManager>();
         m_baseCost = m_UGCost;

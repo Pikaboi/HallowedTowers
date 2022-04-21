@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3027418093010359368}
   - component: {fileID: 6927926866545947568}
   - component: {fileID: 1111603300910242891}
+  - component: {fileID: 5425828282620577563}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -147,6 +148,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa755a94a474364598ff708ac705a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5425828282620577563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302140013350148566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &456054718771960221
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +248,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6107442470498230291}
   - component: {fileID: 1893808004209153129}
-  - component: {fileID: 5243252076370332168}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -268,95 +282,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467265542511758251}
   m_CullTransparentMesh: 1
---- !u!114 &5243252076370332168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 467265542511758251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &518720560133300673
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +292,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8241268645232872402}
   - component: {fileID: 2334067935407950415}
-  - component: {fileID: 4590844300160212398}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -402,95 +326,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518720560133300673}
   m_CullTransparentMesh: 1
---- !u!114 &4590844300160212398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518720560133300673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &519564995360231344
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +337,7 @@ GameObject:
   - component: {fileID: 4764367342632022563}
   - component: {fileID: 6088102687994420499}
   - component: {fileID: 5430149519907486677}
+  - component: {fileID: 1348173085770064429}
   m_Layer: 5
   m_Name: UpgradeName
   m_TagString: Untagged
@@ -625,6 +461,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1348173085770064429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519564995360231344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &684725918473299473
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +486,7 @@ GameObject:
   - component: {fileID: 1577360572174783329}
   - component: {fileID: 5131760508434362407}
   - component: {fileID: 5456764337542636557}
+  - component: {fileID: 6999580358571890828}
   m_Layer: 5
   m_Name: UpgradeCost
   m_TagString: Untagged
@@ -759,6 +610,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6999580358571890828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684725918473299473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-Outline
 --- !u!1 &795014895297665575
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +767,7 @@ GameObject:
   - component: {fileID: 4620671122201868759}
   - component: {fileID: 6634543976855444854}
   - component: {fileID: 4959168145285065131}
+  - component: {fileID: 8771706252257505337}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1028,6 +894,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8771706252257505337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870816797416930384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &1101364714533503477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,6 +1069,7 @@ GameObject:
   - component: {fileID: 5898278360303042092}
   - component: {fileID: 3523282177766665676}
   - component: {fileID: 4558887179220070246}
+  - component: {fileID: 6297320049590155511}
   m_Layer: 5
   m_Name: UpgradeName
   m_TagString: Untagged
@@ -1312,6 +1193,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6297320049590155511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154785610848859751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &1209897494214254780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1217,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7360120725099928370}
   - component: {fileID: 630883929643178867}
-  - component: {fileID: 3257592012163506163}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1357,95 +1251,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209897494214254780}
   m_CullTransparentMesh: 1
---- !u!114 &3257592012163506163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209897494214254780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1242404493294693759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,6 +1563,7 @@ GameObject:
   - component: {fileID: 9006652384495231714}
   - component: {fileID: 4437780510711537337}
   - component: {fileID: 4042741888297244096}
+  - component: {fileID: 7098185073858466652}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1884,6 +1690,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7098185073858466652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620831837580346292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &1677080549170216173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,6 +1715,7 @@ GameObject:
   - component: {fileID: 2445043240742508606}
   - component: {fileID: 2770742001306685852}
   - component: {fileID: 5032229657560256026}
+  - component: {fileID: 610869784927792804}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2021,6 +1842,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &610869784927792804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677080549170216173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &1697483849333900284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,6 +1942,7 @@ GameObject:
   - component: {fileID: 8706680482074335286}
   - component: {fileID: 2851886742594764882}
   - component: {fileID: 3616884052522721593}
+  - component: {fileID: 6996173186591368736}
   m_Layer: 5
   m_Name: UpgradeName
   m_TagString: Untagged
@@ -2230,6 +2066,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6996173186591368736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716241151786802855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &1815387524039127570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,6 +2243,7 @@ MonoBehaviour:
   m_sound: {fileID: 8092263905261482094}
   m_Locked: {fileID: 21300000, guid: 73a8e16d1d9b07843af1fe16cd044711, type: 3}
   m_Purchased: {fileID: 21300000, guid: 79f0491ea427f5848a6e81a6d703e600, type: 3}
+  resourcePath: 
 --- !u!82 &8092263905261482094
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2666,6 +2517,7 @@ MonoBehaviour:
   m_sound: {fileID: 3782920942733961462}
   m_Locked: {fileID: 21300000, guid: 73a8e16d1d9b07843af1fe16cd044711, type: 3}
   m_Purchased: {fileID: 21300000, guid: 79f0491ea427f5848a6e81a6d703e600, type: 3}
+  resourcePath: 
   m_UGPaths:
   - {fileID: 8336456400706409292}
   - {fileID: 6989217562137795850}
@@ -2793,6 +2645,7 @@ GameObject:
   - component: {fileID: 8695927024909516910}
   - component: {fileID: 5170623183000848954}
   - component: {fileID: 5803215673076297009}
+  - component: {fileID: 3075828447052613627}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -2930,6 +2783,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: {fileID: 0}
   m_manager: {fileID: 0}
+--- !u!114 &3075828447052613627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963148987423361436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HalloWitchZSDF.asset
 --- !u!1 &1997772592638156457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2942,6 +2809,7 @@ GameObject:
   - component: {fileID: 7832669453321494647}
   - component: {fileID: 336277806764332374}
   - component: {fileID: 6328820458648307901}
+  - component: {fileID: 1458076696340841580}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3078,6 +2946,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t: {fileID: 0}
+--- !u!114 &1458076696340841580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997772592638156457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &2001731881770603541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3088,7 +2970,6 @@ GameObject:
   m_Component:
   - component: {fileID: 299077099778434664}
   - component: {fileID: 251029162066414519}
-  - component: {fileID: 5901167247547078698}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3123,95 +3004,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001731881770603541}
   m_CullTransparentMesh: 1
---- !u!114 &5901167247547078698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001731881770603541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2013355194496844302
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,6 +3090,7 @@ GameObject:
   - component: {fileID: 160611372416880159}
   - component: {fileID: 3848972237784725690}
   - component: {fileID: 5857591534422646647}
+  - component: {fileID: 7767760466886028458}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3424,6 +3217,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7767760466886028458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081727480455209630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &2208426022059152070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,6 +3317,7 @@ GameObject:
   - component: {fileID: 4669970316180798677}
   - component: {fileID: 9041759176129081883}
   - component: {fileID: 373836019647365126}
+  - component: {fileID: 8973129939214463474}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3636,6 +3444,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8973129939214463474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282681564441932390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &2472042324295642718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3647,6 +3469,7 @@ GameObject:
   - component: {fileID: 1868338150063749750}
   - component: {fileID: 6622687380979526568}
   - component: {fileID: 6159539602427186161}
+  - component: {fileID: 6175513098644442812}
   m_Layer: 5
   m_Name: Atk
   m_TagString: Untagged
@@ -3770,6 +3593,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6175513098644442812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472042324295642718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &2480730881012260362
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,6 +3770,7 @@ MonoBehaviour:
   m_sound: {fileID: 3212163040801316749}
   m_Locked: {fileID: 21300000, guid: 73a8e16d1d9b07843af1fe16cd044711, type: 3}
   m_Purchased: {fileID: 21300000, guid: 79f0491ea427f5848a6e81a6d703e600, type: 3}
+  resourcePath: 
   m_UGPaths:
   - {fileID: 8336456400706409292}
   - {fileID: 6989217562137795850}
@@ -4287,6 +4125,7 @@ GameObject:
   - component: {fileID: 6406751271057742022}
   - component: {fileID: 1393227816262973570}
   - component: {fileID: 2676809229637744709}
+  - component: {fileID: 3364433820907062215}
   m_Layer: 5
   m_Name: UpgradeName
   m_TagString: Untagged
@@ -4410,6 +4249,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3364433820907062215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3261362879830123203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &3283948215920029502
 GameObject:
   m_ObjectHideFlags: 0
@@ -5023,6 +4876,7 @@ GameObject:
   - component: {fileID: 2326391913800875851}
   - component: {fileID: 2107230776357144172}
   - component: {fileID: 1486303406066538410}
+  - component: {fileID: 3005187900646188760}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5149,6 +5003,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3005187900646188760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3499434941963497618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &3503576686281226832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5160,6 +5028,7 @@ GameObject:
   - component: {fileID: 339320424245435578}
   - component: {fileID: 133557222089421956}
   - component: {fileID: 6007746224619639105}
+  - component: {fileID: 2975543889560477131}
   m_Layer: 5
   m_Name: UpgradeCost
   m_TagString: Untagged
@@ -5283,6 +5152,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2975543889560477131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503576686281226832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-Outline
 --- !u!1 &3613527537039916814
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,6 +5177,7 @@ GameObject:
   - component: {fileID: 4715163044099029916}
   - component: {fileID: 6992424379439117452}
   - component: {fileID: 5337773031675873295}
+  - component: {fileID: 234156365251982922}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5420,6 +5304,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &234156365251982922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3613527537039916814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &3663251729056164777
 GameObject:
   m_ObjectHideFlags: 0
@@ -5583,6 +5481,7 @@ MonoBehaviour:
   m_sound: {fileID: 606852623545862485}
   m_Locked: {fileID: 21300000, guid: 73a8e16d1d9b07843af1fe16cd044711, type: 3}
   m_Purchased: {fileID: 21300000, guid: 79f0491ea427f5848a6e81a6d703e600, type: 3}
+  resourcePath: 
 --- !u!82 &606852623545862485
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5704,6 +5603,7 @@ GameObject:
   - component: {fileID: 8750269579875324688}
   - component: {fileID: 8672260520129149702}
   - component: {fileID: 6161051598309364474}
+  - component: {fileID: 6925963730029019813}
   m_Layer: 5
   m_Name: UpgradeCost
   m_TagString: Untagged
@@ -5827,6 +5727,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6925963730029019813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716832527296513231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-Outline
 --- !u!1 &4262564590182035848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6177,6 +6091,7 @@ GameObject:
   - component: {fileID: 6556852546171189543}
   - component: {fileID: 4882770197776237546}
   - component: {fileID: 6409950654856518928}
+  - component: {fileID: 6540226863897181977}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6303,6 +6218,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6540226863897181977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299377337313433908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &5304703954306933502
 GameObject:
   m_ObjectHideFlags: 0
@@ -6315,6 +6244,7 @@ GameObject:
   - component: {fileID: 7442557539826764899}
   - component: {fileID: 8640852478611544396}
   - component: {fileID: 4304953570922404431}
+  - component: {fileID: 6253826613186973597}
   m_Layer: 5
   m_Name: AffinityPrice
   m_TagString: Untagged
@@ -6457,6 +6387,20 @@ MonoBehaviour:
   - {fileID: 280487504731530635}
   - {fileID: 4278807793392985744}
   m_updatedUGPrice: 1200
+--- !u!114 &6253826613186973597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304703954306933502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &5305310162036392682
 GameObject:
   m_ObjectHideFlags: 0
@@ -6468,6 +6412,7 @@ GameObject:
   - component: {fileID: 1880821306129388231}
   - component: {fileID: 380457281876427249}
   - component: {fileID: 1732958562187202381}
+  - component: {fileID: 6307170483657526811}
   m_Layer: 5
   m_Name: Speed
   m_TagString: Untagged
@@ -6591,6 +6536,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6307170483657526811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5305310162036392682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &5336054046698556371
 GameObject:
   m_ObjectHideFlags: 0
@@ -7170,6 +7129,7 @@ MonoBehaviour:
   m_sound: {fileID: 7186489471575212544}
   m_Locked: {fileID: 21300000, guid: 73a8e16d1d9b07843af1fe16cd044711, type: 3}
   m_Purchased: {fileID: 21300000, guid: 79f0491ea427f5848a6e81a6d703e600, type: 3}
+  resourcePath: 
 --- !u!82 &7186489471575212544
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7586,6 +7546,7 @@ GameObject:
   - component: {fileID: 6605813344897966165}
   - component: {fileID: 323224140318792936}
   - component: {fileID: 2097012720714592523}
+  - component: {fileID: 7446998221236831184}
   m_Layer: 5
   m_Name: Range
   m_TagString: Untagged
@@ -7709,6 +7670,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7446998221236831184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265697159991178255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &6361499015258584465
 GameObject:
   m_ObjectHideFlags: 0
@@ -7720,6 +7695,7 @@ GameObject:
   - component: {fileID: 7475296715582364686}
   - component: {fileID: 6239461653741920942}
   - component: {fileID: 8067613170942071987}
+  - component: {fileID: 4976274267607905051}
   m_Layer: 5
   m_Name: UpgradeName
   m_TagString: Untagged
@@ -7843,6 +7819,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4976274267607905051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6361499015258584465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &6401188346694152132
 GameObject:
   m_ObjectHideFlags: 0
@@ -7854,6 +7844,7 @@ GameObject:
   - component: {fileID: 370147616144572812}
   - component: {fileID: 4816515348235471265}
   - component: {fileID: 3408831209327784104}
+  - component: {fileID: 5976469065600245763}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -7980,6 +7971,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5976469065600245763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6401188346694152132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &6415137965548612769
 GameObject:
   m_ObjectHideFlags: 0
@@ -7991,6 +7996,7 @@ GameObject:
   - component: {fileID: 2528129432077246808}
   - component: {fileID: 712792830454283380}
   - component: {fileID: 1114028733265577452}
+  - component: {fileID: 7317729198537978968}
   m_Layer: 5
   m_Name: UpgradeName
   m_TagString: Untagged
@@ -8114,6 +8120,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7317729198537978968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415137965548612769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &6571397177201974749
 GameObject:
   m_ObjectHideFlags: 0
@@ -8125,6 +8145,7 @@ GameObject:
   - component: {fileID: 8522656918169213394}
   - component: {fileID: 3399156564594906351}
   - component: {fileID: 1324908509124952083}
+  - component: {fileID: 3174957669893191122}
   m_Layer: 5
   m_Name: UpgradeCost
   m_TagString: Untagged
@@ -8248,6 +8269,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3174957669893191122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571397177201974749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-Outline
 --- !u!1 &6594221102226561066
 GameObject:
   m_ObjectHideFlags: 0
@@ -8335,6 +8370,7 @@ GameObject:
   - component: {fileID: 7945513054702871237}
   - component: {fileID: 562073511186344536}
   - component: {fileID: 3238193899320881760}
+  - component: {fileID: 5965632985071969210}
   m_Layer: 5
   m_Name: UpgradeCost
   m_TagString: Untagged
@@ -8458,6 +8494,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5965632985071969210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6791078761599714139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-Outline
 --- !u!1 &6922016773459277829
 GameObject:
   m_ObjectHideFlags: 0
@@ -8715,6 +8765,7 @@ GameObject:
   - component: {fileID: 7305502991932565681}
   - component: {fileID: 2071553637792279844}
   - component: {fileID: 3328496695185765196}
+  - component: {fileID: 4333894400214614174}
   m_Layer: 5
   m_Name: UpgradeName
   m_TagString: Untagged
@@ -8838,6 +8889,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4333894400214614174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171305768064549340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &7199706576492474779
 GameObject:
   m_ObjectHideFlags: 0
@@ -8849,6 +8914,7 @@ GameObject:
   - component: {fileID: 5401996727567946579}
   - component: {fileID: 2931582917036741574}
   - component: {fileID: 643900208609723793}
+  - component: {fileID: 4051459995062606702}
   m_Layer: 5
   m_Name: UpgradeCost
   m_TagString: Untagged
@@ -8972,6 +9038,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4051459995062606702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7199706576492474779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-Outline
 --- !u!1 &7236497613544147549
 GameObject:
   m_ObjectHideFlags: 0
@@ -9134,6 +9214,7 @@ GameObject:
   - component: {fileID: 3524373661670803168}
   - component: {fileID: 2978885555526241904}
   - component: {fileID: 4289433858375562824}
+  - component: {fileID: 2028121139207937685}
   m_Layer: 5
   m_Name: UpgradeName
   m_TagString: Untagged
@@ -9257,6 +9338,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2028121139207937685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307764739899963858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &7397844239898887896
 GameObject:
   m_ObjectHideFlags: 0
@@ -9268,6 +9363,7 @@ GameObject:
   - component: {fileID: 8350616190040964106}
   - component: {fileID: 6555823249599699459}
   - component: {fileID: 819660974541294618}
+  - component: {fileID: 2178702147624571998}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9394,6 +9490,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2178702147624571998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7397844239898887896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &7560543350885189190
 GameObject:
   m_ObjectHideFlags: 0
@@ -9557,6 +9667,7 @@ GameObject:
   - component: {fileID: 4598526462319087604}
   - component: {fileID: 5217719027322038605}
   - component: {fileID: 4597908640345446766}
+  - component: {fileID: 7940595448744108047}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9680,6 +9791,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7940595448744108047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824454696291896539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &7967033340332869892
 GameObject:
   m_ObjectHideFlags: 0
@@ -9691,6 +9816,7 @@ GameObject:
   - component: {fileID: 9033386359480489653}
   - component: {fileID: 1873438249025770555}
   - component: {fileID: 5210598537111593025}
+  - component: {fileID: 452585362974293330}
   m_Layer: 5
   m_Name: UpgradeName
   m_TagString: Untagged
@@ -9814,6 +9940,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &452585362974293330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7967033340332869892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &8106099566595431064
 GameObject:
   m_ObjectHideFlags: 0
@@ -9825,6 +9965,7 @@ GameObject:
   - component: {fileID: 7938250232373041565}
   - component: {fileID: 1373298411119996355}
   - component: {fileID: 4708672312819164162}
+  - component: {fileID: 350136158612944394}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9951,6 +10092,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &350136158612944394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8106099566595431064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &8133418322873785699
 GameObject:
   m_ObjectHideFlags: 0
@@ -9962,6 +10117,7 @@ GameObject:
   - component: {fileID: 3453459570753675414}
   - component: {fileID: 4433234301341069645}
   - component: {fileID: 2238404483904642272}
+  - component: {fileID: 1902768942325817253}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -10088,6 +10244,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1902768942325817253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133418322873785699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &8173892906894753480
 GameObject:
   m_ObjectHideFlags: 0
@@ -10099,6 +10269,7 @@ GameObject:
   - component: {fileID: 9196284537553068731}
   - component: {fileID: 1667489003150892539}
   - component: {fileID: 7067056951967681881}
+  - component: {fileID: 6979653648069199121}
   m_Layer: 5
   m_Name: UpgradeCost
   m_TagString: Untagged
@@ -10222,6 +10393,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6979653648069199121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8173892906894753480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-Outline
 --- !u!1 &8230745717084610692
 GameObject:
   m_ObjectHideFlags: 0
@@ -10385,6 +10570,7 @@ MonoBehaviour:
   m_sound: {fileID: 3546301765677004063}
   m_Locked: {fileID: 21300000, guid: 73a8e16d1d9b07843af1fe16cd044711, type: 3}
   m_Purchased: {fileID: 21300000, guid: 79f0491ea427f5848a6e81a6d703e600, type: 3}
+  resourcePath: 
   m_UGPaths:
   - {fileID: 8336456400706409292}
   - {fileID: 6989217562137795850}
@@ -10663,6 +10849,7 @@ MonoBehaviour:
   m_sound: {fileID: 2222835746618591412}
   m_Locked: {fileID: 21300000, guid: 73a8e16d1d9b07843af1fe16cd044711, type: 3}
   m_Purchased: {fileID: 21300000, guid: 79f0491ea427f5848a6e81a6d703e600, type: 3}
+  resourcePath: 
 --- !u!82 &2222835746618591412
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10936,6 +11123,7 @@ MonoBehaviour:
   m_sound: {fileID: 1805473592605490701}
   m_Locked: {fileID: 21300000, guid: 73a8e16d1d9b07843af1fe16cd044711, type: 3}
   m_Purchased: {fileID: 21300000, guid: 79f0491ea427f5848a6e81a6d703e600, type: 3}
+  resourcePath: 
 --- !u!82 &1805473592605490701
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11057,6 +11245,7 @@ GameObject:
   - component: {fileID: 3633152065400388781}
   - component: {fileID: 19142626367845465}
   - component: {fileID: 7699149475077671301}
+  - component: {fileID: 6616314505254930492}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -11183,6 +11372,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6616314505254930492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8512636429904760704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-DemoSDF
 --- !u!1 &8706255399870314935
 GameObject:
   m_ObjectHideFlags: 0
@@ -11269,6 +11472,7 @@ GameObject:
   - component: {fileID: 59441583602282168}
   - component: {fileID: 8893188989152699783}
   - component: {fileID: 7167560511358721398}
+  - component: {fileID: 1087212057552403700}
   m_Layer: 5
   m_Name: UpgradeCost
   m_TagString: Untagged
@@ -11392,6 +11596,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1087212057552403700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778973531393085767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-Outline
 --- !u!1 &8786435312793161972
 GameObject:
   m_ObjectHideFlags: 0
@@ -11479,6 +11697,7 @@ GameObject:
   - component: {fileID: 2079306387320340544}
   - component: {fileID: 6989280098829473083}
   - component: {fileID: 5989703800330438140}
+  - component: {fileID: 761247990411959538}
   m_Layer: 5
   m_Name: UpgradeCost
   m_TagString: Untagged
@@ -11604,6 +11823,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &761247990411959538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963273898686462084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb0c20bea7e57848adbce480afcec6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  resourceString: HauntedNight-Outline
 --- !u!1 &9162676341033999478
 GameObject:
   m_ObjectHideFlags: 0
@@ -11767,6 +12000,7 @@ MonoBehaviour:
   m_sound: {fileID: 8589062129045870027}
   m_Locked: {fileID: 21300000, guid: 73a8e16d1d9b07843af1fe16cd044711, type: 3}
   m_Purchased: {fileID: 21300000, guid: 79f0491ea427f5848a6e81a6d703e600, type: 3}
+  resourcePath: 
 --- !u!82 &8589062129045870027
 AudioSource:
   m_ObjectHideFlags: 0
