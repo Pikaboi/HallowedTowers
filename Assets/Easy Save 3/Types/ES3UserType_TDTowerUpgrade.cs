@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_UGString", "m_UGBought", "m_successor", "m_UGCost", "m_baseCost", "m_UGName", "m_UGCostString", "m_UGPrefab", "m_resource", "m_manager", "m_sound", "m_Locked", "m_Purchased", "resourcePath")]
+	[ES3PropertiesAttribute("m_UGString", "m_UGBought", "m_successor", "m_UGCost", "m_baseCost", "m_UGName", "m_UGCostString", "m_UGPrefab", "m_resource", "m_manager", "m_sound", "m_Locked", "m_Purchased", "resourcePath", "purchased", "locked")]
 	public class ES3UserType_TDTowerUpgrade : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -30,6 +30,8 @@ namespace ES3Types
 			writer.WritePropertyByRef("m_Locked", instance.m_Locked);
 			writer.WritePropertyByRef("m_Purchased", instance.m_Purchased);
 			writer.WriteProperty("resourcePath", instance.resourcePath, ES3Type_string.Instance);
+			writer.WriteProperty("purchased", instance.purchased, ES3Type_bool.Instance);
+			writer.WriteProperty("locked", instance.locked, ES3Type_bool.Instance);
 		}
 
 		protected override void ReadComponent<T>(ES3Reader reader, object obj)
@@ -81,6 +83,12 @@ namespace ES3Types
 						break;
 					case "resourcePath":
 						instance.resourcePath = reader.Read<System.String>(ES3Type_string.Instance);
+						break;
+					case "purchased":
+						instance.purchased = reader.Read<System.Boolean>(ES3Type_bool.Instance);
+						break;
+					case "locked":
+						instance.locked = reader.Read<System.Boolean>(ES3Type_bool.Instance);
 						break;
 					default:
 						reader.Skip();
