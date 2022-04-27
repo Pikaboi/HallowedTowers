@@ -9,7 +9,17 @@ public class SaveControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SaveBoolean save = FindObjectOfType<SaveBoolean>();
+
+        if(save != null)
+        {
+            if (save.load)
+            {
+                LoadGame();
+            }
+        }
+
+        Destroy(save.gameObject);
     }
 
     // Update is called once per frame
