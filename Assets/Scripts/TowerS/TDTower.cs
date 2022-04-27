@@ -28,9 +28,13 @@ public class TDTower : MonoBehaviour
 
     public float m_FireTimer;
 
+    public string resourceString;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
+        m_Projectile = Resources.Load<GameObject>("Projectiles/" + resourceString);
+
         m_Trigger = GetComponent<SphereCollider>();
         m_Trigger.radius = m_TriggerRange;
         m_FireTimer = m_fireRate;

@@ -18,6 +18,7 @@ public class TDEnemy : MonoBehaviour
     public NavMeshAgent m_agent;
     public float m_moveSpeed;
     public float m_attackPower;
+    public float m_playerAttackPower;
     public float m_health;
     public float m_debuffMultiplier = 1.0f;
 

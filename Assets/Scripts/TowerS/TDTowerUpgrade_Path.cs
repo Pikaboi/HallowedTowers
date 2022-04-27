@@ -6,6 +6,7 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
 {
     public TDTowerUpgrade_Path[] m_UGPaths;
     public int PathNum;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -22,8 +23,10 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
     {
         if (m_resource.m_Money >= m_UGCost)
         {
-            m_manager.newUpgrade(m_UGPrefab);
+            
+            m_manager.newUpgrade(m_UGPrefab, resourcePath);
             m_UGBought = true;
+            purchased = true;
             GetComponent<Image>().sprite = m_Purchased;
             m_resource.SubMoney(m_UGCost);
             m_manager.m_sellCost += m_UGCost / 2;
@@ -37,9 +40,12 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
                 if (t != this)
                 {
                     t.gameObject.GetComponent<Button>().enabled = false;
+                    t.gameObject.GetComponent<TDTowerUpgrade>().locked = true;
                     t.gameObject.GetComponent<Image>().sprite = t.gameObject.GetComponent<TDTowerUpgrade>().m_Locked;
                     t.gameObject.GetComponent<TDTowerUpgrade>().m_successor.GetComponent<Image>().sprite = m_Locked;
+                    t.gameObject.GetComponent<TDTowerUpgrade>().m_successor.locked = true;
                     t.gameObject.GetComponent<TDTowerUpgrade>().m_successor.m_successor.GetComponent<Image>().sprite = m_Locked;
+                    t.gameObject.GetComponent<TDTowerUpgrade>().m_successor.m_successor.locked = true;
                 }
             }
 

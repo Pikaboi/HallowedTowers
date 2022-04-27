@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_UGPaths", "PathNum", "m_UGString", "m_UGBought", "m_successor", "m_UGCost", "m_baseCost", "m_UGName", "m_UGCostString", "m_UGPrefab", "m_resource", "m_manager", "m_sound", "m_Locked", "m_Purchased")]
+	[ES3PropertiesAttribute("m_UGPaths", "PathNum", "m_UGString", "m_UGBought", "m_successor", "m_UGCost", "m_baseCost", "m_UGName", "m_UGCostString", "m_UGPrefab", "m_resource", "m_manager", "m_sound", "m_Locked", "m_Purchased", "resourcePath", "purchased", "locked")]
 	public class ES3UserType_TDTowerUpgrade_Path : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -16,13 +16,13 @@ namespace ES3Types
 		{
 			var instance = (TDTowerUpgrade_Path)obj;
 			
-			writer.WriteProperty("m_UGPaths", instance.m_UGPaths, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(TDTowerUpgrade_Path[])));
+			writer.WriteProperty("m_UGPaths", instance.m_UGPaths, ES3UserType_TDTowerUpgrade_PathArray.Instance);
 			writer.WriteProperty("PathNum", instance.PathNum, ES3Type_int.Instance);
 			writer.WriteProperty("m_UGString", instance.m_UGString, ES3Type_string.Instance);
 			writer.WriteProperty("m_UGBought", instance.m_UGBought, ES3Type_bool.Instance);
 			writer.WritePropertyByRef("m_successor", instance.m_successor);
 			writer.WriteProperty("m_UGCost", instance.m_UGCost, ES3Type_float.Instance);
-			writer.WritePrivateField("m_baseCost", instance);
+			writer.WriteProperty("m_baseCost", instance.m_baseCost, ES3Type_float.Instance);
 			writer.WritePropertyByRef("m_UGName", instance.m_UGName);
 			writer.WritePropertyByRef("m_UGCostString", instance.m_UGCostString);
 			writer.WritePropertyByRef("m_UGPrefab", instance.m_UGPrefab);
@@ -31,6 +31,9 @@ namespace ES3Types
 			writer.WritePropertyByRef("m_sound", instance.m_sound);
 			writer.WritePropertyByRef("m_Locked", instance.m_Locked);
 			writer.WritePropertyByRef("m_Purchased", instance.m_Purchased);
+			writer.WriteProperty("resourcePath", instance.resourcePath, ES3Type_string.Instance);
+			writer.WriteProperty("purchased", instance.purchased, ES3Type_bool.Instance);
+			writer.WriteProperty("locked", instance.locked, ES3Type_bool.Instance);
 		}
 
 		protected override void ReadComponent<T>(ES3Reader reader, object obj)
@@ -42,7 +45,7 @@ namespace ES3Types
 				{
 					
 					case "m_UGPaths":
-						instance.m_UGPaths = reader.Read<TDTowerUpgrade_Path[]>();
+						instance.m_UGPaths = reader.Read<TDTowerUpgrade_Path[]>(ES3UserType_TDTowerUpgrade_PathArray.Instance);
 						break;
 					case "PathNum":
 						instance.PathNum = reader.Read<System.Int32>(ES3Type_int.Instance);
@@ -60,8 +63,8 @@ namespace ES3Types
 						instance.m_UGCost = reader.Read<System.Single>(ES3Type_float.Instance);
 						break;
 					case "m_baseCost":
-					reader.SetPrivateField("m_baseCost", reader.Read<System.Single>(), instance);
-					break;
+						instance.m_baseCost = reader.Read<System.Single>(ES3Type_float.Instance);
+						break;
 					case "m_UGName":
 						instance.m_UGName = reader.Read<TMPro.TMP_Text>();
 						break;
@@ -75,7 +78,7 @@ namespace ES3Types
 						instance.m_resource = reader.Read<PlayerResourceManager>();
 						break;
 					case "m_manager":
-						instance.m_manager = reader.Read<TDTowerManager>();
+						instance.m_manager = reader.Read<TDTowerManager>(ES3UserType_TDTowerManager.Instance);
 						break;
 					case "m_sound":
 						instance.m_sound = reader.Read<UnityEngine.AudioSource>();
@@ -85,6 +88,15 @@ namespace ES3Types
 						break;
 					case "m_Purchased":
 						instance.m_Purchased = reader.Read<UnityEngine.Sprite>(ES3Type_Sprite.Instance);
+						break;
+					case "resourcePath":
+						instance.resourcePath = reader.Read<System.String>(ES3Type_string.Instance);
+						break;
+					case "purchased":
+						instance.purchased = reader.Read<System.Boolean>(ES3Type_bool.Instance);
+						break;
+					case "locked":
+						instance.locked = reader.Read<System.Boolean>(ES3Type_bool.Instance);
 						break;
 					default:
 						reader.Skip();

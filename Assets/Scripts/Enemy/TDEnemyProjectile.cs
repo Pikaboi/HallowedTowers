@@ -22,7 +22,7 @@ public class TDEnemyProjectile : MonoBehaviour
     public void InheritFromEnemy(TDEnemy Enemy)
     {
         m_Enemy = Enemy;
-        m_attack = Enemy.m_attackPower;
+        m_attack = Enemy.m_playerAttackPower;
     }
 
     // Update is called once per frame

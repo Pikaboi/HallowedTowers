@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_Weapon", "m_Player", "m_rot", "t", "attackt", "UpgradePrice", "UGCount", "attackBoost", "m_resource", "m_affinitySprite")]
+	[ES3PropertiesAttribute("m_Weapon", "m_Player", "m_rot", "t", "UpgradePrice", "UGCount", "attackBoost", "m_resource", "m_affinitySprite")]
 	public class ES3UserType_WeaponEquipButton : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -20,7 +20,6 @@ namespace ES3Types
 			writer.WritePropertyByRef("m_Player", instance.m_Player);
 			writer.WriteProperty("m_rot", instance.m_rot, ES3Type_Vector3.Instance);
 			writer.WritePropertyByRef("t", instance.t);
-			writer.WritePropertyByRef("attackt", instance.attackt);
 			writer.WritePrivateField("UpgradePrice", instance);
 			writer.WritePrivateField("UGCount", instance);
 			writer.WriteProperty("attackBoost", instance.attackBoost, ES3Type_float.Instance);
@@ -47,9 +46,6 @@ namespace ES3Types
 						break;
 					case "t":
 						instance.t = reader.Read<TMPro.TMP_Text>();
-						break;
-					case "attackt":
-						instance.attackt = reader.Read<TMPro.TMP_Text>();
 						break;
 					case "UpgradePrice":
 					reader.SetPrivateField("UpgradePrice", reader.Read<System.Single>(), instance);

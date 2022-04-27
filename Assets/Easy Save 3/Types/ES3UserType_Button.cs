@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("enabled")]
+	[ES3PropertiesAttribute()]
 	public class ES3UserType_Button : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -16,7 +16,6 @@ namespace ES3Types
 		{
 			var instance = (UnityEngine.UI.Button)obj;
 			
-			writer.WriteProperty("enabled", instance.enabled, ES3Type_bool.Instance);
 		}
 
 		protected override void ReadComponent<T>(ES3Reader reader, object obj)
@@ -27,9 +26,6 @@ namespace ES3Types
 				switch(propertyName)
 				{
 					
-					case "enabled":
-						instance.enabled = reader.Read<System.Boolean>(ES3Type_bool.Instance);
-						break;
 					default:
 						reader.Skip();
 						break;

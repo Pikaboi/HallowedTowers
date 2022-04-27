@@ -61,6 +61,7 @@ public class RoundPlayButton : MonoBehaviour
             if (!m_Image.enabled)
             {
                 m_global.UpdateEconomy();
+                m_global.UpdateRound();
             }
 
             m_Image.enabled = true;
