@@ -17,9 +17,8 @@ public class SaveControl : MonoBehaviour
             {
                 LoadGame();
             }
+            Destroy(save.gameObject);
         }
-
-        Destroy(save.gameObject);
     }
 
     // Update is called once per frame
