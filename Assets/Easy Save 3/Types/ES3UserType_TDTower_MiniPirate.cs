@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("master", "m_angleSplit", "m_angleStart", "m_bulletCount", "Path3UG3", "m_PlayerBoost", "m_Trigger", "m_TriggerRange", "m_level", "m_Projectile", "m_fireRate", "m_fireRateBuff", "m_attack", "m_atkBuff", "m_aimer", "m_InRange", "m_RadiusViewer", "m_Affinity", "rotaterLookAt", "m_resource", "m_FireTimer")]
+	[ES3PropertiesAttribute("master", "m_angleSplit", "m_angleStart", "m_bulletCount", "Path3UG3", "m_PlayerBoost", "m_Trigger", "m_TriggerRange", "m_level", "m_Projectile", "m_fireRate", "m_fireRateBuff", "m_attack", "m_atkBuff", "m_aimer", "m_InRange", "m_RadiusViewer", "m_Affinity", "rotaterLookAt", "m_resource", "m_FireTimer", "resourceString")]
 	public class ES3UserType_TDTower_MiniPirate : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -37,6 +37,7 @@ namespace ES3Types
 			writer.WriteProperty("rotaterLookAt", instance.rotaterLookAt, ES3Type_Vector3.Instance);
 			writer.WritePrivateFieldByRef("m_resource", instance);
 			writer.WriteProperty("m_FireTimer", instance.m_FireTimer, ES3Type_float.Instance);
+			writer.WriteProperty("resourceString", instance.resourceString, ES3Type_string.Instance);
 		}
 
 		protected override void ReadComponent<T>(ES3Reader reader, object obj)
@@ -109,6 +110,9 @@ namespace ES3Types
 					break;
 					case "m_FireTimer":
 						instance.m_FireTimer = reader.Read<System.Single>(ES3Type_float.Instance);
+						break;
+					case "resourceString":
+						instance.resourceString = reader.Read<System.String>(ES3Type_string.Instance);
 						break;
 					default:
 						reader.Skip();

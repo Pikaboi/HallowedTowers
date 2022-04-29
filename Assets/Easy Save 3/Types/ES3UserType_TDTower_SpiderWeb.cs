@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_webPlacement", "m_sentry", "m_sentryTime", "m_sentryTimer", "m_sentryPos", "sentryTotal", "m_sentries", "Path3UG3", "m_Trigger", "m_TriggerRange", "m_level", "m_Projectile", "m_fireRate", "m_fireRateBuff", "m_attack", "m_atkBuff", "m_aimer", "m_InRange", "m_RadiusViewer", "m_Affinity", "rotaterLookAt", "m_resource", "m_FireTimer")]
+	[ES3PropertiesAttribute("m_webPlacement", "m_sentry", "sentryResource", "m_sentryTime", "m_sentryTimer", "m_sentryPos", "sentryTotal", "m_sentries", "Path3UG3", "m_Trigger", "m_TriggerRange", "m_level", "m_Projectile", "m_fireRate", "m_fireRateBuff", "m_attack", "m_atkBuff", "m_aimer", "m_InRange", "m_RadiusViewer", "m_Affinity", "rotaterLookAt", "m_resource", "m_FireTimer", "resourceString")]
 	public class ES3UserType_TDTower_SpiderWeb : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -18,6 +18,7 @@ namespace ES3Types
 			
 			writer.WriteProperty("m_webPlacement", instance.m_webPlacement, ES3Type_Vector3.Instance);
 			writer.WritePropertyByRef("m_sentry", instance.m_sentry);
+			writer.WriteProperty("sentryResource", instance.sentryResource, ES3Type_string.Instance);
 			writer.WriteProperty("m_sentryTime", instance.m_sentryTime, ES3Type_float.Instance);
 			writer.WriteProperty("m_sentryTimer", instance.m_sentryTimer, ES3Type_float.Instance);
 			writer.WriteProperty("m_sentryPos", instance.m_sentryPos, ES3Type_Vector3.Instance);
@@ -39,6 +40,7 @@ namespace ES3Types
 			writer.WriteProperty("rotaterLookAt", instance.rotaterLookAt, ES3Type_Vector3.Instance);
 			writer.WritePrivateFieldByRef("m_resource", instance);
 			writer.WriteProperty("m_FireTimer", instance.m_FireTimer, ES3Type_float.Instance);
+			writer.WriteProperty("resourceString", instance.resourceString, ES3Type_string.Instance);
 		}
 
 		protected override void ReadComponent<T>(ES3Reader reader, object obj)
@@ -54,6 +56,9 @@ namespace ES3Types
 						break;
 					case "m_sentry":
 						instance.m_sentry = reader.Read<UnityEngine.GameObject>(ES3Type_GameObject.Instance);
+						break;
+					case "sentryResource":
+						instance.sentryResource = reader.Read<System.String>(ES3Type_string.Instance);
 						break;
 					case "m_sentryTime":
 						instance.m_sentryTime = reader.Read<System.Single>(ES3Type_float.Instance);
@@ -117,6 +122,9 @@ namespace ES3Types
 					break;
 					case "m_FireTimer":
 						instance.m_FireTimer = reader.Read<System.Single>(ES3Type_float.Instance);
+						break;
+					case "resourceString":
+						instance.resourceString = reader.Read<System.String>(ES3Type_string.Instance);
 						break;
 					default:
 						reader.Skip();

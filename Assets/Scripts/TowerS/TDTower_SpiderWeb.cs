@@ -7,6 +7,7 @@ public class TDTower_SpiderWeb : TDTower
 {
     public Vector3 m_webPlacement = Vector3.zero;
     public GameObject m_sentry;
+    public string sentryResource;
     public float m_sentryTime;
     public float m_sentryTimer;
     public Vector3 m_sentryPos = Vector3.zero;
@@ -24,12 +25,14 @@ public class TDTower_SpiderWeb : TDTower
     public override void Start()
     {
         base.Start();
+        m_sentry = Resources.Load<GameObject>("Towers/SpiderWeb/SentryUpgrades/" + sentryResource);
         m_sentryTimer = m_sentryTime;
     }
 
     // Update is called once per frame
     public override void Update()
     {
+        m_sentry = Resources.Load<GameObject>("Towers/SpiderWeb/SentryUpgrades/" + sentryResource);
         GetRandomPos();
 
         m_FireTimer -= Time.deltaTime;

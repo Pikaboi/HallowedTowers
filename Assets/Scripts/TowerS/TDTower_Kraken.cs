@@ -29,6 +29,8 @@ public class TDTower_Kraken : TDTower
     {
         base.Start();
 
+        lr = GetComponentInChildren<LineRenderer>();
+
         if (Path1UG1)
         {
             m_fireRate = 0.5f;

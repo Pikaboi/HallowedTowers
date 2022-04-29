@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("Path1UG3", "Path3UG1", "Path3UG2", "groupBonus", "Path3UG3", "m_baseTriggerRange", "effectiveRange", "bossPresent", "m_Trigger", "m_TriggerRange", "m_level", "m_Projectile", "m_fireRate", "m_fireRateBuff", "m_attack", "m_atkBuff", "m_aimer", "m_InRange", "m_RadiusViewer", "m_Affinity", "rotaterLookAt", "m_resource", "m_FireTimer")]
+	[ES3PropertiesAttribute("Path1UG3", "Path3UG1", "Path3UG2", "groupBonus", "Path3UG3", "m_baseTriggerRange", "effectiveRange", "bossPresent", "m_Trigger", "m_TriggerRange", "m_level", "m_Projectile", "m_fireRate", "m_fireRateBuff", "m_attack", "m_atkBuff", "m_aimer", "m_InRange", "m_RadiusViewer", "m_Affinity", "rotaterLookAt", "m_resource", "m_FireTimer", "resourceString")]
 	public class ES3UserType_TDTower_Candycorn : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -35,10 +35,11 @@ namespace ES3Types
 			writer.WritePropertyByRef("m_aimer", instance.m_aimer);
 			writer.WriteProperty("m_InRange", instance.m_InRange, ES3Type_bool.Instance);
 			writer.WritePropertyByRef("m_RadiusViewer", instance.m_RadiusViewer);
-			writer.WriteProperty("m_Affinity", instance.m_Affinity, ES3Type_enum.Instance);
+			writer.WriteProperty("m_Affinity", instance.m_Affinity, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(affinity.Affinity)));
 			writer.WriteProperty("rotaterLookAt", instance.rotaterLookAt, ES3Type_Vector3.Instance);
 			writer.WritePrivateFieldByRef("m_resource", instance);
 			writer.WriteProperty("m_FireTimer", instance.m_FireTimer, ES3Type_float.Instance);
+			writer.WriteProperty("resourceString", instance.resourceString, ES3Type_string.Instance);
 		}
 
 		protected override void ReadComponent<T>(ES3Reader reader, object obj)
@@ -107,7 +108,7 @@ namespace ES3Types
 						instance.m_RadiusViewer = reader.Read<UnityEngine.GameObject>(ES3Type_GameObject.Instance);
 						break;
 					case "m_Affinity":
-						instance.m_Affinity = reader.Read<affinity.Affinity>(ES3Type_enum.Instance);
+						instance.m_Affinity = reader.Read<affinity.Affinity>();
 						break;
 					case "rotaterLookAt":
 						instance.rotaterLookAt = reader.Read<UnityEngine.Vector3>(ES3Type_Vector3.Instance);
@@ -117,6 +118,9 @@ namespace ES3Types
 					break;
 					case "m_FireTimer":
 						instance.m_FireTimer = reader.Read<System.Single>(ES3Type_float.Instance);
+						break;
+					case "resourceString":
+						instance.resourceString = reader.Read<System.String>(ES3Type_string.Instance);
 						break;
 					default:
 						reader.Skip();
