@@ -6,6 +6,39 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
+  - first:
+      74: 5976555378331176191
+    second: Take 001 //// BatBody02
+  - first:
+      74: 1850499235780807374
+    second: Take 001 //// BatBody00
+  - first:
+      74: 2197926873652555133
+    second: Take 001 //// BatBody01
+  - first:
+      74: -7287127192943927709
+    second: Take 001 //// BatLeftWing01
+  - first:
+      74: -4481050499831281324
+    second: Take 001 //// BatLeftWing02
+  - first:
+      74: -3088589725867112326
+    second: Take 001 //// BatLeftWing03
+  - first:
+      74: -5544536501548949858
+    second: Take 001 //// BatLeftWing04
+  - first:
+      74: -6767896869516794822
+    second: Take 001 //// BatRightWing01
+  - first:
+      74: 585271608350111489
+    second: Take 001 //// BatRightWing02
+  - first:
+      74: 8376875440399253565
+    second: Take 001 //// BatRightWing03
+  - first:
+      74: -1232019625347407725
+    second: Take 001 //// BatRightWing04
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -80,7 +113,72 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Bat damage(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pSphere1
+      parentName: Bat damage(Clone)
+      position: {x: 0.0014933196, y: 0, z: -0.002142311}
+      rotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BatBody02
+      parentName: Bat damage(Clone)
+      position: {x: 0.002638217, y: 2.715917, z: 0.00000007243533}
+      rotation: {x: 0.0000010935607, y: 0.00000091254327, z: 0.71140504, w: 0.7027822}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: BatBody00
+      parentName: BatBody02
+      position: {x: -0.45678854, y: 0.000000018167498, z: 0.00000004909259}
+      rotation: {x: -0.00000049013795, y: 0.00000046569542, z: -0.98432463, w: 0.17636628}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: BatBody01
+      parentName: BatBody00
+      position: {x: -1.0583287, y: 0.00000014231205, z: 0.000000247268}
+      rotation: {x: -0.00075174985, y: -0.034333244, z: -0.00004610804, w: 0.99941015}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: BatRightWing01
+      parentName: BatBody02
+      position: {x: -1.1364441, y: -0.4598091, z: 0.0000015502928}
+      rotation: {x: -0.03353068, y: -0.0055787293, z: 0.1290196, w: 0.9910593}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BatRightWing02
+      parentName: BatRightWing01
+      position: {x: -0.3769655, y: 0, z: 0.00000001801757}
+      rotation: {x: 0.012805002, y: -0.04407052, z: 0.039277773, w: 0.9981739}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BatRightWing03
+      parentName: BatRightWing02
+      position: {x: -1.0979846, y: 0.0000021074295, z: -0.000000086386}
+      rotation: {x: -0.19216302, y: 0.54063135, z: 0.5921414, w: 0.56582665}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: BatRightWing04
+      parentName: BatRightWing03
+      position: {x: -2.0312722, y: -0.00000009689331, z: 0}
+      rotation: {x: 0, y: 0, z: 1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BatLeftWing01
+      parentName: BatBody02
+      position: {x: -1.1418753, y: 0.46498287, z: -0.0000009689331}
+      rotation: {x: 0.004246814, y: -0.0016685687, z: -0.13949758, w: 0.99021196}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BatLeftWing02
+      parentName: BatLeftWing01
+      position: {x: -0.38975307, y: 0, z: 0.0000000028502556}
+      rotation: {x: -0.006871795, y: -0.03896773, z: -0.04303709, w: 0.99828964}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BatLeftWing03
+      parentName: BatLeftWing02
+      position: {x: -1.0973384, y: -0.0000041179655, z: 1.8914079e-13}
+      rotation: {x: 0.19212042, y: 0.55976456, z: -0.59430605, w: 0.5445675}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: BatLeftWing04
+      parentName: BatLeftWing03
+      position: {x: -2.0229576, y: 0.00000048446657, z: 0.00000009689331}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -97,7 +195,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
