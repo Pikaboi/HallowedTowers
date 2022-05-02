@@ -204,10 +204,12 @@ public class TDProjectileReaper : TDProjectile
             if (_enemy.m_health > 0)
             {
                 _enemy.m_Damage.Play();
+                _enemy.m_anim.SetTrigger("Hit");
             }
             else
             {
                 _enemy.m_Dead.Play();
+                _enemy.m_anim.SetTrigger("Hit");
                 if (_enemy.m_deathEffect != null)
                 {
                     _enemy.m_deathEffect.Play();
