@@ -307,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2882986608628113015}
   - component: {fileID: 4042028314203681740}
-  - component: {fileID: 3170304305180676825}
+  - component: {fileID: 4552506686058644535}
   m_Layer: 2
   m_Name: UG1-1
   m_TagString: Untagged
@@ -345,7 +345,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &3170304305180676825
+--- !u!114 &4552506686058644535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -354,13 +354,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8867338127284404696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bb51c26efa22a341bba9465019de357, type: 3}
+  m_Script: {fileID: 11500000, guid: a7cc7ae16df27614aaa5c15673932c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Trigger: {fileID: 0}
   m_TriggerRange: 10
   m_level: 1
-  m_Projectile: {fileID: 8889714604909872069, guid: 8866195a1d7c4bf439c0cdbb738bc694, type: 3}
+  m_Projectile: {fileID: 0}
   m_fireRate: 0.3
   m_fireRateBuff: 0
   m_attack: 10
@@ -373,3 +373,9 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_FireTimer: 0
   resourceString: Reaper/Bullets/Base
+  Path2UG2: 0
+  Path3UG2: 0
+  m_AffinityFireRate: 0
+  Path3UG3: 0
+  m_SoloAttack: 0
+  m_OGAttack: 0
