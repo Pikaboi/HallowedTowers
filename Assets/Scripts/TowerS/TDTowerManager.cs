@@ -52,6 +52,18 @@ public class TDTowerManager : MonoBehaviour
             m_child = Instantiate(m_base, transform.position, transform.rotation);
             m_child.transform.parent = gameObject.transform;
         }
+
+        if(gameObject.GetComponentInChildren<TDTower_GhostPirate>() != null)
+        {
+            CopyStats();
+            Destroy(m_child);
+            m_child = null;
+            m_base = Resources.Load<GameObject>("Towers/" + baseResource);
+            m_child = Instantiate(m_base, transform.position, transform.rotation);
+            PassStats();
+            m_child.transform.parent = gameObject.transform;
+        }
+
         m_resource = FindObjectOfType<PlayerResourceManager>();
         m_sellCost = m_cost / 2;
         m_UpgradeUI.SetActive(false);
