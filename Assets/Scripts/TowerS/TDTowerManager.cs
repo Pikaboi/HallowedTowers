@@ -51,26 +51,11 @@ public class TDTowerManager : MonoBehaviour
             m_base = Resources.Load<GameObject>("Towers/" + baseResource);
             m_child = Instantiate(m_base, transform.position, transform.rotation);
             m_child.transform.parent = gameObject.transform;
-        }
-
-        //Required Reload for the Pirate Ship
-        if(gameObject.GetComponentInChildren<TDTower_GhostPirate>() != null)
+        } else
         {
             CopyStats();
             Destroy(m_child);
             m_child = null;
-            m_base = Resources.Load<GameObject>("Towers/" + baseResource);
-            m_child = Instantiate(m_base, transform.position, transform.rotation);
-            PassStats();
-            m_child.transform.parent = gameObject.transform;
-        }
-
-        //Required Reload for the Grim Reaper
-        if(gameObject.GetComponentInChildren<TDTower_NoRangeReaper>() != null || gameObject.GetComponentInChildren<TDTowerReaper>() != null)
-        {
-            CopyStats();
-            Destroy(m_child);
-            m_child= null;
             m_base = Resources.Load<GameObject>("Towers/" + baseResource);
             m_child = Instantiate(m_base, transform.position, transform.rotation);
             PassStats();
