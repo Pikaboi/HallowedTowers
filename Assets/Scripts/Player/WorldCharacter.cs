@@ -227,6 +227,7 @@ public class WorldCharacter : MonoBehaviour
             //Check the enemy was attacking and player is not in invincibility frames
             if (!hit)
             {
+                m_anim.SetTrigger("Hit");
                 hit = true;
                 m_health -= other.gameObject.GetComponent<TDEnemyAttack>().m_attack;
 
@@ -247,6 +248,7 @@ public class WorldCharacter : MonoBehaviour
             //Check the enemy was attacking and player is not in invincibility frames
             if (!hit)
             {
+                m_anim.SetTrigger("Hit");
                 hit = true;
                 m_health -= other.gameObject.GetComponent<TDEnemyProjectile>().m_attack;
 
@@ -268,6 +270,7 @@ public class WorldCharacter : MonoBehaviour
         //Check the enemy was attacking and player is not in invincibility frames
         if (!hit)
         {
+            m_anim.SetTrigger("Hit");
             hit = true;
             m_health -= m_attack;
 
