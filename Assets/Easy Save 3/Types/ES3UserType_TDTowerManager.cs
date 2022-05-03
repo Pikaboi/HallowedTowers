@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_child", "m_affinity", "m_base", "m_towerName", "m_cost", "m_sellCost", "m_UpgradeUI", "m_TriggerRange", "m_fireRate", "m_attack", "m_level", "m_UGParticle", "m_BuffParticle", "m_ShootParticle", "m_UGDiscount", "m_LevelDiscount", "m_AffinityDiscount", "baseModel", "Path1Model", "Path2Model", "Path3Model", "baseResource", "m_resource")]
+	[ES3PropertiesAttribute("m_child", "m_affinity", "m_base", "m_towerName", "m_cost", "m_sellCost", "m_UpgradeUI", "m_TriggerRange", "m_fireRate", "m_attack", "m_level", "m_UGParticle", "m_BuffParticle", "m_ShootParticle", "m_UGDiscount", "m_LevelDiscount", "m_AffinityDiscount", "baseModel", "Path1Model", "Path2Model", "Path3Model", "baseResource", "modelNum", "m_resource")]
 	public class ES3UserType_TDTowerManager : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -17,7 +17,7 @@ namespace ES3Types
 			var instance = (TDTowerManager)obj;
 			
 			writer.WritePropertyByRef("m_child", instance.m_child);
-			writer.WriteProperty("m_affinity", instance.m_affinity, ES3Type_enum.Instance);
+			writer.WriteProperty("m_affinity", instance.m_affinity, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(affinity.Affinity)));
 			writer.WritePropertyByRef("m_base", instance.m_base);
 			writer.WriteProperty("m_towerName", instance.m_towerName, ES3Type_string.Instance);
 			writer.WriteProperty("m_cost", instance.m_cost, ES3Type_float.Instance);
@@ -38,6 +38,7 @@ namespace ES3Types
 			writer.WritePropertyByRef("Path2Model", instance.Path2Model);
 			writer.WritePropertyByRef("Path3Model", instance.Path3Model);
 			writer.WriteProperty("baseResource", instance.baseResource, ES3Type_string.Instance);
+			writer.WriteProperty("modelNum", instance.modelNum, ES3Type_int.Instance);
 			writer.WritePropertyByRef("m_resource", instance.m_resource);
 		}
 
@@ -53,7 +54,7 @@ namespace ES3Types
 						instance.m_child = reader.Read<UnityEngine.GameObject>(ES3Type_GameObject.Instance);
 						break;
 					case "m_affinity":
-						instance.m_affinity = reader.Read<affinity.Affinity>(ES3Type_enum.Instance);
+						instance.m_affinity = reader.Read<affinity.Affinity>();
 						break;
 					case "m_base":
 						instance.m_base = reader.Read<UnityEngine.GameObject>(ES3Type_GameObject.Instance);
@@ -114,6 +115,9 @@ namespace ES3Types
 						break;
 					case "baseResource":
 						instance.baseResource = reader.Read<System.String>(ES3Type_string.Instance);
+						break;
+					case "modelNum":
+						instance.modelNum = reader.Read<System.Int32>(ES3Type_int.Instance);
 						break;
 					case "m_resource":
 						instance.m_resource = reader.Read<PlayerResourceManager>();

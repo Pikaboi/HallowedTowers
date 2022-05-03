@@ -40,6 +40,8 @@ public class TDTowerManager : MonoBehaviour
 
     public string baseResource;
 
+    public int modelNum = 0;
+
     [SerializeField] public PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
@@ -69,20 +71,40 @@ public class TDTowerManager : MonoBehaviour
 
         //I hope you like these if statements
         //Blame the dragon tower
-        /*if (Path1Model != null)
+        if(baseModel != null && modelNum == 0)
+        {
+            baseModel.SetActive(true);
+        } else if(baseModel != null && modelNum != 0)
+        {
+            baseModel.SetActive(false);
+        }
+
+        if (Path1Model != null && modelNum == 1)
+        {
+            Path1Model.SetActive(true);
+        }
+        else if (Path1Model != null && modelNum != 1)
         {
             Path1Model.SetActive(false);
         }
 
-        if (Path2Model != null)
+        if (Path2Model != null && modelNum == 2)
+        {
+            Path2Model.SetActive(true);
+        }
+        else if (Path2Model != null && modelNum != 2)
         {
             Path2Model.SetActive(false);
         }
 
-        if (Path3Model != null)
+        if (Path3Model != null && modelNum == 3)
+        {
+            Path3Model.SetActive(true);
+        }
+        else if (Path3Model != null && modelNum != 3)
         {
             Path3Model.SetActive(false);
-        }*/
+        }
     }
 
     // Update is called once per frame
@@ -139,6 +161,7 @@ public class TDTowerManager : MonoBehaviour
 
     public void ChangeModel(int _modelnum)
     {
+        modelNum = _modelnum;
         if(_modelnum == 0)
         {
             return;
