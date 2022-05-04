@@ -9,6 +9,7 @@ public class RoundPlayButton : MonoBehaviour
     Image m_Image;
     //[SerializeField] TMPro.TMP_Text m_Text;
     public WaveCreator[] m_waveCreators;
+    public Button[] m_SaveButtons;
 
     bool m_roundOver;
 
@@ -66,6 +67,10 @@ public class RoundPlayButton : MonoBehaviour
 
             m_Image.enabled = true;
             m_button.enabled = true;
+            foreach (Button b in m_SaveButtons)
+            {
+                b.enabled = true;
+            }
             //m_Text.enabled = true;
         }
         else
@@ -73,6 +78,10 @@ public class RoundPlayButton : MonoBehaviour
             m_Image.enabled = false;
             m_button.enabled = false;
             //m_Text.enabled = false;
+            foreach(Button b in m_SaveButtons)
+            {
+                b.enabled = false;
+            }
         }
     }
 
