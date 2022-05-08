@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_waves", "m_currentWave", "enemies", "enemyCount", "wave", "m_destination", "maxTimer", "timer", "waveIndex", "WavePlaying", "spawnsFinshed", "m_fog", "m_travelButton", "m_unlockRound", "roundPenalty", "penaltyCount", "m_waveIcon", "m_groundWaveIcon", "DistanceMultiplier", "m_fognotif", "m_skipnotif")]
+	[ES3PropertiesAttribute("m_currentWave", "enemies", "enemyCount", "wave", "m_destination", "maxTimer", "timer", "waveIndex", "WavePlaying", "spawnsFinshed", "m_fog", "m_travelButton", "m_unlockRound", "roundPenalty", "penaltyCount", "m_waveIcon", "m_groundWaveIcon", "DistanceMultiplier", "m_fognotif", "m_skipnotif")]
 	public class ES3UserType_WaveCreator : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -16,7 +16,6 @@ namespace ES3Types
 		{
 			var instance = (WaveCreator)obj;
 			
-			writer.WriteProperty("m_waves", instance.m_waves, ES3Internal.ES3TypeMgr.GetOrCreateES3Type(typeof(WaveManager[])));
 			writer.WritePrivateFieldByRef("m_currentWave", instance);
 			writer.WritePrivateField("enemies", instance);
 			writer.WritePrivateField("enemyCount", instance);
@@ -31,7 +30,7 @@ namespace ES3Types
 			writer.WritePropertyByRef("m_travelButton", instance.m_travelButton);
 			writer.WriteProperty("m_unlockRound", instance.m_unlockRound, ES3Type_int.Instance);
 			writer.WriteProperty("roundPenalty", instance.roundPenalty, ES3Type_int.Instance);
-			writer.WritePrivateField("penaltyCount", instance);
+			writer.WriteProperty("penaltyCount", instance.penaltyCount, ES3Type_int.Instance);
 			writer.WritePropertyByRef("m_waveIcon", instance.m_waveIcon);
 			writer.WritePropertyByRef("m_groundWaveIcon", instance.m_groundWaveIcon);
 			writer.WriteProperty("DistanceMultiplier", instance.DistanceMultiplier, ES3Type_float.Instance);
@@ -47,9 +46,6 @@ namespace ES3Types
 				switch(propertyName)
 				{
 					
-					case "m_waves":
-						instance.m_waves = reader.Read<WaveManager[]>();
-						break;
 					case "m_currentWave":
 					reader.SetPrivateField("m_currentWave", reader.Read<WaveManager>(), instance);
 					break;
@@ -93,8 +89,8 @@ namespace ES3Types
 						instance.roundPenalty = reader.Read<System.Int32>(ES3Type_int.Instance);
 						break;
 					case "penaltyCount":
-					reader.SetPrivateField("penaltyCount", reader.Read<System.Int32>(), instance);
-					break;
+						instance.penaltyCount = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
 					case "m_waveIcon":
 						instance.m_waveIcon = reader.Read<WaveAffIcons>();
 						break;

@@ -45,7 +45,7 @@ public class WaveCreator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        waveIndex = 0;
+        //waveIndex = 0;
         m_currentWave = m_waves[waveIndex];
         SetUpWave();
         timer = maxTimer;
