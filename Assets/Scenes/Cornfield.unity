@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 20.696661, g: 19.925703, b: 22.847433, a: 1}
+  m_IndirectSpecularColor: {r: 34.855892, g: 32.2698, b: 34.9368, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3655,54 +3655,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1634395039}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &120944804
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 120944806}
-  - component: {fileID: 120944805}
-  m_Layer: 0
-  m_Name: Sky and Fog Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &120944805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120944804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 4a47738b96247b541a5c8591960f7efd, type: 2}
---- !u!4 &120944806
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120944804}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.133259, y: -49.337296, z: 43.930496}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &122109673
 PrefabInstance:
@@ -60180,3 +60132,60 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8081819900935650313, guid: 786a2d1ce2045564d80163f3a56eca3c, type: 3}
+--- !u!1001 &2755508548309898373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2755508548260932641, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_Name
+      value: Sky and Fog Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.133259
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -49.337296
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 43.930496
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755508548260932643, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ffc51692bbb445e4896aceeaddb2c175, type: 3}
