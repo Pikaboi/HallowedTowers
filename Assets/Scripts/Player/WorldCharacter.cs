@@ -177,9 +177,11 @@ public class WorldCharacter : MonoBehaviour
         } else if (m_WeaponStats.isMelee)
         {
             m_Equipped = WeaponType.MELEE;
+            m_anim.SetBool("Ranged", false);
         } else
         {
             m_Equipped = WeaponType.RANGE;
+            m_anim.SetBool("Ranged", true);
         }
     }
 
