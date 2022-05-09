@@ -18,7 +18,8 @@ public class TDTower_Kraken : TDTower
 
     //Homing in on enemies
     public List<TDEnemy> m_targets;
-    
+
+    public bool shoot = false;
 
     public Vector3 AimPos = new Vector3 (0.0f, 0.0f, 0.0f);
 
@@ -74,6 +75,7 @@ public class TDTower_Kraken : TDTower
         {
             if (m_FireTimer <= 0.0f)
             {
+                shoot = true;
                 if (Path1UG3)
                 {
                     float angle = -10.0f;
@@ -100,6 +102,9 @@ public class TDTower_Kraken : TDTower
                 }
                 m_FireTimer = m_fireRate - (m_fireRate * m_fireRateBuff);
             }
+        } else
+        {
+            shoot = false;
         }
     }
 
