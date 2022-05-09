@@ -61,12 +61,19 @@ public class WorldCharacter : MonoBehaviour
     //Darshan refuses to learn he does things wrong
     [SerializeField] private bool rangedShoot;
 
+    //Save bool 
+    public bool loaded;
+
     // Start is called before the first frame update
     void Start()
     {
         respawnTimer = maxRespawnTimer;
         m_passiveAggroTimer = m_maxPassiveAggroTimer;
-        m_health = m_maxHealth;
+        if (!loaded)
+        {
+            m_health = m_maxHealth;
+            loaded = true;
+        }
         m_Controller = GetComponent<CharacterController>();
         if (m_Weapon != null)
         {
