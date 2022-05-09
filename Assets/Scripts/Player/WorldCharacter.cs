@@ -54,7 +54,12 @@ public class WorldCharacter : MonoBehaviour
     [SerializeField] GameObject m_Weapon;
     [SerializeField] public PlayerWeapon m_WeaponStats;
 
-    public ParticleSystem m_Blockparticle; 
+    public ParticleSystem m_Blockparticle;
+
+    //Animations never go how the lecturers say to do it
+    //So I gotta fix it with this jank instead
+    //Darshan refuses to learn he does things wrong
+    [SerializeField] private bool rangedShoot;
 
     // Start is called before the first frame update
     void Start()
@@ -311,11 +316,41 @@ public class WorldCharacter : MonoBehaviour
         {
             m_attackTime -= Time.deltaTime;
 
+            if(m_attackTime <= 0.6f)
+            {
+                if (m_Equipped == WeaponType.RANGE && !rangedShoot)
+                {
+                    if (m_weaponSFX != null)
+                    {
+                        m_weaponSFX.Play();
+                    }
+                    if (m_WeaponStats.m_particle != null)
+                    {
+                        m_WeaponStats.m_particle.Play();
+                    }
+
+                    if (m_WeaponStats.Bullet != null)
+                    {
+                        GameObject b = Instantiate(m_WeaponStats.Bullet, m_WeaponStats.shootpos.position, transform.rotation);
+
+                        //We are using the same framework as the tower projectiles
+                        b.GetComponent<TDProjectile>().InheritFromTower(m_WeaponStats.m_BulletRange, m_WeaponStats.m_Attack, m_WeaponStats.gameObject, m_WeaponStats.m_Affinity);
+                    }
+                    rangedShoot = true;
+                }
+
+            }
+
             if (m_attackTime <= 0)
             {
-                m_WeaponStats.m_boxCollider.enabled = false;
+                if (m_Equipped == WeaponType.MELEE)
+                {
+                    m_WeaponStats.m_boxCollider.enabled = false;
+                }
+
                 m_attack = false;
                 m_attackTime = m_maxat;
+                rangedShoot = false;
             }
         }
         else
@@ -346,7 +381,9 @@ public class WorldCharacter : MonoBehaviour
 
                         break;
                     case WeaponType.RANGE:
-                        if (m_weaponSFX != null)
+                        m_attack = true;
+
+                        /*if (m_weaponSFX != null)
                         {
                             m_weaponSFX.Play();
                         }
@@ -361,7 +398,7 @@ public class WorldCharacter : MonoBehaviour
 
                             //We are using the same framework as the tower projectiles
                             b.GetComponent<TDProjectile>().InheritFromTower(m_WeaponStats.m_BulletRange, m_WeaponStats.m_Attack, m_WeaponStats.gameObject, m_WeaponStats.m_Affinity);
-                        }
+                        }*/
                         //Shoot a projectile
                         break;
                     default:
