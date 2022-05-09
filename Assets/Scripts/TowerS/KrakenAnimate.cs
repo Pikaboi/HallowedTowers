@@ -21,5 +21,7 @@ public class KrakenAnimate : MonoBehaviour
         {
             m_anim.SetTrigger("Attack");
         }
+
+        gameObject.transform.LookAt(m_tower.AimPos);
     }
 }
