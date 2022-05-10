@@ -5,6 +5,7 @@ using UnityEngine;
 public class TDTower_ReaperMelee : TDTower
 {
     // Start is called before the first frame update
+    public bool shoot = false;
     public override void Start()
     {
         base.Start();
@@ -24,9 +25,13 @@ public class TDTower_ReaperMelee : TDTower
 
             if(m_FireTimer <= 0.0f)
             {
+                shoot = true;
                 GameObject go = Instantiate(m_Projectile, transform.position, Quaternion.Euler(Vector3.zero));
                 go.GetComponent<TDMelee>().InheritFromTower(m_attack + (m_attack * m_atkBuff), gameObject, m_Affinity);
                 m_FireTimer = m_fireRate - (m_fireRate * m_fireRateBuff);
+            } else
+            {
+                shoot = false;
             }
         }
     }

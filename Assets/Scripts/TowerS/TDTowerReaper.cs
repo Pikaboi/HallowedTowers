@@ -24,7 +24,9 @@ public class TDTowerReaper : TDTower
     /// </summary>
     public float m_SoloAttack;
     public float m_OGAttack;
-    
+
+    public bool shoot;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -41,7 +43,39 @@ public class TDTowerReaper : TDTower
     // Update is called once per frame
     public override void Update()
     {
-        base.Update();
+        CheckEnemies();
+        Aim();
+        if (m_InRange)
+        {
+            m_FireTimer -= Time.deltaTime;
+
+            if (m_FireTimer <= 0.0f)
+            {
+                shoot = true;
+                GameObject bullet = Instantiate(m_Projectile, transform.position + transform.forward * 1.5f, m_aimer.transform.rotation);
+                bullet.GetComponent<TDProjectile>().InheritFromTower(m_TriggerRange, m_attack + (m_attack * m_atkBuff), gameObject, m_Affinity);
+                m_FireTimer = m_fireRate - (m_fireRate * m_fireRateBuff);
+
+                if (GetComponentInParent<TDTowerManager>().m_ShootParticle != null)
+                {
+                    GetComponentInParent<TDTowerManager>().m_ShootParticle.Play();
+                }
+            } else
+            {
+                shoot = false;
+            }
+        }
+
+        //To get sub towers like Reapers Scythe updated
+        TDTower[] childTowers = gameObject.GetComponentsInChildren<TDTower>();
+
+        if (childTowers.Length > 0)
+        {
+            for (int i = 0; i < childTowers.Length; i++)
+            {
+                childTowers[i].SetAffinity(m_Affinity);
+            }
+        }
     }
 
     public override void CheckEnemies()
