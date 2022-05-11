@@ -50,7 +50,9 @@ public class TDEnemy : MonoBehaviour
     public float m_StunImmuneTimer = 5.0f;
 
     public bool m_Pushed = false;
-    public float m_PushTimer = 1.0f;
+    public float m_PushTimer = 0.75f;
+    public float m_PushImmunity = 5.0f;
+    public bool m_PushImmune = false;
 
     public float m_chargeTimer = 0.5f;
 
@@ -151,7 +153,7 @@ public class TDEnemy : MonoBehaviour
 
     public void PushControl()
     {
-        if (m_Pushed)
+        if (m_Pushed && !m_PushImmune)
         {
             m_PushTimer -= Time.deltaTime;
             GetComponent<Rigidbody>().MovePosition(transform.position - (m_agent.velocity.normalized * 0.25f));
@@ -159,14 +161,28 @@ public class TDEnemy : MonoBehaviour
             if (m_PushTimer <= 0)
             {
                 m_Pushed = false;
-                m_PushTimer = 1.0f;
+                m_PushImmune = true;
+                m_PushTimer = 0.75f;
+            }
+        }
+
+        if(m_PushImmune)
+        {
+            m_PushImmunity -= Time.deltaTime;
+            if (m_PushImmunity <= 0)
+            {
+                m_PushImmunity = 5.0f;
+                m_PushImmune = false;
             }
         }
     }
 
     public void Push()
     {
-        m_Pushed = true;
+        if (!m_PushImmune)
+        {
+            m_Pushed = true;
+        }
     }
 
     public void Stun()
