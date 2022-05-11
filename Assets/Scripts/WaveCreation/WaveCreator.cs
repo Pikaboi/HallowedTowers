@@ -46,6 +46,7 @@ public class WaveCreator : MonoBehaviour
     void Start()
     {
         //waveIndex = 0;
+        wave.Clear();
         m_currentWave = m_waves[waveIndex];
         SetUpWave();
         timer = maxTimer;
