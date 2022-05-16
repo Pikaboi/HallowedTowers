@@ -13,6 +13,8 @@ public class InventoryPurchase : MonoBehaviour
     public bool bought = false;
 
     public CreateWeaponUpgradeMenu m_UGmenuInstance;
+    public ShopSpeechBubble m_textbubble;
+    public AudioSource m_purchaseAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,8 @@ public class InventoryPurchase : MonoBehaviour
     {
         if (m_resource.m_Money >= m_price)
         {
+            m_purchaseAudio.Play();
+            m_textbubble.OnPurchase();
             bought = true;
             m_resource.SubMoney(m_price);
             //m_sound.Play();
