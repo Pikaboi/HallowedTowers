@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_Weapon", "m_Player", "m_rot", "t", "UpgradePrice", "UGCount", "attackBoost", "m_resource", "m_affinitySprite")]
+	[ES3PropertiesAttribute("UpgradePrice", "UGCount", "attackBoost", "m_resource")]
 	public class ES3UserType_WeaponEquipButton : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -16,15 +16,10 @@ namespace ES3Types
 		{
 			var instance = (WeaponEquipButton)obj;
 			
-			writer.WritePropertyByRef("m_Weapon", instance.m_Weapon);
-			writer.WritePropertyByRef("m_Player", instance.m_Player);
-			writer.WriteProperty("m_rot", instance.m_rot, ES3Type_Vector3.Instance);
-			writer.WritePropertyByRef("t", instance.t);
 			writer.WritePrivateField("UpgradePrice", instance);
 			writer.WritePrivateField("UGCount", instance);
 			writer.WriteProperty("attackBoost", instance.attackBoost, ES3Type_float.Instance);
 			writer.WritePrivateFieldByRef("m_resource", instance);
-			writer.WritePropertyByRef("m_affinitySprite", instance.m_affinitySprite);
 		}
 
 		protected override void ReadComponent<T>(ES3Reader reader, object obj)
@@ -35,18 +30,6 @@ namespace ES3Types
 				switch(propertyName)
 				{
 					
-					case "m_Weapon":
-						instance.m_Weapon = reader.Read<UnityEngine.GameObject>(ES3Type_GameObject.Instance);
-						break;
-					case "m_Player":
-						instance.m_Player = reader.Read<WorldCharacter>();
-						break;
-					case "m_rot":
-						instance.m_rot = reader.Read<UnityEngine.Vector3>(ES3Type_Vector3.Instance);
-						break;
-					case "t":
-						instance.t = reader.Read<TMPro.TMP_Text>();
-						break;
 					case "UpgradePrice":
 					reader.SetPrivateField("UpgradePrice", reader.Read<System.Single>(), instance);
 					break;
@@ -59,9 +42,6 @@ namespace ES3Types
 					case "m_resource":
 					reader.SetPrivateField("m_resource", reader.Read<PlayerResourceManager>(), instance);
 					break;
-					case "m_affinitySprite":
-						instance.m_affinitySprite = reader.Read<UnityEngine.UI.Image>(ES3Type_Image.Instance);
-						break;
 					default:
 						reader.Skip();
 						break;

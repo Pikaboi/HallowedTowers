@@ -10,6 +10,8 @@ public class InventoryPurchase : MonoBehaviour
     public InventoryAdd m_inventory;
     public TMPro.TMP_Text pricetag;
 
+    public bool bought = false;
+
     public CreateWeaponUpgradeMenu m_UGmenuInstance;
 
     // Start is called before the first frame update
@@ -17,6 +19,12 @@ public class InventoryPurchase : MonoBehaviour
     {
         m_resource = FindObjectOfType<PlayerResourceManager>();
         pricetag.text += " " + m_price;
+
+        if (bought)
+        {
+            pricetag.text = "SOLD OUT";
+            GetComponent<UnityEngine.UI.Button>().enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -29,6 +37,7 @@ public class InventoryPurchase : MonoBehaviour
     {
         if (m_resource.m_Money >= m_price)
         {
+            bought = true;
             m_resource.SubMoney(m_price);
             //m_sound.Play();
             m_inventory.addWeapon(m_weaponMenuPrefab);
