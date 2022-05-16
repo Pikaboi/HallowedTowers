@@ -8,14 +8,24 @@ public class InventoryAdd : MonoBehaviour
     public GameObject starterWeapon;
     void Awake()
     {
-        addWeapon(starterWeapon);
-        WorldCharacter player = FindObjectOfType<WorldCharacter>();
-        starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).m_Player = player;
-        starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).OnClick();
+        /*if (transform.GetChildCount() != 0)
+        {
+            addWeapon(starterWeapon);
+            WorldCharacter player = FindObjectOfType<WorldCharacter>();
+            starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).m_Player = player;
+            starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).OnClick();
+        }*/
     }
 
     private void Start()
     {
+        if (transform.childCount == 0)
+        {
+            addWeapon(starterWeapon);
+            WorldCharacter player = FindObjectOfType<WorldCharacter>();
+            starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).m_Player = player;
+            starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).OnClick();
+        } 
     }
 
     // Update is called once per frame
