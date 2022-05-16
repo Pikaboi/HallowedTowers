@@ -18,6 +18,8 @@ public class WeaponEquipButton : MonoBehaviour
 
     public UnityEngine.UI.Image m_affinitySprite;
 
+    public int id;
+
     /*void Start()
     {
         UpgradePrice = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 1000;
@@ -69,7 +71,7 @@ public class WeaponEquipButton : MonoBehaviour
 
         if (m_Weapon != null)
         {
-            m_Player.SpawnWeapon(m_Weapon, m_rot, attackBoost);
+            m_Player.SpawnWeapon(m_Weapon, m_rot, attackBoost, id);
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_health", "loaded")]
+	[ES3PropertiesAttribute("m_health", "weaponID", "loaded")]
 	public class ES3UserType_WorldCharacter : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -17,6 +17,7 @@ namespace ES3Types
 			var instance = (WorldCharacter)obj;
 			
 			writer.WriteProperty("m_health", instance.m_health, ES3Type_float.Instance);
+			writer.WriteProperty("weaponID", instance.weaponID, ES3Type_int.Instance);
 			writer.WriteProperty("loaded", instance.loaded, ES3Type_bool.Instance);
 		}
 
@@ -30,6 +31,9 @@ namespace ES3Types
 					
 					case "m_health":
 						instance.m_health = reader.Read<System.Single>(ES3Type_float.Instance);
+						break;
+					case "weaponID":
+						instance.weaponID = reader.Read<System.Int32>(ES3Type_int.Instance);
 						break;
 					case "loaded":
 						instance.loaded = reader.Read<System.Boolean>(ES3Type_bool.Instance);

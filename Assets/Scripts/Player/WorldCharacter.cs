@@ -61,6 +61,9 @@ public class WorldCharacter : MonoBehaviour
     //Darshan refuses to learn he does things wrong
     [SerializeField] private bool rangedShoot;
 
+    public InventoryAdd m_add;
+    public int weaponID = 0;
+
     //Save bool 
     public bool loaded;
 
@@ -75,10 +78,9 @@ public class WorldCharacter : MonoBehaviour
             loaded = true;
         }
         m_Controller = GetComponent<CharacterController>();
-        if (m_Weapon != null)
-        {
-            m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
-        }
+
+        m_add.transform.GetChild(weaponID).GetComponentInChildren<WeaponEquipButton>().OnClick();
+        
         m_maxat = m_attackTime;
 
         //if (m_Weapon != null)
@@ -415,7 +417,7 @@ public class WorldCharacter : MonoBehaviour
         }
     }
 
-    public void SpawnWeapon(GameObject _weapon, Vector3 m_rot, float _bonus)
+    public void SpawnWeapon(GameObject _weapon, Vector3 m_rot, float _bonus, int _id)
     {
         if (m_Weapon != null)
         {
@@ -428,6 +430,7 @@ public class WorldCharacter : MonoBehaviour
         m_WeaponStats = m_Weapon.GetComponent<PlayerWeapon>();
         m_WeaponStats.m_Attack += _bonus;
         m_weaponSFX.clip = m_WeaponStats.m_audioClip;
+        weaponID = _id;
     }
 
     public float GetMaxHealth() {

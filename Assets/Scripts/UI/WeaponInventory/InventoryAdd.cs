@@ -47,5 +47,6 @@ public class InventoryAdd : MonoBehaviour
     {
         GameObject newWeapon = Instantiate(g);
         newWeapon.transform.SetParent(transform, false);
+        newWeapon.GetComponentInChildren<WeaponEquipButton>().id = (transform.childCount - 1);
     }
 }

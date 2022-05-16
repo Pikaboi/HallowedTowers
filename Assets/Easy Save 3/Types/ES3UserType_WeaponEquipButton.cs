@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("UpgradePrice", "UGCount", "attackBoost", "m_resource")]
+	[ES3PropertiesAttribute("UpgradePrice", "UGCount", "attackBoost", "m_resource", "id")]
 	public class ES3UserType_WeaponEquipButton : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -20,6 +20,7 @@ namespace ES3Types
 			writer.WritePrivateField("UGCount", instance);
 			writer.WriteProperty("attackBoost", instance.attackBoost, ES3Type_float.Instance);
 			writer.WritePrivateFieldByRef("m_resource", instance);
+			writer.WriteProperty("id", instance.id, ES3Type_int.Instance);
 		}
 
 		protected override void ReadComponent<T>(ES3Reader reader, object obj)
@@ -42,6 +43,9 @@ namespace ES3Types
 					case "m_resource":
 					reader.SetPrivateField("m_resource", reader.Read<PlayerResourceManager>(), instance);
 					break;
+					case "id":
+						instance.id = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
 					default:
 						reader.Skip();
 						break;
