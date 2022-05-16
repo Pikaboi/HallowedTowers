@@ -1728,6 +1728,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 6159966970568381689}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &847940531305573194
 AudioSource:
@@ -2000,6 +2001,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 1692827642549909091}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &8193954623292751720
 AudioSource:
@@ -2701,6 +2703,7 @@ GameObject:
   - component: {fileID: 8967076411193941059}
   - component: {fileID: 8967076411193941058}
   - component: {fileID: 5067703899884245017}
+  - component: {fileID: 6733238881796719748}
   m_Layer: 5
   m_Name: PurchaseMenu
   m_TagString: Untagged
@@ -2834,6 +2837,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6733238881796719748}
+        m_TargetAssemblyTypeName: CloseMenu, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8967076411193941058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2943,6 +2958,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6733238881796719748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076411193941056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d0f79aa8239c64f874ba105a14048f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapRoot: {fileID: 8967076412235404771}
 --- !u!1 &8967076411212100948
 GameObject:
   m_ObjectHideFlags: 0
@@ -4133,7 +4161,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076411961253594}
   m_HandleRect: {fileID: 8967076411961253592}
   m_Direction: 2
-  m_Value: 0.99999976
+  m_Value: 1
   m_Size: 0.70723253
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -4508,7 +4536,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8967076411292541129}
   m_HandleRect: {fileID: 8967076411292541128}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6890,6 +6918,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 8967076412936632163}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &4454637833965778658
 AudioSource:
@@ -7162,6 +7191,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 8967076411779011679}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &4518977028468631586
 AudioSource:
@@ -9412,6 +9442,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 8967076411477469711}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &428397156179391063
 AudioSource:
@@ -9850,6 +9881,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 8967076411901041484}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &3846710090033938709
 AudioSource:
@@ -10408,6 +10440,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 8967076412958709040}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &2083843692006784125
 AudioSource:
@@ -11044,17 +11077,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8967076413008870909}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8967076412993346998}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00001049, y: 13.1557}
-  m_SizeDelta: {x: 52.7847, y: 145.686}
+  m_AnchoredPosition: {x: -13.3811, y: 9.8416}
+  m_SizeDelta: {x: 161.1795, y: 59.683}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8967076413008870898
 CanvasRenderer:
@@ -11191,6 +11224,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 8967076411548818175}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &1044894186324737581
 AudioSource:
@@ -11302,6 +11336,7 @@ GameObject:
   - component: {fileID: 8967076413039255128}
   - component: {fileID: 6176266475388387184}
   - component: {fileID: 2821381664366786514}
+  - component: {fileID: 5993263525809126460}
   m_Layer: 5
   m_Name: UpgradeMenu
   m_TagString: Untagged
@@ -11435,6 +11470,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5993263525809126460}
+        m_TargetAssemblyTypeName: CloseMenu, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6176266475388387184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11544,6 +11591,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5993263525809126460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967076413039255110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d0f79aa8239c64f874ba105a14048f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapRoot: {fileID: 8967076412262502741}
 --- !u!1 &8967076413044458125
 GameObject:
   m_ObjectHideFlags: 0
@@ -11796,6 +11856,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 8967076412234618107}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &566628176895382100
 AudioSource:
@@ -12143,6 +12204,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 8967076411702233715}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &2051810260637142630
 AudioSource:
@@ -12528,6 +12590,7 @@ MonoBehaviour:
   m_resource: {fileID: 0}
   m_inventory: {fileID: 0}
   pricetag: {fileID: 8967076412112806196}
+  bought: 0
   m_UGmenuInstance: {fileID: 5837543267440253943}
 --- !u!82 &3199115233002744109
 AudioSource:
