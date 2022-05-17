@@ -23,22 +23,45 @@ public class AffinityUI : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(45.0f, 0.0f, 0.0f);
 
-        switch (m_manager.m_affinity)
+        if (m_manager.GetComponentInChildren<TDTower_Candycorn>() != null)
         {
-            case affinity.Affinity.MONSTER:
-                m_image.sprite = m_monster;
-                break;
-            case affinity.Affinity.MAGIC:
-                m_image.sprite = m_magic;
-                break;
-            case affinity.Affinity.SOUL:
-                m_image.sprite = m_soul;
-                break;
-            case affinity.Affinity.UNDEAD:
-                m_image.sprite = m_undead;
-                break;
-            default:
-                break;
+            switch (m_manager.GetComponentInChildren<TDTower_Candycorn>().m_Affinity)
+            {
+                case affinity.Affinity.MONSTER:
+                    m_image.sprite = m_monster;
+                    break;
+                case affinity.Affinity.MAGIC:
+                    m_image.sprite = m_magic;
+                    break;
+                case affinity.Affinity.SOUL:
+                    m_image.sprite = m_soul;
+                    break;
+                case affinity.Affinity.UNDEAD:
+                    m_image.sprite = m_undead;
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            switch (m_manager.m_affinity)
+            {
+                case affinity.Affinity.MONSTER:
+                    m_image.sprite = m_monster;
+                    break;
+                case affinity.Affinity.MAGIC:
+                    m_image.sprite = m_magic;
+                    break;
+                case affinity.Affinity.SOUL:
+                    m_image.sprite = m_soul;
+                    break;
+                case affinity.Affinity.UNDEAD:
+                    m_image.sprite = m_undead;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
