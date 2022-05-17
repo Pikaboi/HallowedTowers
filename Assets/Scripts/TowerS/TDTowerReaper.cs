@@ -33,6 +33,7 @@ public class TDTowerReaper : TDTower
         base.Start();
         m_OGFireRate = m_fireRate;
         m_OGAttack = m_attack;
+        m_SoloAttack = m_OGAttack * 2;
 
         if (Path2UG2)
         {
@@ -43,6 +44,7 @@ public class TDTowerReaper : TDTower
     // Update is called once per frame
     public override void Update()
     {
+        
         CheckEnemies();
         Aim();
         if (m_InRange)
@@ -131,6 +133,17 @@ public class TDTowerReaper : TDTower
             }
         }
 
+    }
+
+    public override void levelUp()
+    {
+        if (m_level < 20)
+        {
+            m_attack += 1;
+            m_level++;
+            m_OGAttack = m_attack;
+            m_SoloAttack = m_OGAttack * 2;
+        }
     }
 
 }
