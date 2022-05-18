@@ -29,11 +29,25 @@ public class SaveControl : MonoBehaviour
 
     public void SaveGame()
     {
+        TDTowerManager[] managers = FindObjectsOfType<TDTowerManager>();
+
+        foreach (TDTowerManager m in managers)
+        {
+            m.saved = true;
+        }
+
         ES3AutoSaveMgr.Current.Save();
     }
 
     public void SaveAndQuit()
     {
+        TDTowerManager[] managers = FindObjectsOfType<TDTowerManager>();
+
+        foreach (TDTowerManager m in managers)
+        {
+            m.saved = true;
+        }
+
         ES3AutoSaveMgr.Current.Save();
         m_scenecontrol.Title();
     }
@@ -42,9 +56,27 @@ public class SaveControl : MonoBehaviour
     {
         //FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
         //m_Adder.RemoveInventoryOnLoad();
-        ES3AutoSaveMgr.Current.Load();
-        FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
         TDTowerManager[] managers = FindObjectsOfType<TDTowerManager>();
+
+        foreach (TDTowerManager m in managers)
+        {
+            if (m.saved == false)
+            {
+                Destroy(m.gameObject);
+            }
+        }
+
+        ES3AutoSaveMgr.Current.Load();
+
+        TDTowerUpgrade[] ugs = FindObjectsOfType<TDTowerUpgrade>();
+
+        foreach(TDTowerUpgrade u in ugs)
+        {
+            u.Start();
+        }
+
+        FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
+        managers = FindObjectsOfType<TDTowerManager>();
 
         foreach(TDTowerManager m in managers)
         {

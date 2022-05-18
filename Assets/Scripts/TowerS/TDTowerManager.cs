@@ -42,6 +42,8 @@ public class TDTowerManager : MonoBehaviour
 
     public int modelNum = 0;
 
+    public bool saved = false;
+
     [SerializeField] public PlayerResourceManager m_resource;
 
     // Start is called before the first frame update
