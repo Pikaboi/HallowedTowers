@@ -54,8 +54,6 @@ public class SaveControl : MonoBehaviour
 
     public void LoadGame()
     {
-        //FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
-        //m_Adder.RemoveInventoryOnLoad();
         TDTowerManager[] managers = FindObjectsOfType<TDTowerManager>();
 
         foreach (TDTowerManager m in managers)
@@ -67,13 +65,6 @@ public class SaveControl : MonoBehaviour
         }
 
         ES3AutoSaveMgr.Current.Load();
-
-        TDTowerUpgrade[] ugs = FindObjectsOfType<TDTowerUpgrade>();
-
-        foreach(TDTowerUpgrade u in ugs)
-        {
-            u.Start();
-        }
 
         FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
         managers = FindObjectsOfType<TDTowerManager>();
