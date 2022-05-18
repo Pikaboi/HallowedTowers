@@ -6,9 +6,11 @@ public class SaveControl : MonoBehaviour
 {
     public InventoryAdd m_Adder;
     public SceneControl m_scenecontrol;
+    public GameObject m_saveBool;
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         SaveBoolean save = FindObjectOfType<SaveBoolean>();
 
         if(save != null)
@@ -52,26 +54,16 @@ public class SaveControl : MonoBehaviour
         m_scenecontrol.Title();
     }
 
+    public void ReloadScene()
+    {
+        Instantiate(m_saveBool);
+        m_saveBool.GetComponent<SaveBoolean>().load = true;
+
+        m_scenecontrol.Game();
+    }
+
     public void LoadGame()
     {
-        TDTowerManager[] managers = FindObjectsOfType<TDTowerManager>();
-
-        foreach (TDTowerManager m in managers)
-        {
-            if (m.saved == false)
-            {
-                Destroy(m.gameObject);
-            }
-        }
-
         ES3AutoSaveMgr.Current.Load();
-
-        FindObjectOfType<WorldCharacter>().DeleteWeaponsforLoad();
-        managers = FindObjectsOfType<TDTowerManager>();
-
-        foreach(TDTowerManager m in managers)
-        {
-            m.RemoveOtherTowers();
-        }
     }
 }
