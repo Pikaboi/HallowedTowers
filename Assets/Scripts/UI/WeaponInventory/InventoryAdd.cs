@@ -22,9 +22,6 @@ public class InventoryAdd : MonoBehaviour
         if (transform.childCount == 0)
         {
             addWeapon(starterWeapon);
-            WorldCharacter player = FindObjectOfType<WorldCharacter>();
-            starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).m_Player = player;
-            starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).OnClick();
         } 
     }
 

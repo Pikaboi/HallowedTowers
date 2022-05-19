@@ -79,14 +79,19 @@ public class WorldCharacter : MonoBehaviour
         }
         m_Controller = GetComponent<CharacterController>();
 
-        m_add.transform.GetChild(weaponID).GetComponentInChildren<WeaponEquipButton>().OnClick();
-        
-        m_maxat = m_attackTime;
+        PlayerWeapon[] weap = m_weaponPos.GetComponentsInChildren<PlayerWeapon>();
 
-        //if (m_Weapon != null)
-       // {
-         //   SpawnWeapon(m_Weapon, new Vector3(-14.471f, -90, 90), 0);
-       // }
+        foreach(PlayerWeapon p in weap)
+        {
+            Destroy(p.gameObject);
+        }
+
+        if (m_Weapon == null)
+        {
+            m_add.transform.GetChild(weaponID).GetComponentInChildren<WeaponEquipButton>().OnClick();
+        }
+
+        m_maxat = m_attackTime;
     }
 
     // Update is called once per frame
