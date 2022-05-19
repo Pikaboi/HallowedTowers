@@ -86,7 +86,7 @@ public class WorldCharacter : MonoBehaviour
             Destroy(p.gameObject);
         }
 
-        if (m_Weapon == null)
+        if (m_Weapon == null && m_add.transform.childCount != 0)
         {
             m_add.transform.GetChild(weaponID).GetComponentInChildren<WeaponEquipButton>().OnClick();
         }
@@ -95,6 +95,11 @@ public class WorldCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_Weapon == null && m_add.transform.childCount != 0)
+        {
+            m_add.transform.GetChild(weaponID).GetComponentInChildren<WeaponEquipButton>().OnClick();
+        }
+
         HitTimer();
         if (Input.GetKeyDown(KeyCode.M))
         {
