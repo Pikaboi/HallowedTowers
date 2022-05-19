@@ -14,7 +14,7 @@ public class WorldCharacter : MonoBehaviour
     public float recoveryTimerMax = 2.0f;
 
     public float m_attackTime;
-    float m_maxat;
+    float m_maxat = 1.25f;
     public bool m_attack = false;
     public Animator m_anim;
 
@@ -90,8 +90,6 @@ public class WorldCharacter : MonoBehaviour
         {
             m_add.transform.GetChild(weaponID).GetComponentInChildren<WeaponEquipButton>().OnClick();
         }
-
-        m_maxat = m_attackTime;
     }
 
     // Update is called once per frame
@@ -330,7 +328,7 @@ public class WorldCharacter : MonoBehaviour
         {
             m_attackTime -= Time.deltaTime;
 
-            if(m_attackTime <= 0.6f)
+            if(m_attackTime <= 0.9f)
             {
                 if (m_Equipped == WeaponType.RANGE && !rangedShoot)
                 {
