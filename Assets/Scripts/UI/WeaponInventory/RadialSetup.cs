@@ -22,7 +22,7 @@ public class RadialSetup : MonoBehaviour
         {
             if (m_Radial.m_weapon != null)
             {
-                GetComponentInChildren<TMPro.TMP_Text>().text = m_Radial.m_weapon.name;
+                GetComponentInChildren<TMPro.TMP_Text>().text = m_Radial.m_weapon.m_Weapon.name;
             } else
             {
                 GetComponentInChildren<TMPro.TMP_Text>().text = "";
