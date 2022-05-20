@@ -15,6 +15,7 @@ public class WheelEquipper : MonoBehaviour
         if (equipped)
         {
             m_weapon = FindObjectOfType<InventoryAdd>().transform.GetChild(weaponid).GetComponentInChildren<WeaponEquipButton>();
+            UpdateStats();
         }
     }
 
@@ -29,7 +30,7 @@ public class WheelEquipper : MonoBehaviour
         {
             equipped = true;
             weaponid = m_weapon.id;
-            t.text = m_weapon.name;
+            t.text = m_weapon.m_Weapon.name;
         }
         else
         {
