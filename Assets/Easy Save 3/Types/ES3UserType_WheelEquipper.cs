@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("m_weapon")]
+	[ES3PropertiesAttribute("weaponid", "equipped")]
 	public class ES3UserType_WheelEquipper : ES3ComponentType
 	{
 		public static ES3Type Instance = null;
@@ -16,7 +16,8 @@ namespace ES3Types
 		{
 			var instance = (WheelEquipper)obj;
 			
-			writer.WritePropertyByRef("m_weapon", instance.m_weapon);
+			writer.WriteProperty("weaponid", instance.weaponid, ES3Type_int.Instance);
+			writer.WriteProperty("equipped", instance.equipped, ES3Type_bool.Instance);
 		}
 
 		protected override void ReadComponent<T>(ES3Reader reader, object obj)
@@ -27,8 +28,11 @@ namespace ES3Types
 				switch(propertyName)
 				{
 					
-					case "m_weapon":
-						instance.m_weapon = reader.Read<WeaponEquipButton>(ES3UserType_WeaponEquipButton.Instance);
+					case "weaponid":
+						instance.weaponid = reader.Read<System.Int32>(ES3Type_int.Instance);
+						break;
+					case "equipped":
+						instance.equipped = reader.Read<System.Boolean>(ES3Type_bool.Instance);
 						break;
 					default:
 						reader.Skip();

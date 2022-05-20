@@ -44,6 +44,7 @@ public class RadialSetup : MonoBehaviour
         {
             CheckForWeaponOnRadial(m_equipper.m_Weapon);
             m_Radial.m_weapon = m_equipper.m_Weapon;
+            m_Radial.UpdateStats();
 
             RadialSetup[] radials = FindObjectsOfType<RadialSetup>();
 
