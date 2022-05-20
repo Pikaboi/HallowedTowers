@@ -280,8 +280,8 @@ GameObject:
   - component: {fileID: 7132178374471884308}
   - component: {fileID: 7132178374471884309}
   - component: {fileID: 7132178374471884310}
-  - component: {fileID: 7132178374471884311}
   - component: {fileID: 7132178374471884296}
+  - component: {fileID: 8208111271472889294}
   m_Layer: 11
   m_Name: Button (3)
   m_TagString: Untagged
@@ -391,8 +391,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7132178374471884311}
-        m_TargetAssemblyTypeName: WeaponEquipButton, Assembly-CSharp
+      - m_Target: {fileID: 8208111271472889294}
+        m_TargetAssemblyTypeName: WheelEquipper, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -415,24 +415,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7132178374471884311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7132178374471884298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c80af53932c5b44b87ee940679bf0a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Weapon: {fileID: 0}
-  m_Player: {fileID: 0}
-  m_rot: {x: 0, y: 0, z: 0}
-  t: {fileID: 0}
-  attackBoost: 0
-  m_affinitySprite: {fileID: 0}
 --- !u!82 &7132178374471884296
 AudioSource:
   m_ObjectHideFlags: 0
@@ -529,6 +511,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8208111271472889294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132178374471884298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710e005d6b4ba8441a5172c279c344c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weapon: {fileID: 0}
 --- !u!1 &7132178374586900113
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,8 +536,8 @@ GameObject:
   - component: {fileID: 7132178374586900123}
   - component: {fileID: 7132178374586900124}
   - component: {fileID: 7132178374586900125}
-  - component: {fileID: 7132178374586900126}
   - component: {fileID: 7132178374586900127}
+  - component: {fileID: 5964958739889125449}
   m_Layer: 11
   m_Name: Button
   m_TagString: Untagged
@@ -652,8 +647,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7132178374586900126}
-        m_TargetAssemblyTypeName: WeaponEquipButton, Assembly-CSharp
+      - m_Target: {fileID: 5964958739889125449}
+        m_TargetAssemblyTypeName: WheelEquipper, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -676,24 +671,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7132178374586900126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7132178374586900113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c80af53932c5b44b87ee940679bf0a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Weapon: {fileID: 0}
-  m_Player: {fileID: 0}
-  m_rot: {x: 0, y: 0, z: 0}
-  t: {fileID: 0}
-  attackBoost: 0
-  m_affinitySprite: {fileID: 0}
 --- !u!82 &7132178374586900127
 AudioSource:
   m_ObjectHideFlags: 0
@@ -790,6 +767,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5964958739889125449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132178374586900113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710e005d6b4ba8441a5172c279c344c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weapon: {fileID: 0}
 --- !u!1 &7132178374608297503
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,8 +926,8 @@ GameObject:
   - component: {fileID: 7132178374653961273}
   - component: {fileID: 7132178374653961274}
   - component: {fileID: 7132178374653961275}
-  - component: {fileID: 7132178374653961276}
   - component: {fileID: 7132178374653961277}
+  - component: {fileID: 7863655360308545684}
   m_Layer: 11
   m_Name: Button (5)
   m_TagString: Untagged
@@ -1047,8 +1037,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7132178374653961276}
-        m_TargetAssemblyTypeName: WeaponEquipButton, Assembly-CSharp
+      - m_Target: {fileID: 7863655360308545684}
+        m_TargetAssemblyTypeName: WheelEquipper, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -1071,24 +1061,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7132178374653961276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7132178374653961279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c80af53932c5b44b87ee940679bf0a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Weapon: {fileID: 0}
-  m_Player: {fileID: 0}
-  m_rot: {x: 0, y: 0, z: 0}
-  t: {fileID: 0}
-  attackBoost: 0
-  m_affinitySprite: {fileID: 0}
 --- !u!82 &7132178374653961277
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1185,6 +1157,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7863655360308545684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132178374653961279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710e005d6b4ba8441a5172c279c344c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weapon: {fileID: 0}
 --- !u!1 &7132178374664131624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,8 +1182,8 @@ GameObject:
   - component: {fileID: 7132178374664131634}
   - component: {fileID: 7132178374664131635}
   - component: {fileID: 7132178374664131636}
-  - component: {fileID: 7132178374664131637}
   - component: {fileID: 7132178374664131638}
+  - component: {fileID: 7291788357021507901}
   m_Layer: 11
   m_Name: Button (4)
   m_TagString: Untagged
@@ -1308,8 +1293,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7132178374664131637}
-        m_TargetAssemblyTypeName: WeaponEquipButton, Assembly-CSharp
+      - m_Target: {fileID: 7291788357021507901}
+        m_TargetAssemblyTypeName: WheelEquipper, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -1332,24 +1317,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7132178374664131637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7132178374664131624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c80af53932c5b44b87ee940679bf0a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Weapon: {fileID: 0}
-  m_Player: {fileID: 0}
-  m_rot: {x: 0, y: 0, z: 0}
-  t: {fileID: 0}
-  attackBoost: 0
-  m_affinitySprite: {fileID: 0}
 --- !u!82 &7132178374664131638
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1446,6 +1413,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7291788357021507901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132178374664131624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710e005d6b4ba8441a5172c279c344c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weapon: {fileID: 0}
 --- !u!1 &7132178374759829970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,8 +1708,8 @@ GameObject:
   - component: {fileID: 7132178374869432318}
   - component: {fileID: 7132178374869432319}
   - component: {fileID: 7132178374869432304}
-  - component: {fileID: 7132178374869432305}
   - component: {fileID: 7132178374869432306}
+  - component: {fileID: 7016924787390382655}
   m_Layer: 11
   m_Name: Button (1)
   m_TagString: Untagged
@@ -1839,8 +1819,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7132178374869432305}
-        m_TargetAssemblyTypeName: WeaponEquipButton, Assembly-CSharp
+      - m_Target: {fileID: 7016924787390382655}
+        m_TargetAssemblyTypeName: WheelEquipper, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -1863,24 +1843,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7132178374869432305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7132178374869432308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c80af53932c5b44b87ee940679bf0a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Weapon: {fileID: 0}
-  m_Player: {fileID: 0}
-  m_rot: {x: 0, y: 0, z: 0}
-  t: {fileID: 0}
-  attackBoost: 0
-  m_affinitySprite: {fileID: 0}
 --- !u!82 &7132178374869432306
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1977,6 +1939,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7016924787390382655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132178374869432308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710e005d6b4ba8441a5172c279c344c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weapon: {fileID: 0}
 --- !u!1 &7132178375198636109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,8 +1964,8 @@ GameObject:
   - component: {fileID: 7132178375198636119}
   - component: {fileID: 7132178375198636104}
   - component: {fileID: 7132178375198636105}
-  - component: {fileID: 7132178375198636106}
   - component: {fileID: 7132178375198636107}
+  - component: {fileID: 5784611473214853888}
   m_Layer: 11
   m_Name: Button (2)
   m_TagString: Untagged
@@ -2100,8 +2075,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7132178375198636106}
-        m_TargetAssemblyTypeName: WeaponEquipButton, Assembly-CSharp
+      - m_Target: {fileID: 5784611473214853888}
+        m_TargetAssemblyTypeName: WheelEquipper, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -2124,24 +2099,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7132178375198636106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7132178375198636109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c80af53932c5b44b87ee940679bf0a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Weapon: {fileID: 0}
-  m_Player: {fileID: 0}
-  m_rot: {x: 0, y: 0, z: 0}
-  t: {fileID: 0}
-  attackBoost: 0
-  m_affinitySprite: {fileID: 0}
 --- !u!82 &7132178375198636107
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2238,6 +2195,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5784611473214853888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132178375198636109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710e005d6b4ba8441a5172c279c344c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weapon: {fileID: 0}
 --- !u!1 &7132178375318550257
 GameObject:
   m_ObjectHideFlags: 0

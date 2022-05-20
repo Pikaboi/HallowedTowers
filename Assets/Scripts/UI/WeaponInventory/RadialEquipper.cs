@@ -5,8 +5,7 @@ using UnityEngine;
 public class RadialEquipper : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject m_Weapon;
-    public Vector3 m_rot;
+    public WeaponEquipButton m_Weapon;
     void Start()
     {
 

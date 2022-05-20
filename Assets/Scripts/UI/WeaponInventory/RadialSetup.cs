@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RadialSetup : MonoBehaviour
 {
-    public WeaponEquipButton m_Radial;
+    public WheelEquipper m_Radial;
     bool m_Configure = false;
     RadialEquipper m_equipper;
     Button m_button;
@@ -20,9 +20,9 @@ public class RadialSetup : MonoBehaviour
     {
         if (m_Radial != null)
         {
-            if (m_Radial.m_Weapon != null)
+            if (m_Radial.m_weapon != null)
             {
-                GetComponentInChildren<TMPro.TMP_Text>().text = m_Radial.m_Weapon.name;
+                GetComponentInChildren<TMPro.TMP_Text>().text = m_Radial.m_weapon.name;
             } else
             {
                 GetComponentInChildren<TMPro.TMP_Text>().text = "";
@@ -43,9 +43,7 @@ public class RadialSetup : MonoBehaviour
         if(m_equipper != null)
         {
             CheckForWeaponOnRadial(m_equipper.m_Weapon);
-            m_Radial.m_Weapon = m_equipper.m_Weapon;
-            m_Radial.m_rot = m_equipper.m_rot;
-
+            m_Radial.m_weapon = m_equipper.m_Weapon;
 
             RadialSetup[] radials = FindObjectsOfType<RadialSetup>();
 
@@ -65,7 +63,7 @@ public class RadialSetup : MonoBehaviour
         m_Configure = true;
     }
 
-    public void CheckForWeaponOnRadial(GameObject _weapon)
+    public void CheckForWeaponOnRadial(WeaponEquipButton _weapon)
     {
         RadialSetup[] radials = FindObjectsOfType<RadialSetup>();
 
@@ -73,10 +71,9 @@ public class RadialSetup : MonoBehaviour
         {
             if(r != this)
             {
-                if (r.m_Radial.m_Weapon == _weapon)
+                if (r.m_Radial.m_weapon == _weapon)
                 {
-                    r.m_Radial.m_Weapon = m_Radial.m_Weapon;
-                    r.m_Radial.m_rot = m_Radial.m_rot;
+                    r.m_Radial.m_weapon = m_Radial.m_weapon;
                 }
             }
         }
