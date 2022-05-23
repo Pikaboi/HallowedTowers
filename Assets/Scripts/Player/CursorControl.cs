@@ -124,6 +124,11 @@ public class CursorControl : MonoBehaviour
         m_Placer.transform.position = hit.point + new Vector3(0.0f, 0.1f, 0.0f);
     }
 
+    public void SetMarkerSprite(Sprite _sprite)
+    {
+        m_Marker.sprite = _sprite;
+    }
+
     void DetectTowerInRange()
     {
         Collider[] col = Physics.OverlapSphere(m_Placer.transform.position, 0.75f);
@@ -150,6 +155,7 @@ public class CursorControl : MonoBehaviour
                     Instantiate(m_currentTower, m_Placer.transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.rotation);
                     m_resource.SubMoney(GetTowerScript().m_cost);
                     m_spawnSFX.Play();
+                    m_Marker.sprite = null;
                 }
                 m_currentTower = null;
             }

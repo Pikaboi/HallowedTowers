@@ -36,5 +36,6 @@ public class TowerSelector : MonoBehaviour
     {
         cursor.GetComponent<CursorControl>().m_currentTower = Tower;
         cursor.GetComponent<CursorControl>().m_currentSpike = null;
+        cursor.GetComponent<CursorControl>().SetMarkerSprite(gameObject.GetComponent<UnityEngine.UI.Image>().sprite);
     }
 }
