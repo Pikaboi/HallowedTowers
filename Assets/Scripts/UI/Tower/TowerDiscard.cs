@@ -18,11 +18,13 @@ public class TowerDiscard : MonoBehaviour
         if (cursor.m_currentTower != null)
         {
             cursor.m_currentTower = null;
+            cursor.SetMarkerSprite(null);
         }
 
         if(cursor.m_currentSpike != null)
         {
             cursor.m_currentSpike = null;
+            cursor.SetMarkerSprite(null);
         }
     }
 

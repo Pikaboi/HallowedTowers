@@ -16,5 +16,6 @@ public class SpikeSetter : MonoBehaviour
     {
         cursor.GetComponent<CursorControl>().m_currentSpike = Spike;
         cursor.GetComponent<CursorControl>().m_currentTower = null;
+        cursor.GetComponent<CursorControl>().SetMarkerSprite(GetComponent<UnityEngine.UI.Image>().sprite);
     }
 }

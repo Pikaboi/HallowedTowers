@@ -167,6 +167,7 @@ public class CursorControl : MonoBehaviour
                     Instantiate(m_currentSpike, m_Placer.transform.position, transform.rotation);
                     m_currentSpike.GetComponent<Spikes>().PayForSpikes();
                     m_spawnSFX.Play();
+                    m_Marker.sprite = null;
                 }
                 m_currentSpike = null;
             }
