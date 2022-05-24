@@ -54,5 +54,6 @@ public class TutorialScroll : MonoBehaviour
     public void Close()
     {
         transform.parent.GetComponent<TutorialControl>().CloseTutorial(childID);
+        gameObject.SetActive(false);
     }
 }

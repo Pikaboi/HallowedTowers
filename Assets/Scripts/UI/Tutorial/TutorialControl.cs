@@ -8,12 +8,12 @@ public class TutorialControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<UnityEngine.UI.Image>().enabled = false;
+        /*GetComponent<UnityEngine.UI.Image>().enabled = false;
 
         foreach(GameObject tutorial in m_Tutorials)
         {
             tutorial.SetActive(false);
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -25,14 +25,13 @@ public class TutorialControl : MonoBehaviour
     public void ActivateTutorial(int _tutorialID)
     {
         GetComponent<UnityEngine.UI.Image>().enabled = true;
-        Time.timeScale = 0;
         m_Tutorials[_tutorialID].SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void CloseTutorial(int _tutorialID)
     {
         GetComponent<UnityEngine.UI.Image>().enabled = false;
         Time.timeScale = 1;
-        m_Tutorials[_tutorialID].SetActive(false);
     }
 }
