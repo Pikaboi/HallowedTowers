@@ -76,6 +76,21 @@ public class GlobalWorldController : MonoBehaviour
     public void UpdateRound()
     {
         RoundNum++;
+
+        if (RoundNum == 1)
+        {
+            FindObjectOfType<TutorialControl>().ActivateTutorial(2);
+        }
+
+        if(RoundNum == 2)
+        {
+            FindObjectOfType<TutorialControl>().ActivateTutorial(3);
+        }
+
+        if(RoundNum == 3)
+        {
+            FindObjectOfType<TutorialControl>().ActivateTutorial(5);
+        }
     }
 
 }
