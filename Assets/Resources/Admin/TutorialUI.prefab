@@ -169,7 +169,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385093625894325
 CanvasRenderer:
@@ -199,12 +199,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'If you do not wish to place the tower, use the trash can button to remove
-    your selection
+  m_text: 'If you do not wish to place a tower, discard it by selecting the trash
+
+    icon.
 
 
-    choosing a different tower to build or selecting a tower
-    on the map will do the same.'
+    Choosing
+    a different tower to build or selecting a tower on the map will do the same.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -213,8 +214,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -231,8 +232,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -308,7 +309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -203.2}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385093661878932
@@ -442,7 +443,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385093666700564
 CanvasRenderer:
@@ -472,12 +473,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Affinity can be changed to improve towers against monster types.
+  m_text: 'Affinity can be changed to improve damage against monster affinities.
 
 
     If
-    you wish to discard a tower, click on the tower to access its upgrade page and
-    click the Trash can Icon.'
+    you wish to discard a placed tower, click on the tower to access its upgrade
+    page and click the Trash Icon.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -486,8 +487,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -504,8 +505,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -514,7 +515,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -582,8 +583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -44.1}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385093681574469
 CanvasRenderer:
@@ -623,8 +624,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -641,8 +642,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -651,7 +652,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -718,8 +719,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -35.500015}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385093687176564
 CanvasRenderer:
@@ -749,12 +750,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hordes of enemies will move towards the defend point. if enough monsters
-    breach defense, the game is over.
+  m_text: 'Hordes of enemies will attempt to breach your defenses and reach
+
+    the
+    Realm of Arkland. If they succeed, all is lost. Defend the innocent
+
+    at all
+    costs.
 
 
-    If the hunter is near an enemy, there
-    is a chance the enemy will attack. A orange glow will signify aggression.'
+    If Valentin is in close proximity to an enemy, they will  be more
+    prone
+
+    to attack him. This will be signified by them emitting an orange glow.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -763,8 +771,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -781,8 +789,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -791,7 +799,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1122,7 +1130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -205.3}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385093720496098
@@ -1387,8 +1395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -41.399994}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385093752617055
 CanvasRenderer:
@@ -1418,15 +1426,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'During your travels you will find Mausoleum''s
+  m_text: 'You will encounter Mausoleums during the course of your travels that you
+    may loot candy from in order to upgrade your towers and
+
+    weapons.
 
 
-    You can recive candy
-    from mausoleums.
+    Mausoleums
+    will replenish their supply every time a round is completed.
 
 
-    Mausoleums gain interest in candy every round they are
-    not used.'
+    Press ''Space''
+    next to them to recieve funds'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -1435,8 +1446,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1453,8 +1464,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1463,7 +1474,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1530,8 +1541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -44.100006}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385093806792311
 CanvasRenderer:
@@ -1561,14 +1572,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The inventory is where the Hunter can swap his weaponry around.
+  m_text: 'The inventory is where Valentin can swap his weaponry around.
 
 
     Click
     on a weapon and then press ''Equip'' to Equip a weapon.
 
 
-    you can buy weapons
+    You can buy weapons
     at Pak''n''Spook Stores.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -1578,8 +1589,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1596,8 +1607,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1606,7 +1617,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1673,7 +1684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -218.6}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385093859924859
@@ -1807,7 +1818,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385093884193305
 CanvasRenderer:
@@ -1837,8 +1848,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "If cornered by an enemy, hold E to cast a protective spell. \n\nYou cannot
-    move or attack while the spell is being cast."
+  m_text: 'If Valentin is cornered by enemies, he can cast a protective shield
+
+    to
+    protect himself. Press ''E'' to activate this spell.
+
+
+    You cannot move or
+    attack whilst the spell is active.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -1847,8 +1864,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1865,8 +1882,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1875,7 +1892,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2232,8 +2249,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2329,7 +2346,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094020047109
 CanvasRenderer:
@@ -2359,8 +2376,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The hunter can fight enemies on thier own. \n\nUse 'Space' to use your
-    weapon to attack.\n"
+  m_text: 'A seasoned veteran of his trade, Valentin can use a variety of weapons
+    to dispatch of his foes, be they human or supernatural.
+
+
+    Press the Spacebar
+    to use your weapon when in combat.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -2369,8 +2392,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2387,8 +2410,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2397,7 +2420,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2596,7 +2619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -203.2}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094083541451
@@ -2728,7 +2751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -213.29999}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094087236902
@@ -2993,8 +3016,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -30.700012}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094140848223
 CanvasRenderer:
@@ -3035,8 +3058,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278222591
+  m_fontColor: {r: 1, g: 0.49411765, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3053,8 +3076,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3063,7 +3086,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3130,7 +3153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -213.29999}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094178735209
@@ -3264,7 +3287,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094241594062
 CanvasRenderer:
@@ -3302,7 +3325,7 @@ MonoBehaviour:
 
 
     Upgrades apply special effects to towers,
-    there are 3 paths per tower.'
+    with each tower having 3 unique upgrade paths, excelling in different abilities.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -3311,8 +3334,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3329,8 +3352,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3339,7 +3362,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3407,7 +3430,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094322283892
 CanvasRenderer:
@@ -3437,9 +3460,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Select towers or hazards using thier icon on the right of the screen.
-    \n\nYou can place towers where the icon turns green. If the icon turns red, the
-    placement is invalid."
+  m_text: 'Select towers or hazards by clicking their icons on the right side of
+
+    the
+    screen.
+
+
+    You can place towers where the icon turns green. If the icon turns
+    red, the placement is invalid.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -3448,8 +3476,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3466,8 +3494,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3476,7 +3504,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3543,7 +3571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -218.6}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094336295302
@@ -3865,8 +3893,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4016,8 +4044,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4243,7 +4271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -205.3}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094660611869
@@ -4433,8 +4461,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4528,7 +4556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.5, y: -180.3}
+  m_AnchoredPosition: {x: -45.5, y: -205.3}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094724715640
@@ -4717,8 +4745,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4860,7 +4888,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Hunter
+  m_text: Meet Valentin Antonescu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -4869,8 +4897,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4964,8 +4992,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -30.7}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385094943399961
 CanvasRenderer:
@@ -5009,8 +5037,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278222591
+  m_fontColor: {r: 1, g: 0.49411765, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5027,8 +5055,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5037,7 +5065,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -5104,7 +5132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.5, y: -180.3}
+  m_AnchoredPosition: {x: -45.5, y: -203.2}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095107536640
@@ -5237,8 +5265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -35.500015}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095138468764
 CanvasRenderer:
@@ -5268,14 +5296,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Each enemy has an affinity icon above them.
+  m_text: 'Each enemy''s strength is determined by one of four different Affinities.
 
 
-    Monster (Red) is neutral.
 
-
-    Soul
-    (Yellow) is weak to Magic and Strong on Undead
+    These
+    are Monster, Soul, Undead and Magic affinities. Hitting a monster with thier
+    weakness will increase you and your towers'' damage, but hitting a resistance
+    will decrease you and your towers'' damage
 
 '
   m_isRightToLeft: 0
@@ -5286,8 +5314,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5304,8 +5332,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5314,7 +5342,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -5437,8 +5465,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5532,7 +5560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.5, y: -180.3}
+  m_AnchoredPosition: {x: -45.5, y: -213.29999}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095158879479
@@ -5664,7 +5692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -213.29999}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095169208190
@@ -5796,8 +5824,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 1.884, y: -60}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095169958899
 CanvasRenderer:
@@ -5827,8 +5855,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The Hunter is the playable character, tasked with defense against the
-    monsters. \n\nMove the hunter with 'WASD' and travel around the world."
+  m_text: 'Valentin is a legendary vampire hunter of enigmatic origins, on a mission
+    to liberate the Realm of Arkland from the evil led by his archnemesis, the Legendary
+    Vampire.
+
+
+    Move Valentin using the ''WASD'' keys to navigate around the world.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -5837,8 +5869,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278222591
+  m_fontColor: {r: 1, g: 0.49574813, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5855,8 +5887,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5865,7 +5897,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -5932,7 +5964,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -203.2}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095184769915
@@ -6428,7 +6460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.5, y: -180.3}
+  m_AnchoredPosition: {x: -45.5, y: -203.2}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095325806749
@@ -6560,7 +6592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.5, y: -180.3}
+  m_AnchoredPosition: {x: -45.5, y: -213.3}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095436794571
@@ -6692,8 +6724,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -41.4}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095446274584
 CanvasRenderer:
@@ -6723,8 +6755,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A thick fog surrounds areas with monsters. \n\nDefeat waves of monsters
-    to thin the fog."
+  m_text: 'Much of the realm is covered by a shroud of dense fog, the source of deadly
+    creatures from an unearthly dimension.
+
+
+    Defeat waves of these creatures
+    to eliminate this nefarious fog and liberate new areas to explore.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -6733,8 +6769,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.51526886, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6751,8 +6787,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6761,7 +6797,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -6829,8 +6865,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -44.100006}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095509183542
 CanvasRenderer:
@@ -6860,7 +6896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You can access the radial menu at anytime by holding down ''Q''
+  m_text: 'You can access the radial menu at any point by holding down ''Q''.
 
 
     Click
@@ -6873,8 +6909,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6891,8 +6927,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6901,7 +6937,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -6969,7 +7005,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095554600614
 CanvasRenderer:
@@ -6999,11 +7035,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pak ''n'' Spook are stores with new weapons and the ability to upgrade
-    your current.
+  m_text: 'Welcome to Pak''n Spook, Arkland''s one stop destination for all things
+    spooky! Here you can accquire and upgrade your weapons for use in gameplay.
 
 
-    Purchasing and upgrading cost candy, so decide wisely.'
+    Purchasing
+    and upgrading cost candy, so choose wisely. We
+
+    don''t do refunds or discounts.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -7012,8 +7051,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7030,8 +7069,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7040,7 +7079,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -7372,8 +7411,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -35.5}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095657548773
 CanvasRenderer:
@@ -7403,11 +7442,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Undead (Blue) is Weak to soul and strong against magic
+  m_text: 'Magic Enemies are strong against souls and weak against undead.
 
 
-    Magic (Pink)
-    is Weak against Soul and strong against undead.'
+    Undead
+    Enemies are strong against magic and weak against soul.
+
+
+    Souls are strong
+    against undead and weak againt Magic'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -7416,8 +7459,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7434,8 +7477,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7444,7 +7487,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -7511,7 +7554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.5, y: -180.3}
+  m_AnchoredPosition: {x: -45.5, y: -218.6}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1054385095705478758
@@ -7644,8 +7687,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.1, y: -60}
-  m_SizeDelta: {x: 107.3398, y: 50}
+  m_AnchoredPosition: {x: 4.1, y: -35.500015}
+  m_SizeDelta: {x: 143.4292, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5843736659635332081
 CanvasRenderer:
@@ -7675,8 +7718,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bosses (Green Icon) are more powerful enemies. They are an instant game
-    over if not defeated.
+  m_text: 'Bosses (Green Icon) are the most powerful generals of the vampire horde.
+    Losing to them
+
+    will result in total chaos in Arkland, resulting in certain
+    defeat. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ed65ba001a589a448add8817423dbf92, type: 2}
   m_sharedMaterial: {fileID: -9147346156660677477, guid: ed65ba001a589a448add8817423dbf92, type: 2}
@@ -7685,8 +7731,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278223871
+  m_fontColor: {r: 1, g: 0.5137255, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7703,8 +7749,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7713,7 +7759,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -7780,7 +7826,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.5, y: -180.3}
+  m_AnchoredPosition: {x: 45.5, y: -213.29999}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7189236501645426981
@@ -7912,7 +7958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.5, y: -180.3}
+  m_AnchoredPosition: {x: -45.5, y: -213.29999}
   m_SizeDelta: {x: 47.0254, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4039691363253719608
