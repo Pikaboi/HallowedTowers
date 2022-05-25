@@ -19,7 +19,7 @@ public class GlobalWorldController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        FindObjectOfType<TutorialControl>().ActivateTutorial(1);
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class GlobalWorldController : MonoBehaviour
     {
         //Debug Command, please comment out
         //Nukes all enemies
-        if (Input.GetKeyDown(KeyCode.O))
+        /*if (Input.GetKeyDown(KeyCode.O))
         {
             GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -35,7 +35,7 @@ public class GlobalWorldController : MonoBehaviour
             {
                 Destroy(g);
             }
-        }
+        }*/
 
         foreach(WaveCreator w in waveCreators)
         {
@@ -76,6 +76,21 @@ public class GlobalWorldController : MonoBehaviour
     public void UpdateRound()
     {
         RoundNum++;
+
+        if (RoundNum == 1)
+        {
+            FindObjectOfType<TutorialControl>().ActivateTutorial(2);
+        }
+
+        if(RoundNum == 2)
+        {
+            FindObjectOfType<TutorialControl>().ActivateTutorial(3);
+        }
+
+        if(RoundNum == 3)
+        {
+            FindObjectOfType<TutorialControl>().ActivateTutorial(5);
+        }
     }
 
 }

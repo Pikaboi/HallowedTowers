@@ -32,6 +32,10 @@ public class RoundPlayButton : MonoBehaviour
     //Handle the onClick event
     void StartLevel()
     {
+        if (firstRound)
+        {
+            FindObjectOfType<TutorialControl>().ActivateTutorial(4);
+        }
         firstRound = false;
         foreach(WaveCreator w in m_waveCreators)
         {
