@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class TutorialScroll : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class TutorialScroll : MonoBehaviour
             if(i == 0)
             {
                 transform.GetChild(i).gameObject.SetActive(true);
+                if (transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>() != null)
+                {
+                    transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>().enabled = true;
+                }
             } else
             {
                 transform.GetChild(i).gameObject.SetActive(false);
@@ -40,20 +45,48 @@ public class TutorialScroll : MonoBehaviour
     public void PageForward()
     {
         transform.GetChild(pageID).gameObject.SetActive(false);
+
+        if (transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>() != null)
+        {
+            transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>().enabled = false;
+        }
+
         pageID++;
         transform.GetChild(pageID).gameObject.SetActive(true);
+
+        if (transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>() != null)
+        {
+            transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>().enabled = true;
+        }
     }
 
     public void PageBack()
     {
         transform.GetChild(pageID).gameObject.SetActive(false);
+
+        if (transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>() != null)
+        {
+            transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>().enabled = false;
+        }
+
         pageID--;
         transform.GetChild(pageID).gameObject.SetActive(true);
+
+        if (transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>() != null)
+        {
+            transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>().enabled = true;
+        }
     }
 
     public void Close()
     {
         transform.parent.GetComponent<TutorialControl>().CloseTutorial(childID);
+
+        if (transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>() != null)
+        {
+            transform.GetChild(pageID).GetComponentInChildren<VideoPlayer>().enabled = false;
+        }
+
         gameObject.SetActive(false);
     }
 }
