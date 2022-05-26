@@ -5216,7 +5216,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b739a3f02ff77bf48b7636e64c3e3b4c, type: 2}
+  - {fileID: 2100000, guid: 51c8e8067201b7049a7c399fc22d42e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5274,7 +5274,7 @@ GameObject:
   - component: {fileID: 5125874137717928486}
   - component: {fileID: 6578037705740012550}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5546,7 +5546,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10423,6 +10423,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 203304971324945164}
     m_Modifications:
     - target: {fileID: 3566243428224689716, guid: ff59a05c282baff439228b51d5d4a43b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566243428224689716, guid: ff59a05c282baff439228b51d5d4a43b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
@@ -10439,16 +10443,28 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7805051608522583494, guid: ff59a05c282baff439228b51d5d4a43b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805051608522583494, guid: ff59a05c282baff439228b51d5d4a43b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805051608522583494, guid: ff59a05c282baff439228b51d5d4a43b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805051608522583494, guid: ff59a05c282baff439228b51d5d4a43b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.397
+      value: -0.068
       objectReference: {fileID: 0}
     - target: {fileID: 7805051608522583494, guid: ff59a05c282baff439228b51d5d4a43b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7805051608522583494, guid: ff59a05c282baff439228b51d5d4a43b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.369
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 7805051608522583494, guid: ff59a05c282baff439228b51d5d4a43b, type: 3}
       propertyPath: m_LocalRotation.w
