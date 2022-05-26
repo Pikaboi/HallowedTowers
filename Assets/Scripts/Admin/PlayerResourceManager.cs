@@ -21,10 +21,10 @@ public class PlayerResourceManager : MonoBehaviour
             m_SceneControl.GameOver();
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        /*if (Input.GetKeyDown(KeyCode.P))
         {
             AddMoney(10000f);
-        }
+        }*/
     }
 
     public void AddMoney(float _money)
