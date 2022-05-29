@@ -143,6 +143,19 @@ public class TDTowerReaper : TDTower
             m_level++;
             m_OGAttack = m_attack;
             m_SoloAttack = m_OGAttack * 2;
+
+            TDTower[] childTowers = gameObject.GetComponentsInChildren<TDTower>();
+
+            if (childTowers.Length > 0)
+            {
+                for (int i = 0; i < childTowers.Length; i++)
+                {
+                    if(childTowers[i] != this)
+                    {
+                        childTowers[i].levelUp();
+                    }
+                }
+            }
         }
     }
 
