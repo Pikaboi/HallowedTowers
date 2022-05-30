@@ -21,8 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fog_set
-  m_Shader: {fileID: -6465566751694194690, guid: aefc63699cf4eff49a6bbb7c9ef5d160, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _DISABLE_DECALS _DISABLE_SSR_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
+  m_Shader: {fileID: 4800000, guid: ee2ce0be66f45d9449d71ba9b49c2acd, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _DISABLE_DECALS _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -34,7 +34,6 @@ Material:
   - MOTIONVECTORS
   - TransparentDepthPostpass
   - TransparentBackface
-  - TransparentDepthPrepass
   - RayTracingPrepass
   m_SavedProperties:
     serializedVersion: 3
@@ -84,7 +83,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3ce96f03821f10244b9863eec1268144, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissiveColorMap:
@@ -116,7 +115,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3ce96f03821f10244b9863eec1268144, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NORMAL_MAP:
@@ -132,11 +131,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OPACITY_MAP:
-        m_Texture: {fileID: 2800000, guid: e9e1e759cf2101c4692d7355804adeb8, type: 3}
+        m_Texture: {fileID: 2800000, guid: ae1f517ac020068419ed94ebcc7eb12d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ae1f517ac020068419ed94ebcc7eb12d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SPECULAR_COLOR_MAP:
@@ -210,12 +209,12 @@ Material:
     - _AlphaCutoffPostpass: 0
     - _AlphaCutoffPrepass: 1
     - _AlphaCutoffShadow: 0
-    - _AlphaDstBlend: 1
+    - _AlphaDstBlend: 10
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
     - _Anisotropy: 0
-    - _BlendMode: 1
+    - _BlendMode: 0
     - _COAT_IOR: 1
     - _COAT_ROUGHNESS: 0
     - _COAT_THICKNESS: 0
@@ -250,13 +249,13 @@ Material:
     - _DistortionVectorScale: 2
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 1
-    - _DstBlend: 1
+    - _DstBlend: 10
     - _EmissiveColorMode: 1
     - _EmissiveExposureWeight: 0
     - _EmissiveIntensity: 1
     - _EmissiveIntensityUnit: 0
     - _EnableBlendModePreserveSpecularLighting: 0
-    - _EnableFogOnTransparent: 0
+    - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _Glossiness: 0
@@ -282,8 +281,9 @@ Material:
     - _MetallicRemapMin: 0
     - _NormalMapSpace: 1
     - _NormalScale: 0
-    - _OPACITY: 0.042
-    - _Opacity: 0.5
+    - _OPACITY: 0.035
+    - _Opacity: 0.006
+    - _OpacityThreshold: 0
     - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
@@ -292,7 +292,7 @@ Material:
     - _PPDPrimitiveWidth: 1
     - _RayTracing: 0
     - _ReceivesSSR: 1
-    - _ReceivesSSRTransparent: 0
+    - _ReceivesSSRTransparent: 1
     - _RefractionModel: 0
     - _RenderQueueType: 4
     - _RequireSplitLighting: 0
@@ -309,10 +309,10 @@ Material:
     - _SpecularOcclusionMode: 0
     - _SrcBlend: 1
     - _StencilRef: 0
-    - _StencilRefDepth: 0
+    - _StencilRefDepth: 8
     - _StencilRefDistortionVec: 4
-    - _StencilRefGBuffer: 2
-    - _StencilRefMV: 32
+    - _StencilRefGBuffer: 10
+    - _StencilRefMV: 40
     - _StencilWriteMask: 6
     - _StencilWriteMaskDepth: 8
     - _StencilWriteMaskDistortionVec: 4
@@ -350,7 +350,7 @@ Material:
     - _UseMetallicMap: 0
     - _UseNormalMap: 0
     - _UseOpacityMap: 0
-    - _UseRoughnessMap: 0
+    - _UseRoughnessMap: 1
     - _UseShadowThreshold: 0
     - _ZTestDepthEqualForOpaque: 0
     - _ZTestGBuffer: 3
@@ -381,6 +381,6 @@ Material:
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _UnlitColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnlitColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _UvTiling: {r: 1, g: 1, b: 1, a: 0}
+    - _UvOffset: {r: -0.11, g: 0, b: 0, a: 0}
+    - _UvTiling: {r: 0.73, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []
