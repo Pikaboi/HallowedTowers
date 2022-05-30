@@ -10,9 +10,11 @@ public class RadialSetup : MonoBehaviour
     bool m_Configure = false;
     RadialEquipper m_equipper;
     Button m_button;
+    public Sprite blankImg;
     // Start is called before the first frame update
     void Start()
     {
+        blankImg = m_weaponImg.sprite;
         m_button = GetComponent<Button>();
         GetComponent<Image>().alphaHitTestMinimumThreshold = 1f;
     }
@@ -27,6 +29,7 @@ public class RadialSetup : MonoBehaviour
             } else
             {
                 GetComponentInChildren<TMPro.TMP_Text>().text = "";
+                m_weaponImg.sprite = blankImg;
             }
         }
         if (m_Configure)
