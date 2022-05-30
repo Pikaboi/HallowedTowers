@@ -200,6 +200,7 @@ public class WorldCharacter : MonoBehaviour
         {
             m_Equipped = WeaponType.MELEE;
             m_anim.SetBool("Ranged", false);
+            m_anim.SetBool("Slam", m_WeaponStats.slam);
         } else
         {
             m_Equipped = WeaponType.RANGE;
