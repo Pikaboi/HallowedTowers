@@ -18,6 +18,7 @@ public class PlayerWeapon : MonoBehaviour
     public Transform shootpos;
     public bool m_Critical;
     public BoxCollider m_boxCollider;
+    public bool slam;
 
     public void Start()
     {
