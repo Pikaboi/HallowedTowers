@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RadialSetup : MonoBehaviour
 {
     public WheelEquipper m_Radial;
+    public Image m_weaponImg;
     bool m_Configure = false;
     RadialEquipper m_equipper;
     Button m_button;
@@ -44,6 +45,8 @@ public class RadialSetup : MonoBehaviour
         {
             CheckForWeaponOnRadial(m_equipper.m_Weapon);
             m_Radial.m_weapon = m_equipper.m_Weapon;
+            m_weaponImg.sprite = m_equipper.m_WeaponImage;
+            m_Radial.m_weaponImage.sprite = m_equipper.m_WeaponImage;
             m_Radial.UpdateStats();
 
             RadialSetup[] radials = FindObjectsOfType<RadialSetup>();

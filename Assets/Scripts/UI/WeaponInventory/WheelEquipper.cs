@@ -8,6 +8,7 @@ public class WheelEquipper : MonoBehaviour
     public int weaponid;
     public bool equipped = false;
     private TMPro.TMP_Text t;
+    public UnityEngine.UI.Image m_weaponImage;
     // Start is called before the first frame update
     void Start()
     {

@@ -24,4 +24,25 @@ public class TDTower_NoRangeReaper : TDTower
             }
         }
     }
+
+    public override void levelUp()
+    {
+        if (m_level < 20)
+        {
+            m_level++;
+
+            TDTower[] childTowers = gameObject.GetComponentsInChildren<TDTower>();
+
+            if (childTowers.Length > 0)
+            {
+                for (int i = 0; i < childTowers.Length; i++)
+                {
+                    if (childTowers[i] != this)
+                    {
+                        childTowers[i].levelUp();
+                    }
+                }
+            }
+        }
+    }
 }
