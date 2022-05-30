@@ -187,6 +187,7 @@ public class WorldCharacter : MonoBehaviour
     {
         m_respawn.Play();
         m_health = m_maxHealth;
+        m_anim.SetTrigger("Respawn");
         transform.position = SpawnPoint.transform.position;
         respawnTimer = maxRespawnTimer;
     }
@@ -258,6 +259,7 @@ public class WorldCharacter : MonoBehaviour
 
                 if (m_health <= 0)
                 {
+                    m_anim.SetTrigger("Death");
                     m_dead.Play();
                 }
                 else
@@ -279,6 +281,7 @@ public class WorldCharacter : MonoBehaviour
 
                 if (m_health <= 0)
                 {
+                    m_anim.SetTrigger("Death");
                     m_dead.Play();
                 }
                 else
@@ -301,6 +304,7 @@ public class WorldCharacter : MonoBehaviour
 
             if (m_health <= 0)
             {
+                m_anim.SetTrigger("Death");
                 m_dead.Play();
             }
             else
