@@ -9726,6 +9726,7 @@ GameObject:
   - component: {fileID: 350135973346362796}
   - component: {fileID: 7742767533380999658}
   - component: {fileID: 3586717379148324967}
+  - component: {fileID: 3897975470078180343}
   m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
@@ -9821,6 +9822,10 @@ MonoBehaviour:
   m_Weapon: {fileID: 0}
   m_WeaponStats: {fileID: 0}
   m_Blockparticle: {fileID: 6485196655871645081}
+  rangedShoot: 0
+  m_add: {fileID: 0}
+  weaponID: 0
+  loaded: 0
 --- !u!82 &6543825761366794959
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10232,6 +10237,22 @@ MonoBehaviour:
   - {fileID: 350135973346362796}
   - {fileID: 7742767533380999658}
   - {fileID: 6711217629095811528}
+--- !u!208 &3897975470078180343
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8489511823917039165}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &4881609649893989653
 PrefabInstance:
   m_ObjectHideFlags: 0
