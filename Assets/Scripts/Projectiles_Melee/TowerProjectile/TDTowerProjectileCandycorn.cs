@@ -141,7 +141,7 @@ public class TDTowerProjectileCandycorn : TDProjectile
                 if (val == 1.2f)
                 {
                     //Doubles money on advantage
-                    _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 2.0f * 1.5f, _enemy.m_health * 2.0f * 1.5f)));
+                    _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 2.0f * _enemy.moneyMult, _enemy.m_health * 2.0f * _enemy.moneyMult)));
                 }
                 else if (val == 0.8f)
                 {
@@ -150,18 +150,18 @@ public class TDTowerProjectileCandycorn : TDProjectile
                 }
                 else
                 {
-                    _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+                    _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * _enemy.moneyMult, _enemy.m_health * _enemy.moneyMult)));
                 }
 
             }
             else
             {
-                _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+                _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * _enemy.moneyMult, _enemy.m_health * _enemy.moneyMult)));
             }
 
             if (Path2UG3 && _enemy.m_affinity == Affinity.MONSTER)
             {
-                _enemy.m_resource.AddMoney(5);
+                _enemy.m_resource.AddMoney(m_attack);
             }
 
             _enemy.m_health -= trueDamage;
@@ -169,7 +169,7 @@ public class TDTowerProjectileCandycorn : TDProjectile
             if (_enemy.m_CurrentWeb != null && _enemy.m_CurrentWeb.Path2UG1)
             {
                 _enemy.m_health -= _enemy.m_CurrentWeb.m_Attack;
-                _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(_enemy.m_CurrentWeb.m_Attack * 1.5f, _enemy.m_health * 1.5f)));
+                _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(_enemy.m_CurrentWeb.m_Attack * _enemy.moneyMult, _enemy.m_health * _enemy.moneyMult)));
             }
 
             _enemy.ParticleColorChange(m_Affinity);
@@ -177,7 +177,7 @@ public class TDTowerProjectileCandycorn : TDProjectile
 
             if (_enemy.m_health <= 0 && Path2UG1)
             {
-                _enemy.m_resource.AddMoney(25);
+                _enemy.m_resource.AddMoney(m_attack * 1.5f);
             }
 
             if (_enemy.m_health > 0)

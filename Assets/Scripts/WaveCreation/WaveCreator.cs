@@ -38,6 +38,7 @@ public class WaveCreator : MonoBehaviour
     public WaveAffIcons m_groundWaveIcon;
 
     public float DistanceMultiplier;
+    public float moneyMultiplier;
 
     public FogLiftNotification m_fognotif;
     public FogLiftNotification m_skipnotif;
@@ -92,6 +93,7 @@ public class WaveCreator : MonoBehaviour
                 TDEnemy e = Instantiate(wave[0], transform.position, transform.rotation);
                 e.m_Destination = m_destination;
                 e.m_health *= DistanceMultiplier;
+                e.moneyMult = moneyMultiplier;
                 wave.Remove(wave[0]);
                 timer = maxTimer;
             }

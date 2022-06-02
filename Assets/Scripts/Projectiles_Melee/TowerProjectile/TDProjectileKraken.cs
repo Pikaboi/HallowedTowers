@@ -185,7 +185,7 @@ public class TDProjectileKraken : TDProjectile
                 }
             }
 
-            _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+            _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * _enemy.moneyMult, _enemy.m_health * _enemy.moneyMult)));
 
             if (Path3UG2)
             {
@@ -202,7 +202,7 @@ public class TDProjectileKraken : TDProjectile
             if (_enemy.m_CurrentWeb != null && _enemy.m_CurrentWeb.Path2UG1)
             {
                 _enemy.m_health -= _enemy.m_CurrentWeb.m_Attack;
-                _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(_enemy.m_CurrentWeb.m_Attack * 1.5f, _enemy.m_health * 1.5f)));
+                _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(_enemy.m_CurrentWeb.m_Attack * _enemy.moneyMult, _enemy.m_health * _enemy.moneyMult)));
             }
 
             _enemy.ParticleColorChange(m_Affinity);
