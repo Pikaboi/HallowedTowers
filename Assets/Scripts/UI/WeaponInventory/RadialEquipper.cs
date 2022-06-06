@@ -6,7 +6,7 @@ public class RadialEquipper : MonoBehaviour
 {
     // Start is called before the first frame update
     public WeaponEquipButton m_Weapon;
-    public Sprite m_WeaponImage;
+
     void Start()
     {
 

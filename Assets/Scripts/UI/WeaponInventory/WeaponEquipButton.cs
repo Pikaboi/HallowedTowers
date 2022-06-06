@@ -20,6 +20,8 @@ public class WeaponEquipButton : MonoBehaviour
 
     public int id;
 
+    public Sprite m_WeaponImage;
+
     /*void Start()
     {
         UpgradePrice = m_Weapon.GetComponent<PlayerWeapon>().m_Attack * 1000;

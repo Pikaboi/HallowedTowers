@@ -48,8 +48,7 @@ public class RadialSetup : MonoBehaviour
         {
             CheckForWeaponOnRadial(m_equipper.m_Weapon);
             m_Radial.m_weapon = m_equipper.m_Weapon;
-            m_weaponImg.sprite = m_equipper.m_WeaponImage;
-            m_Radial.m_weaponImage.sprite = m_equipper.m_WeaponImage;
+            m_weaponImg.sprite = m_equipper.m_Weapon.m_WeaponImage;
             m_Radial.UpdateStats();
 
             RadialSetup[] radials = FindObjectsOfType<RadialSetup>();
@@ -81,6 +80,7 @@ public class RadialSetup : MonoBehaviour
                 if (r.m_Radial.m_weapon == _weapon)
                 {
                     r.m_Radial.m_weapon = m_Radial.m_weapon;
+                    r.m_Radial.UpdateStats();
                 }
             }
         }
