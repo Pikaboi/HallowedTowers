@@ -91,6 +91,8 @@ public class TDEnemy : MonoBehaviour
     public Transform m_projectileSpawn;
     public bool ranged;
 
+    public float moneyMult;
+
     // Start is called before the first frame update
     public virtual void Start()
     {

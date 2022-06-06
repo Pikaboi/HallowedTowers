@@ -99,8 +99,18 @@ public class TDMelee : MonoBehaviour
     public virtual void DamageEnemy(float damage, TDEnemy _enemy)
     {
         float trueDamage = damage * AffinityCheck(_enemy.m_affinity) * _enemy.m_debuffMultiplier;
-        _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * 1.5f, _enemy.m_health * 1.5f)));
+        _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(trueDamage * _enemy.moneyMult, _enemy.m_health * _enemy.moneyMult)));
         _enemy.m_health -= trueDamage;
+
+        if (_enemy.m_CurrentWeb != null && _enemy.m_CurrentWeb.Path2UG1)
+        {
+            _enemy.m_health -= _enemy.m_CurrentWeb.m_Attack;
+            _enemy.m_resource.AddMoney(Mathf.Round(Mathf.Min(_enemy.m_CurrentWeb.m_Attack * _enemy.moneyMult, _enemy.m_health * _enemy.moneyMult)));
+        }
+
+        _enemy.ParticleColorChange(m_affinity);
+        _enemy.m_Particle.Play();
+
         if (_enemy.m_health > 0)
         {
             _enemy.m_Damage.Play();
