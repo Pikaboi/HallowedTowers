@@ -26,6 +26,7 @@ public class RadialSetup : MonoBehaviour
             if (m_Radial.m_weapon != null)
             {
                 GetComponentInChildren<TMPro.TMP_Text>().text = m_Radial.m_weapon.m_Weapon.name;
+                m_weaponImg.sprite = m_Radial.m_weapon.m_WeaponImage;
             } else
             {
                 GetComponentInChildren<TMPro.TMP_Text>().text = "";
@@ -80,6 +81,7 @@ public class RadialSetup : MonoBehaviour
                 if (r.m_Radial.m_weapon == _weapon)
                 {
                     r.m_Radial.m_weapon = m_Radial.m_weapon;
+                    r.m_weaponImg = m_Radial.m_weaponImage;
                     r.m_Radial.UpdateStats();
                 }
             }
