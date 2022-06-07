@@ -24,9 +24,13 @@ public class TutorialControl : MonoBehaviour
 
     public void ActivateTutorial(int _tutorialID)
     {
-        GetComponent<UnityEngine.UI.Image>().enabled = true;
-        m_Tutorials[_tutorialID].SetActive(true);
-        Time.timeScale = 0;
+        if (m_Tutorials[_tutorialID].GetComponent<TutorialScroll>().seen == false)
+        {
+            GetComponent<UnityEngine.UI.Image>().enabled = true;
+            m_Tutorials[_tutorialID].SetActive(true);
+            m_Tutorials[_tutorialID].GetComponent<TutorialScroll>().seen = true;
+            Time.timeScale = 0;
+        }
     }
 
     public void CloseTutorial(int _tutorialID)

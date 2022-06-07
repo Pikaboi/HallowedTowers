@@ -5,9 +5,10 @@ using UnityEngine.Video;
 
 public class TutorialScroll : MonoBehaviour
 {
-
     public int childID;
     public int pageID = 0;
+
+    public bool seen = false;
     // Start is called before the first frame update
     void Start()
     {
