@@ -20,6 +20,7 @@ public class TDTowerUpgrade : MonoBehaviour
     public TDTowerManager m_manager;
 
     public AudioSource m_sound;
+    public AudioSource m_denied;
 
     public Sprite m_Locked;
     public Sprite m_Purchased;
@@ -93,6 +94,9 @@ public class TDTowerUpgrade : MonoBehaviour
             {
                 m_successor.gameObject.GetComponent<UnityEngine.UI.Button>().enabled = true;
             }
+        } else
+        {
+            m_denied.Play();
         }
     }
 }

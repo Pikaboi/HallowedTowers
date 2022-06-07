@@ -19,6 +19,7 @@ public class CursorControl : MonoBehaviour
     bool m_placable = false;
 
     public AudioSource m_spawnSFX;
+    public AudioSource m_denied;
 
     public bool m_configure = false;
 
@@ -156,6 +157,10 @@ public class CursorControl : MonoBehaviour
                     m_resource.SubMoney(GetTowerScript().m_cost);
                     m_spawnSFX.Play();
                     m_Marker.sprite = null;
+                } else
+                {
+                    m_denied.Play();
+                    m_Marker.sprite = null;
                 }
                 m_currentTower = null;
             }
@@ -167,6 +172,11 @@ public class CursorControl : MonoBehaviour
                     Instantiate(m_currentSpike, m_Placer.transform.position, transform.rotation);
                     m_currentSpike.GetComponent<Spikes>().PayForSpikes();
                     m_spawnSFX.Play();
+                    m_Marker.sprite = null;
+                }
+                else
+                {
+                    m_denied.Play();
                     m_Marker.sprite = null;
                 }
                 m_currentSpike = null;

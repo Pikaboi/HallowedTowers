@@ -12,6 +12,7 @@ public class TDTower_LevelUp : MonoBehaviour
     public AudioSource m_sound;
 
     public bool isMax;
+    public AudioSource m_denied;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,9 @@ public class TDTower_LevelUp : MonoBehaviour
             m_tower.levelUp();
             gameObject.GetComponentInParent<TDTowerManager>().m_UGParticle.Play();
             m_sound.Play();
+        } else
+        {
+            m_denied.Play();
         }
 
         if(m_tower.m_level == 20)

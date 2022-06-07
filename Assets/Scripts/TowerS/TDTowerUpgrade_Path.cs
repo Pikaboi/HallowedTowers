@@ -56,6 +56,9 @@ public class TDTowerUpgrade_Path : TDTowerUpgrade
             {
                 m_successor.gameObject.GetComponent<Button>().enabled = true;
             }
+        } else
+        {
+            m_denied.Play();
         }
     }
 }
