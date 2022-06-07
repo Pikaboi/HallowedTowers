@@ -38,12 +38,14 @@ public class WheelEquipper : MonoBehaviour
         {
             equipped = true;
             weaponid = m_weapon.id;
+            m_weaponImage.sprite = m_weapon.m_WeaponImage;
             t.text = m_weapon.m_Weapon.name;
         }
         else
         {
             equipped = false;
             t.text = "";
+            m_weaponImage.sprite = blankImg;
         }
     }
 
