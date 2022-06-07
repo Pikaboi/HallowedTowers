@@ -15,6 +15,7 @@ public class InventoryPurchase : MonoBehaviour
     public CreateWeaponUpgradeMenu m_UGmenuInstance;
     public ShopSpeechBubble m_textbubble;
     public AudioSource m_purchaseAudio;
+    public AudioSource m_deniedAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,9 @@ public class InventoryPurchase : MonoBehaviour
             GetComponent<UnityEngine.UI.Button>().enabled = false;
 
             //m_UGmenuInstance.UpdateEquips();
+        } else
+        {
+            m_deniedAudio.Play();
         }
     }
 }
