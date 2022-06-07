@@ -29,7 +29,7 @@ public class CamMove : MonoBehaviour
     void LateUpdate()
     {
         Vector3 desired = new Vector3(Mathf.Clamp(m_follow.transform.position.x, xBoundsMax, xBoundsMin), transform.position.y, Mathf.Clamp(m_follow.transform.position.z - offset, zBoundsMax, zBoundsMin));
-        Vector3 smoothed = Vector3.Lerp(transform.position, desired, 0.125f);
+        Vector3 smoothed = Vector3.Lerp(transform.position, desired, 0.1f);
         transform.position = smoothed;
     }
 }
