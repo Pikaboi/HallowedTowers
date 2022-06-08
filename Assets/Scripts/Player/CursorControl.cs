@@ -163,6 +163,9 @@ public class CursorControl : MonoBehaviour
                     m_Marker.sprite = null;
                 }
                 m_currentTower = null;
+            } else if(m_currentTower != null && m_placable == false)
+            {
+                m_denied.Play();
             }
 
             if (m_currentSpike != null && m_placable && !EventSystem.current.IsPointerOverGameObject())
@@ -180,6 +183,10 @@ public class CursorControl : MonoBehaviour
                     m_Marker.sprite = null;
                 }
                 m_currentSpike = null;
+            }
+            else if (m_currentSpike!= null && m_placable == false)
+            {
+                m_denied.Play();
             }
 
             if (m_currentTower == null && m_currentSpike == null && hit.collider != null && hit.collider.gameObject.GetComponent<WorldCharacter>() == null && hit.collider.gameObject.layer == 11 && !EventSystem.current.IsPointerOverGameObject())
