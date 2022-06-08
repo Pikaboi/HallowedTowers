@@ -139,6 +139,7 @@ MonoBehaviour:
   m_attackProj: {fileID: 0}
   m_projectileSpawn: {fileID: 0}
   ranged: 0
+  moneyMult: 0
 --- !u!54 &203304971324945167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10156,13 +10157,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Base HumanLPalm'\n\tTransform 'Base HumanRUpperarm'\n\tTransform
-    'Base HumanPelvis'\n\tTransform 'Base HumanLCalf'\n\tTransform 'Base HumanRPalm'\n\tTransform
-    'Base HumanRCalf'\n\tTransform 'Base HumanLUpperarm'\n\tTransform 'Base HumanRForearm'\n\tTransform
-    'Base HumanLForearm'\n\tTransform 'Base HumanRUpperarm'\n\tand more ...\n\tFrom
-    animation clip 'Take 001'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
