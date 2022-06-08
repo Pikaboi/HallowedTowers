@@ -72,7 +72,7 @@ public class TDTowerUpgrade : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        m_UGCost = m_baseCost - (m_baseCost * m_manager.m_UGDiscount);
+        m_UGCost = Mathf.RoundToInt(m_baseCost - (m_baseCost * m_manager.m_UGDiscount));
         m_UGName.text = m_UGString;
         m_UGCostString.text = m_UGCost.ToString();
         m_UGPrefab = Resources.Load<GameObject>("Towers/" + resourcePath);
