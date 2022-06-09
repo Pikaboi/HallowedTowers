@@ -15,6 +15,8 @@ public class TrickTreatHouse : MonoBehaviour
 
     public TMPro.TMP_Text t;
 
+    public float limit = 10000;
+
     //bool End = false;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,14 @@ public class TrickTreatHouse : MonoBehaviour
 
     public void UpdateIncome()
     {
+
         m_value += m_baseIncome * m_multiplier;
+
+        if(m_value > limit)
+        {
+            m_value = limit;
+        }
+
         m_multiplier += 0.1f;
     }
 
