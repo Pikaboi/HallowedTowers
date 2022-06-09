@@ -67,6 +67,8 @@ public class WorldCharacter : MonoBehaviour
     //Save bool 
     public bool loaded;
 
+    public bool dead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -186,6 +188,7 @@ public class WorldCharacter : MonoBehaviour
     void Respawn()
     {
         m_respawn.Play();
+        dead = false;
         m_health = m_maxHealth;
         m_anim.SetTrigger("Respawn");
         transform.position = SpawnPoint.transform.position;
@@ -259,8 +262,12 @@ public class WorldCharacter : MonoBehaviour
 
                 if (m_health <= 0)
                 {
-                    m_anim.SetTrigger("Death");
-                    m_dead.Play();
+                    if (dead == false)
+                    {
+                        m_anim.SetTrigger("Death");
+                        m_dead.Play();
+                        dead = true;
+                    }
                 }
                 else
                 {
@@ -281,8 +288,12 @@ public class WorldCharacter : MonoBehaviour
 
                 if (m_health <= 0)
                 {
-                    m_anim.SetTrigger("Death");
-                    m_dead.Play();
+                    if (dead == false)
+                    {
+                        m_anim.SetTrigger("Death");
+                        m_dead.Play();
+                        dead = true;
+                    }
                 }
                 else
                 {
@@ -296,7 +307,7 @@ public class WorldCharacter : MonoBehaviour
     {
         Debug.Log("I've been shot!");
         //Check the enemy was attacking and player is not in invincibility frames
-        if (!hit)
+        if (!hit && !blocking)
         {
             m_anim.SetTrigger("Hit");
             hit = true;
@@ -304,8 +315,12 @@ public class WorldCharacter : MonoBehaviour
 
             if (m_health <= 0)
             {
-                m_anim.SetTrigger("Death");
-                m_dead.Play();
+                if (dead == false)
+                {
+                    m_anim.SetTrigger("Death");
+                    m_dead.Play();
+                    dead = true;
+                }
             }
             else
             {

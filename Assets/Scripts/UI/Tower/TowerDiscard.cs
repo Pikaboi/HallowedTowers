@@ -32,7 +32,7 @@ public class TowerDiscard : MonoBehaviour
     {
         if (cursor.GetComponent<CursorControl>().m_selectedTower != null)
         {
-            m_resource.AddMoney(cursor.GetSelectedTowerScript().m_sellCost);
+            m_resource.AddMoney(Mathf.RoundToInt(cursor.GetSelectedTowerScript().m_sellCost));
             Destroy(cursor.m_selectedTower);
             cursor.m_selectedTower = null;
         }
