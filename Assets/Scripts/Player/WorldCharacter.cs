@@ -81,6 +81,8 @@ public class WorldCharacter : MonoBehaviour
         }
         m_Controller = GetComponent<CharacterController>();
 
+        FindObjectOfType<InventoryAdd>(true).setUpWeapon();
+
         PlayerWeapon[] weap = m_weaponPos.GetComponentsInChildren<PlayerWeapon>();
 
         foreach(PlayerWeapon p in weap)

@@ -6,17 +6,9 @@ public class InventoryAdd : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject starterWeapon;
-    public bool saved = false;
     void Awake()
     {
-        if (!saved)
-        {
-            if (transform.childCount == 0)
-            {
-                addWeapon(starterWeapon);
-            }
-            saved = true;
-        }
+
     }
 
     private void Start()
@@ -28,6 +20,14 @@ public class InventoryAdd : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void setUpWeapon()
+    {
+        if (transform.childCount == 0)
+        {
+            addWeapon(starterWeapon);
+        }
     }
 
     public void RemoveInventoryOnLoad()
