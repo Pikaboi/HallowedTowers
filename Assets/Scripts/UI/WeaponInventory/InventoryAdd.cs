@@ -6,23 +6,22 @@ public class InventoryAdd : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject starterWeapon;
+    public bool saved = false;
     void Awake()
     {
-        /*if (transform.GetChildCount() != 0)
+        if (!saved)
         {
-            addWeapon(starterWeapon);
-            WorldCharacter player = FindObjectOfType<WorldCharacter>();
-            starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).m_Player = player;
-            starterWeapon.GetComponentInChildren<WeaponEquipButton>(true).OnClick();
-        }*/
+            if (transform.childCount == 0)
+            {
+                addWeapon(starterWeapon);
+            }
+            saved = true;
+        }
     }
 
     private void Start()
     {
-        if (transform.childCount == 0)
-        {
-            addWeapon(starterWeapon);
-        } 
+        
     }
 
     // Update is called once per frame
